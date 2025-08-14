@@ -10,7 +10,7 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
   title="Portfolio - Meon Valley Web" 
   description="Explore our diverse portfolio of web development projects, from charity websites to complex data analysis platforms."
 >
-  <div class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+  <div class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
@@ -46,10 +46,10 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
               <div class="space-y-4">
                 <!-- Project Meta -->
                 <div class="flex flex-wrap gap-2">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
                     {project.data.technology}
                   </span>
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
                     {project.data.category}
                   </span>
                   <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
@@ -60,12 +60,12 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
                     {project.data.status}
                   </span>
                   {project.data.timeline && (
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
                       {project.data.timeline}
                     </span>
                   )}
                   {project.data.dataScale && (
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
                       {project.data.dataScale}
                     </span>
                   )}
@@ -73,7 +73,7 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
 
                 <!-- Project Title and Description -->
                 <div>
-                  <h2 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                  <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
                     {project.data.title}
                   </h2>
                   <p class="mt-2 text-gray-600 text-lg">
@@ -90,7 +90,7 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
                 <div class="pt-4">
                   <a 
                     href={`/portfolio/${project.slug}`}
-                    class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group-hover:underline transition-colors duration-200"
+                    class="inline-flex items-center text-primary-600 hover:text-primary-800 font-medium group-hover:underline transition-colors duration-200"
                   >
                     Read Full Case Study
                     <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,7 +117,7 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
       </p>
       <a 
         href="/contact" 
-        class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+        class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-colors duration-200"
       >
         Get In Touch
         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

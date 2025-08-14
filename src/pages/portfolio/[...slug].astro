@@ -18,15 +18,15 @@ const { Content } = await entry.render();
   description={entry.data.description}
 >
   <!-- Hero Section -->
-  <div class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+  <div class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <!-- Project Meta -->
         <div class="flex flex-wrap justify-center gap-2 mb-6">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
             {entry.data.technology}
           </span>
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
             {entry.data.category}
           </span>
           <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
@@ -37,12 +37,12 @@ const { Content } = await entry.render();
             {entry.data.status}
           </span>
           {entry.data.timeline && (
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
               {entry.data.timeline}
             </span>
           )}
           {entry.data.dataScale && (
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
               {entry.data.dataScale}
             </span>
           )}
@@ -89,7 +89,7 @@ const { Content } = await entry.render();
       <div class="flex justify-between items-center">
         <a 
           href="/portfolio" 
-          class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+          class="inline-flex items-center text-primary-600 hover:text-primary-800 font-medium transition-colors duration-200"
         >
           <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -99,7 +99,7 @@ const { Content } = await entry.render();
         
         <a 
           href="/contact" 
-          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-colors duration-200"
         >
           Start Your Project
           <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
