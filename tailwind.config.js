@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#fdf2f8',
-          100: '#fce7f3',
-          200: '#fbcfe8',
-          300: '#f9a8d4',
-          400: '#f472b6',
-          500: '#ec4899', // Toned down from #CF0F6F
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
-          900: '#831843',
+          50: '#fdf2f7',
+          100: '#fce7f0',
+          200: '#f9cfe1',
+          300: '#f5a7c8',
+          400: '#ee74a7',
+          500: '#BC1F63', // Brand pink from logo
+          600: '#a91b58',
+          700: '#8f1749',
+          800: '#77143e',
+          900: '#631235',
         },
         gray: {
           50: '#f8fafc',
