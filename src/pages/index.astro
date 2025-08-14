@@ -1,16 +1,325 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl lg:text-7xl font-bold text-dark-900 mb-8 leading-tight">
+          The <span class="text-primary-500">developer</span><br />
+          web design studio
+        </h1>
+        <p class="text-xl lg:text-2xl text-dark-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          Professional web development and hosting for small to mid-size companies. 
+          WordPress, headless WordPress with Astro, or full AstroJS solutions.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+            Start Your Project
+          </a>
+          <a href="/portfolio" class="border-2 border-dark-200 text-dark-700 px-8 py-4 rounded-lg hover:border-primary-500 hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
+            View Our Work
+          </a>
+        </div>
+      </div>
+
+      <!-- Code Example -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="bg-dark-900 rounded-xl p-6 shadow-2xl">
+          <div class="flex items-center mb-4">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div class="ml-4 text-dark-400 text-sm font-mono">Development Process</div>
+          </div>
+          <pre class="text-green-400 font-mono text-sm overflow-x-auto"><code>{`// Development -> Staging -> Production
+const project = {
+  methodology: 'Bedrock',
+  framework: ['WordPress', 'AstroJS', 'Laravel'],
+  hosting: 'Fast & Reliable',
+  backup: 'Webmaster Backup Alliance',
+  costs: 'No Hidden Fees'
+}
+
+deploy(project) // Mobile-first, tested, secure`}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-dark-900 mb-6">
+          Web development as code
+        </h2>
+        <p class="text-xl text-dark-600 max-w-3xl mx-auto">
+          Before us, small businesses had to work with expensive agencies or complicated DIY solutions. 
+          We provide professional development with transparent pricing and modern methodologies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Web Development -->
+        <div class="text-center">
+          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">Modern Development</h3>
+          <p class="text-dark-600 mb-6">
+            WordPress, headless WordPress with Astro, or full AstroJS solutions. 
+            Every website is mobile-friendly from the start.
+          </p>
+          <ul class="text-left space-y-2 text-dark-600">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Responsive Design
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              SEO Optimized
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Fast Loading
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hosting -->
+        <div class="text-center">
+          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">Fast Hosting</h3>
+          <p class="text-dark-600 mb-6">
+            Lightning-fast hosting with daily backups, security monitoring, 
+            and 99.9% uptime guarantee. No hidden costs.
+          </p>
+          <ul class="text-left space-y-2 text-dark-600">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Daily Backups
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Security Monitoring
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              99.9% Uptime
+            </li>
+          </ul>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="text-center">
+          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">Maintenance Plans</h3>
+          <p class="text-dark-600 mb-6">
+            Comprehensive maintenance through our HelpDesk service. 
+            From basic support to full management with weekly testing.
+          </p>
+          <ul class="text-left space-y-2 text-dark-600">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Plugin Management
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Content Updates
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Weekly Testing
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-20 bg-dark-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-dark-900 mb-6">
+          Transparent pricing for every business
+        </h2>
+        <p class="text-xl text-dark-600 max-w-3xl mx-auto">
+          No hidden costs. Professional websites that deliver exceptional user experience 
+          and help your business grow.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Starter -->
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">Starter</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-primary-500">£800</span>
+            <span class="text-dark-600"> - £1,000</span>
+          </div>
+          <p class="text-dark-600 mb-6">Perfect for tradesmen and personal blogs</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Mobile-friendly design
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Basic SEO setup
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Contact forms
+            </li>
+          </ul>
+          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Business -->
+        <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-primary-500 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+          </div>
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">Business</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-primary-500">£3,000</span>
+            <span class="text-dark-600">+</span>
+          </div>
+          <p class="text-dark-600 mb-6">Professional business websites</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Custom responsive design
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Advanced SEO
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              CMS integration
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Performance optimization
+            </li>
+          </ul>
+          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
+            Get Started
+          </a>
+        </div>
+
+        <!-- E-commerce -->
+        <div class="bg-white rounded-xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-dark-900 mb-4">E-commerce</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-primary-500">£5,000</span>
+            <span class="text-dark-600">+</span>
+          </div>
+          <p class="text-dark-600 mb-6">Full online stores with payment processing</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Product catalog
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Payment integration
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Inventory management
+            </li>
+            <li class="flex items-center text-dark-600">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Order management
+            </li>
+          </ul>
+          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Start building today
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+        Professional web development and hosting solutions. Mobile-friendly designs, 
+        transparent pricing, and ongoing support to help your business succeed online.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+          Start Your Project
+        </a>
+        <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
+          View Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

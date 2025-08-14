@@ -1,43 +1,97 @@
-# Astro Starter Kit: Minimal
+# Meon Valley Web 2025
 
-```sh
-npm create astro@latest -- --template minimal
+A modern, clean website for Meon Valley Web built with AstroJS and Tailwind CSS. Inspired by column.com's typography and layout with toned-down brand colors.
+
+## Features
+
+- **Modern Design**: Clean, professional layout inspired by column.com
+- **Mobile-First**: Fully responsive design that works on all devices
+- **Fast Performance**: Built with AstroJS for lightning-fast loading
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Accessible**: Following web accessibility best practices
+
+## Tech Stack
+
+- **Framework**: AstroJS
+- **Styling**: Tailwind CSS
+- **Content**: Markdown files
+- **Fonts**: Inter (primary), JetBrains Mono (code)
+- **Icons**: Heroicons
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
+src/
+├── components/
+│   ├── Header.astro
+│   └── Footer.astro
+├── layouts/
+│   └── MainLayout.astro
+├── pages/
+│   ├── index.astro
+│   ├── about.astro
+│   ├── services.astro
+│   ├── portfolio.astro
+│   ├── hosting.astro
+│   └── contact.astro
+├── content/
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── about.md
+└── styles/
+    └── global.css
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+# Install dependencies
+npm install
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Start development server
+npm run dev
 
-## 🧞 Commands
+# Build for production
+npm run build
 
-All commands are run from the root of the project, from a terminal:
+# Preview production build
+npm run preview
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Brand Colors
 
-## 👀 Want to learn more?
+- **Primary**: Pink/Magenta tones (toned down from original #CF0F6F)
+- **Dark**: Slate gray tones for text and backgrounds
+- **Accent**: Primary color variations for highlights
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Services Offered
+
+- WordPress Development
+- Headless WordPress + Astro
+- Full AstroJS Development
+- Laravel Applications
+- Fast Hosting Solutions
+- Maintenance Plans
+
+## Pricing
+
+- **Starter Websites**: £800-£1,000 (tradesmen, personal blogs)
+- **Business Websites**: £3,000+ (professional business sites)
+- **E-commerce Sites**: £5,000+ (online stores with payment processing)
+- **Hosting**: From £15/month
+- **Maintenance**: From £50/month
+
+## Charity Commitment
+
+- Free website for a charity every quarter
+- 10% of profits go to charitable causes
+
+## Contact
+
+- Website: [meonvalleyweb.com](https://meonvalleyweb.com)
+- Email: hello@meonvalleyweb.com
+- Location: Meon Valley, Hampshire, UK
+
+---
+
+🤖 Generated with [Memex](https://memex.tech)
+Co-Authored-By: Memex <noreply@memex.tech>

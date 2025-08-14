@@ -1,0 +1,19 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { readFileSync } from 'fs';
+import { marked } from 'marked';
+
+// Read and parse the markdown content
+const aboutContent = readFileSync('./src/content/pages/about.md', 'utf-8');
+const htmlContent = marked(aboutContent);
+---
+
+<MainLayout title="About Us | Meon Valley Web" description="Learn about Meon Valley Web - professional web development and hosting for small to mid-size companies. Modern methodologies, transparent pricing, and community commitment.">
+  <div class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <div set:html={htmlContent} />
+      </div>
+    </div>
+  </div>
+</MainLayout>
