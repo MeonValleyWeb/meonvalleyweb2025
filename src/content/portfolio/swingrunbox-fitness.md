@@ -3,11 +3,13 @@ title: "SwingRunBox Fitness Site"
 description: "AstroJS fitness site for local company, delivered in 7 days for launch"
 technology: "AstroJS"
 category: "Fitness & Health"
-client: "Local Fitness Company"
+client: "WynFit"
 status: "Live"
 featured: true
 order: 2
 timeline: "7 days"
+image: "/portfolio/wynfit.jpg"
+imageAlt: "WynFit SwingRunBox fitness website homepage"
 ---
 
 # SwingRunBox Fitness Site

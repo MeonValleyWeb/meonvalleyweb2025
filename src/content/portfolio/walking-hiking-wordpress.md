@@ -7,6 +7,8 @@ client: "Trussell Trust Fundraiser"
 status: "Live"
 featured: true
 order: 1
+image: "/portfolio/twodogsananawning.jpg"
+imageAlt: "Two Dogs and an Awning walking website homepage"
 ---
 
 # Walking & Hiking WordPress Site

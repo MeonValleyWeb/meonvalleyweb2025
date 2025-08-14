@@ -13,6 +13,8 @@ const portfolioCollection = defineCollection({
     order: z.number(),
     timeline: z.string().optional(),
     dataScale: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   }),
 });
 
@@ -30,8 +32,8 @@ const servicesCollection = defineCollection({
 const pagesCollection = defineCollection({
   type: 'content',
   schema: z.object({
-    title: z.string(),
-    description: z.string(),
+    title: z.string().optional(),
+    description: z.string().optional(),
     layout: z.string().optional(),
   }),
 });

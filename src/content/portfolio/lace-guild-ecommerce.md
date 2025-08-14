@@ -7,6 +7,8 @@ client: "The Lace Guild"
 status: "In Development"
 featured: true
 order: 3
+image: "/portfolio/thelaceguild.jpg"
+imageAlt: "The Lace Guild website homepage showing lace-making heritage"
 ---
 
 # The Lace Guild Ecommerce Modernization

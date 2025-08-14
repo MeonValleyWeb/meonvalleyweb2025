@@ -7,6 +7,8 @@ client: "Saints Disabled Association"
 status: "Live"
 featured: true
 order: 4
+image: "/portfolio/sdsa.jpg"
+imageAlt: "Saints Disabled Supporters Association website homepage"
 ---
 
 # Saints Disabled Association Management System
