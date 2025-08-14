@@ -8,7 +8,7 @@ status: "Live"
 featured: true
 order: 6
 image: "/portfolio/wessexwhisky.jpg"
-imageAlt: "Wessex Whisky ecommerce website homepage showcasing premium whisky collection"
+imageAlt: "Wessex Whisky club website homepage showcasing premium premium tastings for charity"
 ---
 
 # Wessex Whisky Ecommerce Site

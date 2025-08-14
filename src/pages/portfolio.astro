@@ -31,11 +31,11 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
             <!-- Project Image -->
             <div class={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
               {project.data.image ? (
-                <div class="aspect-video rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                   <img 
                     src={project.data.image} 
                     alt={project.data.imageAlt || project.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               ) : (
