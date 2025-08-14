@@ -1,274 +1,129 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const portfolioItems = await getCollection('portfolio');
+const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<MainLayout title="Portfolio | Meon Valley Web" description="View our portfolio of professional websites and web applications. WordPress, AstroJS, Laravel, and headless solutions for businesses.">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
+<MainLayout 
+  title="Portfolio - Meon Valley Web" 
+  description="Explore our diverse portfolio of web development projects, from charity websites to complex data analysis platforms."
+>
+  <div class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Our <span class="text-primary-500">work</span>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
+          Our Portfolio
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Explore our portfolio of professional websites and web applications. 
-          From simple business sites to complex e-commerce solutions.
+        <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover the diverse range of projects we've delivered, from charity websites and ecommerce platforms to innovative data analysis tools and rapid-deployment solutions.
         </p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Portfolio Grid -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project 1 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.109m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.135-2.85-.135-.584-.031-.661.854-.082.899 0 0 .541.075 1.115.105l1.65 4.53-2.31 6.942-3.85-11.472c.647-.03 1.232-.105 1.232-.105.582-.075.516-.93-.065-.899 0 0-1.755.135-2.88.135-.202 0-.438-.008-.69-.015C4.911 2.015 8.235 0 12.001 0c2.8 0 5.349 1.07 7.268 2.826-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12.001 24C5.382 24 0 18.618 0 12.001s5.382-12 12.001-12S24 5.384 24 12.001 18.618 24 12.001 24zM6.54 12.001c0-1.91.97-3.595 2.44-4.615L6.54 17.973c-1.45-1.65-2.34-3.78-2.34-6.172v.2z"/>
-                </svg>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid gap-12 lg:gap-16">
+      {sortedPortfolio.map((project, index) => (
+        <article class="group">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Project Image Placeholder -->
+            <div class={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+              <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 flex items-center justify-center">
+                <div class="text-center text-gray-500">
+                  <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  <p class="text-sm font-medium">Project Image</p>
+                  <p class="text-xs text-gray-400">Coming Soon</p>
+                </div>
               </div>
-              <p class="text-primary-700 font-medium">WordPress Site</p>
             </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Local Tradesman Website</h3>
-            <p class="text-gray-600 mb-4">
-              Professional website for a local plumbing business with service pages, 
-              contact forms, and mobile-friendly design.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">WordPress</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Responsive</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">SEO</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 2 weeks</p>
-              <p><strong>Budget:</strong> £950</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <p class="text-primary-700 font-medium">Headless WordPress + Astro</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Marketing Agency Site</h3>
-            <p class="text-gray-600 mb-4">
-              High-performance marketing site with WordPress backend for content 
-              management and Astro frontend for speed.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Headless WP</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">AstroJS</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Fast</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 4 weeks</p>
-              <p><strong>Budget:</strong> £4,200</p>
-            </div>
-          </div>
-        </div>
+            <!-- Project Content -->
+            <div class={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+              <div class="space-y-4">
+                <!-- Project Meta -->
+                <div class="flex flex-wrap gap-2">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    {project.data.technology}
+                  </span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    {project.data.category}
+                  </span>
+                  <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                    project.data.status === 'Live' ? 'bg-emerald-100 text-emerald-800' :
+                    project.data.status === 'In Development' ? 'bg-yellow-100 text-yellow-800' :
+                    'bg-purple-100 text-purple-800'
+                  }`}>
+                    {project.data.status}
+                  </span>
+                  {project.data.timeline && (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                      {project.data.timeline}
+                    </span>
+                  )}
+                  {project.data.dataScale && (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                      {project.data.dataScale}
+                    </span>
+                  )}
+                </div>
 
-        <!-- Project 3 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                </svg>
-              </div>
-              <p class="text-primary-700 font-medium">E-commerce</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Artisan Craft Store</h3>
-            <p class="text-gray-600 mb-4">
-              Full e-commerce solution with product catalog, payment processing, 
-              inventory management, and order tracking.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">WooCommerce</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Payments</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Inventory</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 6 weeks</p>
-              <p><strong>Budget:</strong> £5,800</p>
-            </div>
-          </div>
-        </div>
+                <!-- Project Title and Description -->
+                <div>
+                  <h2 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                    {project.data.title}
+                  </h2>
+                  <p class="mt-2 text-gray-600 text-lg">
+                    {project.data.description}
+                  </p>
+                </div>
 
-        <!-- Project 4 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M16.074 16.86c-.72.616-2.157.769-3.567.769-1.41 0-2.847-.153-3.567-.769-.72-.616-.767-1.617-.104-2.28.663-.663 1.664-.616 2.28.104.616.72 1.617.767 2.28.104.663-.663.616-1.664-.104-2.28-.72-.616-1.617-.767-2.28-.104-.663.663-.616 1.664.104 2.28.72.616 2.157.769 3.567.769 1.41 0 2.847-.153 3.567-.769.72-.616.767-1.617.104-2.28-.663-.663-1.664-.616-2.28.104-.616.72-1.617.767-2.28.104-.663-.663-.616-1.664.104-2.28.72-.616 1.617-.767 2.28-.104.663.663.616 1.664-.104 2.28z"/>
-                </svg>
-              </div>
-              <p class="text-primary-700 font-medium">AstroJS Site</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Professional Portfolio</h3>
-            <p class="text-gray-600 mb-4">
-              Lightning-fast portfolio site for a photographer with image galleries, 
-              contact forms, and blog functionality.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">AstroJS</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Gallery</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Blog</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 3 weeks</p>
-              <p><strong>Budget:</strong> £2,800</p>
-            </div>
-          </div>
-        </div>
+                <!-- Client Info -->
+                <div class="text-sm text-gray-500">
+                  <span class="font-medium">Client:</span> {project.data.client}
+                </div>
 
-        <!-- Project 5 -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033.012.009.025.018.037.027.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.030.033-.043.012-.012.025-.02.037-.027.014-.013.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.018.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.02-.028-.033-.002-.003-.006-.003-.009-.006-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"/>
-                </svg>
+                <!-- Read More Link -->
+                <div class="pt-4">
+                  <a 
+                    href={`/portfolio/${project.slug}`}
+                    class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group-hover:underline transition-colors duration-200"
+                  >
+                    Read Full Case Study
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p class="text-primary-700 font-medium">Laravel Application</p>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Business Management System</h3>
-            <p class="text-gray-600 mb-4">
-              Custom Laravel application for project management with user roles, 
-              task tracking, and reporting dashboard.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Laravel</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Dashboard</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">API</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 8 weeks</p>
-              <p><strong>Budget:</strong> £7,500</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Charity Project -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-primary-200">
-          <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-primary-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-              </div>
-              <p class="text-primary-700 font-medium">Charity Project</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Local Animal Rescue</h3>
-            <p class="text-gray-600 mb-4">
-              Free website for a local animal rescue charity with adoption listings, 
-              donation system, and volunteer registration.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">WordPress</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Donations</span>
-              <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Free</span>
-            </div>
-            <div class="text-sm text-gray-500">
-              <p><strong>Timeline:</strong> 3 weeks</p>
-              <p><strong>Budget:</strong> Free (Charity)</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </article>
+      ))}
     </div>
-  </section>
+  </div>
 
-  <!-- Process Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Our development process
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Every project follows our proven Development → Staging → Production workflow 
-          using Bedrock methodology for reliable, secure results.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">1</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery & Planning</h3>
-          <p class="text-gray-600">
-            We start by understanding your business, goals, and requirements. 
-            Clear planning ensures successful project delivery.
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">2</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Development & Testing</h3>
-          <p class="text-gray-600">
-            Development → Staging → Production workflow ensures thorough testing 
-            and quality assurance before launch.
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">3</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Launch & Support</h3>
-          <p class="text-gray-600">
-            Smooth launch with ongoing support through our maintenance plans 
-            and HelpDesk service.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-primary-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Ready to start your project?
+  <!-- Call to Action Section -->
+  <div class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Ready to Start Your Project?
       </h2>
-      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-        Let's discuss your requirements and create something amazing together. 
-        Free consultation and transparent pricing.
+      <p class="text-xl text-gray-600 mb-8">
+        Let's discuss how we can help bring your vision to life with modern web technologies.
       </p>
-      <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-        Get Your Free Quote
+      <a 
+        href="/contact" 
+        class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+      >
+        Get In Touch
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
       </a>
     </div>
-  </section>
+  </div>
 </MainLayout>
