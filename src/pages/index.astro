@@ -12,9 +12,9 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center min-h-[600px]">
         <!-- Left Content -->
-        <div class="max-w-xl">
+        <div class="lg:col-span-6 max-w-xl">
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
             Professional web development guides your <span class="text-primary-500">business growth</span>
           </h1>
@@ -22,26 +22,26 @@ import MainLayout from '../layouts/MainLayout.astro';
             Meon Valley Web is the fit-for-purpose solution for building modern, fast, and scalable websites for small to mid-size companies.
           </p>
           
-          <!-- Feature List -->
-          <div class="space-y-6 mb-12">
+          <!-- Feature Grid - 2x2 Layout -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div>
-              <h3 class="text-xl font-bold text-black mb-2">Modern Development</h3>
-              <p class="text-gray-600">WordPress, headless WordPress with Astro, or full AstroJS solutions.</p>
+              <h3 class="text-lg font-bold text-black mb-2">Modern Development</h3>
+              <p class="text-gray-600 text-sm">WordPress, headless WordPress with Astro, or full AstroJS solutions.</p>
             </div>
             
             <div>
-              <h3 class="text-xl font-bold text-black mb-2">Fast Hosting</h3>
-              <p class="text-gray-600">Lightning-fast hosting with 99.9% uptime guarantee and daily backups.</p>
+              <h3 class="text-lg font-bold text-black mb-2">Fast Hosting</h3>
+              <p class="text-gray-600 text-sm">Lightning-fast hosting with 99.9% uptime guarantee and daily backups.</p>
             </div>
             
             <div>
-              <h3 class="text-xl font-bold text-black mb-2">Local Support</h3>
-              <p class="text-gray-600">Personal service with professional results, based in the Meon Valley.</p>
+              <h3 class="text-lg font-bold text-black mb-2">Local Support</h3>
+              <p class="text-gray-600 text-sm">Personal service with professional results, based in the Meon Valley.</p>
             </div>
             
             <div>
-              <h3 class="text-xl font-bold text-black mb-2">Transparent Pricing</h3>
-              <p class="text-gray-600">No hidden costs or surprise fees. Clear pricing from the start.</p>
+              <h3 class="text-lg font-bold text-black mb-2">Transparent Pricing</h3>
+              <p class="text-gray-600 text-sm">No hidden costs or surprise fees. Clear pricing from the start.</p>
             </div>
           </div>
           
@@ -55,39 +55,39 @@ import MainLayout from '../layouts/MainLayout.astro';
           </div>
         </div>
         
-        <!-- Right Image -->
-        <div class="relative">
-          <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Professional Web Development" class="w-full h-auto rounded-xl" />
-          </div>
-          
-          <!-- Floating stats -->
-          <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
-            <div class="text-2xl font-bold text-black">50+</div>
-            <div class="text-sm text-gray-600">Happy Customers</div>
-          </div>
-          <div class="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
-            <div class="flex items-center mb-1">
-              <div class="text-2xl font-bold text-black mr-2">5.0</div>
-              <div class="flex">
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                </svg>
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                </svg>
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                </svg>
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                </svg>
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                </svg>
-              </div>
+        <!-- Right Image - Bleeding off page -->
+        <div class="lg:col-span-6 relative lg:-mr-[50vw] lg:pr-[50vw]">
+          <div class="relative h-[600px] bg-white rounded-l-2xl shadow-2xl border border-gray-200 p-8 overflow-hidden">
+            <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Professional Web Development" class="w-full h-full object-cover rounded-xl" />
+            
+            <!-- Floating stats -->
+            <div class="absolute top-8 left-8 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+              <div class="text-2xl font-bold text-black">50+</div>
+              <div class="text-sm text-gray-600">Happy Customers</div>
             </div>
-            <div class="text-sm text-gray-600">Client Reviews</div>
+            <div class="absolute top-8 right-8 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+              <div class="flex items-center mb-1">
+                <div class="text-2xl font-bold text-black mr-2">5.0</div>
+                <div class="flex">
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="text-sm text-gray-600">Client Reviews</div>
+            </div>
           </div>
         </div>
       </div>
