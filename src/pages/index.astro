@@ -4,501 +4,755 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
   <!-- Hero Section -->
-  <section class="py-24 lg:py-32 bg-white relative overflow-hidden">
-    <!-- Background Image Placeholder - you can replace this -->
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 to-white">
-      <!-- You can replace this with your custom background image -->
+  <section class="py-20 lg:py-32 bg-white relative overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-20 right-20 w-72 h-72 bg-primary-50 rounded-full opacity-60 blur-3xl"></div>
+      <div class="absolute bottom-20 left-20 w-96 h-96 bg-green-50 rounded-full opacity-40 blur-3xl"></div>
     </div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-        <!-- Left Content - 7 columns -->
-        <div class="lg:col-span-7">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-6 leading-[1.1] tracking-tight">
-            Web development<br />
-            for the Meon Valley
-          </h1>
-          <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-            The only web development agency in the Meon Valley built to enable local businesses to create modern, fast, and scalable websites.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href="/contact" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-base inline-flex items-center justify-center">
-              Start building
-            </a>
-            <a href="/portfolio" class="text-black px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium text-base inline-flex items-center justify-center underline">
-              View our work
-            </a>
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
+          Make better use of your<br />
+          <span class="text-primary-500">web presence</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          Professional web development and hosting services for small to mid-size companies in the Meon Valley. 
+          Modern, fast, and scalable websites that help your business grow.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
+            Start Your Project Today
+          </a>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="relative max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
+            <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Professional Web Development" class="w-full h-auto rounded-xl" />
+          </div>
+          <!-- Floating stats -->
+          <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+            <div class="text-2xl font-bold text-black">50+</div>
+            <div class="text-sm text-gray-600">Happy Customers</div>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+            <div class="flex items-center mb-1">
+              <div class="text-2xl font-bold text-black mr-2">5.0</div>
+              <div class="flex">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-sm text-gray-600">Client Reviews</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right Code Example - 5 columns -->
-        <div class="lg:col-span-5">
-          <!-- This will be positioned absolutely over the preview -->
+  <!-- Trusted by Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-lg text-gray-600 mb-8">We trust our services and our clients to the most innovative companies in the world</p>
+      </div>
+      <!-- Technology Logos -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
+        <img src="/astro.png" alt="AstroJS" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/wordpress-tile.svg" alt="WordPress" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/laravel.png" alt="Laravel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/ubuntu-2.svg" alt="Ubuntu" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/Netlify_logo.svg.png" alt="Netlify" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/spinupwp.png" alt="SpinupWP" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
+          Appropriate features for proper web development
+        </h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-4">Increases Brand Awareness</h3>
+          <p class="text-gray-600 leading-relaxed">
+            You want to stand out in your industry as a leader, but you also want to be seen as a relevant solution for your audience.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-4">Amplifies SEO Success</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Make sure you optimize your website for both desktop and mobile search results for maximum visibility and success.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-4">Builds Customer Trust</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Even with a strong SEO strategy, building customer trust in your brand takes time. Invest in quality content for readers.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-4">Transparent Pricing</h3>
+          <p class="text-gray-600 leading-relaxed">
+            No hidden costs or surprise fees. Clear pricing from the start with ongoing support that fits your budget perfectly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section with Image -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Content -->
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-8 leading-tight">
+            Take effective control of your web presence
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Meon Valley Web automatically handles all aspects of your website development and hosting. 
+            Instant reports, seamless maintenance, and integrations with the tools your business loves.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            We offer unlimited revisions and ongoing support with transparent pricing. This makes us perfect 
+            for businesses with simple to complex web development needs. Available as both static sites 
+            and dynamic applications for desktop and mobile.
+          </p>
+          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center">
+            Discover More
+          </a>
+        </div>
+        
+        <!-- Right Image -->
+        <div class="relative">
+          <div class="bg-white shadow-1xl p-4">
+            <img src="/hal-gatewood-xzzgY__zX8A-unsplash.jpg" alt="Web Development Dashboard" class="w-full h-auto rounded-xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Tabs Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
+          We create world-class web design & development
+        </h2>
+      </div>
+      
+      <!-- Tab Navigation -->
+      <div class="flex justify-center mb-12">
+        <div class="bg-white rounded-xl p-2 shadow-lg border border-gray-200">
+          <div class="flex space-x-2">
+            <button class="tab-button active flex items-center px-6 py-3 rounded-lg font-medium text-sm transition-colors duration-200 bg-primary-500 text-white" data-tab="development">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              Web Development
+            </button>
+            <button class="tab-button flex items-center px-6 py-3 rounded-lg font-medium text-sm transition-colors duration-200 text-gray-600 hover:text-gray-900" data-tab="hosting">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+              </svg>
+              Hosting & Maintenance
+            </button>
+          </div>
         </div>
       </div>
       
-      <!-- Website Preview - Reduced Spacing -->
-      <div class="relative mt-6">
-        <!-- Overlapping Code Box - Positioned Above -->
-        <div class="relative z-10 mb-4">
-          <div class="flex justify-end">
-            <div class="max-w-md">
-              <div class="bg-gray-900 rounded-lg p-4 shadow-2xl border border-gray-800">
-                <div class="flex items-center mb-3">
-                  <div class="flex space-x-1.5">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div class="ml-3 text-gray-400 text-sm font-mono">terminal</div>
-                </div>
-                <pre class="text-green-400 font-mono text-sm leading-relaxed overflow-x-auto"><code>{`curl 'https://api.meonvalley.dev/sites' \\
-    -u :prod_mvw_2024_api_key \\
-    -d business_name="Local Hampshire Business" \\
-    -d template="astro-wordpress-headless" \\
-    -d hosting="fast-reliable" \\
-    -d support="local-personal"`}</code></pre>
-              </div>
-            </div>
+      <!-- Tab Content -->
+      <div class="tab-content" id="development">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-black">Modern Web Development</h3>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              We specialize in modern web development using the latest technologies. From WordPress 
+              to headless solutions with Astro, and custom Laravel applications - we build websites 
+              that are fast, secure, and scalable.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Responsive design for all devices</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">SEO optimized from the ground up</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Lightning-fast loading speeds</span>
+              </li>
+            </ul>
           </div>
-        </div>
-        
-        <!-- Dashboard Preview - 50% Overlap -->
-        <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white p-4 -mt-20">
-          <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Build Statistics" class="w-full h-auto max-w-4xl mx-auto" />
+          <div class="relative">
+            <img src="/dashboard.jpg" alt="Web Development Portfolio" class="w-full h-auto rounded-xl shadow-lg" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Code Examples with Sidebar -->
-  <section class="py-20 bg-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch min-h-full">
-        <!-- Content Column -->
-        <div class="lg:col-span-2 space-y-12">
-          <!-- Section Title moved to left column -->
-          <div class="mb-8">
-            <div class="flex items-center mb-4">
-              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-              <span class="text-green-600 font-medium text-sm">In action</span>
-            </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-black mb-2 leading-tight">
-              The power of local expertise with modern technology
-            </h2>
-            <p class="text-gray-500 text-lg">
-              in the <span class="text-gray-400">lightest format possible</span>
+      
+      <div class="tab-content hidden" id="hosting">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-black">Reliable Hosting & Maintenance</h3>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Our hosting solutions are built for performance and reliability. With daily backups, 
+              security monitoring, and 99.9% uptime guarantee, your website will always be available 
+              when your customers need it.
             </p>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Daily automated backups</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">24/7 security monitoring</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">99.9% uptime guarantee</span>
+              </li>
+            </ul>
           </div>
-          
-          <!-- Modern Static Sites Section -->
-          <div>
-            <h3 class="text-2xl font-bold text-black mb-4">Modern static sites and applications</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Build lightning-fast websites with AstroJS. Perfect for businesses that need speed, 
-              SEO performance, and modern development practices.
-            </p>
-            
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🚀 AstroJS</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">⚡ Static Sites</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🎯 SEO Optimized</span>
-            </div>
-
-            <!-- Code Example -->
-            <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl blur-lg"></div>
-              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
-                <div class="flex items-center mb-4">
-                  <div class="flex space-x-2">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div class="ml-4 text-gray-400 text-sm font-mono">Create a new Astro project</div>
-                </div>
-                <pre class="text-orange-400 font-mono text-sm overflow-x-auto"><code>{`npm create astro@latest meon-valley-business \\
-  --template minimal \\
-  --typescript strict \\
-  --tailwind \\
-  --git
-
-cd meon-valley-business
-npm run dev`}</code></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- WordPress Development Section -->
-          <div>
-            <h3 class="text-2xl font-bold text-black mb-4">Professional WordPress development</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Modern WordPress development using Bedrock methodology. Secure, maintainable, 
-              and scalable solutions for content-driven websites.
-            </p>
-            
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">📝 WordPress</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🛡️ Bedrock</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🔧 Custom Themes</span>
-            </div>
-
-            <!-- Code Example -->
-            <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl blur-lg"></div>
-              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
-                <div class="flex items-center mb-4">
-                  <div class="flex space-x-2">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div class="ml-4 text-gray-400 text-sm font-mono">Setup WordPress with Bedrock</div>
-                </div>
-                <pre class="text-blue-400 font-mono text-sm overflow-x-auto"><code>{`composer create-project roots/bedrock meon-valley-site
-cd meon-valley-site
-cp .env.example .env
-
-# Configure environment
-echo "WP_HOME='https://meonvalleybusiness.com'" >> .env
-echo "WP_SITEURL='https://meonvalleybusiness.com/wp'" >> .env`}</code></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Laravel Applications Section -->
-          <div>
-            <h3 class="text-2xl font-bold text-black mb-4">Custom web applications</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Build powerful custom applications with Laravel. Perfect for complex business 
-              requirements, APIs, and data-driven solutions.
-            </p>
-            
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">⚡ Laravel</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🔗 APIs</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">📊 Custom Solutions</span>
-            </div>
-
-            <!-- Code Example -->
-            <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-xl blur-lg"></div>
-              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
-                <div class="flex items-center mb-4">
-                  <div class="flex space-x-2">
-                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div class="ml-4 text-gray-400 text-sm font-mono">Create a new Laravel application</div>
-                </div>
-                <pre class="text-red-400 font-mono text-sm overflow-x-auto"><code>{`composer create-project laravel/laravel meon-valley-app
-cd meon-valley-app
-
-# Setup API routes
-php artisan make:controller Api/BusinessController
-php artisan make:model Business -m
-php artisan migrate`}</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar Content with Header-style Background -->
-        <div class="lg:col-span-3 relative flex">
-          <!-- Header-style gradient background that extends to right edge -->
-          <div class="absolute inset-0 lg:-mr-[50vw] bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 rounded-l-3xl border-l-4 border-t border-b border-primary-200/50">
-          </div>
-          
-          <div class="relative z-10 py-10 pl-16 pr-12 flex flex-col justify-center w-full">
-            <!-- Full Logo -->
-            <div class="mb-12">
-              <img src="/meon-valley-web-logo.svg" alt="Meon Valley Web" class="h-40 w-auto" />
-            </div>
-            
-            <div class="space-y-10 text-xl lg:text-2xl text-gray-700 leading-relaxed">
-              <p class="text-2xl lg:text-3xl">
-                <strong class="text-black">Based in the heart of the Meon Valley</strong>, we bring together the personal touch of local service 
-                with cutting-edge web development technologies.
-              </p>
-              <p class="text-xl lg:text-2xl">
-                Whether you need a simple WordPress site for your local business, a headless WordPress 
-                solution with Astro for blazing-fast performance, or a full custom application built 
-                with Laravel, <strong class="text-black">we have the expertise to deliver</strong>.
-              </p>
-              <p class="text-xl lg:text-2xl">
-                Our approach combines modern development practices with transparent pricing and 
-                ongoing local support. <strong class="text-black">No hidden costs, no complicated contracts</strong> - just professional 
-                web development that helps your business grow.
-              </p>
-            </div>
-
-
-
-            <div class="mt-12">
-              <a href="/contact" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200 font-normal text-sm inline-block">
-                Discuss Your Project
-              </a>
-            </div>
-
-            <!-- Technology Logos -->
-            <div class="mt-12 pt-8 border-t border-gray-300">
-              <p class="text-gray-600 text-lg mb-8 font-medium">Built with modern technologies:</p>
-              <div class="grid grid-cols-3 gap-8 items-center">
-                <img src="/astro.png" alt="AstroJS" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/wordpress-tile.svg" alt="WordPress" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/laravel.png" alt="Laravel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/ubuntu-2.svg" alt="Ubuntu" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/Netlify_logo.svg.png" alt="Netlify" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/spinupwp.png" alt="SpinupWP" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-                <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
-              </div>
-            </div>
+          <div class="relative">
+            <img src="/dashboard.jpg" alt="Hosting Dashboard" class="w-full h-auto rounded-xl shadow-lg" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Overview -->
+  <!-- SEO Content Section -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
-          Web development as code
-        </h2>
-        <p class="text-xl text-gray-700 max-w-3xl">
-          Before us, small businesses had to work with expensive agencies or complicated DIY solutions. 
-          We provide professional development with transparent pricing and modern methodologies.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <!-- Web Development -->
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-            </svg>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Image -->
+        <div class="relative">
+          <div class="bg-white rounded-2xl p-8">
+            <img src="/clark-tibbs-oqStl2L5oxI-unsplash.jpg" alt="SEO Performance Dashboard" class="w-full h-auto rounded-xl" />
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Modern Development</h3>
-          <p class="text-gray-600 mb-6">
-            WordPress, headless WordPress with Astro, or full AstroJS solutions. 
-            Every website is mobile-friendly from the start.
-          </p>
-          <ul class="text-left space-y-2 text-gray-600">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Responsive Design
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              SEO Optimized
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Fast Loading
-            </li>
-          </ul>
-        </div>
-
-        <!-- Hosting -->
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Hosting</h3>
-          <p class="text-gray-600 mb-6">
-            Lightning-fast hosting with daily backups, security monitoring, 
-            and 99.9% uptime guarantee. No hidden costs.
-          </p>
-          <ul class="text-left space-y-2 text-gray-600">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Daily Backups
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Security Monitoring
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              99.9% Uptime
-            </li>
-          </ul>
-        </div>
-
-        <!-- Maintenance -->
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Maintenance Plans</h3>
-          <p class="text-gray-600 mb-6">
-            Comprehensive maintenance through our HelpDesk service. 
-            From basic support to full management with weekly testing.
-          </p>
-          <ul class="text-left space-y-2 text-gray-600">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Plugin Management
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Content Updates
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Weekly Testing
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Meon Valley Web Section -->
-  <section class="py-20 bg-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Definitive Background Container -->
-      <div class="relative">
-        <!-- Background that extends to right edge -->
-        <div class="absolute inset-y-0 left-0 right-0 lg:-mr-[50vw] bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-l-3xl border-l-4 border-t border-b border-blue-200">
-          <!-- Hexagonal pattern -->
-          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 25px 25px, rgba(59,130,246,0.15) 2px, transparent 2px); background-size: 50px 50px;"></div>
-          <!-- Diagonal lines pattern -->
-          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59,130,246,0.1) 10px, rgba(59,130,246,0.1) 20px);"></div>
-          <!-- Subtle gradient overlay -->
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-white/40"></div>
         </div>
         
-        <div class="relative z-10 py-16 pl-12 pr-8">
-          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-12">
-            Why Meon Valley Web?
+        <!-- Right Content -->
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-8 leading-tight">
+            SEO gains momentum by increasing your investment
           </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            SEO is often referred to as the 'long-term game' in the marketing world. The more time you invest, 
+            the faster the benefits of SEO will accrue. As your website content grows, so does your visibility.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Search engine optimization ensures that your online presence is both articulated properly 
+            and discoverable to potential customers.
+          </p>
           
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="space-y-8">
+          <div class="space-y-6">
+            <div class="flex items-start">
+            
               <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Local expertise</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  Based in Hampshire, we understand local businesses and their unique needs. 
-                  Personal service with professional results.
-                </p>
-              </div>
-              
-              <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Modern technology</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  We use the latest web technologies - WordPress, Astro, Laravel - to build 
-                  fast, secure, and scalable websites.
-                </p>
-              </div>
-              
-              <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Transparent pricing</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  No hidden costs or surprise fees. Clear pricing from the start, 
-                  with ongoing support that fits your budget.
-                </p>
+                <h3 class="text-xl font-bold text-black mb-2">Keyword Research</h3>
+                <p class="text-gray-600">Keyword research is the process of discovering valuable search queries that your customers use.</p>
               </div>
             </div>
             
-            <div class="space-y-8">
-              <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Ongoing support</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  We don't just build your website and disappear. Comprehensive maintenance 
-                  and support to keep your site running smoothly.
-                </p>
-              </div>
+            <div class="flex items-start">
               
               <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Fast hosting</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  Lightning-fast hosting with daily backups, security monitoring, 
-                  and 99.9% uptime guarantee.
-                </p>
+                <h3 class="text-xl font-bold text-black mb-2">Link Building</h3>
+                <p class="text-gray-600">Link building is a SEO technique that increases your search engine ranking through quality backlinks.</p>
               </div>
+            </div>
+            
+            <div class="flex items-start">
               
               <div>
-                <h3 class="text-2xl font-bold text-black mb-4">Mobile-first design</h3>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                  Every website is designed to work perfectly on mobile devices, 
-                  ensuring your customers can find you anywhere.
-                </p>
+                <h3 class="text-xl font-bold text-black mb-2">Ranking</h3>
+                <p class="text-gray-600">It helps a website achieve top positions in the search engine results pages for relevant keywords.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
+          Perfect fit regardless of your specific budget
+        </h2>
+        <div class="flex justify-center mb-8">
+          <div class="bg-white rounded-xl p-2 shadow-lg border border-gray-200">
+            <div class="flex space-x-2">
+              <button class="pricing-toggle active px-6 py-2 rounded-lg font-medium text-sm transition-colors duration-200" data-period="monthly">
+                Per Month
+              </button>
+              <button class="pricing-toggle px-6 py-2 rounded-lg font-medium text-sm transition-colors duration-200" data-period="yearly">
+                Per Year
+                <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Save 20%</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Starter Plan -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 relative">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Starter</h3>
+            <div class="pricing-amount" data-monthly="£299" data-yearly="£2,390">
+              <span class="text-5xl font-bold text-black">£299</span>
+              <span class="text-gray-600 ml-2">/project</span>
+            </div>
+            <div class="pricing-period text-gray-600 mt-2" data-monthly="One-time payment" data-yearly="£2,390 yearly">
+              One-time payment
             </div>
           </div>
           
-          <div class="mt-12 pt-8 border-t border-gray-300">
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="/contact" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200 font-normal text-sm inline-block w-fit">
-                Start Your Project
-              </a>
-              <a href="/about" class="border border-gray-400 text-black px-6 py-3 rounded-md hover:border-black transition-colors duration-200 font-normal text-sm inline-block w-fit">
-                Learn More About Us
-              </a>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">5-page WordPress website</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Mobile responsive design</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Basic SEO setup</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Contact form integration</span>
+            </li>
+          </ul>
+          
+          <a href="/contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center block">
+            Get Started
+          </a>
+          <p class="text-center text-sm text-gray-500 mt-4">Perfect for small businesses</p>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="bg-white rounded-2xl shadow-xl border-2 border-primary-500 p-8 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">Most Popular</span>
+          </div>
+          
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Professional</h3>
+            <div class="pricing-amount" data-monthly="£599" data-yearly="£4,790">
+              <span class="text-5xl font-bold text-black">£599</span>
+              <span class="text-gray-600 ml-2">/project</span>
             </div>
+            <div class="pricing-period text-gray-600 mt-2" data-monthly="One-time payment" data-yearly="£4,790 yearly">
+              One-time payment
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">10-page custom website</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Advanced SEO optimization</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">E-commerce integration</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Analytics & reporting</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">3 months support included</span>
+            </li>
+          </ul>
+          
+          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
+            Get Started
+          </a>
+          <p class="text-center text-sm text-gray-500 mt-4">Perfect for growing businesses</p>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 relative">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Enterprise</h3>
+            <div class="pricing-amount" data-monthly="£1,299" data-yearly="£10,390">
+              <span class="text-5xl font-bold text-black">£1,299</span>
+              <span class="text-gray-600 ml-2">/project</span>
+            </div>
+            <div class="pricing-period text-gray-600 mt-2" data-monthly="One-time payment" data-yearly="£10,390 yearly">
+              One-time payment
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Unlimited pages</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Custom application development</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">API integrations</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Priority support</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">12 months support included</span>
+            </li>
+          </ul>
+          
+          <a href="/contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center block">
+            Get Started
+          </a>
+          <p class="text-center text-sm text-gray-500 mt-4">Perfect for large businesses</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonial Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gray-50 rounded-3xl p-12 lg:p-16 relative">
+        <!-- Quote Icon -->
+        <div class="absolute top-8 left-8">
+          <svg class="w-12 h-12 text-primary-200" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+          </svg>
+        </div>
+        
+        <div class="text-center max-w-4xl mx-auto">
+          <blockquote class="text-2xl lg:text-3xl font-medium text-gray-900 mb-8 leading-relaxed">
+            "Meon Valley Web transformed our online presence completely. Their local expertise combined with modern 
+            technology gave us exactly what we needed. The ongoing support has been exceptional."
+          </blockquote>
+          
+          <div class="flex items-center justify-center">
+            <div class="w-16 h-16 bg-gray-300 rounded-full mr-4"></div>
+            <div class="text-left">
+              <div class="font-bold text-gray-900">Sarah Mitchell</div>
+              <div class="text-gray-600">Managing Director, Hampshire Gardens Ltd</div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <a href="/testimonials" class="text-primary-500 hover:text-primary-600 font-medium">
+              Read All Reviews →
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-black relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Technology background" class="w-full h-full object-cover" />
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-          Start building today
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
+          Some FAQs about our web development services
         </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
-          Professional web development and hosting solutions for the Meon Valley. 
-          Mobile-friendly designs, transparent pricing, and ongoing local support 
-          to help your business succeed online.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/contact" class="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-100 transition-colors duration-200 font-normal text-sm inline-block w-fit">
-            Start Your Project
-          </a>
-          <a href="/portfolio" class="border border-gray-400 text-white px-6 py-3 rounded-md hover:border-white transition-colors duration-200 font-normal text-sm inline-block w-fit">
-            View Portfolio
-          </a>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
+          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+            <span class="text-lg font-medium text-gray-900">How do I get started with a new website project?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 leading-relaxed">
+              Simply contact us through our website or give us a call. We'll schedule a consultation to discuss your 
+              requirements, timeline, and budget. From there, we'll provide a detailed proposal and project timeline.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
+          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+            <span class="text-lg font-medium text-gray-900">What is the typical timeline for a website project?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 leading-relaxed">
+              A typical website project takes 2-6 weeks depending on complexity. Simple WordPress sites can be completed 
+              in 2-3 weeks, while custom applications may take 4-8 weeks. We'll provide a detailed timeline during consultation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
+          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+            <span class="text-lg font-medium text-gray-900">Do you provide ongoing support and maintenance?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 leading-relaxed">
+              Yes, we offer comprehensive maintenance plans including security updates, backups, performance monitoring, 
+              and content updates. Our support plans range from basic maintenance to full management services.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
+          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+            <span class="text-lg font-medium text-gray-900">Can you help with SEO and digital marketing?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 leading-relaxed">
+              Absolutely! All our websites are built with SEO best practices from the ground up. We also offer ongoing 
+              SEO services, content strategy, and can recommend trusted local digital marketing partners.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-20 bg-primary-500 relative overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to start your web project today?
+      </h2>
+      <p class="text-xl text-primary-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+        If you're ready to take your business online with professional web development and reliable hosting, 
+        get in touch today and receive a free consultation and project quote.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
+          Start Your Project
+        </a>
+        <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
+          View Our Work
+        </a>
+      </div>
+      
+      <!-- App Store Style Buttons (if applicable) -->
+      <div class="flex justify-center space-x-4">
+        <div class="text-primary-100 text-sm">
+          Available for consultation across Hampshire and surrounding areas
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Interactive Elements -->
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-500', 'text-white'));
+          tabContents.forEach(content => content.classList.add('hidden'));
+          
+          // Add active class to clicked button and show corresponding content
+          button.classList.add('active', 'bg-primary-500', 'text-white');
+          document.getElementById(targetTab).classList.remove('hidden');
+        });
+      });
+      
+      // Set initial active state
+      document.querySelector('.tab-button[data-tab="development"]').classList.add('bg-primary-500', 'text-white');
+      
+      // Pricing toggle
+      const pricingToggles = document.querySelectorAll('.pricing-toggle');
+      const pricingAmounts = document.querySelectorAll('.pricing-amount');
+      const pricingPeriods = document.querySelectorAll('.pricing-period');
+      
+      pricingToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const period = toggle.getAttribute('data-period');
+          
+          // Remove active class from all toggles
+          pricingToggles.forEach(t => t.classList.remove('active', 'bg-primary-500', 'text-white'));
+          
+          // Add active class to clicked toggle
+          toggle.classList.add('active', 'bg-primary-500', 'text-white');
+          
+          // Update pricing display
+          pricingAmounts.forEach(amount => {
+            const monthlyPrice = amount.getAttribute('data-monthly');
+            const yearlyPrice = amount.getAttribute('data-yearly');
+            const price = period === 'yearly' ? yearlyPrice : monthlyPrice;
+            amount.innerHTML = `<span class="text-5xl font-bold text-black">${price}</span><span class="text-gray-600 ml-2">/project</span>`;
+          });
+          
+          pricingPeriods.forEach(periodEl => {
+            const monthlyText = periodEl.getAttribute('data-monthly');
+            const yearlyText = periodEl.getAttribute('data-yearly');
+            periodEl.textContent = period === 'yearly' ? yearlyText : monthlyText;
+          });
+        });
+      });
+      
+      // Set initial pricing state
+      document.querySelector('.pricing-toggle[data-period="monthly"]').classList.add('bg-primary-500', 'text-white');
+      
+      // FAQ functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('svg');
+        
+        question.addEventListener('click', () => {
+          const isOpen = !answer.classList.contains('hidden');
+          
+          // Close all other FAQ items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.querySelector('.faq-answer').classList.add('hidden');
+              otherItem.querySelector('svg').classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current item
+          if (isOpen) {
+            answer.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+          } else {
+            answer.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+    });
+  </script>
 </MainLayout>
