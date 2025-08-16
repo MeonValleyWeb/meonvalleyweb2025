@@ -4,48 +4,260 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-4xl mx-auto">
-        <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-          The <span class="text-primary-500">developer</span><br />
-          web design studio
-        </h1>
-        <p class="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-          Professional web development and hosting for small to mid-size companies. 
-          WordPress, headless WordPress with Astro, or full AstroJS solutions.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
-            Start Your Project
-          </a>
-          <a href="/portfolio" class="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg hover:border-primary-500 hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
-            View Our Work
-          </a>
+  <section class="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <!-- Background Image Placeholder - you can replace this -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 to-white">
+      <!-- You can replace this with your custom background image -->
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <!-- Left Content - 7 columns -->
+        <div class="lg:col-span-7">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-6 leading-[1.1] tracking-tight">
+            Web development<br />
+            for the Meon Valley
+          </h1>
+          <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+            The only web development agency in the Meon Valley built to enable local businesses to create modern, fast, and scalable websites.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="/contact" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-base inline-flex items-center justify-center">
+              Start building
+            </a>
+            <a href="/portfolio" class="text-black px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium text-base inline-flex items-center justify-center underline">
+              View our work
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Code Example - 5 columns -->
+        <div class="lg:col-span-5">
+          <!-- This will be positioned absolutely over the preview -->
         </div>
       </div>
-
-      <!-- Code Example -->
-      <div class="mt-16 max-w-4xl mx-auto">
-        <div class="bg-gray-900 rounded-xl p-6 shadow-2xl">
-          <div class="flex items-center mb-4">
-            <div class="flex space-x-2">
-              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+      
+      <!-- Website Preview - Reduced Spacing -->
+      <div class="relative mt-6">
+        <!-- Overlapping Code Box - Positioned Above -->
+        <div class="relative z-10 mb-4">
+          <div class="flex justify-end">
+            <div class="max-w-md">
+              <div class="bg-gray-900 rounded-lg p-4 shadow-2xl border border-gray-800">
+                <div class="flex items-center mb-3">
+                  <div class="flex space-x-1.5">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="ml-3 text-gray-400 text-sm font-mono">terminal</div>
+                </div>
+                <pre class="text-green-400 font-mono text-sm leading-relaxed overflow-x-auto"><code>{`curl 'https://api.meonvalley.dev/sites' \\
+    -u :prod_mvw_2024_api_key \\
+    -d business_name="Local Hampshire Business" \\
+    -d template="astro-wordpress-headless" \\
+    -d hosting="fast-reliable" \\
+    -d support="local-personal"`}</code></pre>
+              </div>
             </div>
-            <div class="ml-4 text-gray-400 text-sm font-mono">Development Process</div>
           </div>
-          <pre class="text-green-400 font-mono text-sm overflow-x-auto"><code>{`// Development -> Staging -> Production
-const project = {
-  methodology: 'Bedrock',
-  framework: ['WordPress', 'AstroJS', 'Laravel'],
-  hosting: 'Fast & Reliable',
-  backup: 'Webmaster Backup Alliance',
-  costs: 'No Hidden Fees'
-}
+        </div>
+        
+        <!-- Dashboard Preview - 50% Overlap -->
+        <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white p-4 -mt-20">
+          <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Build Statistics" class="w-full h-auto max-w-4xl mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-deploy(project) // Mobile-first, tested, secure`}</code></pre>
+  <!-- Code Examples with Sidebar -->
+  <section class="py-20 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch min-h-full">
+        <!-- Content Column -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Section Title moved to left column -->
+          <div class="mb-8">
+            <div class="flex items-center mb-4">
+              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+              <span class="text-green-600 font-medium text-sm">In action</span>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-black mb-2 leading-tight">
+              The power of local expertise with modern technology
+            </h2>
+            <p class="text-gray-500 text-lg">
+              in the <span class="text-gray-400">lightest format possible</span>
+            </p>
+          </div>
+          
+          <!-- Modern Static Sites Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-black mb-4">Modern static sites and applications</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Build lightning-fast websites with AstroJS. Perfect for businesses that need speed, 
+              SEO performance, and modern development practices.
+            </p>
+            
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🚀 AstroJS</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">⚡ Static Sites</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🎯 SEO Optimized</span>
+            </div>
+
+            <!-- Code Example -->
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl blur-lg"></div>
+              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
+                <div class="flex items-center mb-4">
+                  <div class="flex space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="ml-4 text-gray-400 text-sm font-mono">Create a new Astro project</div>
+                </div>
+                <pre class="text-orange-400 font-mono text-sm overflow-x-auto"><code>{`npm create astro@latest meon-valley-business \\
+  --template minimal \\
+  --typescript strict \\
+  --tailwind \\
+  --git
+
+cd meon-valley-business
+npm run dev`}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- WordPress Development Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-black mb-4">Professional WordPress development</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Modern WordPress development using Bedrock methodology. Secure, maintainable, 
+              and scalable solutions for content-driven websites.
+            </p>
+            
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">📝 WordPress</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🛡️ Bedrock</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🔧 Custom Themes</span>
+            </div>
+
+            <!-- Code Example -->
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl blur-lg"></div>
+              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
+                <div class="flex items-center mb-4">
+                  <div class="flex space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="ml-4 text-gray-400 text-sm font-mono">Setup WordPress with Bedrock</div>
+                </div>
+                <pre class="text-blue-400 font-mono text-sm overflow-x-auto"><code>{`composer create-project roots/bedrock meon-valley-site
+cd meon-valley-site
+cp .env.example .env
+
+# Configure environment
+echo "WP_HOME='https://meonvalleybusiness.com'" >> .env
+echo "WP_SITEURL='https://meonvalleybusiness.com/wp'" >> .env`}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laravel Applications Section -->
+          <div>
+            <h3 class="text-2xl font-bold text-black mb-4">Custom web applications</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Build powerful custom applications with Laravel. Perfect for complex business 
+              requirements, APIs, and data-driven solutions.
+            </p>
+            
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">⚡ Laravel</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">🔗 APIs</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">📊 Custom Solutions</span>
+            </div>
+
+            <!-- Code Example -->
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-xl blur-lg"></div>
+              <div class="relative bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
+                <div class="flex items-center mb-4">
+                  <div class="flex space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="ml-4 text-gray-400 text-sm font-mono">Create a new Laravel application</div>
+                </div>
+                <pre class="text-red-400 font-mono text-sm overflow-x-auto"><code>{`composer create-project laravel/laravel meon-valley-app
+cd meon-valley-app
+
+# Setup API routes
+php artisan make:controller Api/BusinessController
+php artisan make:model Business -m
+php artisan migrate`}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Content with Header-style Background -->
+        <div class="lg:col-span-3 relative flex">
+          <!-- Header-style gradient background that extends to right edge -->
+          <div class="absolute inset-0 lg:-mr-[50vw] bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 rounded-l-3xl border-l-4 border-t border-b border-primary-200/50">
+          </div>
+          
+          <div class="relative z-10 py-10 pl-16 pr-12 flex flex-col justify-center w-full">
+            <!-- Full Logo -->
+            <div class="mb-12">
+              <img src="/meon-valley-web-logo.svg" alt="Meon Valley Web" class="h-40 w-auto" />
+            </div>
+            
+            <div class="space-y-10 text-xl lg:text-2xl text-gray-700 leading-relaxed">
+              <p class="text-2xl lg:text-3xl">
+                <strong class="text-black">Based in the heart of the Meon Valley</strong>, we bring together the personal touch of local service 
+                with cutting-edge web development technologies.
+              </p>
+              <p class="text-xl lg:text-2xl">
+                Whether you need a simple WordPress site for your local business, a headless WordPress 
+                solution with Astro for blazing-fast performance, or a full custom application built 
+                with Laravel, <strong class="text-black">we have the expertise to deliver</strong>.
+              </p>
+              <p class="text-xl lg:text-2xl">
+                Our approach combines modern development practices with transparent pricing and 
+                ongoing local support. <strong class="text-black">No hidden costs, no complicated contracts</strong> - just professional 
+                web development that helps your business grow.
+              </p>
+            </div>
+
+
+
+            <div class="mt-12">
+              <a href="/contact" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200 font-normal text-sm inline-block">
+                Discuss Your Project
+              </a>
+            </div>
+
+            <!-- Technology Logos -->
+            <div class="mt-12 pt-8 border-t border-gray-300">
+              <p class="text-gray-600 text-lg mb-8 font-medium">Built with modern technologies:</p>
+              <div class="grid grid-cols-3 gap-8 items-center">
+                <img src="/astro.png" alt="AstroJS" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/wordpress-tile.svg" alt="WordPress" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/laravel.png" alt="Laravel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/ubuntu-2.svg" alt="Ubuntu" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/Netlify_logo.svg.png" alt="Netlify" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/spinupwp.png" alt="SpinupWP" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+                <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity mx-auto" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -54,11 +266,11 @@ deploy(project) // Mobile-first, tested, secure`}</code></pre>
   <!-- Services Overview -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <div class="mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
           Web development as code
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-700 max-w-3xl">
           Before us, small businesses had to work with expensive agencies or complicated DIY solutions. 
           We provide professional development with transparent pricing and modern methodologies.
         </p>
@@ -171,154 +383,121 @@ deploy(project) // Mobile-first, tested, secure`}</code></pre>
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="py-20 bg-gray-50">
+  <!-- Why Meon Valley Web Section -->
+  <section class="py-20 bg-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Transparent pricing for every business
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          No hidden costs. Professional websites that deliver exceptional user experience 
-          and help your business grow.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Starter -->
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Starter</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-primary-500">£800</span>
-            <span class="text-gray-600"> - £1,000</span>
-          </div>
-          <p class="text-gray-600 mb-6">Perfect for tradesmen and personal blogs</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Mobile-friendly design
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Basic SEO setup
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Contact forms
-            </li>
-          </ul>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Started
-          </a>
+      <!-- Definitive Background Container -->
+      <div class="relative">
+        <!-- Background that extends to right edge -->
+        <div class="absolute inset-y-0 left-0 right-0 lg:-mr-[50vw] bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-l-3xl border-l-4 border-t border-b border-blue-200">
+          <!-- Hexagonal pattern -->
+          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 25px 25px, rgba(59,130,246,0.15) 2px, transparent 2px); background-size: 50px 50px;"></div>
+          <!-- Diagonal lines pattern -->
+          <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59,130,246,0.1) 10px, rgba(59,130,246,0.1) 20px);"></div>
+          <!-- Subtle gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-white/40"></div>
         </div>
-
-        <!-- Business -->
-        <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-primary-500 relative">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+        
+        <div class="relative z-10 py-16 pl-12 pr-8">
+          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-12">
+            Why Meon Valley Web?
+          </h2>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Local expertise</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  Based in Hampshire, we understand local businesses and their unique needs. 
+                  Personal service with professional results.
+                </p>
+              </div>
+              
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Modern technology</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  We use the latest web technologies - WordPress, Astro, Laravel - to build 
+                  fast, secure, and scalable websites.
+                </p>
+              </div>
+              
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Transparent pricing</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  No hidden costs or surprise fees. Clear pricing from the start, 
+                  with ongoing support that fits your budget.
+                </p>
+              </div>
+            </div>
+            
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Ongoing support</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  We don't just build your website and disappear. Comprehensive maintenance 
+                  and support to keep your site running smoothly.
+                </p>
+              </div>
+              
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Fast hosting</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  Lightning-fast hosting with daily backups, security monitoring, 
+                  and 99.9% uptime guarantee.
+                </p>
+              </div>
+              
+              <div>
+                <h3 class="text-2xl font-bold text-black mb-4">Mobile-first design</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  Every website is designed to work perfectly on mobile devices, 
+                  ensuring your customers can find you anywhere.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Business</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-primary-500">£3,000</span>
-            <span class="text-gray-600">+</span>
+          
+          <div class="mt-12 pt-8 border-t border-gray-300">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contact" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-200 font-normal text-sm inline-block w-fit">
+                Start Your Project
+              </a>
+              <a href="/about" class="border border-gray-400 text-black px-6 py-3 rounded-md hover:border-black transition-colors duration-200 font-normal text-sm inline-block w-fit">
+                Learn More About Us
+              </a>
+            </div>
           </div>
-          <p class="text-gray-600 mb-6">Professional business websites</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Custom responsive design
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Advanced SEO
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              CMS integration
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Performance optimization
-            </li>
-          </ul>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Started
-          </a>
-        </div>
-
-        <!-- E-commerce -->
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">E-commerce</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-primary-500">£5,000</span>
-            <span class="text-gray-600">+</span>
-          </div>
-          <p class="text-gray-600 mb-6">Full online stores with payment processing</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Product catalog
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Payment integration
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Inventory management
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Order management
-            </li>
-          </ul>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Started
-          </a>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- CTA Section -->
-  <section class="py-20 bg-primary-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Start building today
-      </h2>
-      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-        Professional web development and hosting solutions. Mobile-friendly designs, 
-        transparent pricing, and ongoing support to help your business succeed online.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-          Start Your Project
-        </a>
-        <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
-          View Portfolio
-        </a>
+  <section class="py-20 bg-black relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Technology background" class="w-full h-full object-cover" />
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+          Start building today
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
+          Professional web development and hosting solutions for the Meon Valley. 
+          Mobile-friendly designs, transparent pricing, and ongoing local support 
+          to help your business succeed online.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/contact" class="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-100 transition-colors duration-200 font-normal text-sm inline-block w-fit">
+            Start Your Project
+          </a>
+          <a href="/portfolio" class="border border-gray-400 text-white px-6 py-3 rounded-md hover:border-white transition-colors duration-200 font-normal text-sm inline-block w-fit">
+            View Portfolio
+          </a>
+        </div>
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@ title: "Walking & Hiking WordPress Site"
 description: "WordPress site featuring over 900 walks for charity fundraising"
 technology: "WordPress"
 category: "Charity & Fundraising"
-client: "Trussell Trust Fundraiser"
+client: "Two Dogs and an Awning"
 status: "Live"
 featured: true
 order: 1

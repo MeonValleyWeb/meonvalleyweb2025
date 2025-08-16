@@ -1,8 +1,8 @@
 ---
-title: "Wessex Whisky Ecommerce Site"
-description: "Premium whisky ecommerce platform with sophisticated product showcase and ordering system"
-technology: "Ecommerce Platform"
-category: "Retail & Ecommerce"
+title: "Wessex Whisky Club Membership Site"
+description: "Premium whisky tastings to benefit charites and club membership"
+technology: "Membership Platform"
+category: "Club and Meetings"
 client: "Wessex Whisky"
 status: "Live"
 featured: true
@@ -13,11 +13,11 @@ imageAlt: "Wessex Whisky club website homepage showcasing premium premium tastin
 
 # Wessex Whisky Ecommerce Site
 
-A sophisticated ecommerce platform for Wessex Whisky, showcasing their premium whisky collection with an elegant, professional design that reflects the quality and heritage of their products.
+A sophisticated ecommerce platform for Wessex Whisky, showcasing their premium whisky tastings for charity with an elegant, professional design that reflects the quality and heritage of their products.
 
 ## Project Overview
 
-This project involved creating a high-end ecommerce experience for a premium whisky retailer, focusing on product presentation, user experience, and seamless purchasing workflows.
+This project involved creating a high-end experience to attract members, focusing on premium tasting presentation, user experience, and seamless club membership management.
 
 ## Key Features
 
