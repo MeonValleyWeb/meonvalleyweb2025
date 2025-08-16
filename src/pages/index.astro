@@ -14,7 +14,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         <!-- Left Content -->
-        <div class="lg:col-span-6 max-w-xl" id="hero-content">
+        <div class="col-span-full lg:col-span-6 max-w-xl lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left" id="hero-content">
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
             Professional web development guides your <span class="text-primary-500">business growth</span>
           </h1>
@@ -55,8 +55,8 @@ import MainLayout from '../layouts/MainLayout.astro';
           </div>
         </div>
         
-        <!-- Right Image - Full width to browser edge, matching left column height -->
-        <div class="lg:col-span-6 relative flex items-start">
+        <!-- Right Image - Full width to browser edge, matching left column height (Desktop only) -->
+        <div class="hidden lg:block lg:col-span-6 relative flex items-start">
           <div class="absolute top-0 left-0 right-0 lg:right-[calc(-50vw+50%)] bg-white rounded-l-2xl shadow-2xl border border-gray-200 overflow-hidden hero-image-container">
             <div class="relative w-full h-full p-8">
               <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Professional Web Development" class="w-full h-full object-cover object-left rounded-xl" />
@@ -66,7 +66,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
     </div>
 
-    <!-- JavaScript to match image height to content height -->
+    <!-- JavaScript to match image height to content height (Desktop only) -->
     <script>
       function matchImageHeight() {
         const contentElement = document.getElementById('hero-content');
@@ -75,18 +75,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         if (contentElement && imageContainer && window.innerWidth >= 1024) {
           const contentHeight = contentElement.offsetHeight;
           imageContainer.style.height = contentHeight + 'px';
-        } else if (imageContainer && window.innerWidth < 1024) {
-          // Reset height for mobile
-          imageContainer.style.height = '400px';
         }
       }
 
-      // Run on load and resize
-      window.addEventListener('load', matchImageHeight);
-      window.addEventListener('resize', matchImageHeight);
-      
-      // Run immediately for faster initial render
-      document.addEventListener('DOMContentLoaded', matchImageHeight);
+      // Only run on desktop
+      if (window.innerWidth >= 1024) {
+        window.addEventListener('load', matchImageHeight);
+        window.addEventListener('resize', matchImageHeight);
+        document.addEventListener('DOMContentLoaded', matchImageHeight);
+      }
     </script>
   </section>
 
