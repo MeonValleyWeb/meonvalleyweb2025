@@ -51,13 +51,24 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Image placeholder -->
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <div class="aspect-video bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center">
-              <div class="text-center text-primary-600">
-                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <p class="text-sm font-medium">Sophie's Story</p>
-                <p class="text-xs text-primary-500">Inspiring our commitment to giving back</p>
+            <div class="aspect-video rounded-xl relative overflow-hidden">
+              <!-- Background image -->
+              <img 
+                src="/sophie-and-dad-canoeing.jpg" 
+                alt="Sophie and dad canoeing" 
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+              <!-- Overlay for better text readability -->
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <!-- Text content in front -->
+              <div class="relative z-10 flex items-center justify-center h-full">
+                <div class="text-center text-white">
+                  <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                  </svg>
+                  <p class="text-sm font-medium">Sophie's Story</p>
+                  <p class="text-xs text-white/80">Inspiring our commitment to giving back</p>
+                </div>
               </div>
             </div>
           </div>
@@ -82,13 +93,24 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Image placeholder -->
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <div class="aspect-video bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl flex items-center justify-center">
-              <div class="text-center text-primary-600">
-                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                </svg>
-                <p class="text-sm font-medium">£300,000+ Raised</p>
-                <p class="text-xs text-primary-500">For mobile CT scanner</p>
+            <div class="aspect-video rounded-xl relative overflow-hidden">
+              <!-- Background image -->
+              <img 
+                src="/ceretom-scanner.JPG" 
+                alt="Ceretom CT scanner" 
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+              <!-- Overlay for better text readability -->
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <!-- Text content in front -->
+              <div class="relative z-10 flex items-center justify-center h-full">
+                <div class="text-center text-white">
+                  <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                  </svg>
+                  <p class="text-sm font-medium">£300,000+ Raised</p>
+                  <p class="text-xs text-white/80">For mobile CT scanner</p>
+                </div>
               </div>
             </div>
           </div>
@@ -98,19 +120,19 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div>
           <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p>
-              The family started organizing <strong class="text-black">Sophie's Gift Ball</strong>, an annual fundraising 
+              The family started organising <strong class="text-black">Sophie's Gift Ball</strong>, an annual fundraising 
               event that has helped raise <strong class="text-black">over £300,000</strong> for a mobile CT scanner. 
               This vital piece of equipment helps people like Sophie while they're in ICU, providing 
               life-saving diagnostic capabilities directly at the bedside.
             </p>
             <p>
-              Andrew has also cycled the <strong class="text-black">South Downs Way</strong> and participated in numerous 
+              Andrew & Alison also cycled the <strong class="text-black">South Downs Way</strong> and participated in numerous 
               other fundraising initiatives, always with the goal of giving back to the services 
-              that supported his family during their darkest hours.
+              that supported their whole family during their darkest hours.
             </p>
             <p>
-              The family has contributed to organizations including the <strong class="text-black">Hampshire & Isle of Wight Air Ambulance</strong>, 
-              the <strong class="text-black">QE2 Activity Centre</strong>, and many other beneficial services that make 
+              The family has contributed to organisations including the <strong class="text-black">The Southampton University Hospitals Trust</strong>, the <strong class="text-black">Hampshire & Isle of Wight Air Ambulance</strong>, 
+              the <strong class="text-black">QE2 Activity Centre</strong>, <strong class="text-black"> the Saints Disabled Supporters' Association</strong> and many other beneficial services that make 
               a real difference to people's lives.
             </p>
           </div>
@@ -135,15 +157,28 @@ import MainLayout from '../layouts/MainLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- SDSA -->
         <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-          <div class="aspect-square bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center mb-6">
-            <div class="text-center text-red-600">
-              <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-              </svg>
-              <p class="text-xs font-medium">SDSA</p>
+          <div class="aspect-square rounded-xl relative overflow-hidden mb-6">
+            <!-- Background image -->
+            <img 
+              src="/portfolio/sdsa.jpg" 
+              alt="SDSA website" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <!-- Overlay to make background very faint -->
+            <div class="absolute inset-0 bg-white/85 rounded-xl"></div>
+            <!-- Logo and text content in front -->
+            <div class="relative z-10 flex items-center justify-center h-full">
+              <div class="text-center text-gray-800">
+                <img 
+                  src="/SDSA.png" 
+                  alt="SDSA logo" 
+                  class="w-24 h-24 mx-auto mb-2 object-contain"
+                />
+                <p class="text-xs font-medium">SDSA</p>
+              </div>
             </div>
           </div>
-          <h3 class="text-lg font-bold text-black mb-2">Southampton Disability Sports Association</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Saints Disabled Supporters' Association</h3>
           <p class="text-gray-600 text-sm mb-4">
             Supporting disabled sports in Southampton. Sophie is a huge Southampton fan - don't judge!
           </p>
@@ -152,12 +187,25 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <!-- Wessex Whisky Club -->
         <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-          <div class="aspect-square bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl flex items-center justify-center mb-6">
-            <div class="text-center text-amber-600">
-              <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-              </svg>
-              <p class="text-xs font-medium">Wessex Whisky</p>
+          <div class="aspect-square rounded-xl relative overflow-hidden mb-6">
+            <!-- Background image -->
+            <img 
+              src="/portfolio/wessexwhiskyclub.jpg" 
+              alt="Wessex Whisky Club website" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <!-- Overlay to make background very faint -->
+            <div class="absolute inset-0 bg-white/85 rounded-xl"></div>
+            <!-- Logo and text content in front -->
+            <div class="relative z-10 flex items-center justify-center h-full">
+              <div class="text-center text-gray-800">
+                <img 
+                  src="/wessex_whisky.jpeg" 
+                  alt="Wessex Whisky logo" 
+                  class="w-24 h-24 mx-auto mb-2 object-contain rounded-lg"
+                />
+                <p class="text-xs font-medium">Wessex Whisky</p>
+              </div>
             </div>
           </div>
           <h3 class="text-lg font-bold text-black mb-2">Wessex Whisky Club</h3>
@@ -169,12 +217,23 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <!-- The Lace Guild -->
         <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-          <div class="aspect-square bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl flex items-center justify-center mb-6">
-            <div class="text-center text-purple-600">
-              <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4 4 4 0 004-4V5z"></path>
-              </svg>
-              <p class="text-xs font-medium">Lace Guild</p>
+          <div class="aspect-square rounded-xl relative overflow-hidden mb-6">
+            <!-- Background image -->
+            <img 
+              src="/portfolio/thelaceguild.jpg" 
+              alt="The Lace Guild website" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <!-- Overlay to make background very faint -->
+            <div class="absolute inset-0 bg-white/85 rounded-xl"></div>
+            <!-- Icon and text content in front -->
+            <div class="relative z-10 flex items-center justify-center h-full">
+              <div class="text-center text-gray-800">
+                <svg class="w-20 h-20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4 4 4 0 004-4V5z"></path>
+                </svg>
+                <p class="text-xs font-medium">Lace Guild</p>
+              </div>
             </div>
           </div>
           <h3 class="text-lg font-bold text-black mb-2">The Lace Guild</h3>
@@ -186,12 +245,25 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <!-- Two Dogs and an Awning -->
         <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-          <div class="aspect-square bg-gradient-to-br from-green-50 to-green-100 rounded-xl flex items-center justify-center mb-6">
-            <div class="text-center text-green-600">
-              <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-              </svg>
-              <p class="text-xs font-medium">Two Dogs</p>
+          <div class="aspect-square rounded-xl relative overflow-hidden mb-6">
+            <!-- Background image -->
+            <img 
+              src="/portfolio/twodogsananawning.jpg" 
+              alt="Two Dogs and an Awning website" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <!-- Overlay to make background very faint -->
+            <div class="absolute inset-0 bg-white/85 rounded-xl"></div>
+            <!-- Logo and text content in front -->
+            <div class="relative z-10 flex items-center justify-center h-full">
+              <div class="text-center text-gray-800">
+                <img 
+                  src="/twodogs.png" 
+                  alt="Two Dogs logo" 
+                  class="w-24 h-24 mx-auto mb-2 object-contain"
+                />
+                <p class="text-xs font-medium">Two Dogs</p>
+              </div>
             </div>
           </div>
           <h3 class="text-lg font-bold text-black mb-2">Two Dogs and an Awning</h3>

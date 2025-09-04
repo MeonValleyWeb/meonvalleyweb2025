@@ -4,7 +4,7 @@ We are a professional web development studio specializing in modern, mobile-frie
 
 ## Our Approach
 
-We believe in **development as code** - using modern methodologies and transparent processes to build websites that not only look great but perform exceptionally well. Every project follows our proven Development → Staging → Production workflow using Bedrock methodology.
+We believe in **development as code** - using modern methodologies and transparent processes to build websites that not only look great but perform exceptionally well. Every project follows our proven Development → Staging → Production workflow using the [12 Factor App](https://12factor.net/) methodology.
 
 ## What We Do
 
