@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2025-01-27] - Feature Branch Merge to Main
+
+### Merged
+- Successfully merged `feature/style-exploration` branch into `main`
+- All WordPress hosting focus updates now live on main branch
+- Fast-forward merge with no conflicts
+- Repository now contains all latest changes and improvements
+
+### Additional Updates
+- Final index page refinements and optimizations
+- All feature branch changes integrated into production-ready main branch
+
+### Comprehensive Changes Included in Merge
+- **22 files changed** with 1,914 insertions and 427 deletions
+- **New pages created:** charity.astro, pricing.astro
+- **New assets added:** 14 image files for portfolio and projects
+- **Enhanced components:** Header.astro with improved navigation
+- **Content updates:** about.md, about.astro, contact.astro, portfolio.astro, index.astro
+- **Documentation:** Complete CHANGELOG.md for tracking all changes
+
+---
+
 ## [2025-01-27] - Pricing Page Hosting Focus Update
 
 ### Added
