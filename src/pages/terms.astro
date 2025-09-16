@@ -1,0 +1,305 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { readFileSync } from 'fs';
+import { marked } from 'marked';
+
+// Configure marked for better HTML output
+marked.setOptions({
+  breaks: true,
+  gfm: true
+});
+
+// Read and parse the markdown file
+const termsContent = readFileSync('src/content/legal/terms-of-service.md', 'utf-8');
+const htmlContent = marked(termsContent);
+---
+
+<MainLayout title="Terms of Service | Meon Valley Web" description="Our terms of service for website design, development, hosting, and maintenance services. Comprehensive coverage of our service agreements.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Terms of <span class="text-primary-500">Service</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Our comprehensive terms covering website design, development, hosting, and maintenance services. 
+          Clear agreements that protect both your business and ours.
+        </p>
+        <div class="bg-white rounded-xl p-4 shadow-lg border border-gray-200 inline-block">
+          <p class="text-sm text-gray-500">
+            <strong class="text-gray-900">Last updated:</strong> January 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Navigation</h2>
+        <p class="text-gray-600">Jump to the section you need</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <a href="#services-overview" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
+          <div class="text-primary-600 font-medium text-sm">Services Overview</div>
+        </a>
+        <a href="#payment-terms" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
+          <div class="text-primary-600 font-medium text-sm">Payment Terms</div>
+        </a>
+        <a href="#hosting-terms" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
+          <div class="text-primary-600 font-medium text-sm">Hosting Terms</div>
+        </a>
+        <a href="#contact-information" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
+          <div class="text-primary-600 font-medium text-sm">Contact Info</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="legal-content prose prose-lg max-w-none" id="legal-content">
+        <div set:html={htmlContent} />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Add IDs to headings for navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.getElementById('legal-content');
+      const headings = content.querySelectorAll('h2');
+      
+      // Map heading text to IDs
+      const headingMap = {
+        'Services Overview': 'services-overview',
+        'Payment Terms': 'payment-terms', 
+        'Hosting Terms': 'hosting-terms',
+        'Contact Information': 'contact-information'
+      };
+      
+      headings.forEach(heading => {
+        const text = heading.textContent.trim();
+        const id = headingMap[text] || text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        heading.id = id;
+      });
+      
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to work together?</h2>
+        <p class="text-gray-600 mb-6">
+          By engaging our services, you agree to these terms. Have questions? 
+          We're here to clarify anything before we start your project.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium">
+            Start Your Project
+          </a>
+          <a href="mailto:info@meonvalleyweb.com" class="border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-lg hover:bg-primary-500 hover:text-white transition-colors duration-200 font-medium">
+            Ask Questions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Reset and base styles */
+  .legal-content {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #374151;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  
+  /* Hide the markdown h1 since we have a hero */
+  .legal-content h1 {
+    display: none;
+  }
+  
+  /* Major section headings */
+  .legal-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin: 100px 0 40px 0;
+    padding: 32px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-left: 8px solid #059669;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-top: 2px solid #059669;
+  }
+  
+  .legal-content h2:first-of-type {
+    margin-top: 0;
+  }
+  
+  /* Subsection headings */
+  .legal-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #059669;
+    margin: 48px 0 24px 0;
+    padding: 16px 20px;
+    background: #f0fdf4;
+    border-left: 4px solid #059669;
+    border-radius: 8px;
+  }
+  
+  /* Paragraphs */
+  .legal-content p {
+    margin-bottom: 40px;
+    line-height: 1.9;
+    font-size: 19px;
+    color: #374151;
+    max-width: none;
+  }
+  
+  /* Add extra space after sections */
+  .legal-content hr {
+    border: none;
+    height: 6px;
+    background: linear-gradient(to right, #059669, #10b981, #059669);
+    margin: 80px 0;
+    border-radius: 3px;
+  }
+  
+  /* Strong text */
+  .legal-content strong {
+    font-weight: 600;
+    color: #111827;
+    background: #fef3c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  /* Links */
+  .legal-content a {
+    color: #059669;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .legal-content a:hover {
+    color: #047857;
+    background: #f0fdf4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  /* Remove duplicate hr rule since we added it above */
+  
+  /* Lists */
+  .legal-content ul {
+    margin: 32px 0;
+    padding: 24px;
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    list-style: none;
+  }
+  
+  .legal-content li {
+    margin-bottom: 16px;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  
+  .legal-content li:before {
+    content: "▸";
+    color: #059669;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+  
+  /* Emphasis */
+  .legal-content em {
+    font-style: italic;
+    color: #4b5563;
+    background: #f9fafb;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  /* Blockquotes */
+  .legal-content blockquote {
+    border-left: 6px solid #059669;
+    background: #f0fdf4;
+    padding: 24px 32px;
+    margin: 48px 0;
+    border-radius: 12px;
+    font-style: italic;
+    color: #065f46;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Navigation scroll targets */
+  .legal-content h2[id] {
+    scroll-margin-top: 120px;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .legal-content {
+      font-size: 16px;
+    }
+    
+    .legal-content h2 {
+      font-size: 28px;
+      margin: 60px 0 24px 0;
+      padding: 20px;
+    }
+    
+    .legal-content h3 {
+      font-size: 22px;
+      margin: 36px 0 20px 0;
+      padding: 12px 16px;
+    }
+    
+    .legal-content p {
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+    
+    .legal-content ul {
+      padding: 20px;
+      margin: 24px 0;
+    }
+    
+    .legal-content li {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+</style>

@@ -1,0 +1,234 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { readFileSync } from 'fs';
+import { marked } from 'marked';
+
+// Configure marked for better HTML output
+marked.setOptions({
+  breaks: true,
+  gfm: true
+});
+
+// Read and parse the markdown file
+const privacyContent = readFileSync('src/content/legal/privacy-policy.md', 'utf-8');
+const htmlContent = marked(privacyContent);
+---
+
+<MainLayout title="Privacy Policy | Meon Valley Web" description="Our privacy policy explains how we collect, use, and protect your personal data in compliance with UK GDPR and data protection laws.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Privacy <span class="text-primary-500">Policy</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          We're committed to protecting your privacy and personal data. This policy explains how we collect, 
+          use, and safeguard your information in compliance with UK GDPR and data protection laws.
+        </p>
+        <div class="bg-white rounded-xl p-4 shadow-lg border border-gray-200 inline-block">
+          <p class="text-sm text-gray-500">
+            <strong class="text-gray-900">Last updated:</strong> January 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="legal-content prose prose-lg max-w-none">
+        <div set:html={htmlContent} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Questions about your privacy?</h2>
+        <p class="text-gray-600 mb-6">
+          If you have any questions about how we handle your personal data or want to exercise your rights, 
+          we're here to help.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:info@meonvalleyweb.com" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium">
+            Email Us
+          </a>
+          <a href="tel:+447850037850" class="border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-lg hover:bg-primary-500 hover:text-white transition-colors duration-200 font-medium">
+            Call Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Reset and base styles */
+  .legal-content {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #374151;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  
+  /* Hide the markdown h1 since we have a hero */
+  .legal-content h1 {
+    display: none;
+  }
+  
+  /* Major section headings */
+  .legal-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin: 80px 0 32px 0;
+    padding: 24px;
+    background: #f8fafc;
+    border-left: 6px solid #059669;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .legal-content h2:first-of-type {
+    margin-top: 0;
+  }
+  
+  /* Subsection headings */
+  .legal-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #059669;
+    margin: 48px 0 24px 0;
+    padding: 16px 20px;
+    background: #f0fdf4;
+    border-left: 4px solid #059669;
+    border-radius: 8px;
+  }
+  
+  /* Paragraphs */
+  .legal-content p {
+    margin-bottom: 32px;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #374151;
+  }
+  
+  /* Strong text */
+  .legal-content strong {
+    font-weight: 600;
+    color: #111827;
+    background: #fef3c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  /* Links */
+  .legal-content a {
+    color: #059669;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .legal-content a:hover {
+    color: #047857;
+    background: #f0fdf4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  /* Horizontal rules */
+  .legal-content hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, #059669, #10b981, #059669);
+    margin: 64px 0;
+    border-radius: 2px;
+  }
+  
+  /* Lists */
+  .legal-content ul {
+    margin: 32px 0;
+    padding: 24px;
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    list-style: none;
+  }
+  
+  .legal-content li {
+    margin-bottom: 16px;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  
+  .legal-content li:before {
+    content: "▸";
+    color: #059669;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+  
+  /* Emphasis */
+  .legal-content em {
+    font-style: italic;
+    color: #4b5563;
+    background: #f9fafb;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  /* Blockquotes */
+  .legal-content blockquote {
+    border-left: 6px solid #059669;
+    background: #f0fdf4;
+    padding: 24px 32px;
+    margin: 48px 0;
+    border-radius: 12px;
+    font-style: italic;
+    color: #065f46;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .legal-content {
+      font-size: 16px;
+    }
+    
+    .legal-content h2 {
+      font-size: 28px;
+      margin: 60px 0 24px 0;
+      padding: 20px;
+    }
+    
+    .legal-content h3 {
+      font-size: 22px;
+      margin: 36px 0 20px 0;
+      padding: 12px 16px;
+    }
+    
+    .legal-content p {
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+    
+    .legal-content ul {
+      padding: 20px;
+      margin: 24px 0;
+    }
+    
+    .legal-content li {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+</style>
