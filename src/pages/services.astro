@@ -14,6 +14,14 @@ import MainLayout from '../layouts/MainLayout.astro';
           From simple business websites to complex e-commerce solutions, we deliver 
           modern, mobile-friendly websites that help your business succeed online.
         </p>
+        <div class="mt-8 bg-white rounded-xl p-6 shadow-lg border border-gray-200 max-w-4xl mx-auto">
+          <p class="text-lg text-gray-700 mb-2">
+            <strong>Most small business projects start from £2,500.</strong>
+          </p>
+          <p class="text-gray-600">
+            Small blogs and sites with less than 5 pages on an economy plan from £500, dependent on content.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -33,39 +41,46 @@ import MainLayout from '../layouts/MainLayout.astro';
           <h3 class="text-2xl font-bold text-gray-900 mb-4">WordPress Development</h3>
           <p class="text-gray-600 mb-6">
             Custom WordPress themes and functionality tailored to your business needs. 
-            From simple blogs to complex business websites.
+            From simple blogs to complex business websites with full content management capabilities.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Custom theme development
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Plugin development & integration
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              WooCommerce e-commerce
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Performance optimization
-            </li>
-          </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £3,000</div>
-          <p class="text-sm text-gray-500 mb-4">Professional business websites</p>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Quote
-          </a>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-green-600 mb-3">✓ Advantages</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Easy content management for non-technical users
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Extensive plugin ecosystem for added functionality
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                SEO-friendly with built-in optimization tools
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Cost-effective for most business websites
+              </li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold text-orange-600 mb-3">⚠ Considerations</h4>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Requires regular updates and maintenance
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Can be slower than static sites without optimization
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Security considerations with plugins and themes
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Headless WordPress + Astro -->
@@ -75,42 +90,49 @@ import MainLayout from '../layouts/MainLayout.astro';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Headless WordPress + Astro</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Headless WordPress</h3>
           <p class="text-gray-600 mb-6">
-            The best of both worlds - WordPress for content management with Astro's 
-            lightning-fast frontend performance.
+            The best of both worlds - WordPress for content management with modern 
+            frontend frameworks for lightning-fast performance and enhanced security.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Ultra-fast loading speeds
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              WordPress admin for content
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Superior SEO performance
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Enhanced security
-            </li>
-          </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £4,000</div>
-          <p class="text-sm text-gray-500 mb-4">High-performance hybrid solution</p>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Quote
-          </a>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-green-600 mb-3">✓ Advantages</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Ultra-fast loading speeds with static generation
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Familiar WordPress admin for content management
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Enhanced security with separated frontend/backend
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Superior SEO performance and Core Web Vitals
+              </li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold text-orange-600 mb-3">⚠ Considerations</h4>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Higher initial development cost and complexity
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Content changes require site rebuilds (usually automated)
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Limited real-time dynamic functionality
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Full AstroJS -->
@@ -123,39 +145,46 @@ import MainLayout from '../layouts/MainLayout.astro';
           <h3 class="text-2xl font-bold text-gray-900 mb-4">Full AstroJS Development</h3>
           <p class="text-gray-600 mb-6">
             Modern static site generation with dynamic capabilities. Perfect for 
-            marketing sites, portfolios, and content-heavy websites.
+            marketing sites, portfolios, and content-heavy websites that prioritize speed.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Lightning-fast performance
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Markdown-based content
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Component-based architecture
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Easy maintenance
-            </li>
-          </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £2,500</div>
-          <p class="text-sm text-gray-500 mb-4">Modern static sites</p>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Quote
-          </a>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-green-600 mb-3">✓ Advantages</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Exceptional performance with minimal JavaScript
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Built-in SEO optimization and Core Web Vitals
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Component-based architecture for maintainability
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Markdown-based content management
+              </li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold text-orange-600 mb-3">⚠ Considerations</h4>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Content updates require technical knowledge
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Limited dynamic functionality compared to WordPress
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Best suited for content that doesn't change frequently
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Laravel Development -->
@@ -168,41 +197,64 @@ import MainLayout from '../layouts/MainLayout.astro';
           <h3 class="text-2xl font-bold text-gray-900 mb-4">Laravel Development</h3>
           <p class="text-gray-600 mb-6">
             Robust web applications and APIs built with Laravel. Perfect for complex 
-            business logic, user management, and data-driven applications.
+            business logic, user management, and data-driven applications that require custom functionality.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Custom web applications
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              API development
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Database design & optimization
-            </li>
-            <li class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              User authentication & roles
-            </li>
-          </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £5,000</div>
-          <p class="text-sm text-gray-500 mb-4">Complex web applications</p>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Get Quote
-          </a>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-green-600 mb-3">✓ Advantages</h4>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Highly customizable for complex business requirements
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Robust user authentication and role management
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Excellent for API development and integrations
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-green-500 mr-2">•</span>
+                Scalable architecture for growing applications
+              </li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold text-orange-600 mb-3">⚠ Considerations</h4>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Higher development cost and longer timeline
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Requires more server resources than static sites
+              </li>
+              <li class="flex items-start text-gray-600">
+                <span class="text-orange-500 mr-2">•</span>
+                Ongoing maintenance and security updates needed
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Development Services CTA -->
+  <section class="py-20 bg-primary-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to get started?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+        Let's discuss your project requirements and find the perfect development solution for your business. 
+        Free consultation and transparent pricing.
+      </p>
+      <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+        Get Your Free Quote
+      </a>
     </div>
   </section>
 
@@ -214,100 +266,177 @@ import MainLayout from '../layouts/MainLayout.astro';
           Hosting & Maintenance
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Keep your website running smoothly with our hosting and maintenance services. 
-          No hidden costs, transparent pricing, and reliable support.
+          Choose the perfect hosting solution for your business needs.
         </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Fast Hosting -->
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-            </svg>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Wayfarer Hosting Only -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Wayfarer</h3>
+            <p class="text-sm text-gray-500 mb-4">Hosting Only</p>
+            <div class="mb-4">
+              <span class="text-5xl font-bold text-gray-900">£30</span>
+              <span class="text-gray-600 ml-2">/ monthly</span>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast Hosting</h3>
-          <p class="text-gray-600 mb-6">
-            Lightning-fast hosting with 99.9% uptime guarantee. Daily backups, 
-            security monitoring, and no hidden costs.
-          </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              99.9% uptime guarantee
+              <span class="text-gray-700">Premium Storage</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Daily automated backups
+              <span class="text-gray-700">Unlimited Bandwidth</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Security monitoring
+              <span class="text-gray-700">Free SSL Certificate</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              SSL certificates included
+              <span class="text-gray-700">Daily Automated Backups</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Email Support</span>
             </li>
           </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £15/month</div>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Learn More
+
+          <a href="/contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center block">
+            Get Hosting Only
           </a>
         </div>
 
-        <!-- Maintenance Plans -->
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
+        <!-- Shipwright Hosting & Maintenance -->
+        <div class="bg-white rounded-2xl shadow-xl border-2 border-primary-500 p-8 relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">Most Popular</span>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Maintenance Plans</h3>
-          <p class="text-gray-600 mb-6">
-            Comprehensive maintenance through our HelpDesk service. From basic support 
-            to full management with weekly testing procedures.
-          </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center text-gray-600">
+          
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Shipwright</h3>
+            <p class="text-sm text-gray-500 mb-4">Hosting & Maintenance</p>
+            <div class="mb-4">
+              <span class="text-5xl font-bold text-gray-900">£75</span>
+              <span class="text-gray-600 ml-2">/ monthly</span>
+            </div>
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Plugin management & updates
+              <span class="text-gray-700">All Wayfarer features +</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Content & product updates
+              <span class="text-gray-700">Plugin Checks & Updates</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Weekly testing procedures
+              <span class="text-gray-700">Basic Security Monitoring</span>
             </li>
-            <li class="flex items-center text-gray-600">
+            <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              Help & guidance via HelpDesk
+              <span class="text-gray-700">WordPress Core Updates</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Priority Email Support</span>
             </li>
           </ul>
-          <div class="text-2xl font-bold text-primary-500 mb-2">From £50/month</div>
-          <a href="/contact" class="block w-full bg-primary-500 text-white text-center py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
-            Learn More
+
+          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
+            Get Hosting & Maintenance
           </a>
         </div>
+
+        <!-- Monarch Premium -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Monarch</h3>
+            <p class="text-sm text-gray-500 mb-4">Premium Hosting & Maintenance</p>
+            <div class="mb-4">
+              <span class="text-5xl font-bold text-gray-900">£100</span>
+              <span class="text-gray-600 ml-2">/ monthly</span>
+            </div>
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">All Shipwright features +</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Advanced Security Setup [Bedrock]</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Staging Environment</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">CDN Integration</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Performance Monitoring</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Priority Support</span>
+            </li>
+          </ul>
+
+          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
+            Get Premium Plan
+          </a>
+        </div>
+      </div>
+
+      <!-- Setup Included -->
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-4xl mx-auto mt-16">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Setup included:</h3>
+        <p class="text-gray-600">
+          WordPress migration, DNS configuration, security hardening, and performance optimization. 
+          *Staging environment included if design services taken up with Connect. 
+          *Migration Assistance compulsory - £250.
+        </p>
       </div>
     </div>
   </section>
