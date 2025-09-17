@@ -6,11 +6,7 @@ import { marked } from 'marked';
 // Configure marked for better HTML output
 marked.setOptions({
   gfm: true,
-  breaks: false, // use blank lines for new paragraphs
-  headerIds: true,
-  headerPrefix: 'section-',
-  mangle: false, // keep heading text intact for IDs
-  smartypants: true
+  breaks: false // use blank lines for new paragraphs
 });
 
 // Read and parse the markdown file
@@ -52,10 +48,10 @@ const htmlContent = marked(termsContent);
     // Smooth scroll for navigation links
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function(this: HTMLAnchorElement, e) {
           e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
+          const targetId = this.getAttribute('href')?.substring(1);
+          const targetElement = document.getElementById(targetId || '');
           
           if (targetElement) {
             targetElement.scrollIntoView({
