@@ -5,12 +5,16 @@ import { marked } from 'marked';
 
 // Configure marked for better HTML output
 marked.setOptions({
-  breaks: true,
-  gfm: true
+  gfm: true,
+  breaks: false, // use blank lines for new paragraphs
+  headerIds: true,
+  headerPrefix: 'section-',
+  mangle: false, // keep heading text intact for IDs
+  smartypants: true
 });
 
 // Read and parse the markdown file
-const termsContent = readFileSync('src/content/legal/terms-of-service.md', 'utf-8');
+const termsContent = readFileSync('src/content/legal/improved-terms.md', 'utf-8');
 const htmlContent = marked(termsContent);
 ---
 
@@ -35,33 +39,9 @@ const htmlContent = marked(termsContent);
     </div>
   </section>
 
-  <!-- Quick Navigation -->
-  <section class="py-12 bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Navigation</h2>
-        <p class="text-gray-600">Jump to the section you need</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        <a href="#services-overview" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
-          <div class="text-primary-600 font-medium text-sm">Services Overview</div>
-        </a>
-        <a href="#payment-terms" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
-          <div class="text-primary-600 font-medium text-sm">Payment Terms</div>
-        </a>
-        <a href="#hosting-terms" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
-          <div class="text-primary-600 font-medium text-sm">Hosting Terms</div>
-        </a>
-        <a href="#contact-information" class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center hover:bg-primary-100 transition-colors duration-200">
-          <div class="text-primary-600 font-medium text-sm">Contact Info</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Content Section -->
   <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="legal-content prose prose-lg max-w-none" id="legal-content">
         <div set:html={htmlContent} />
       </div>
@@ -69,26 +49,8 @@ const htmlContent = marked(termsContent);
   </section>
 
   <script>
-    // Add IDs to headings for navigation
+    // Smooth scroll for navigation links
     document.addEventListener('DOMContentLoaded', function() {
-      const content = document.getElementById('legal-content');
-      const headings = content.querySelectorAll('h2');
-      
-      // Map heading text to IDs
-      const headingMap = {
-        'Services Overview': 'services-overview',
-        'Payment Terms': 'payment-terms', 
-        'Hosting Terms': 'hosting-terms',
-        'Contact Information': 'contact-information'
-      };
-      
-      headings.forEach(heading => {
-        const text = heading.textContent.trim();
-        const id = headingMap[text] || text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-        heading.id = id;
-      });
-      
-      // Smooth scroll for navigation links
       document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
@@ -102,6 +64,29 @@ const htmlContent = marked(termsContent);
             });
           }
         });
+      });
+
+      // Add scroll spy functionality
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+          if (navLink) {
+            if (entry.isIntersecting) {
+              navLink.classList.add('bg-primary-100', 'border-primary-300');
+              navLink.classList.remove('bg-primary-50', 'border-primary-200');
+            } else {
+              navLink.classList.remove('bg-primary-100', 'border-primary-300');
+              navLink.classList.add('bg-primary-50', 'border-primary-200');
+            }
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px'
+      });
+
+      // Observe all section headings
+      document.querySelectorAll('h2[id]').forEach(heading => {
+        observer.observe(heading);
       });
     });
   </script>
@@ -129,177 +114,159 @@ const htmlContent = marked(termsContent);
 </MainLayout>
 
 <style>
-  /* Reset and base styles */
+  /* Base typography */
   .legal-content {
-    font-family: system-ui, -apple-system, sans-serif;
-    color: #374151;
-    line-height: 1.7;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #111827;
+    line-height: 1.8;
     font-size: 18px;
+    max-width: none;
+    text-align: left; /* avoid justify rivers */
   }
-  
+
   /* Hide the markdown h1 since we have a hero */
   .legal-content h1 {
     display: none;
   }
-  
-  /* Major section headings */
-  .legal-content h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #111827;
-    margin: 100px 0 40px 0;
-    padding: 32px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    border-left: 8px solid #059669;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    border-top: 2px solid #059669;
-  }
-  
-  .legal-content h2:first-of-type {
-    margin-top: 0;
-  }
-  
-  /* Subsection headings */
+
+  /* Headings: clear, bold, well-spaced */
+  .legal-content h2,
   .legal-content h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #059669;
-    margin: 48px 0 24px 0;
-    padding: 16px 20px;
-    background: #f0fdf4;
-    border-left: 4px solid #059669;
-    border-radius: 8px;
-  }
-  
-  /* Paragraphs */
-  .legal-content p {
-    margin-bottom: 40px;
-    line-height: 1.9;
-    font-size: 19px;
-    color: #374151;
-    max-width: none;
-  }
-  
-  /* Add extra space after sections */
-  .legal-content hr {
-    border: none;
-    height: 6px;
-    background: linear-gradient(to right, #059669, #10b981, #059669);
-    margin: 80px 0;
-    border-radius: 3px;
-  }
-  
-  /* Strong text */
-  .legal-content strong {
-    font-weight: 600;
-    color: #111827;
-    background: #fef3c7;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  
-  /* Links */
-  .legal-content a {
-    color: #059669;
-    text-decoration: underline;
-    font-weight: 500;
-  }
-  
-  .legal-content a:hover {
-    color: #047857;
-    background: #f0fdf4;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-decoration: none;
-  }
-  
-  /* Remove duplicate hr rule since we added it above */
-  
-  /* Lists */
-  .legal-content ul {
-    margin: 32px 0;
-    padding: 24px;
-    background: #fafafa;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    list-style: none;
-  }
-  
-  .legal-content li {
-    margin-bottom: 16px;
-    padding-left: 24px;
-    position: relative;
-    line-height: 1.7;
-    font-size: 17px;
-  }
-  
-  .legal-content li:before {
-    content: "▸";
-    color: #059669;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 20px;
-  }
-  
-  /* Emphasis */
-  .legal-content em {
-    font-style: italic;
-    color: #4b5563;
-    background: #f9fafb;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  
-  /* Blockquotes */
-  .legal-content blockquote {
-    border-left: 6px solid #059669;
-    background: #f0fdf4;
-    padding: 24px 32px;
-    margin: 48px 0;
-    border-radius: 12px;
-    font-style: italic;
-    color: #065f46;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  
-  /* Navigation scroll targets */
-  .legal-content h2[id] {
+    font-weight: 800 !important;
+    line-height: 1.25;
+    color: #0f172a;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     scroll-margin-top: 120px;
   }
-  
-  /* Mobile responsive */
+
+  .legal-content h2 {
+    font-size: 2rem; /* 32px */
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-content h3 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  /* Paragraph spacing */
+  .legal-content p {
+    margin: 1rem 0 1.25rem 0;
+    font-size: 1.0625rem; /* 17px */
+  }
+
+  /* First paragraph after a heading slightly emphasized */
+  .legal-content h2 + p,
+  .legal-content h3 + p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  /* Lists: use normal bullets and good spacing */
+  .legal-content ul,
+  .legal-content ol {
+    margin: 1rem 0 1.5rem 0;
+    padding-left: 1.5rem;
+    background: none;
+    border: none;
+    list-style: revert;
+    box-shadow: none;
+  }
+
+  .legal-content li {
+    margin: 0.375rem 0;
+    padding-left: 0;
+    position: static;
+    line-height: 1.7;
+    font-size: 1.0625rem;
+    color: #1f2937;
+  }
+
+  /* Horizontal rule as a clean divider */
+  .legal-content hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 2.5rem 0;
+  }
+
+  /* Strong text */
+  .legal-content strong {
+    font-weight: 700;
+    color: #0f172a;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Links */
+  .legal-content a {
+    color: #047857;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .legal-content a:hover {
+    color: #065f46;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  /* Blockquotes: subtle */
+  .legal-content blockquote {
+    border-left: 4px solid #10b981;
+    background: #f0fdf4;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    font-style: italic;
+    color: #064e3b;
+    box-shadow: none;
+    position: static;
+  }
+
+  /* Make sure prose utilities don’t fight our spacing */
+  .legal-content.prose :where(p, h2, h3, ul, ol, blockquote) {
+    margin-top: revert;
+    margin-bottom: revert;
+  }
+
+  /* Mobile tweaks */
   @media (max-width: 768px) {
     .legal-content {
       font-size: 16px;
+      line-height: 1.7;
     }
-    
     .legal-content h2 {
-      font-size: 28px;
-      margin: 60px 0 24px 0;
-      padding: 20px;
+      font-size: 1.75rem;
     }
-    
     .legal-content h3 {
-      font-size: 22px;
-      margin: 36px 0 20px 0;
-      padding: 12px 16px;
+      font-size: 1.25rem;
     }
-    
-    .legal-content p {
-      margin-bottom: 24px;
-      font-size: 16px;
+  }
+
+  /* Print styles */
+  @media print {
+    .legal-content {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #000;
     }
-    
-    .legal-content ul {
-      padding: 20px;
-      margin: 24px 0;
+    .legal-content h2,
+    .legal-content h3 {
+      border: none !important;
+      page-break-after: avoid;
     }
-    
-    .legal-content li {
-      font-size: 16px;
-      margin-bottom: 12px;
+    .legal-content h2 {
+      border-bottom: 1px solid #000 !important;
+      padding-bottom: 0.25rem !important;
     }
   }
 </style>
