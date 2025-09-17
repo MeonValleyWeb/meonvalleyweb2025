@@ -20,7 +20,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Contact Form -->
         <div class="bg-white rounded-xl p-8 shadow-lg">
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h2>
-          <form name="contact" method="POST" data-netlify="true" netlify class="space-y-6">
+          <form name="contact" method="POST" data-netlify="true" class="space-y-6">
             <input type="hidden" name="_to" value="hello@meonvalleyweb.com" />
             <input type="hidden" name="_subject" value="New Contact Form Submission" />
             <input type="hidden" name="_replyto" value="" />
@@ -135,8 +135,8 @@ import MainLayout from '../layouts/MainLayout.astro';
   <script>
     // Populate the _replyto field with the user's email
     document.addEventListener('DOMContentLoaded', function() {
-      const emailInput = document.getElementById('email');
-      const replytoInput = document.querySelector('input[name="_replyto"]');
+      const emailInput = document.getElementById('email') as HTMLInputElement;
+      const replytoInput = document.querySelector('input[name="_replyto"]') as HTMLInputElement;
       
       if (emailInput && replytoInput) {
         emailInput.addEventListener('input', function() {
