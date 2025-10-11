@@ -5,7 +5,7 @@ Comprehensive performance optimization addressing PageSpeed Insights warnings fo
 
 ## Commits
 
-### 1. Image Optimization (Commit: d2c0def)
+### 1. Image Optimization (Commits: d2c0def, 0660cc6)
 **Optimized images with Astro Image component**
 
 #### Results
