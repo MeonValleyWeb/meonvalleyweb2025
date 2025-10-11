@@ -12,3 +12,12 @@
   --color-primary-800: #77143e;
   --color-primary-900: #631235;
 }
+
+/* Optimize font loading - prevent invisible text */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Inter');
+}

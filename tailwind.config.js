@@ -30,8 +30,29 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol'
+        ],
+        mono: [
+          'JetBrains Mono',
+          'ui-monospace',
+          'SFMono-Regular',
+          'SF Mono',
+          'Menlo',
+          'Consolas',
+          'Liberation Mono',
+          'monospace'
+        ],
       },
     },
   },
