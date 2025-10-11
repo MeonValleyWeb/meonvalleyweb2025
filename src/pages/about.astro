@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import dashboardImg from '../assets/dashboard.jpg';
 ---
 
 <MainLayout title="About Us | Meon Valley Web" description="Learn about Meon Valley Web - professional web development and hosting for small to mid-size companies. Modern methodologies, transparent pricing, and community commitment.">
@@ -49,7 +51,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Image placeholder -->
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <img src="/dashboard.jpg" alt="Our Development Process" class="w-full h-auto rounded-xl" />
+            <Image 
+              src={dashboardImg} 
+              alt="Our Development Process" 
+              class="w-full h-auto rounded-xl"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
       </div>

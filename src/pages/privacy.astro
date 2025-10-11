@@ -10,7 +10,7 @@ marked.setOptions({
 });
 
 // Read and parse the markdown file
-const privacyContent = readFileSync('src/content/legal/privacy-policy.md', 'utf-8');
+const privacyContent = readFileSync('src/content/legal/_privacy-policy.md', 'utf-8');
 const htmlContent = marked(privacyContent);
 ---
 
