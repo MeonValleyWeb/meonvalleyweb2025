@@ -6,7 +6,7 @@ import { marked } from 'marked';
 // Configure marked for better HTML output
 marked.setOptions({
   gfm: true,
-  breaks: false // use blank lines for new paragraphs
+  breaks: false
 });
 
 // Read and parse the markdown file
@@ -37,8 +37,8 @@ const htmlContent = marked(termsContent);
 
   <!-- Content Section -->
   <section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="legal-content prose prose-lg max-w-none" id="legal-content">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="legal-content" id="legal-content">
         <div set:html={htmlContent} />
       </div>
     </div>
@@ -109,160 +109,105 @@ const htmlContent = marked(termsContent);
   </section>
 </MainLayout>
 
-<style>
-  /* Base typography */
+<style is:global>
+  /* Clean, readable typography */
   .legal-content {
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    color: #111827;
-    line-height: 1.8;
-    font-size: 18px;
+    color: #374151;
+    line-height: 1.75;
+    font-size: 1rem;
     max-width: none;
-    text-align: left; /* avoid justify rivers */
   }
 
-  /* Hide the markdown h1 since we have a hero */
+  /* Hide markdown h1 since we have a hero */
   .legal-content h1 {
     display: none;
   }
 
-  /* Headings: clear, bold, well-spaced */
-  .legal-content h2,
+  /* Add spacing after hidden h1 - targets first paragraph (Last updated) */
+  .legal-content h1 + p {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    font-size: 0.9375rem;
+    color: #6b7280;
+  }
+
+  /* Headings */
+  .legal-content h2 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #111827;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+    scroll-margin-top: 120px;
+  }
+
+  .legal-content h2:first-of-type {
+    margin-top: 0;
+  }
+
   .legal-content h3 {
-    font-weight: 800 !important;
-    line-height: 1.25;
-    color: #0f172a;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #111827;
     margin-top: 3rem;
     margin-bottom: 1rem;
     scroll-margin-top: 120px;
   }
 
-  .legal-content h2 {
-    font-size: 2rem; /* 32px */
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-  }
-
-  .legal-content h3 {
-    font-size: 1.5rem; /* 24px */
-  }
-
-  /* Paragraph spacing */
+  /* Paragraphs */
   .legal-content p {
-    margin: 1rem 0 1.25rem 0;
-    font-size: 1.0625rem; /* 17px */
+    margin: 1rem 0;
+    color: #4b5563;
+    line-height: 1.8;
   }
 
-  /* First paragraph after a heading slightly emphasized */
-  .legal-content h2 + p,
-  .legal-content h3 + p {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-  }
-
-  /* Lists: use normal bullets and good spacing */
+  /* Lists */
   .legal-content ul,
   .legal-content ol {
-    margin: 1rem 0 1.5rem 0;
+    margin: 0.75rem 0;
     padding-left: 1.5rem;
-    background: none;
-    border: none;
-    list-style: revert;
-    box-shadow: none;
   }
 
   .legal-content li {
-    margin: 0.375rem 0;
-    padding-left: 0;
-    position: static;
-    line-height: 1.7;
-    font-size: 1.0625rem;
-    color: #1f2937;
+    margin: 0.5rem 0;
+    color: #4b5563;
   }
 
-  /* Horizontal rule as a clean divider */
+  /* Horizontal rules */
   .legal-content hr {
     border: none;
     height: 1px;
     background: #e5e7eb;
-    margin: 2.5rem 0;
+    margin: 3rem 0;
   }
 
-  /* Strong text */
+  /* Strong text - bold and darker */
   .legal-content strong {
     font-weight: 700;
-    color: #0f172a;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
+    color: #111827;
   }
 
   /* Links */
   .legal-content a {
-    color: #047857;
+    color: #059669;
     text-decoration: underline;
     text-underline-offset: 2px;
-    transition: color 0.2s ease;
   }
 
   .legal-content a:hover {
-    color: #065f46;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    text-decoration: none;
-    box-shadow: none;
+    color: #047857;
   }
 
-  /* Blockquotes: subtle */
-  .legal-content blockquote {
-    border-left: 4px solid #10b981;
-    background: #f0fdf4;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0;
-    border-radius: 4px;
-    font-style: italic;
-    color: #064e3b;
-    box-shadow: none;
-    position: static;
-  }
-
-  /* Make sure prose utilities don’t fight our spacing */
-  .legal-content.prose :where(p, h2, h3, ul, ol, blockquote) {
-    margin-top: revert;
-    margin-bottom: revert;
-  }
-
-  /* Mobile tweaks */
+  /* Mobile */
   @media (max-width: 768px) {
-    .legal-content {
-      font-size: 16px;
-      line-height: 1.7;
-    }
     .legal-content h2 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
     .legal-content h3 {
-      font-size: 1.25rem;
-    }
-  }
-
-  /* Print styles */
-  @media print {
-    .legal-content {
-      font-size: 12px;
-      line-height: 1.6;
-      color: #000;
-    }
-    .legal-content h2,
-    .legal-content h3 {
-      border: none !important;
-      page-break-after: avoid;
-    }
-    .legal-content h2 {
-      border-bottom: 1px solid #000 !important;
-      padding-bottom: 0.25rem !important;
+      font-size: 1.125rem;
     }
   }
 </style>
