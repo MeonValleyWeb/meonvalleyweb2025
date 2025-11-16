@@ -12,7 +12,7 @@ We believe in **development as code** - using modern methodologies and transpare
 - **Headless WordPress with Astro** - The best of both worlds
 - **Full AstroJS Solutions** - Lightning-fast static sites
 - **Laravel Development** - Robust web applications
-- **Fast Hosting** - Reliable, secure hosting solutions
+- **Secure Fast Hosting** - Reliable, secure hosting solutions
 - **Maintenance Plans** - Ongoing support through our HelpDesk service
 
 ## Our Commitment
