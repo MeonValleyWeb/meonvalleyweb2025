@@ -90,8 +90,3 @@ npm run preview
 - Website: [meonvalleyweb.com](https://meonvalleyweb.com)
 - Email: hello@meonvalleyweb.com
 - Location: Meon Valley, Hampshire, UK
-
----
-
-🤖 Generated with [Memex](https://memex.tech)
-Co-Authored-By: Memex <noreply@memex.tech>
