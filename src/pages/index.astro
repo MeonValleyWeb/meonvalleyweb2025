@@ -1,5 +1,16 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import dashboardImg from '../assets/dashboard.jpg';
+import halGatewoodXzzg from '../assets/hal-gatewood-xzzgY__zX8A-unsplash.jpg';
+import halGatewoodTZc3 from '../assets/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg';
+import halGatewoodWeRQ from '../assets/hal-gatewood-weRQAu9TA-A-unsplash.jpg';
+import halGatewoodSVbF from '../assets/hal-gatewood-SVbFzF_8eGU-unsplash.jpg';
+import astroLogo from '../assets/astro.png';
+import netlifyLogo from '../assets/Netlify_logo.svg.png';
+import laravelLogo from '../assets/laravel.png';
+import spinupwpLogo from '../assets/spinupwp.png';
+import twodogsImg from '../assets/twodogs.png';
 ---
 
 <MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
@@ -25,22 +36,22 @@ import MainLayout from '../layouts/MainLayout.astro';
           <!-- Feature Grid - 2x2 Layout -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div>
-              <h3 class="text-lg font-bold text-black mb-2">Modern Development</h3>
+              <p class="text-lg font-bold text-black mb-2">Modern Development</p>
               <p class="text-gray-600 text-sm">WordPress, headless WordPress with Astro, or full AstroJS solutions.</p>
             </div>
             
             <div>
-              <h3 class="text-lg font-bold text-black mb-2">Fast Hosting</h3>
+              <p class="text-lg font-bold text-black mb-2">Fast Hosting</p>
               <p class="text-gray-600 text-sm">Lightning-fast hosting with 99.9% uptime guarantee and daily backups.</p>
             </div>
             
             <div>
-              <h3 class="text-lg font-bold text-black mb-2">Local Support</h3>
+              <p class="text-lg font-bold text-black mb-2">Local Support</p>
               <p class="text-gray-600 text-sm">Personal service with professional results, based in the Meon Valley.</p>
             </div>
             
             <div>
-              <h3 class="text-lg font-bold text-black mb-2">Transparent Pricing</h3>
+              <p class="text-lg font-bold text-black mb-2">Transparent Pricing</p>
               <p class="text-gray-600 text-sm">No hidden costs or surprise fees. Clear pricing from the start.</p>
             </div>
           </div>
@@ -49,8 +60,8 @@ import MainLayout from '../layouts/MainLayout.astro';
             <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
               Get started
             </a>
-            <a href="/pricing" class="text-primary-500 hover:text-primary-600 px-8 py-4 rounded-lg font-medium text-lg inline-flex items-center justify-center underline">
-              View pricing
+            <a href="/services" class="text-primary-500 hover:text-primary-600 px-8 py-4 rounded-lg font-medium text-lg inline-flex items-center justify-center underline">
+              View services
             </a>
           </div>
         </div>
@@ -59,7 +70,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="hidden lg:block lg:col-span-6 relative flex items-start">
           <div class="absolute top-0 left-0 right-0 lg:right-[calc(-50vw+50%)] bg-white rounded-l-2xl shadow-2xl border border-gray-200 overflow-hidden hero-image-container">
             <div class="relative w-full h-full p-8">
-              <img src="/dashboard.jpg" alt="Meon Valley Web Dashboard - Professional Web Development" class="w-full h-full object-cover object-left rounded-xl" />
+              <Image 
+                src={dashboardImg} 
+                alt="Meon Valley Web Dashboard - Professional Web Development" 
+                class="w-full h-full object-cover object-left rounded-xl"
+                widths={[600, 900, 1200]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                format="webp"
+                quality={80}
+              />
             </div>
           </div>
         </div>
@@ -95,12 +114,12 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
       <!-- Technology Logos -->
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
-        <img src="/astro.png" alt="AstroJS" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <Image src={astroLogo} alt="AstroJS" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
         <img src="/wordpress-tile.svg" alt="WordPress" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-        <img src="/laravel.png" alt="Laravel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <Image src={laravelLogo} alt="Laravel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={165} height={48} format="webp" />
         <img src="/ubuntu-2.svg" alt="Ubuntu" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-        <img src="/Netlify_logo.svg.png" alt="Netlify" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-        <img src="/spinupwp.png" alt="SpinupWP" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+        <Image src={netlifyLogo} alt="Netlify" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
+        <Image src={spinupwpLogo} alt="SpinupWP" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
         <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
       </div>
     </div>
@@ -197,7 +216,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Right Image -->
         <div class="relative">
           <div class="bg-white shadow-1xl p-4">
-            <img src="/hal-gatewood-xzzgY__zX8A-unsplash.jpg" alt="Web Development Dashboard" class="w-full h-auto rounded-xl" />
+            <Image 
+              src={halGatewoodXzzg} 
+              alt="Web Development Dashboard" 
+              class="w-full h-auto rounded-xl"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
       </div>
@@ -265,7 +292,15 @@ import MainLayout from '../layouts/MainLayout.astro';
             </ul>
           </div>
           <div class="relative">
-            <img src="/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg" alt="Web Development Portfolio" class="w-full h-auto rounded-xl shadow-lg" />
+            <Image 
+              src={halGatewoodTZc3} 
+              alt="Web Development Portfolio" 
+              class="w-full h-auto rounded-xl shadow-lg"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
       </div>
@@ -301,7 +336,15 @@ import MainLayout from '../layouts/MainLayout.astro';
             </ul>
           </div>
           <div class="relative">
-            <img src="/hal-gatewood-weRQAu9TA-A-unsplash.jpg" alt="Hosting Dashboard" class="w-full h-auto rounded-xl shadow-lg" />
+            <Image 
+              src={halGatewoodWeRQ} 
+              alt="Hosting Dashboard" 
+              class="w-full h-auto rounded-xl shadow-lg"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
       </div>
@@ -315,7 +358,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Left Image -->
         <div class="relative">
           <div class="bg-white rounded-2xl p-8">
-            <img src="/hal-gatewood-SVbFzF_8eGU-unsplash.jpg" alt="SEO Performance Dashboard" class="w-full h-auto rounded-xl" />
+            <Image 
+              src={halGatewoodSVbF} 
+              alt="SEO Performance Dashboard" 
+              class="w-full h-auto rounded-xl"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
         
@@ -383,7 +434,9 @@ import MainLayout from '../layouts/MainLayout.astro';
           </blockquote>
           
           <div class="flex items-center justify-center">
-            <div class="w-16 h-16 bg-gray-300 rounded-full mr-4"><img src="/twodogs.png" alt="Two Dogs and an Awning" class="w-16 h-16 mx-auto mb-4" /></div>
+            <div class="w-16 h-16 bg-gray-300 rounded-full mr-4">
+              <Image src={twodogsImg} alt="Two Dogs and an Awning" class="w-16 h-16 mx-auto mb-4" width={64} height={64} format="webp" />
+            </div>
             <div class="text-left">
               <div class="font-bold text-gray-900">Paul Fredericks</div>
               <div class="text-gray-600"><a href="https://twodogsandanawning.co.uk" target="_blank">Two Dogs and an Awning</a></div>
@@ -494,8 +547,8 @@ import MainLayout from '../layouts/MainLayout.astro';
         <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
           Start Your Project
         </a>
-        <a href="/pricing" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-          View Pricing
+        <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
+          View Services
         </a>
       </div>
       

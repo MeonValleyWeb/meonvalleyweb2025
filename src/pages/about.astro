@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import dashboardImg from '../assets/dashboard.jpg';
 ---
 
 <MainLayout title="About Us | Meon Valley Web" description="Learn about Meon Valley Web - professional web development and hosting for small to mid-size companies. Modern methodologies, transparent pricing, and community commitment.">
@@ -49,7 +51,15 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Image placeholder -->
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <img src="/dashboard.jpg" alt="Our Development Process" class="w-full h-auto rounded-xl" />
+            <Image 
+              src={dashboardImg} 
+              alt="Our Development Process" 
+              class="w-full h-auto rounded-xl"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={80}
+            />
           </div>
         </div>
       </div>
@@ -133,7 +143,7 @@ import MainLayout from '../layouts/MainLayout.astro';
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-black mb-4">Fast Hosting</h3>
+          <h3 class="text-xl font-bold text-black mb-4">Secure & Fast Hosting</h3>
           <p class="text-gray-600">
             Reliable, secure hosting solutions with 99.9% uptime guarantee, 
             daily backups, and security monitoring.

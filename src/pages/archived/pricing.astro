@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Pricing - Premium WordPress Hosting | Meon Valley Web" description="Simple, transparent pricing for premium WordPress hosting solutions. Fast, secure, and reliable hosting designed for growing businesses.">
@@ -116,14 +116,14 @@ import MainLayout from '../layouts/MainLayout.astro';
         </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
-        <!-- Wayfarer Plan -->
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 relative">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Wayfarer Hosting Only -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
           <div class="text-center mb-8">
             <h3 class="text-2xl font-bold text-black mb-4">Wayfarer</h3>
-            <p class="text-sm text-gray-500 mb-4">Best option for personal blogs & small businesses</p>
+            <p class="text-sm text-gray-500 mb-4">Hosting Only</p>
             <div class="mb-4">
-              <span class="text-5xl font-bold text-black">£25</span>
+              <span class="text-5xl font-bold text-black">£30</span>
               <span class="text-gray-600 ml-2">/ monthly</span>
             </div>
           </div>
@@ -157,32 +157,26 @@ import MainLayout from '../layouts/MainLayout.astro';
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <span class="text-gray-700">WordPress Management</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
               <span class="text-gray-700">Email Support</span>
             </li>
           </ul>
           
           <a href="/contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center block">
-            Get Personal Hosting
+            Get Hosting Only
           </a>
         </div>
 
-        <!-- Monarch Plan -->
+        <!-- Shipwright Hosting & Maintenance -->
         <div class="bg-white rounded-2xl shadow-xl border-2 border-primary-500 p-8 relative">
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">Best value</span>
+            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">Most Popular</span>
           </div>
           
           <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-black mb-4">Monarch</h3>
-            <p class="text-sm text-gray-500 mb-4">Best for medium-sized business websites</p>
+            <h3 class="text-2xl font-bold text-black mb-4">Shipwright</h3>
+            <p class="text-sm text-gray-500 mb-4">Hosting & Maintenance</p>
             <div class="mb-4">
-              <span class="text-5xl font-bold text-black">£50</span>
+              <span class="text-5xl font-bold text-black">£75</span>
               <span class="text-gray-600 ml-2">/ monthly</span>
             </div>
           </div>
@@ -192,31 +186,62 @@ import MainLayout from '../layouts/MainLayout.astro';
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <span class="text-gray-700">Everything in Personal +</span>
+              <span class="text-gray-700">All Wayfarer features +</span>
             </li>
             <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <span class="text-gray-700">Performance Improvements</span>
+              <span class="text-gray-700">Plugin Checks & Updates</span>
             </li>
             <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
-              <span class="text-gray-700">Priority Support</span>
+              <span class="text-gray-700">Basic Security Monitoring</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">WordPress Core Updates</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Priority Email Support</span>
+            </li>
+          </ul>
+          
+          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
+            Get Hosting & Maintenance
+          </a>
+        </div>
+
+        <!-- Monarch Premium -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Monarch</h3>
+            <p class="text-sm text-gray-500 mb-4">Premium Hosting & Maintenance</p>
+            <div class="mb-4">
+              <span class="text-5xl font-bold text-black">£100</span>
+              <span class="text-gray-600 ml-2">/ monthly</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">All Shipwright features +</span>
             </li>
             <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
               <span class="text-gray-700">Advanced Security Setup [Bedrock]</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Performance Monitoring</span>
             </li>
             <li class="flex items-center">
               <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -230,20 +255,24 @@ import MainLayout from '../layouts/MainLayout.astro';
               </svg>
               <span class="text-gray-700">CDN Integration</span>
             </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Performance Monitoring</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Priority Support</span>
+            </li>
           </ul>
           
           <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
-            Get Corporate Hosting
+            Get Premium Plan
           </a>
         </div>
-      </div>
-
-      <!-- Enterprise CTA -->
-      <div class="text-center mb-16">
-        <h3 class="text-2xl font-bold text-black mb-4">Need Enterprise Solutions?</h3>
-        <a href="/contact" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium">
-          Get a Custom Quote
-        </a>
       </div>
 
       <!-- Setup Included -->
@@ -251,7 +280,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <h3 class="text-xl font-bold text-black mb-4">Setup included:</h3>
         <p class="text-gray-600 mb-4">
           WordPress migration, DNS configuration, security hardening, and performance optimization. 
-          *Staging environment included if design services taken up with Connect. All design services automatically on our 'Monarch' Plan. 
+          *Staging environment included if design services taken up with Connect. 
           *Migration Assistance compulsory - £250.
         </p>
       </div>

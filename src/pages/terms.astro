@@ -1,0 +1,213 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { readFileSync } from 'fs';
+import { marked } from 'marked';
+
+// Configure marked for better HTML output
+marked.setOptions({
+  gfm: true,
+  breaks: false
+});
+
+// Read and parse the markdown file
+const termsContent = readFileSync('src/content/legal/_improved-terms.md', 'utf-8');
+const htmlContent = marked(termsContent);
+---
+
+<MainLayout title="Terms of Service | Meon Valley Web" description="Our terms of service for website design, development, hosting, and maintenance services. Comprehensive coverage of our service agreements.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Terms of <span class="text-primary-500">Service</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Our comprehensive terms covering website design, development, hosting, and maintenance services. 
+          Clear agreements that protect both your business and ours.
+        </p>
+        <div class="bg-white rounded-xl p-4 shadow-lg border border-gray-200 inline-block">
+          <p class="text-sm text-gray-500">
+            <strong class="text-gray-900">Last updated:</strong> January 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="legal-content" id="legal-content">
+        <div set:html={htmlContent} />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll for navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(this: HTMLAnchorElement, e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href')?.substring(1);
+          const targetElement = document.getElementById(targetId || '');
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add scroll spy functionality
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+          if (navLink) {
+            if (entry.isIntersecting) {
+              navLink.classList.add('bg-primary-100', 'border-primary-300');
+              navLink.classList.remove('bg-primary-50', 'border-primary-200');
+            } else {
+              navLink.classList.remove('bg-primary-100', 'border-primary-300');
+              navLink.classList.add('bg-primary-50', 'border-primary-200');
+            }
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px'
+      });
+
+      // Observe all section headings
+      document.querySelectorAll('h2[id]').forEach(heading => {
+        observer.observe(heading);
+      });
+    });
+  </script>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to work together?</h2>
+        <p class="text-gray-600 mb-6">
+          By engaging our services, you agree to these terms. Have questions? 
+          We're here to clarify anything before we start your project.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium">
+            Start Your Project
+          </a>
+          <a href="mailto:info@meonvalleyweb.com" class="border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-lg hover:bg-primary-500 hover:text-white transition-colors duration-200 font-medium">
+            Ask Questions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style is:global>
+  /* Clean, readable typography */
+  .legal-content {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #374151;
+    line-height: 1.75;
+    font-size: 1rem;
+    max-width: none;
+  }
+
+  /* Hide markdown h1 since we have a hero */
+  .legal-content h1 {
+    display: none;
+  }
+
+  /* Add spacing after hidden h1 - targets first paragraph (Last updated) */
+  .legal-content h1 + p {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    font-size: 0.9375rem;
+    color: #6b7280;
+  }
+
+  /* Headings */
+  .legal-content h2 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #111827;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+    scroll-margin-top: 120px;
+  }
+
+  .legal-content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .legal-content h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 120px;
+  }
+
+  /* Paragraphs */
+  .legal-content p {
+    margin: 1rem 0;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  /* Lists */
+  .legal-content ul,
+  .legal-content ol {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    margin: 0.5rem 0;
+    color: #4b5563;
+  }
+
+  /* Horizontal rules */
+  .legal-content hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 3rem 0;
+  }
+
+  /* Strong text - bold and darker */
+  .legal-content strong {
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* Links */
+  .legal-content a {
+    color: #059669;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-content a:hover {
+    color: #047857;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .legal-content h2 {
+      font-size: 1.5rem;
+    }
+    .legal-content h3 {
+      font-size: 1.125rem;
+    }
+  }
+</style>

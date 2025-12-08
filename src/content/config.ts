@@ -38,8 +38,18 @@ const pagesCollection = defineCollection({
   }),
 });
 
+const legalCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    lastUpdated: z.date().optional(),
+  }),
+});
+
 export const collections = {
   portfolio: portfolioCollection,
   services: servicesCollection,
   pages: pagesCollection,
+  legal: legalCollection,
 };
