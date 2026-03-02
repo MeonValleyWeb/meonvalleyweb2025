@@ -99,32 +99,8 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
         <input name="website" type="url" placeholder="Website URL" class="w-full border border-gray-300 rounded-lg px-4 py-3" />
         <textarea name="issue" rows="4" placeholder="Describe the issue" class="w-full border border-gray-300 rounded-lg px-4 py-3" required></textarea>
-        <select name="preferred_slot" class="w-full border border-gray-300 rounded-lg px-4 py-3" required>
-          <option value="">Preferred call time (30 mins)</option>
-          <optgroup label="Monday">
-            <option>Mon 09:00</option>
-            <option>Mon 09:30</option>
-            <option>Mon 10:00</option>
-            <option>Mon 10:30</option>
-            <option>Mon 11:00</option>
-            <option>Mon 11:30</option>
-          </optgroup>
-          <optgroup label="Tuesday">
-            <option>Tue 09:00</option>
-            <option>Tue 09:30</option>
-            <option>Tue 10:00</option>
-            <option>Tue 10:30</option>
-            <option>Tue 11:00</option>
-            <option>Tue 11:30</option>
-          </optgroup>
-          <optgroup label="Friday">
-            <option>Fri 09:00</option>
-            <option>Fri 09:30</option>
-            <option>Fri 10:00</option>
-            <option>Fri 10:30</option>
-            <option>Fri 11:00</option>
-            <option>Fri 11:30</option>
-          </optgroup>
+        <select id="preferred_slot" name="preferred_slot" class="w-full border border-gray-300 rounded-lg px-4 py-3" required>
+          <option value="">Preferred call time (next 2 weeks)</option>
         </select>
         <select name="urgency" class="w-full border border-gray-300 rounded-lg px-4 py-3">
           <option value="">Urgency</option>
@@ -193,4 +169,39 @@ import MainLayout from '../layouts/MainLayout.astro';
       </a>
     </div>
   </section>
+
+  <script>
+    (function () {
+      const select = document.getElementById('preferred_slot');
+      if (!select) return;
+
+      const times = ['09:00','09:30','10:00','10:30','11:00','11:30'];
+      const allowedDays = new Set([1, 2, 5]); // Mon, Tue, Fri
+      const start = new Date();
+      const options = [];
+
+      for (let i = 0; i < 14; i++) {
+        const d = new Date(start);
+        d.setDate(start.getDate() + i);
+        if (!allowedDays.has(d.getDay())) continue;
+
+        const dateLabel = d.toLocaleDateString('en-GB', {
+          weekday: 'short',
+          day: '2-digit',
+          month: 'short'
+        });
+
+        times.forEach((time) => {
+          options.push(`${dateLabel} ${time}`);
+        });
+      }
+
+      options.forEach((label) => {
+        const opt = document.createElement('option');
+        opt.value = label;
+        opt.textContent = label;
+        select.appendChild(opt);
+      });
+    })();
+  </script>
 </MainLayout>
