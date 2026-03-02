@@ -9,6 +9,41 @@ export interface Props {
 }
 
 const { title, description = "Professional web development and hosting services for small to mid-size companies." } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL('/meon-valley-web-logo.svg', Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Meon Valley Web",
+      "url": "https://meonvalleyweb.com",
+      "logo": ogImage,
+      "areaServed": ["Hampshire", "South Coast", "United Kingdom"],
+      "description": "Web design, WordPress hosting, and maintenance for small businesses."
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Managed WordPress Hosting",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Meon Valley Web",
+        "url": "https://meonvalleyweb.com"
+      },
+      "areaServed": ["Hampshire", "South Coast", "United Kingdom"]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "WordPress Support & Maintenance",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Meon Valley Web",
+        "url": "https://meonvalleyweb.com"
+      },
+      "areaServed": ["Hampshire", "South Coast", "United Kingdom"]
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -17,7 +52,25 @@ const { title, description = "Professional web development and hosting services 
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Meon Valley Web" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json">
+      {JSON.stringify(jsonLd)}
+    </script>
     
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
