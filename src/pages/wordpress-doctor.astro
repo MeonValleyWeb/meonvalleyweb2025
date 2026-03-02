@@ -14,7 +14,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         Perfect for businesses that need reliable fixes and peace of mind.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+        <button type="button" onclick="openCalBooking()" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
           Book a WordPress fix
         </button>
         <a href="#what-we-fix" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
@@ -107,10 +107,13 @@ import MainLayout from '../layouts/MainLayout.astro';
         </select>
         <div class="flex flex-col sm:flex-row gap-4">
           <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800">Send request</button>
-          <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 text-center">
+          <button type="button" onclick="openCalBooking()" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 text-center">
             Book a 30‑minute call
           </button>
         </div>
+        <p class="text-sm text-gray-600 mt-3">
+          If the calendar doesn’t open, use this link: <a class="text-primary-600 hover:text-primary-700" href="https://www.cal.eu/meonvalleyweb/30min">cal.eu/meonvalleyweb/30min</a>
+        </p>
       </form>
     </div>
   </section>
@@ -164,7 +167,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
         Book a quick check‑up and we’ll advise the fastest path to resolution.
       </p>
-      <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+      <button type="button" onclick="openCalBooking()" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
         Book a WordPress fix
       </button>
     </div>
