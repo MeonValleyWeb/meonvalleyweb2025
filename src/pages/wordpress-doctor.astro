@@ -14,9 +14,9 @@ import MainLayout from '../layouts/MainLayout.astro';
         Perfect for businesses that need reliable fixes and peace of mind.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#" data-cal-link="meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+        <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
           Book a WordPress fix
-        </a>
+        </button>
         <a href="#what-we-fix" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
           See what we fix
         </a>
@@ -91,7 +91,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <h2 class="text-3xl font-bold text-gray-900 mb-3">Request a WordPress Fix</h2>
         <p class="text-gray-600">Tell us what’s wrong and book a 30‑minute call.</p>
       </div>
-      <form name="wordpress-doctor" method="POST" data-netlify="true" class="space-y-4">
+      <form name="wordpress-doctor" method="POST" action="/thank-you" data-netlify="true" class="space-y-4">
         <input type="hidden" name="form-name" value="wordpress-doctor" />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input name="name" type="text" placeholder="Your name" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
@@ -107,9 +107,9 @@ import MainLayout from '../layouts/MainLayout.astro';
         </select>
         <div class="flex flex-col sm:flex-row gap-4">
           <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800">Send request</button>
-          <a href="#" data-cal-link="meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 text-center">
+          <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 text-center">
             Book a 30‑minute call
-          </a>
+          </button>
         </div>
       </form>
     </div>
@@ -164,9 +164,9 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
         Book a quick check‑up and we’ll advise the fastest path to resolution.
       </p>
-      <a href="#" data-cal-link="meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+      <button type="button" data-cal-link="https://www.cal.eu/meonvalleyweb/30min" data-cal-config='{"layout":"month_view"}' class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
         Book a WordPress fix
-      </a>
+      </button>
     </div>
   </section>
 </MainLayout>
