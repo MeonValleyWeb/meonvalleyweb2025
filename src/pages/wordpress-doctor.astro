@@ -14,9 +14,9 @@ import MainLayout from '../layouts/MainLayout.astro';
         Perfect for businesses that need reliable fixes and peace of mind.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <button type="button" onclick="openCalBooking()" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
-          Book a WordPress fix
-        </button>
+        <a href="#booking-form" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+          Request a WordPress fix
+        </a>
         <a href="#what-we-fix" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
           See what we fix
         </a>
@@ -85,11 +85,11 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <section class="py-20 bg-white">
+  <section id="booking-form" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-bold text-gray-900 mb-3">Request a WordPress Fix</h2>
-        <p class="text-gray-600">Tell us what’s wrong and book a 30‑minute call.</p>
+        <p class="text-gray-600">Tell us what’s wrong and request a 30‑minute call. We’ll confirm by email.</p>
       </div>
       <form name="wordpress-doctor" method="POST" action="/thank-you" data-netlify="true" class="space-y-4">
         <input type="hidden" name="form-name" value="wordpress-doctor" />
@@ -99,6 +99,33 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
         <input name="website" type="url" placeholder="Website URL" class="w-full border border-gray-300 rounded-lg px-4 py-3" />
         <textarea name="issue" rows="4" placeholder="Describe the issue" class="w-full border border-gray-300 rounded-lg px-4 py-3" required></textarea>
+        <select name="preferred_slot" class="w-full border border-gray-300 rounded-lg px-4 py-3" required>
+          <option value="">Preferred call time (30 mins)</option>
+          <optgroup label="Monday">
+            <option>Mon 09:00</option>
+            <option>Mon 09:30</option>
+            <option>Mon 10:00</option>
+            <option>Mon 10:30</option>
+            <option>Mon 11:00</option>
+            <option>Mon 11:30</option>
+          </optgroup>
+          <optgroup label="Tuesday">
+            <option>Tue 09:00</option>
+            <option>Tue 09:30</option>
+            <option>Tue 10:00</option>
+            <option>Tue 10:30</option>
+            <option>Tue 11:00</option>
+            <option>Tue 11:30</option>
+          </optgroup>
+          <optgroup label="Friday">
+            <option>Fri 09:00</option>
+            <option>Fri 09:30</option>
+            <option>Fri 10:00</option>
+            <option>Fri 10:30</option>
+            <option>Fri 11:00</option>
+            <option>Fri 11:30</option>
+          </optgroup>
+        </select>
         <select name="urgency" class="w-full border border-gray-300 rounded-lg px-4 py-3">
           <option value="">Urgency</option>
           <option>Urgent (site down)</option>
@@ -107,13 +134,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         </select>
         <div class="flex flex-col sm:flex-row gap-4">
           <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800">Send request</button>
-          <button type="button" onclick="openCalBooking()" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 text-center">
-            Book a 30‑minute call
-          </button>
         </div>
-        <p class="text-sm text-gray-600 mt-3">
-          If the calendar doesn’t open, use this link: <a class="text-primary-600 hover:text-primary-700" href="https://cal.com/meonvalleyweb/30min">cal.com/meonvalleyweb/30min</a>
-        </p>
       </form>
     </div>
   </section>
@@ -167,9 +188,9 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
         Book a quick check‑up and we’ll advise the fastest path to resolution.
       </p>
-      <button type="button" onclick="openCalBooking()" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-        Book a WordPress fix
-      </button>
+      <a href="#booking-form" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+        Request a WordPress fix
+      </a>
     </div>
   </section>
 </MainLayout>

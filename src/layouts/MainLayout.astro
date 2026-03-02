@@ -93,26 +93,6 @@ const jsonLd = {
     <script src="https://cdn.usefathom.com/script.js" data-site="GVQVVZKT" defer></script>
     <!-- / Fathom -->
 
-    <!-- Cal.com embed -->
-    <script>
-      (function (C, A, L) {
-        let p = function (a, ar) { a.q.push(ar); };
-        let d = C.document;
-        C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const ns = ar[1]; cal.ns[ns] = cal.ns[ns] || function () { p(cal.ns[ns], arguments); }; return; } p(cal, ar); };
-      })(window, 'https://cal.com/embed/embed.js', 'init');
-      Cal('init', { origin: 'https://cal.com' });
-
-      window.openCalBooking = function () {
-        try {
-          if (window.Cal) {
-            window.Cal('open', { calLink: 'meonvalleyweb/30min', layout: 'month_view' });
-            return;
-          }
-        } catch (e) {}
-        window.location.href = 'https://cal.com/meonvalleyweb/30min';
-      };
-    </script>
-    <!-- / Cal.com embed -->
   </head>
   <body class="bg-white text-gray-700 font-sans antialiased">
     <!-- Skip to main content link -->
