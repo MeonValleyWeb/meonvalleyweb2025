@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-03-03] - v1.3
+
+### Added
+- WordPress Doctor landing page with booking flow and request-a-slot form
+- Local SEO landing pages for web design, WordPress hosting, and support
+- `robots.txt` for improved crawl control
+
+### Changed
+- Hosting and services pages updated with new CTAs and booking integration
+- Main layout and header/footer tweaks to support new marketing pages
+
+---
+
+## [2025-12-08] - v1.2
+
+### Added
+- Dark mode support across the site
+- Fathom analytics tracking
+
+### Changed
+- Astro upgraded to v5.16.4
+- Performance optimizations (image handling, render-blocking fixes)
+- Accessibility improvements aligned to WCAG 2.1 AA
+- Terms and privacy layout refinements
+- Netlify form validation adjustments
+
+---
+
+## [2025-08-16] - v1.1
+
+### Added
+- Comprehensive charity page and portfolio showcase
+- Expanded portfolio projects and assets
+
+### Changed
+- Homepage redesign with modern layout and hero refinements
+- Pricing page reworked toward WordPress hosting focus
+- About page updated with refreshed styling
+
+---
+
 ## [2025-01-27] - Feature Branch Merge to Main
 
 ### Merged
