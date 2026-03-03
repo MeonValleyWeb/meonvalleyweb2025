@@ -1,0 +1,118 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('newsroom');
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const featured = sortedPosts.find((post) => post.data.featured) || sortedPosts[0];
+const rest = sortedPosts.filter((post) => post !== featured);
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+---
+
+<MainLayout
+  title="Newsroom | Meon Valley Web"
+  description="Client announcements, partnerships, and updates from Meon Valley Web."
+>
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">Newsroom</h1>
+        <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+          Client wins, partnerships, launches, and announcements from the Meon Valley Web team.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {featured ? (
+      <article class="grid lg:grid-cols-2 gap-10 items-center bg-white rounded-2xl border border-gray-100 shadow-lg p-8">
+        <div class="space-y-4">
+          <div class="flex flex-wrap gap-2">
+            {featured.data.category && (
+              <span class="inline-flex items-center rounded-full bg-primary-100 text-primary-700 px-3 py-1 text-xs font-medium">
+                {featured.data.category}
+              </span>
+            )}
+            <span class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-3 py-1 text-xs font-medium">
+              {formatDate(featured.data.date)}
+            </span>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900">{featured.data.title}</h2>
+          <p class="text-lg text-gray-600">{featured.data.description}</p>
+          <div class="flex items-center gap-4">
+            <a
+              href={`/newsroom/${featured.slug}`}
+              class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-800"
+            >
+              Read the update
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden bg-gray-100">
+          {featured.data.image ? (
+            <img
+              src={featured.data.image}
+              alt={featured.data.imageAlt || featured.data.title}
+              class="w-full h-full object-cover"
+            />
+          ) : (
+            <div class="aspect-video flex items-center justify-center text-gray-400">
+              <span class="text-sm">Featured announcement</span>
+            </div>
+          )}
+        </div>
+      </article>
+    ) : (
+      <div class="text-center text-gray-600">News updates will appear here soon.</div>
+    )}
+
+    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {rest.map((post) => (
+        <article class="bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col">
+          {post.data.image ? (
+            <img
+              src={post.data.image}
+              alt={post.data.imageAlt || post.data.title}
+              class="w-full h-44 object-cover rounded-t-2xl"
+            />
+          ) : (
+            <div class="h-44 bg-gray-100 rounded-t-2xl"></div>
+          )}
+          <div class="p-6 flex flex-col gap-3 flex-1">
+            <div class="flex flex-wrap gap-2">
+              {post.data.category && (
+                <span class="inline-flex items-center rounded-full bg-primary-100 text-primary-700 px-3 py-1 text-xs font-medium">
+                  {post.data.category}
+                </span>
+              )}
+              <span class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-3 py-1 text-xs font-medium">
+                {formatDate(post.data.date)}
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">{post.data.title}</h3>
+            <p class="text-gray-600 text-sm flex-1">{post.data.description}</p>
+            <a
+              href={`/newsroom/${post.slug}`}
+              class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-800"
+            >
+              Read more
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</MainLayout>
