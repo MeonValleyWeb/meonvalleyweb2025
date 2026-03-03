@@ -24,6 +24,6 @@ pnpm-debug.log*
 .idea/
 
 # local marketing and exports
-marketing/
+/marketing/
 output/
 public/performance/
