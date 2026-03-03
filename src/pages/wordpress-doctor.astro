@@ -93,9 +93,20 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
       <form name="wordpress-doctor" method="POST" action="/thank-you" data-netlify="true" class="space-y-4">
         <input type="hidden" name="form-name" value="wordpress-doctor" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <input name="name" type="text" placeholder="Your name" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
           <input name="email" type="email" placeholder="Your email" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
+          <input
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="Your mobile"
+            pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,4}[-\s\.]?[0-9]{1,9}$"
+            title="Please enter a valid mobile number (e.g., +44 7123 456789 or 07123 456789)"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3"
+            required
+          />
         </div>
         <input name="website" type="url" placeholder="Website URL" class="w-full border border-gray-300 rounded-lg px-4 py-3" />
         <textarea name="issue" rows="4" placeholder="Describe the issue" class="w-full border border-gray-300 rounded-lg px-4 py-3" required></textarea>
