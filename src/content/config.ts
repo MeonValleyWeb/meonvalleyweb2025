@@ -47,9 +47,41 @@ const legalCollection = defineCollection({
   }),
 });
 
+const newsroomCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    author: z.string().optional(),
+    category: z.string().optional(),
+    featured: z.boolean().default(false),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
+const blogCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    author: z.string().optional(),
+    category: z.string().optional(),
+    featured: z.boolean().default(false),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   portfolio: portfolioCollection,
   services: servicesCollection,
   pages: pagesCollection,
   legal: legalCollection,
+  newsroom: newsroomCollection,
+  blog: blogCollection,
 };
