@@ -12,6 +12,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       allowedHosts: ['devserver-feature-hosting-landing-pages--meonvalleyweb.netlify.app']
-    }
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        logLevel: 'silent'
+      }
+    },
+    logLevel: 'error'
   }
 });

@@ -7,9 +7,10 @@ seriously and will respond as quickly as possible.
 
 Please report security issues by email:
 
-- hello@meonvalleyweb.com
+- <hello@meonvalleyweb.com>
 
 Include as much detail as possible:
+
 - A clear description of the issue and potential impact
 - Steps to reproduce
 - Any proof-of-concept code or screenshots (if applicable)
@@ -25,4 +26,3 @@ made from `main` to production.
 ## Security References
 
 - See `docs/SECURITY_AUDIT_2025.md` for the most recent audit notes.
-

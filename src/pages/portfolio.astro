@@ -98,8 +98,8 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
 
                 <!-- Read More Link -->
                 <div class="pt-4">
-                  <a 
-                    href={`/portfolio/${project.slug}`}
+                  <a
+                    href={`/portfolio/${project.id.split('/').pop()?.replace(/\.md$/, '')}`}
                     class="inline-flex items-center text-primary-600 hover:text-primary-800 font-medium group-hover:underline transition-colors duration-200"
                   >
                     Read Full Case Study

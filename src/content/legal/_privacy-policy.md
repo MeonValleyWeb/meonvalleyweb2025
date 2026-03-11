@@ -1,3 +1,9 @@
+---
+title: "Privacy Policy"
+description: "Meon Valley Web's privacy policy"
+lastUpdated: 2025-01-15
+---
+
 # Privacy Policy
 
 **Last updated: January 2025**

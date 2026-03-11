@@ -1,3 +1,9 @@
+---
+title: "Terms of Service"
+description: "Meon Valley Web's terms of service"
+lastUpdated: 2025-01-15
+---
+
 # Terms of Service
 
 **Last updated: January 2025**
