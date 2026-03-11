@@ -62,6 +62,7 @@ const newsroomCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    body: z.string().optional(),
   }),
 });
 
