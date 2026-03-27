@@ -146,19 +146,39 @@ import MainLayout from '../layouts/MainLayout.astro';
           <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Book a Free Consultation</h3>
             <p class="text-gray-600 mb-4">
-              Prefer to talk? Schedule a 15-minute call to discuss your project. No obligation, just friendly advice.
+              Prefer to talk? Request a 30-minute call to discuss your project. We'll confirm by email.
             </p>
-            <a 
-              href="https://calendly.com/meonvalleyweb/15min" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-center block flex items-center justify-center gap-2"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-              Schedule a Call
-            </a>
+            <form name="booking-request" method="POST" action="/thank-you" data-netlify="true" class="space-y-3">
+              <input type="hidden" name="form-name" value="booking-request" />
+              <input name="name" type="text" placeholder="Your name" class="w-full border border-gray-300 rounded-lg px-4 py-2" required />
+              <input name="email" type="email" placeholder="Your email" class="w-full border border-gray-300 rounded-lg px-4 py-2" required />
+              <input name="phone" type="tel" placeholder="Your phone" class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-xs text-gray-600 mb-1">Preferred date</label>
+                  <input name="preferred_date" type="date" class="w-full border border-gray-300 rounded-lg px-2 py-2 text-sm" required />
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-600 mb-1">Preferred time</label>
+                  <select name="preferred_time" class="w-full border border-gray-300 rounded-lg px-2 py-2 text-sm" required>
+                    <option value="">Select</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="w-full bg-primary-500 text-white py-2 px-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold">
+                Request Call
+              </button>
+            </form>
           </div>
         </div>
       </div>
