@@ -1,0 +1,15 @@
+# Netlify Redirects
+# Force HTTPS and non-www
+
+# Redirect /home to root (fixing 404)
+/home / 301
+
+# Redirect www to non-www
+https://www.meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
+
+# Redirect HTTP to HTTPS
+http://meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
+http://www.meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
+
+# SPA fallback (if needed later)
+# /* /index.html 200

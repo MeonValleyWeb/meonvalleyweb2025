@@ -1,0 +1,615 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="AI on Your Website: A Business Owner's Guide [2025]" 
+  description="Expert guide to using AI on your business website. Learn where AI adds value, the pitfalls to avoid, and why it's not just 'adding ChatGPT'. Hampshire web design expertise."
+>
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        2025 Business Guide
+      </span>
+      <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        AI on Your Website: <span class="text-primary-500">What Business Owners Need to Know</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        It's not just about adding ChatGPT. Learn where AI genuinely adds value to your website, 
+        the expensive mistakes to avoid, and how to choose between local and cloud-based solutions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#where-to-use" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+          Where to Use AI
+        </a>
+        <a href="#pitfalls" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+          Avoid the Pitfalls
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Every business owner has heard the hype: "Add AI to your website!" But here's what most 
+        web agencies won't tell you: slapping a ChatGPT widget on your homepage is often worse 
+        than useless—it can damage your credibility, slow your site down, and create legal liabilities 
+        you never anticipated.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        As Hampshire-based web developers who've integrated AI into dozens of business websites, 
+        we've seen what works and what fails spectacularly. This guide cuts through the marketing 
+        fluff to show you where AI genuinely benefits your online presence—and where it actively 
+        harms it.
+      </p>
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg my-8">
+        <p class="text-gray-800 font-medium">
+          <strong>Key Insight:</strong> Using AI on your website is fundamentally different from using 
+          ChatGPT for your emails. Website AI needs to be fast, reliable, secure, and aligned with 
+          your brand—24/7, without hallucinating wrong information to your customers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Big Difference -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+        Website AI ≠ ChatGPT
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-xl font-bold text-red-600 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            ChatGPT on Your Website
+          </h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              Can give wrong answers about your business
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              No control over what it says to customers
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              Requires users to have their own account
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              Data sent to OpenAI's servers
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              Generic responses, not your brand voice
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">✗</span>
+              No integration with your booking/cart systems
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-xl font-bold text-green-600 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Proper Website AI Integration
+          </h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Trained on your specific business data
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Controlled responses with guardrails
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Seamless for all visitors—no accounts needed
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Can run locally (data stays on your server)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Matches your brand voice and tone
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500">✓</span>
+              Connects to your booking, payment, and CRM systems
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where to Use AI -->
+  <section id="where-to-use" class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+        Where Should AI Actually Go on Your Website?
+      </h2>
+      <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        Strategic AI implementation delivers ROI. Random AI placement wastes money and frustrates users.
+      </p>
+
+      <!-- GOOD Uses -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center gap-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          ✓ High-Value AI Applications
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">1. Smart Product Recommendations</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              "Customers who bought X also bought Y"—but actually intelligent, based on browsing patterns, 
+              not just purchase history.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 10-30% increase in average order value
+            </p>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">2. Intelligent Search</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              Visitors type "blue widget for garage" and find the right product—even if your 
+              descriptions don't use those exact words.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 15-25% improvement in search-to-purchase conversion
+            </p>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">3. Dynamic Pricing Optimization</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              Adjust pricing based on demand, competitor analysis, and inventory levels—automatically 
+              and within rules you set.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 5-12% margin improvement
+            </p>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">4. Content Personalization</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              Show different homepage content to first-time visitors vs. returning customers 
+              vs. abandoned cart users.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 20-40% improvement in engagement
+            </p>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">5. Chatbot with Business Context</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              Answers questions using your actual documentation—prices, availability, delivery times—
+              not generic web knowledge.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 30-50% reduction in support tickets
+            </p>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2">6. Automated Content Generation</h4>
+            <p class="text-gray-700 text-sm mb-3">
+              Create location-specific landing pages, product descriptions, or SEO content 
+              from data feeds—properly edited by humans.
+            </p>
+            <p class="text-green-700 text-sm font-medium">
+              ROI: 70% reduction in content production time
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAD Uses -->
+      <div id="pitfalls">
+        <h3 class="text-2xl font-bold text-red-700 mb-6 flex items-center gap-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          ✗ Expensive AI Mistakes (The Big NOs)
+        </h3>
+        
+        <div class="space-y-4">
+          <div class="bg-red-50 border border-red-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="text-red-600">NO:</span> Generic ChatGPT Chatbots
+            </h4>
+            <p class="text-gray-700 text-sm mb-2">
+              That "Ask our AI assistant!" popup that doesn't know your prices, can't check stock, 
+              and hallucinates wrong answers about your services. Customers hate it.
+            </p>
+            <p class="text-red-700 text-sm font-medium">
+              Cost: Lost customers + damaged reputation + potential legal liability
+            </p>
+          </div>
+
+          <div class="bg-red-50 border border-red-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="text-red-600">NO:</span> AI-Generated Images Without Disclosure
+            </h4>
+            <p class="text-gray-700 text-sm mb-2">
+              Using AI-generated photos of your "team" or "office" that don't exist. When customers 
+              visit or video call and see something completely different, trust is destroyed.
+            </p>
+            <p class="text-red-700 text-sm font-medium">
+              Cost: Complete loss of credibility when discovered
+            </p>
+          </div>
+
+          <div class="bg-red-50 border border-red-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="text-red-600">NO:</span> AI Writing All Your Content Unedited
+            </h4>
+            <p class="text-gray-700 text-sm mb-2">
+              Publishing AI-generated blog posts and service pages without human review. They often 
+              contain subtle errors, outdated information, or just sound generic and soulless.
+            </p>
+            <p class="text-red-700 text-sm font-medium">
+              Cost: Google penalises low-quality content; customers sense the inauthenticity
+            </p>
+          </div>
+
+          <div class="bg-red-50 border border-red-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="text-red-600">NO:</span> AI Making Pricing Decisions Unsupervised
+            </h4>
+            <p class="text-gray-700 text-sm mb-2">
+              Letting AI adjust prices without guardrails. Stories abound of algorithms pricing 
+              products at £0.01 or 10x normal price during glitches.
+            </p>
+            <p class="text-red-700 text-sm font-medium">
+              Cost: Revenue loss or customer outrage from price errors
+            </p>
+          </div>
+
+          <div class="bg-red-50 border border-red-200 p-6 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="text-red-600">NO:</span> Processing Sensitive Data Through Cloud AI
+            </h4>
+            <p class="text-gray-700 text-sm mb-2">
+              Sending customer medical records, financial details, or legal documents to external 
+              AI services (OpenAI, Claude, etc.) without considering GDPR and data protection laws.
+            </p>
+            <p class="text-red-700 text-sm font-medium">
+              Cost: GDPR fines up to 4% of annual revenue + legal liability
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local vs Cloud Models -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+        Local AI vs Cloud AI: The Critical Decision
+      </h2>
+      <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        Where your AI runs affects speed, cost, privacy, and control. Choose wrong and you'll 
+        face problems you never anticipated.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Cloud AI -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">Cloud AI Models</h3>
+          </div>
+          
+          <p class="text-gray-600 mb-4 text-sm">
+            OpenAI GPT-4, Claude, Gemini, etc. Your data goes to their servers.
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-green-700 mb-1">✓ Best For:</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• General content generation</li>
+                <li>• Non-sensitive customer queries</li>
+                <li>• Prototyping and testing</li>
+                <li>• When you need cutting-edge capabilities</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-red-700 mb-1">✗ Avoid For:</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Medical/health data</li>
+                <li>• Financial records</li>
+                <li>• Legal documents</li>
+                <li>• GDPR-sensitive personal data</li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <p class="text-sm text-blue-800">
+                <strong>Cost:</strong> Pay per token (usage). Can be £50-500/month depending on traffic.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local AI -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">Local AI Models</h3>
+          </div>
+          
+          <p class="text-gray-600 mb-4 text-sm">
+            Self-hosted on your server. Models like Llama, Mistral, or fine-tuned open-source variants.
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-green-700 mb-1">✓ Best For:</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Sensitive data processing</li>
+                <li>• High-volume operations</li>
+                <li>• GDPR compliance requirements</li>
+                <li>• Custom fine-tuned models</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-red-700 mb-1">✗ Challenges:</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Requires technical expertise</li>
+                <li>• Server hardware costs</li>
+                <li>• Not as capable as cloud models (yet)</li>
+                <li>• Maintenance responsibility</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 p-3 rounded-lg">
+              <p class="text-sm text-green-800">
+                <strong>Cost:</strong> Higher upfront, but flat monthly hosting fee regardless of usage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+        <h4 class="font-bold text-gray-900 mb-2">Our Recommendation for Hampshire Businesses</h4>
+        <p class="text-gray-700">
+          Most small businesses should start with <strong>cloud AI for non-sensitive tasks</strong> 
+          (content suggestions, basic chatbots) and consider <strong>local AI only when processing 
+          customer data</strong> or at significant scale. We help you make this decision based on 
+          your specific industry and compliance requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Choosing the Right Model -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+        How We Choose the Right AI Model for Your Website
+      </h2>
+
+      <div class="space-y-6">
+        <div class="flex gap-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-bold text-primary-600">1</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Analyse Your Use Case</h3>
+            <p class="text-gray-700">
+              Are you generating content? Answering customer questions? Analysing data? 
+              Each task needs different capabilities. A model great for writing isn't necessarily 
+              good for code or structured data extraction.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-bold text-primary-600">2</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Data Sensitivity Assessment</h3>
+            <p class="text-gray-700">
+              Does the AI need to process customer names? Order details? Medical info? 
+              This determines whether cloud or local is appropriate—and which providers 
+              can meet your compliance needs.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-bold text-primary-600">3</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Volume & Speed Requirements</h3>
+            <p class="text-gray-700">
+              10 queries per day? 10,000? Local models can be faster for high volumes 
+              since there's no network latency. Cloud models often have rate limits that 
+              can throttle your site during traffic spikes.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-bold text-primary-600">4</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Budget Reality Check</h3>
+            <p class="text-gray-700">
+              Cloud AI seems cheap until you scale. A site with heavy chatbot usage can 
+              rack up £1,000+/month in API fees. Local AI costs more upfront but is 
+              predictable. We model both scenarios for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-bold text-primary-600">5</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Test, Monitor, Adjust</h3>
+            <p class="text-gray-700">
+              We never deploy AI and forget it. We track accuracy, response times, 
+              and customer satisfaction. Models are upgraded, prompts are refined, 
+              and guardrails are tightened based on real usage data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Success Stories -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg-px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+        Real Results: AI Done Right
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold text-gray-900 mb-2">E-commerce Site: 40% Revenue Increase</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Implemented AI-powered product recommendations and intelligent search for a Hampshire 
+            retail business. The system learned from browsing patterns to suggest complementary products.
+          </p>
+          <p class="text-green-700 text-sm font-medium">
+            Result: £12,000 additional monthly revenue after 3 months.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold text-gray-900 mb-2">Service Business: 60% Fewer Support Calls</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Built a context-aware chatbot trained on the company's actual documentation. 
+            It answers 80% of common questions without human intervention.
+          </p>
+          <p class="text-green-700 text-sm font-medium">
+            Result: Owner reclaimed 15 hours/week previously spent on repetitive emails.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold text-gray-900 mb-2">Local Trades: 25% More Enquiries</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Used AI to generate 50 location-specific landing pages for different service areas. 
+            Each page was human-edited but AI-drafted from a data feed.
+          </p>
+          <p class="text-green-700 text-sm font-medium">
+            Result: Dominated local search for "[service] + [town]" combinations.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold text-gray-900 mb-2">GDPR-Compliant Local AI</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Implemented a self-hosted AI system for a healthcare-adjacent business. 
+            All patient-adjacent data stays on their server, never leaves the UK.
+          </p>
+          <p class="text-green-700 text-sm font-medium">
+            Result: Passed regulatory audit with zero data protection concerns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Bottom Line -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+        The Bottom Line for Business Owners
+      </h2>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p class="mb-6">
+          AI on your website is not a magic wand—it's a tool that, when used correctly, delivers 
+          measurable business value. When used incorrectly, it becomes an expensive liability that 
+          frustrates customers and damages your reputation.
+        </p>
+
+        <div class="bg-gray-100 p-6 rounded-xl my-8">
+          <h3 class="font-bold text-gray-900 mb-4">The Golden Rules:</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li><strong>Start with the problem, not the technology.</strong> Don't add AI because it's trendy. Add it because it solves a specific business problem.</li>
+            <li><strong>Control the output.</strong> AI should augment your business knowledge, not replace it. Always have guardrails.</li>
+            <li><strong>Consider data privacy from day one.</strong> GDPR fines are real and devastating.</li>
+            <li><strong>Test with real users before full deployment.</strong> What works in theory often fails in practice.</li>
+            <li><strong>Monitor and iterate.</strong> AI models drift. Performance degrades. Stay vigilant.</li>
+          </ol>
+        </div>
+
+        <p class="mb-6">
+          At Meon Valley Web, we don't sell AI buzzwords—we implement AI solutions that actually 
+          work for Hampshire businesses. Whether you need a smart product recommender, a compliant 
+          customer service chatbot, or a local AI system that keeps your data in-house, we guide 
+          you through the decision and build it properly.
+        </p>
+
+        <p class="mb-6">
+          The future belongs to businesses that use AI intelligently—not those who rush to add 
+          "AI-powered!" stickers to their websites. Make sure you're in the first group.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Want to explore AI for your website?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8">
+        We offer free consultations to assess whether AI makes sense for your specific business—and 
+        if so, which approach will deliver ROI without the risks.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg">
+          Book Your AI Consultation
+        </a>
+        <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

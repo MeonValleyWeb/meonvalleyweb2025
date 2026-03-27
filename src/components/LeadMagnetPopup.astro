@@ -1,0 +1,165 @@
+---
+// Exit-intent popup for lead magnet
+---
+
+<div id="lead-magnet-popup" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="popup-backdrop"></div>
+  
+  <!-- Popup Content -->
+  <div class="absolute inset-0 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative animate-fade-in-up">
+      <!-- Close Button -->
+      <button 
+        id="close-popup" 
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        aria-label="Close popup"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <!-- Icon -->
+      <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      
+      <!-- Content -->
+      <h2 class="text-2xl font-bold text-gray-900 text-center mb-4">
+        Get Your Free Website Health Checklist
+      </h2>
+      <p class="text-gray-600 text-center mb-6">
+        Discover the 15 critical elements every business website needs. Download our comprehensive checklist and audit your site today.
+      </p>
+      
+      <!-- Form -->
+      <form name="lead-magnet" method="POST" data-netlify="true" action="/thank-you-checklist" class="space-y-4">
+        <input type="hidden" name="form-name" value="lead-magnet" />
+        <div style="display: none;">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+        
+        <div>
+          <label for="leadEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+          <input 
+            type="email" 
+            id="leadEmail" 
+            name="email" 
+            required 
+            placeholder="your@email.com"
+            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+          >
+        </div>
+        
+        <div>
+          <label for="leadName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+          <input 
+            type="text" 
+            id="leadName" 
+            name="firstName" 
+            required 
+            placeholder="John"
+            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+          >
+        </div>
+        
+        <button type="submit" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          Download Free Checklist
+        </button>
+      </form>
+      
+      <p class="text-xs text-gray-500 text-center mt-4">
+        No spam, ever. Unsubscribe anytime. We respect your privacy.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.3s ease-out;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('lead-magnet-popup');
+    const backdrop = document.getElementById('popup-backdrop');
+    const closeBtn = document.getElementById('close-popup');
+    
+    let hasShown = false;
+    let hasSubmitted = false;
+    
+    // Check localStorage
+    try {
+      hasShown = localStorage.getItem('leadMagnetShown') === 'true';
+      hasSubmitted = localStorage.getItem('leadMagnetSubmitted') === 'true';
+    } catch (e) {
+      console.log('localStorage not available');
+    }
+    
+    // Show popup on exit intent
+    function showPopup() {
+      if (!hasShown && !hasSubmitted && popup) {
+        popup.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        hasShown = true;
+        try {
+          localStorage.setItem('leadMagnetShown', 'true');
+        } catch (e) {}
+      }
+    }
+    
+    function hidePopup() {
+      if (popup) {
+        popup.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Exit intent detection
+    document.addEventListener('mouseout', function(e) {
+      if (e.clientY < 10 && !hasShown && !hasSubmitted) {
+        showPopup();
+      }
+    });
+    
+    // Close on backdrop click
+    backdrop?.addEventListener('click', hidePopup);
+    
+    // Close on button click
+    closeBtn?.addEventListener('click', hidePopup);
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        hidePopup();
+      }
+    });
+    
+    // Mark as submitted on form submit
+    const form = document.querySelector('form[name="lead-magnet"]');
+    form?.addEventListener('submit', function() {
+      try {
+        localStorage.setItem('leadMagnetSubmitted', 'true');
+      } catch (e) {}
+    });
+  });
+</script>
