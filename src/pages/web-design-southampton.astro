@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const southamptonFAQs = [
+  {
+    question: "Do you work with Southampton businesses?",
+    answer: "Yes, we work extensively with Southampton businesses across all sectors. From the city centre and Southampton Docks to the suburbs like Portswood, Bitterne, and Shirley, we help local companies establish a strong online presence. Our Southampton clients range from maritime businesses and retailers to professional services and startups."
+  },
+  {
+    question: "How much does a website cost in Southampton?",
+    answer: "Our Southampton web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO, and CMS training. E-commerce websites start from £4,500. We provide fixed-price quotes tailored to Southampton businesses with no hidden costs."
+  },
+  {
+    question: "What areas in Southampton do you cover?",
+    answer: "We serve businesses throughout Southampton including the City Centre, Ocean Village, Docks, Portswood, Bitterne, Shirley, Woolston, and surrounding areas. Whether you're based in SO14, SO15, SO16, SO17, SO18, SO19, or SO30-SO45 postcodes, we can help with your web design project."
+  },
+  {
+    question: "Can you help Southampton businesses with e-commerce websites?",
+    answer: "Absolutely. We specialise in e-commerce web design for Southampton retailers and businesses wanting to sell online. Using WooCommerce or custom solutions, we create online stores that integrate with local payment processors, support click-and-collect, and are optimised for converting Southampton customers."
+  },
+  {
+    question: "Do you offer WordPress support for Southampton businesses?",
+    answer: "Yes, we provide comprehensive WordPress services for Southampton businesses including custom theme development, plugin integration, hosting with 99.9% uptime, security monitoring, and ongoing maintenance packages. We can also help fix issues with existing WordPress sites."
+  },
+  {
+    question: "How quickly can you build a website for my Southampton business?",
+    answer: "Most Southampton business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex projects with custom features take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout the build process."
+  },
+  {
+    question: "Can you help my Southampton business rank on Google?",
+    answer: "Yes, all our websites are built with SEO fundamentals including fast loading times, mobile optimisation, schema markup, and proper heading structures. For Southampton businesses specifically, we optimise for local search terms like 'web design Southampton' and your specific services combined with location keywords."
+  }
+];
 ---
+
+<SchemaFAQ faqs={southamptonFAQs} />
 
 <MainLayout 
   title="Web Design Southampton | Professional Website Development" 
@@ -190,6 +224,38 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="bg-gray-50 rounded-lg p-4 text-center">
           <p class="font-semibold text-gray-900">Bassett</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Southampton web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {southamptonFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

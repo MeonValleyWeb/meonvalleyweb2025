@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const winchesterFAQs = [
+  {
+    question: "Do you work with Winchester businesses?",
+    answer: "Yes, we work with businesses throughout Winchester and the surrounding areas. From the city centre around the Cathedral to businesses on the outskirts in SO22, SO23, and SO24 postcodes, we help local companies establish a professional online presence. Our Winchester clients include professional services, hospitality businesses, retailers, and educational institutions."
+  },
+  {
+    question: "How much does a website cost in Winchester?",
+    answer: "Our Winchester web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, SEO setup, and CMS training. E-commerce websites for Winchester retailers start from £4,500. We provide transparent, fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas around Winchester do you cover?",
+    answer: "We serve businesses throughout Winchester including the city centre, Fulflood, Weeke, Stanmore, Badger Farm, and surrounding villages. We cover SO22, SO23, and SO24 postcodes. Whether you're based near the Cathedral, in a business park, or in the surrounding Hampshire countryside, we can help with your web design project."
+  },
+  {
+    question: "Can you help Winchester hospitality businesses with websites?",
+    answer: "Absolutely. Winchester's vibrant hospitality scene needs professional websites. We specialise in creating websites for Winchester restaurants, hotels, B&Bs, and pubs. Our designs include booking systems, menu displays, event calendars, and integration with reservation platforms. We understand what makes Winchester hospitality businesses unique."
+  },
+  {
+    question: "Do you offer WordPress development for Winchester businesses?",
+    answer: "Yes, WordPress is our primary platform for Winchester clients. We build custom WordPress themes, provide managed WordPress hosting with 99.9% uptime, security monitoring, and ongoing support packages. Whether you need a new WordPress site or improvements to an existing one, we have the expertise to help."
+  },
+  {
+    question: "How long does it take to build a website for my Winchester business?",
+    answer: "Most Winchester business websites are completed within 2-4 weeks from initial consultation to launch. Simple brochure sites can be ready in 2 weeks, while more complex projects with custom features take 4-6 weeks. We provide a detailed timeline and keep you updated throughout."
+  },
+  {
+    question: "Can you help my Winchester business rank on Google?",
+    answer: "Yes, all our websites are built with SEO best practices including fast loading, mobile optimisation, schema markup, and proper heading structures. For Winchester businesses specifically, we optimise for local search terms like 'web design Winchester' and service-specific keywords combined with location. We can also help optimise your Google Business Profile for local map visibility."
+  }
+];
 ---
+
+<SchemaFAQ faqs={winchesterFAQs} />
 
 <MainLayout 
   title="Web Design Winchester | Professional Website Development" 
@@ -151,6 +185,38 @@ import MainLayout from '../layouts/MainLayout.astro';
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Winchester web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {winchesterFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

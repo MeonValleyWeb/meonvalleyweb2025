@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const basingstokeFAQs = [
+  {
+    question: "Do you work with Basingstoke businesses?",
+    answer: "Yes, we work extensively with businesses across Basingstoke. From the town centre and Festival Place area to business parks like Chineham and Houndmills, we help local companies establish a professional online presence. Our Basingstoke clients include professional services, retailers, technology companies, and corporate businesses."
+  },
+  {
+    question: "How much does a website cost in Basingstoke?",
+    answer: "Our Basingstoke web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO, and training. Corporate and e-commerce websites start from £4,500. We provide transparent, fixed-price quotes tailored to Basingstoke businesses with no hidden costs."
+  },
+  {
+    question: "What areas in Basingstoke do you cover?",
+    answer: "We serve businesses throughout Basingstoke including the town centre (RG21), Chineham (RG24), South Ham, Popley, Hatch Warren, and surrounding areas. We cover RG21, RG22, RG23, and RG24 postcodes. Whether you're based in a business park, retail location, or office building, we can help with your web design project."
+  },
+  {
+    question: "Can you help Basingstoke corporate businesses with websites?",
+    answer: "Absolutely. We specialise in professional corporate websites for Basingstoke businesses. Our designs include staff profiles, service showcases, case studies, document libraries, and integration with business systems. We understand the professional standards required by Basingstoke's diverse business community."
+  },
+  {
+    question: "Do you offer WordPress development for Basingstoke businesses?",
+    answer: "Yes, we provide comprehensive WordPress services for Basingstoke businesses including custom theme development, plugin integration, managed hosting with 99.9% uptime, and ongoing maintenance packages. Whether you need a new WordPress site or improvements to an existing one, we have the expertise."
+  },
+  {
+    question: "How quickly can you build a website for my Basingstoke business?",
+    answer: "Most Basingstoke business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex corporate sites take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout."
+  },
+  {
+    question: "Can you help my Basingstoke business rank on Google?",
+    answer: "Yes, all our websites are built with SEO best practices including fast loading times, mobile optimisation, schema markup, and proper heading structures. For Basingstoke businesses specifically, we optimise for local search terms like 'web design Basingstoke' and your services combined with location keywords."
+  }
+];
 ---
+
+<SchemaFAQ faqs={basingstokeFAQs} />
 
 <MainLayout 
   title="Web Design Basingstoke | Professional Website Development" 
@@ -306,6 +340,38 @@ import MainLayout from '../layouts/MainLayout.astro';
           to deliver results. Our office is just 30 minutes away, making face-to-face meetings 
           convenient whenever you need them.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Basingstoke web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {basingstokeFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

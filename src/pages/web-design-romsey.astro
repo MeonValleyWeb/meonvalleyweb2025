@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const romseyFAQs = [
+  {
+    question: "Do you work with Romsey businesses?",
+    answer: "Yes, we work extensively with businesses in Romsey and surrounding villages. From the historic market town centre near the Abbey to businesses in areas like Cupernham and Woodley, we help local companies establish a professional online presence. Our Romsey clients include independent retailers, professional services, hospitality businesses, and tradespeople."
+  },
+  {
+    question: "How much does a website cost in Romsey?",
+    answer: "Our Romsey web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO setup, and CMS training. E-commerce websites for Romsey retailers start from £4,500. We provide transparent, fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas around Romsey do you cover?",
+    answer: "We serve businesses throughout the Romsey area including the town centre (SO51), surrounding villages like Wellow, Timsbury, Michelmersh, and the wider Test Valley. Whether you're based in Romsey town or the surrounding Hampshire countryside, we can help with your web design project."
+  },
+  {
+    question: "Can you help Romsey hospitality businesses with websites?",
+    answer: "Absolutely. Romsey's charming hospitality scene benefits from professional websites. We specialise in creating websites for Romsey restaurants, pubs, B&Bs, and guest houses. Our designs include booking systems, menu displays, event calendars, and integration with local tourism platforms. We understand what makes Romsey hospitality businesses special."
+  },
+  {
+    question: "Do you offer WordPress support for Romsey businesses?",
+    answer: "Yes, we provide comprehensive WordPress services for Romsey businesses including custom theme development, managed hosting with 99.9% uptime, security monitoring, and ongoing maintenance packages. We can help with new WordPress sites or improvements to existing ones."
+  },
+  {
+    question: "How quickly can you build a website for my Romsey business?",
+    answer: "Most Romsey business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex projects take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout the process."
+  },
+  {
+    question: "Can you help my Romsey business rank on Google?",
+    answer: "Yes, all our websites are built with SEO best practices including fast loading times, mobile optimisation, schema markup, and proper heading structures. For Romsey businesses specifically, we optimise for local search terms like 'web design Romsey' and your services combined with location keywords."
+  }
+];
 ---
+
+<SchemaFAQ faqs={romseyFAQs} />
 
 <MainLayout 
   title="Web Design Romsey | Professional Website Development" 
@@ -309,6 +343,38 @@ import MainLayout from '../layouts/MainLayout.astro';
           we'll create a website that feels authentically you—professional yet personal, just 
           like Romsey itself.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Romsey web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {romseyFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

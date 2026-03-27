@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const petersfieldFAQs = [
+  {
+    question: "Do you work with Petersfield businesses?",
+    answer: "Yes, we work extensively with businesses in Petersfield and throughout East Hampshire. From the historic market town centre to businesses in surrounding villages like Liss, Liphook, and Sheet, we help local companies establish a strong online presence. Our Petersfield clients include professional services, independent retailers, tradespeople, and hospitality businesses."
+  },
+  {
+    question: "How much does a website cost in Petersfield?",
+    answer: "Our Petersfield web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO setup, and training on how to update your site. E-commerce websites start from £4,500. We provide transparent, fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas around Petersfield do you cover?",
+    answer: "We serve businesses throughout the Petersfield area including the town centre, GU31 and GU32 postcodes, and surrounding East Hampshire villages. Whether you're based near the Heath Pond, along the High Street, or in nearby villages like Steep or Stroud, we can help with your web design project."
+  },
+  {
+    question: "Can you help Petersfield retailers sell online?",
+    answer: "Absolutely. We specialise in e-commerce web design for Petersfield independent retailers and businesses wanting to reach customers online. Using WooCommerce or Shopify, we create online stores with secure payments, inventory management, and click-and-collect options. Perfect for Petersfield's unique independent shops."
+  },
+  {
+    question: "Do you offer WordPress support for Petersfield businesses?",
+    answer: "Yes, we provide comprehensive WordPress services for Petersfield businesses including custom theme development, managed hosting with 99.9% uptime, security monitoring, and ongoing maintenance packages. We can help with new WordPress sites or fix issues with existing ones."
+  },
+  {
+    question: "How quickly can you build a website for my Petersfield business?",
+    answer: "Most Petersfield business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex projects with custom features take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout."
+  },
+  {
+    question: "Can you help my Petersfield business rank on Google?",
+    answer: "Yes, all our websites are built with SEO fundamentals including fast loading times, mobile optimisation, schema markup, and proper heading structures. For Petersfield businesses specifically, we optimise for local search terms like 'web design Petersfield' and your services combined with location keywords. We can also help optimise your Google Business Profile."
+  }
+];
 ---
+
+<SchemaFAQ faqs={petersfieldFAQs} />
 
 <MainLayout 
   title="Web Design Petersfield | Professional Website Development" 
@@ -191,6 +225,38 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="bg-gray-50 rounded-lg p-4 text-center">
           <p class="font-semibold text-gray-900">Bishops Waltham</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Petersfield web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {petersfieldFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

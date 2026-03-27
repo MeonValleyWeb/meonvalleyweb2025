@@ -1,6 +1,40 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const portsmouthFAQs = [
+  {
+    question: "Do you work with Portsmouth businesses?",
+    answer: "Yes, we work extensively with businesses across Portsmouth. From Southsea and Old Portsmouth to the city centre and Portsea, we help local companies establish a strong digital presence. Our Portsmouth clients include retailers, professional services, tradespeople, and hospitality businesses."
+  },
+  {
+    question: "How much does a website cost in Portsmouth?",
+    answer: "Our Portsmouth web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO setup, and CMS training. E-commerce websites start from £4,500. We provide fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas in Portsmouth do you cover?",
+    answer: "We serve businesses throughout Portsmouth including Southsea, Old Portsmouth, Fratton, Copnor, Milton, Baffins, and surrounding areas. We cover PO1, PO2, PO3, PO4, PO5, and PO6 postcodes. Whether you're based in the city centre or the suburbs, we can help with your web design project."
+  },
+  {
+    question: "Can you help Portsmouth hospitality businesses with websites?",
+    answer: "Absolutely. We specialise in websites for Portsmouth restaurants, cafes, pubs, and hospitality businesses. Our designs include table booking integration, menu displays, event calendars, and online ordering systems. We understand the unique needs of the hospitality sector in Portsmouth."
+  },
+  {
+    question: "Do you offer e-commerce web design for Portsmouth retailers?",
+    answer: "Yes, we create e-commerce websites for Portsmouth retailers wanting to sell online. Using WooCommerce or Shopify, we build online stores with secure payments, inventory management, and click-and-collect functionality. Perfect for Southsea independent shops and Portsmouth retail businesses."
+  },
+  {
+    question: "How quickly can you build a website for my Portsmouth business?",
+    answer: "Most Portsmouth business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex e-commerce sites take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout the build process."
+  },
+  {
+    question: "Can you help my Portsmouth business appear on Google Maps?",
+    answer: "Yes, we optimise your website for local SEO and can help set up and optimise your Google Business Profile. This helps you appear in Google Maps searches and local 'near me' searches for Portsmouth customers. All our websites include schema markup for better local search visibility."
+  }
+];
 ---
+
+<SchemaFAQ faqs={portsmouthFAQs} />
 
 <MainLayout 
   title="Web Design Portsmouth | Professional Website Development" 
@@ -191,6 +225,38 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="bg-gray-50 rounded-lg p-4 text-center">
           <p class="font-semibold text-gray-900">Port Solent</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Portsmouth web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {portsmouthFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>
