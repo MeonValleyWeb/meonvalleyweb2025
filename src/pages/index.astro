@@ -11,6 +11,8 @@ import netlifyLogo from '../assets/Netlify_logo.svg.png';
 import laravelLogo from '../assets/laravel.png';
 import spinupwpLogo from '../assets/spinupwp.png';
 import twodogsImg from '../assets/twodogs.png';
+import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
+import TrustSignals from '../components/TrustSignals.astro';
 ---
 
 <MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
@@ -124,6 +126,9 @@ import twodogsImg from '../assets/twodogs.png';
       </div>
     </div>
   </section>
+
+  <!-- Trust Signals Section -->
+  <TrustSignals />
 
   <!-- Features Section -->
   <section class="py-20 bg-white">
@@ -560,6 +565,56 @@ import twodogsImg from '../assets/twodogs.png';
       </div>
     </div>
   </section>
+
+  <!-- Lead Magnet Inline Section -->
+  <section class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Free Website Health Checklist
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Get our comprehensive 15-point checklist to audit your website. Discover what's working, what's missing, and how to improve your online presence.
+          </p>
+        </div>
+        
+        <form name="lead-magnet-inline" method="POST" data-netlify="true" action="/thank-you-checklist" class="max-w-lg mx-auto">
+          <input type="hidden" name="form-name" value="lead-magnet-inline" />
+          <div style="display: none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input 
+              type="email" 
+              name="email" 
+              required 
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+            >
+            <button type="submit" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold whitespace-nowrap flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Get Checklist
+            </button>
+          </div>
+          <p class="text-xs text-gray-500 text-center mt-4">
+            Join 500+ business owners who've improved their websites. No spam, unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Magnet Popup -->
+  <LeadMagnetPopup />
 
   <!-- JavaScript for Interactive Elements -->
   <script>
