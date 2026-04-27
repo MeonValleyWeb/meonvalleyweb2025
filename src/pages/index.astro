@@ -673,4 +673,184 @@ import TrustSignals from '../components/TrustSignals.astro';
       });
     });
   </script>
+
+  <!-- WebMCP: Expose site tools to AI agents -->
+  <script>
+    // WebMCP API support for agent tool discovery
+    // https://webmachinelearning.github.io/webmcp/
+    // https://developer.chrome.com/blog/webmcp-epp
+    (function() {
+      // Check if WebMCP API is available
+      if (!navigator.modelContext || typeof navigator.modelContext.registerTool !== 'function') {
+        console.log('WebMCP API not available');
+        return;
+      }
+
+      const abortController = new AbortController();
+      const { signal } = abortController;
+
+      // Register navigation tool
+      navigator.modelContext.registerTool({
+        name: 'navigate',
+        description: 'Navigate to a specific page on the Meon Valley Web site',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            page: {
+              type: 'string',
+              description: 'Page to navigate to',
+              enum: ['home', 'services', 'about', 'portfolio', 'contact', 'blog', 'hosting']
+            }
+          },
+          required: ['page']
+        },
+        execute: async (args) => {
+          const pageUrls = {
+            home: '/',
+            services: '/services',
+            about: '/about',
+            portfolio: '/portfolio',
+            contact: '/contact',
+            blog: '/blog',
+            hosting: '/hosting'
+          };
+          
+          const url = pageUrls[args.page];
+          if (url) {
+            window.location.href = url;
+            return { success: true, navigatedTo: url };
+          }
+          return { success: false, error: 'Unknown page: ' + args.page };
+        }
+      }, { signal });
+
+      // Register contact form tool
+      navigator.modelContext.registerTool({
+        name: 'submit_inquiry',
+        description: 'Submit a contact form inquiry for web development services',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string', description: 'Contact name' },
+            email: { type: 'string', description: 'Email address' },
+            phone: { type: 'string', description: 'Phone number (optional)' },
+            service_type: { 
+              type: 'string', 
+              description: 'Type of service interested in',
+              enum: ['wordpress', 'astro', 'laravel', 'hosting', 'maintenance', 'other']
+            },
+            message: { type: 'string', description: 'Project details or message' }
+          },
+          required: ['name', 'email', 'message']
+        },
+        execute: async (args) => {
+          // Navigate to contact page with pre-filled data (if supported)
+          const params = new URLSearchParams({
+            name: args.name,
+            email: args.email,
+            phone: args.phone || '',
+            service: args.service_type || 'other',
+            message: args.message
+          });
+          
+          window.location.href = '/contact?' + params.toString();
+          return { 
+            success: true, 
+            message: 'Navigating to contact form with your information',
+            destination: '/contact'
+          };
+        }
+      }, { signal });
+
+      // Register service info tool
+      navigator.modelContext.registerTool({
+        name: 'get_service_info',
+        description: 'Get information about a specific web development service',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            service: { 
+              type: 'string', 
+              description: 'Service to get information about',
+              enum: ['wordpress', 'astro', 'laravel', 'hosting', 'pricing']
+            }
+          },
+          required: ['service']
+        },
+        execute: async (args) => {
+          const serviceInfo = {
+            wordpress: {
+              name: 'WordPress Development',
+              description: 'Custom WordPress themes and functionality for business websites',
+              features: ['Custom themes', 'Plugin development', 'E-commerce', 'Content management'],
+              url: '/services'
+            },
+            astro: {
+              name: 'AstroJS Development',
+              description: 'High-performance static sites with Astro framework',
+              features: ['Static site generation', 'Partial hydration', 'Fast performance', 'SEO optimized'],
+              url: '/services'
+            },
+            laravel: {
+              name: 'Laravel Applications',
+              description: 'Custom web applications built with Laravel PHP framework',
+              features: ['Custom applications', 'API development', 'Database design', 'Authentication'],
+              url: '/services'
+            },
+            hosting: {
+              name: 'Web Hosting',
+              description: 'Fast, reliable hosting with 99.9% uptime guarantee',
+              features: ['Daily backups', 'Security monitoring', 'SSL certificates', 'CDN included'],
+              url: '/hosting'
+            },
+            pricing: {
+              name: 'Pricing',
+              description: 'Transparent pricing for web development services',
+              starting_price: '£2,500 for small business sites',
+              economy_plan: 'From £500 for simple sites',
+              url: '/services'
+            }
+          };
+          
+          const info = serviceInfo[args.service];
+          if (info) {
+            return { success: true, info };
+          }
+          return { success: false, error: 'Unknown service: ' + args.service };
+        }
+      }, { signal });
+
+      // Register portfolio lookup tool
+      navigator.modelContext.registerTool({
+        name: 'view_portfolio',
+        description: 'View portfolio projects and case studies',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            category: { 
+              type: 'string', 
+              description: 'Project category to filter by',
+              enum: ['all', 'ecommerce', 'business', 'charity', 'wordpress', 'astro']
+            }
+          }
+        },
+        execute: async (args) => {
+          let url = '/portfolio';
+          if (args.category && args.category !== 'all') {
+            // Add category as query param (if filtering is implemented)
+            url += '?category=' + encodeURIComponent(args.category);
+          }
+          window.location.href = url;
+          return { 
+            success: true, 
+            message: 'Viewing portfolio projects',
+            category: args.category || 'all',
+            destination: url
+          };
+        }
+      }, { signal });
+
+      console.log('WebMCP tools registered successfully');
+    })();
+  </script>
 </MainLayout>

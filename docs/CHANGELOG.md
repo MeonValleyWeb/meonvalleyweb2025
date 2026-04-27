@@ -25,6 +25,10 @@ All notable changes to this project will be documented in this file.
 - Agent Skills Discovery index per RFC v0.2.0
   - `/.well-known/agent-skills/index.json` with $schema and skills array
   - Skills: request-quote, browse-services, view-portfolio (with SHA-256 digests)
+- WebMCP browser API support for agent tool exposure
+  - Register 4 tools: navigate, submit_inquiry, get_service_info, view_portfolio
+  - Each tool has name, description, inputSchema (JSON Schema), and execute callback
+  - Uses AbortController for cleanup when page unloads
 
 ## [2026-03-03] - v1.3
 
