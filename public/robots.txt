@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Content Signals - AI content usage preferences
+# https://contentsignals.org/
+# https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 # Sitemap location
 Sitemap: https://meonvalleyweb.com/sitemap-index.xml
 

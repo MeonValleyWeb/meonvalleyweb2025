@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 - Markdown content negotiation for agent requests per llmstxt.org
   - Netlify Edge Function to convert HTML to markdown when `Accept: text/markdown` header is present
   - Returns `Content-Type: text/markdown` with `x-markdown-tokens` header
+- Content Signals in robots.txt for AI content usage preferences (per IETF draft)
+  - `ai-train=no` - Do not use content for AI training
+  - `search=yes` - Allow search engine indexing
+  - `ai-input=no` - Do not use content as AI input
 
 ## [2026-03-03] - v1.3
 
