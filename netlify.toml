@@ -1,0 +1,14 @@
+# Netlify configuration for Markdown for Agents support
+# https://docs.netlify.com/edge-functions/overview/
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Edge Functions configuration
+[[edge_functions]]
+  path = "/*"
+  function = "markdown-negotiation"

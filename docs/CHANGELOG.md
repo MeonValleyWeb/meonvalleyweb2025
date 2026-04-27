@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file.
   - `Link: </services>; rel="service-doc"` - API documentation reference
   - `Link: </contact>; rel="service-desc"` - Service description reference
   - `Link: </about>; rel="describedby"` - Site description reference
+- Markdown content negotiation for agent requests per llmstxt.org
+  - Netlify Edge Function to convert HTML to markdown when `Accept: text/markdown` header is present
+  - Returns `Content-Type: text/markdown` with `x-markdown-tokens` header
 
 ## [2026-03-03] - v1.3
 
