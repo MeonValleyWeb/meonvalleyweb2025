@@ -6,3 +6,10 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Robots-Tag: all
+
+# Link headers for agent discovery (RFC 8288)
+# https://www.rfc-editor.org/rfc/rfc8288
+/
+  Link: </services>; rel="service-doc"
+  Link: </contact>; rel="service-desc"
+  Link: </about>; rel="describedby"

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-04-27] - v1.4
+
+### Added
+- Link response headers for agent discovery per RFC 8288
+  - `Link: </services>; rel="service-doc"` - API documentation reference
+  - `Link: </contact>; rel="service-desc"` - Service description reference
+  - `Link: </about>; rel="describedby"` - Site description reference
+
 ## [2026-03-03] - v1.3
 
 ### Added
