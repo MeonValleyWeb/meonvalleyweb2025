@@ -22,6 +22,9 @@ All notable changes to this project will be documented in this file.
 - MCP Server Card for agent discovery per SEP-1649
   - `/.well-known/mcp/server-card.json` with server info and capabilities
   - Documents available resources: services, about, portfolio
+- Agent Skills Discovery index per RFC v0.2.0
+  - `/.well-known/agent-skills/index.json` with $schema and skills array
+  - Skills: request-quote, browse-services, view-portfolio (with SHA-256 digests)
 
 ## [2026-03-03] - v1.3
 
