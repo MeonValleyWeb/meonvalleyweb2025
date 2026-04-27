@@ -16,6 +16,9 @@ All notable changes to this project will be documented in this file.
   - `ai-train=no` - Do not use content for AI training
   - `search=yes` - Allow search engine indexing
   - `ai-input=no` - Do not use content as AI input
+- API catalog for automated API discovery per RFC 9727
+  - `/.well-known/api-catalog` endpoint with `application/linkset+json` content type
+  - Linkset includes anchor, service-desc, service-doc, and status relations
 
 ## [2026-03-03] - v1.3
 

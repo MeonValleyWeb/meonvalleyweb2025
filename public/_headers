@@ -13,3 +13,8 @@
   Link: </services>; rel="service-doc"
   Link: </contact>; rel="service-desc"
   Link: </about>; rel="describedby"
+
+# API Catalog content type (RFC 9727)
+# https://www.rfc-editor.org/rfc/rfc9727
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
