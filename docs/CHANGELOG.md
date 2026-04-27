@@ -19,6 +19,9 @@ All notable changes to this project will be documented in this file.
 - API catalog for automated API discovery per RFC 9727
   - `/.well-known/api-catalog` endpoint with `application/linkset+json` content type
   - Linkset includes anchor, service-desc, service-doc, and status relations
+- MCP Server Card for agent discovery per SEP-1649
+  - `/.well-known/mcp/server-card.json` with server info and capabilities
+  - Documents available resources: services, about, portfolio
 
 ## [2026-03-03] - v1.3
 

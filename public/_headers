@@ -18,3 +18,8 @@
 # https://www.rfc-editor.org/rfc/rfc9727
 /.well-known/api-catalog
   Content-Type: application/linkset+json
+
+# MCP Server Card (SEP-1649)
+# https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127
+/.well-known/mcp/server-card.json
+  Content-Type: application/json
