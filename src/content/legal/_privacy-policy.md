@@ -4,10 +4,6 @@ description: "Meon Valley Web's privacy policy"
 lastUpdated: 2025-01-15
 ---
 
-# Privacy Policy
-
-**Last updated: January 2025**
-
 ## Introduction
 
 Meon Valley Web ("we", "our", or "us") is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website design, hosting, and related services.

@@ -21,12 +21,17 @@ const htmlContent = entry.body ? await marked(entry.body) : '';
 ---
 
 <MainLayout 
-  title={`${entry.data.title} - Portfolio`} 
+  title={`${entry.data.title} - Portfolio`}
   description={entry.data.description}
->
+   breadcrumbs={[
+     { name: 'Home', href: '/' },
+     { name: 'Portfolio', href: '/portfolio' },
+     { name: entry.data.title },
+   ]}
+  >
   <!-- Hero Section -->
-  <div class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
+     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <!-- Project Meta -->
         <div class="flex flex-wrap justify-center gap-2 mb-6">
@@ -68,9 +73,8 @@ const htmlContent = entry.body ? await marked(entry.body) : '';
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Project Image -->
+    </section>
+    <!-- Project Image -->
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     {entry.data.image ? (
       <div class="rounded-lg shadow-lg overflow-hidden">

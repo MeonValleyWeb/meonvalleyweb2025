@@ -38,20 +38,20 @@
       <!-- Form -->
       <form name="lead-magnet" method="POST" data-netlify="true" action="/thank-you-checklist" class="space-y-4">
         <input type="hidden" name="form-name" value="lead-magnet" />
-        <div style="display: none;">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        <div style="display: none;" aria-hidden="true">
+          <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
         </div>
         
         <div>
           <label for="leadEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-          <input 
-            type="email" 
-            id="leadEmail" 
-            name="email" 
-            required 
-            placeholder="your@email.com"
-            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
-          >
+            <input
+              id="leadEmail"
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
+            />
         </div>
         
         <div>

@@ -10,8 +10,9 @@ marked.setOptions({
 });
 
 // Read and parse the markdown file
-const termsContent = readFileSync('src/content/legal/_improved-terms.md', 'utf-8');
+const termsContent = readFileSync('src/content/legal/_terms-of-service.md', 'utf-8');
 const htmlContent = marked(termsContent);
+const termsModifiedDate = '2025-01-15';
 ---
 
 <MainLayout title="Terms of Service | Meon Valley Web" description="Our terms of service for website design, development, hosting, and maintenance services. Comprehensive coverage of our service agreements.">
@@ -28,7 +29,7 @@ const htmlContent = marked(termsContent);
         </p>
         <div class="bg-white rounded-xl p-4 shadow-lg border border-gray-200 inline-block">
           <p class="text-sm text-gray-500">
-            <strong class="text-gray-900">Last updated:</strong> January 2025
+            <strong class="text-gray-900">Last updated:</strong> {termsModifiedDate}
           </p>
         </div>
       </div>

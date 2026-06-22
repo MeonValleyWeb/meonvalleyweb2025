@@ -11,10 +11,6 @@ image: "/portfolio/sdsa.jpg"
 imageAlt: "Saints Disabled Supporters Association website homepage"
 ---
 
-# Saints Disabled Association Management System
-
-A sophisticated web-based system managing complex forms and automation workflows for the Saints Disabled Association, streamlining season ticket allocations and administrative processes.
-
 ## Project Overview
 
 The Saints Disabled Association required a comprehensive solution to manage their season ticket allocation process, which involves complex eligibility criteria, accessibility requirements, and administrative workflows.

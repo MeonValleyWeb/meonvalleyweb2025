@@ -2,12 +2,18 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { readFileSync } from 'fs';
 import { marked } from 'marked';
+import { getCollection } from 'astro:content';
 
 // Configure marked for better HTML output
 marked.setOptions({
   breaks: true,
   gfm: true
 });
+
+// Load the legal entry to get frontmatter (must happen before awaiting at top level of module script)
+const legalEntries = await getCollection('legal');
+const privacyEntry = legalEntries.find((e) => e.id === 'privacy-policy' || e.id.includes('privacy-policy'));
+const lastUpdated = privacyEntry?.data.lastUpdated || null;
 
 // Read and parse the markdown file
 const privacyContent = readFileSync('src/content/legal/_privacy-policy.md', 'utf-8');
@@ -28,7 +34,7 @@ const htmlContent = marked(privacyContent);
         </p>
         <div class="bg-white rounded-xl p-4 shadow-lg border border-gray-200 inline-block">
           <p class="text-sm text-gray-500">
-            <strong class="text-gray-900">Last updated:</strong> January 2025
+            <strong class="text-gray-900">Last updated:</strong> {lastUpdated ? new Date(lastUpdated).toLocaleDateString('en-GB', { year: 'numeric', month: 'long' }) : 'January 2025'}
           </p>
         </div>
       </div>

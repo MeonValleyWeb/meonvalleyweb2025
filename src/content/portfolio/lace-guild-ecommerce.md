@@ -11,9 +11,7 @@ image: "/portfolio/thelaceguild.jpg"
 imageAlt: "The Lace Guild website homepage showing lace-making heritage"
 ---
 
-# The Lace Guild Ecommerce Modernization
 
-A comprehensive modernization project for The Lace Guild, transforming their established ecommerce platform and museum website to serve their community better in the digital age.
 
 ## Project Overview
 

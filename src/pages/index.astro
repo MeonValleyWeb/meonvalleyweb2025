@@ -586,18 +586,20 @@ import TrustSignals from '../components/TrustSignals.astro';
         
         <form name="lead-magnet-inline" method="POST" data-netlify="true" action="/thank-you-checklist" class="max-w-lg mx-auto">
           <input type="hidden" name="form-name" value="lead-magnet-inline" />
-          <div style="display: none;">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          <div style="display: none;" aria-hidden="true">
+            <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
           </div>
           
           <div class="flex flex-col sm:flex-row gap-4">
-            <input 
-              type="email" 
-              name="email" 
-              required 
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
               placeholder="Enter your email"
+              aria-label="Enter your email address"
               class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
-            >
+            />
             <button type="submit" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold whitespace-nowrap flex items-center justify-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>

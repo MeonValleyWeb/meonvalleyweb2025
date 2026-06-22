@@ -12,9 +12,7 @@ image: "/portfolio/climatedataexplorer.jpg"
 imageAlt: "Climate Data Explorer showing global temperature analysis dashboard"
 ---
 
-# Global Temperature Monitoring System
 
-An ambitious AstroJS experiment that imports and analyzes 2.5 million temperature records, providing detailed climate monitoring capabilities segmented by city, country, and region.
 
 ## Project Overview
 

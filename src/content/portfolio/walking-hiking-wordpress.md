@@ -11,10 +11,6 @@ image: "/portfolio/twodogsananawning.jpg"
 imageAlt: "Two Dogs and an Awning walking website homepage"
 ---
 
-# Walking & Hiking WordPress Site
-
-A comprehensive WordPress site featuring over 900 documented walks, created for a dedicated individual raising money for the Trussell Trust.
-
 ## Project Overview
 
 This project showcases the power of WordPress as a content management system for large-scale content organization. The site serves as both a resource for hiking enthusiasts and a platform for charitable fundraising.

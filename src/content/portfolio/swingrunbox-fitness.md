@@ -12,9 +12,7 @@ image: "/portfolio/wynfit.jpg"
 imageAlt: "WynFit SwingRunBox fitness website homepage"
 ---
 
-# SwingRunBox Fitness Site
 
-A modern, high-performance fitness website built with AstroJS, showcasing the innovative SwingRunBox routine. Delivered in just 7 days to meet a critical launch deadline.
 
 ## Project Overview
 

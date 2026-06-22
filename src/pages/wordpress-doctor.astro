@@ -1,23 +1,62 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const pageTitle = 'WordPress Doctor Hampshire | Fast Fixes & Care | Meon Valley Web';
+const description =
+  'Hampshire WordPress Doctor for hacked sites, slow performance, broken updates, errors and downtime. Diagnosis, repair and optional ongoing maintenance plans.';
+
+const fixes = [
+  { title: 'Hacked sites', desc: 'Malware removal, blacklist checks, and hardening to keep your site clean and secure.' },
+  { title: 'Slow performance', desc: 'Speed audits, caching, and Core Web Vitals improvements for faster load times.' },
+  { title: 'Broken updates', desc: 'Plugin/theme conflicts, safe rollbacks, and update fixes without breaking your site.' },
+  { title: 'Errors & downtime', desc: 'White screen of death, 500 errors, or crashes resolved quickly and safely.' },
+  { title: 'Security issues', desc: 'Vulnerability patching, login protection, firewall setup, and spam prevention.' },
+  { title: 'Care plans', desc: 'Optional monthly care: updates, monitoring, backups, and priority support.' },
+];
+
+const steps = [
+  { num: '1', title: 'Diagnose', desc: 'We assess the issue and provide a clear action plan.' },
+  { num: '2', title: 'Repair', desc: 'We fix the root cause and verify stability.' },
+  { num: '3', title: 'Protect', desc: 'Optional ongoing care to keep things stable.' },
+];
+
+const faqs = [
+  { q: 'How quickly can you start?', a: 'Most fixes can begin within 24–48 hours, depending on severity.' },
+  { q: 'Do you fix hacked sites?', a: 'Yes. We clean, secure, and harden the site to prevent repeat incidents.' },
+  { q: 'Is it one-off or ongoing?', a: 'Both. You can book a one-time repair or choose a maintenance plan.' },
+  { q: 'Do you support WooCommerce?', a: 'Yes. We routinely fix and optimise WooCommerce sites.' },
+];
 ---
 
-<MainLayout title="WordPress Doctor Hampshire | Meon Valley Web" description="WordPress fixes, security, and maintenance for Hampshire and South Coast businesses.">
-  <!-- Hero Section -->
+<MainLayout
+  title={pageTitle}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'WordPress Doctor' },
+  ]}
+
+>
+  <!-- Hero -->
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-        WordPress Doctor in <span class="text-primary-500">Hampshire</span> for fast fixes and ongoing care
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        WordPress Doctor in <span class="text-primary-500">Hampshire</span>
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Diagnose, repair, and optimise your WordPress site with a senior specialist. 
-        Perfect for businesses that need reliable fixes and peace of mind.
+        Diagnose, repair, and optimise your WordPress site with a senior specialist. Perfect for businesses that need reliable fixes and peace of mind.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#booking-form" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
+        <a
+          href="#booking-form"
+          class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        >
           Request a WordPress fix
         </a>
-        <a href="#what-we-fix" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+        <a
+          href="#what-we-fix"
+          class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        >
           See what we fix
         </a>
       </div>
@@ -28,88 +67,86 @@ import MainLayout from '../layouts/MainLayout.astro';
   <section id="what-we-fix" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">What we fix</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">From urgent repairs to performance clean‑ups.</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">What we fix</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">From urgent repairs to performance clean-ups.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Hacked sites</h3>
-          <p class="text-gray-600">Malware removal, blacklist checks, and hardening to keep your site clean and secure.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Slow performance</h3>
-          <p class="text-gray-600">Speed audits, caching, and Core Web Vitals improvements for faster load times.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Broken updates</h3>
-          <p class="text-gray-600">Plugin/theme conflicts, safe rollbacks, and update fixes without breaking your site.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Errors & downtime</h3>
-          <p class="text-gray-600">White screen of death, 500 errors, or crashes resolved quickly and safely.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Security issues</h3>
-          <p class="text-gray-600">Vulnerability patching, login protection, firewall setup, and spam prevention.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Care plans</h3>
-          <p class="text-gray-600">Optional monthly care: updates, monitoring, backups, and priority support.</p>
-        </div>
+        {fixes.map((item) => (
+          <article class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-gray-50" aria-label="How WordPress Doctor works">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">How it works</h2>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">How it works</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">1) Diagnose</h3>
-          <p class="text-gray-600">We assess the issue and provide a clear action plan.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">2) Repair</h3>
-          <p class="text-gray-600">We fix the root cause and verify stability.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <h3 class="text-xl font-bold text-gray-900 mb-3">3) Protect</h3>
-          <p class="text-gray-600">Optional ongoing care to keep things stable.</p>
-        </div>
+        {steps.map((item) => (
+          <article class="bg-white rounded-xl p-8 shadow-lg">
+            <span class="text-4xl font-bold text-primary-500">{item.num})</span>
+            <h3 class="text-xl font-bold text-gray-900 mt-4 mb-3">{item.title}</h3>
+            <p class="text-gray-600">{item.desc}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section id="booking-form" class="py-20 bg-white">
+  <!-- Booking Form -->
+  <section id="booking-form" class="py-20 bg-white" aria-label="Request a WordPress fix">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-bold text-gray-900 mb-3">Request a WordPress Fix</h2>
-        <p class="text-gray-600">Tell us what’s wrong and request a 30‑minute call. We’ll confirm by email.</p>
+        <p class="text-gray-600">Tell us what’s wrong and request a 30-minute call. We’ll confirm by email.</p>
       </div>
+
       <form name="wordpress-doctor" method="POST" action="/thank-you" data-netlify="true" class="space-y-4">
         <input type="hidden" name="form-name" value="wordpress-doctor" />
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <input name="name" type="text" placeholder="Your name" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
-          <input name="email" type="email" placeholder="Your email" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
-          <input
-            name="phone"
-            type="tel"
-            inputmode="tel"
-            autocomplete="tel"
-            placeholder="Your mobile"
-            pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,4}[-\s\.]?[0-9]{1,9}$"
-            title="Please enter a valid mobile number (e.g., +44 7123 456789 or 07123 456789)"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3"
-            required
-          />
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your name</label>
+            <input id="name" name="name" type="text" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your email</label>
+            <input id="email" name="email" type="email" class="w-full border border-gray-300 rounded-lg px-4 py-3" required />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Your mobile</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,4}[-\s\.]?[0-9]{1,9}$"
+              title="Please enter a valid mobile number (e.g., +44 7123 456789 or 07123 456789)"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3"
+              required
+            />
+          </div>
         </div>
-        <input name="website" type="url" placeholder="Website URL" class="w-full border border-gray-300 rounded-lg px-4 py-3" />
-        <textarea name="issue" rows="4" placeholder="Describe the issue" class="w-full border border-gray-300 rounded-lg px-4 py-3" required></textarea>
+
+        <div>
+          <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Website URL</label>
+          <input id="website" name="website" type="url" class="w-full border border-gray-300 rounded-lg px-4 py-3" />
+        </div>
+
+        <div>
+          <label for="issue" class="block text-sm font-medium text-gray-700 mb-1">Describe the issue</label>
+          <textarea id="issue" name="issue" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3" required></textarea>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm text-gray-600 mb-1" for="preferred_date">Preferred date</label>
@@ -120,60 +157,65 @@ import MainLayout from '../layouts/MainLayout.astro';
             <label class="block text-sm text-gray-600 mb-1" for="preferred_time">Preferred time</label>
             <select id="preferred_time" name="preferred_time" class="w-full border border-gray-300 rounded-lg px-4 py-3" required>
               <option value="">Select a time</option>
+              <option>09:00 - 12:00</option>
+              <option>12:00 - 14:00</option>
+              <option>14:00 - 17:00</option>
             </select>
           </div>
         </div>
-        <select name="urgency" class="w-full border border-gray-300 rounded-lg px-4 py-3">
-          <option value="">Urgency</option>
-          <option>Urgent (site down)</option>
-          <option>Soon (errors / slow)</option>
-          <option>Not urgent (general support)</option>
-        </select>
+
+        <div>
+          <label for="urgency" class="block text-sm font-medium text-gray-700 mb-1">Urgency</label>
+          <select id="urgency" name="urgency" class="w-full border border-gray-300 rounded-lg px-4 py-3">
+            <option value="">Select urgency</option>
+            <option>Urgent (site down)</option>
+            <option>Soon (errors / slow)</option>
+            <option>Not urgent (general support)</option>
+          </select>
+        </div>
+
         <div class="flex flex-col sm:flex-row gap-4">
-          <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800">Send request</button>
+          <button
+            type="submit"
+            class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-primary-500"
+          >
+            Send request
+          </button>
         </div>
       </form>
     </div>
   </section>
 
-  <section class="py-12 bg-white">
+  <!-- Hosting plug -->
+  <section class="py-12 bg-white" aria-label="Managed hosting alternative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-primary-50 border border-primary-100 rounded-xl p-6 md:p-8 text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Want a fully managed setup?</h3>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">Want a fully managed setup?</h2>
         <p class="text-gray-700 mb-4">
-          If you prefer hands‑off hosting and maintenance, explore our managed WordPress hosting plans.
+          If you prefer hands-off hosting and maintenance, explore our managed WordPress hosting plans.
         </p>
-        <a href="/hosting" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+        <a href="/hosting" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm">
           See hosting plans →
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-20 bg-white">
+  <!-- FAQ -->
+  <section class="py-20 bg-white" aria-label="Frequently asked questions">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">WordPress Doctor FAQs</h2>
-        <p class="text-xl text-gray-600">Quick answers before you book a check‑up.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">WordPress Doctor FAQs</h2>
+        <p class="text-xl text-gray-600">Quick answers before you book a check-up.</p>
       </div>
+
       <div class="space-y-6">
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">How quickly can you start?</h3>
-          <p class="text-gray-700">Most fixes can begin within 24–48 hours, depending on severity.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you fix hacked sites?</h3>
-          <p class="text-gray-700">Yes. We clean, secure, and harden the site to prevent repeat incidents.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Is it one‑off or ongoing?</h3>
-          <p class="text-gray-700">Both. You can book a one‑time repair or choose a maintenance plan.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you support WooCommerce?</h3>
-          <p class="text-gray-700">Yes. We routinely fix and optimise WooCommerce sites.</p>
-        </div>
+        {faqs.map((item) => (
+          <article class="bg-gray-50 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{item.q}</h3>
+            <p class="text-gray-700">{item.a}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -181,59 +223,17 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- CTA -->
   <section class="py-20 bg-primary-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Need help right now?</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Need help right now?</h2>
       <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-        Book a quick check‑up and we’ll advise the fastest path to resolution.
+        Urgent issue or ongoing concern? Get in touch and we’ll respond during the next business day.
       </p>
-      <a href="#booking-form" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-        Request a WordPress fix
+      <a
+        href="/contact"
+        class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-500"
+      >
+        Contact us
       </a>
     </div>
   </section>
 
-  <script>
-    (function () {
-      const dateInput = document.getElementById('preferred_date');
-      const timeSelect = document.getElementById('preferred_time');
-      if (!dateInput || !timeSelect) return;
-
-      const times = ['09:00','09:30','10:00','10:30','11:00','11:30'];
-      const allowedDays = new Set([1, 2, 5]); // Mon, Tue, Fri
-
-      const today = new Date();
-      const max = new Date();
-      max.setDate(today.getDate() + 13);
-
-      const toISO = (d) => d.toISOString().split('T')[0];
-      dateInput.min = toISO(today);
-      dateInput.max = toISO(max);
-
-      const clearTimes = () => {
-        timeSelect.innerHTML = '<option value="">Select a time</option>';
-      };
-
-      const populateTimes = () => {
-        clearTimes();
-        const selectedDate = new Date(dateInput.value);
-        if (isNaN(selectedDate.getTime())) return;
-
-        if (!allowedDays.has(selectedDate.getDay())) {
-          const opt = document.createElement('option');
-          opt.value = '';
-          opt.textContent = 'Not available on this day';
-          timeSelect.appendChild(opt);
-          return;
-        }
-
-        times.forEach((time) => {
-          const opt = document.createElement('option');
-          opt.value = time;
-          opt.textContent = time;
-          timeSelect.appendChild(opt);
-        });
-      };
-
-      dateInput.addEventListener('change', populateTimes);
-    })();
-  </script>
 </MainLayout>

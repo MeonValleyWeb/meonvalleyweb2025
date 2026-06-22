@@ -23,8 +23,8 @@ import MainLayout from '../layouts/MainLayout.astro';
           <form name="contact" method="POST" data-netlify="true" action="/thank-you" class="space-y-6">
             <input type="hidden" name="form-name" value="contact" />
             <!-- Honeypot field for spam protection -->
-            <div style="display: none;">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            <div style="display: none;" aria-hidden="true">
+              <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
