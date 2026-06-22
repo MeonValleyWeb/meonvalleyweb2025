@@ -8,7 +8,7 @@ status: "Experimental"
 featured: true
 order: 5
 dataScale: "2.5M records"
-image: "/portfolio/climatedataexplorer.jpg"
+image: "/portfolio/climatedataexplorer.webp"
 imageAlt: "Climate Data Explorer showing global temperature analysis dashboard"
 ---
 

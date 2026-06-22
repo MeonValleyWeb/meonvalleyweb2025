@@ -5,7 +5,7 @@ date: 2026-02-10
 author: "Meon Valley Web"
 category: "Performance"
 featured: true
-image: "/portfolio/wessexwhiskyclub.jpg"
+image: "/portfolio/wessexwhiskyclub.webp"
 imageAlt: "Performance metrics dashboard"
 tags: ["performance", "conversion", "seo"]
 ---

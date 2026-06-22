@@ -8,7 +8,7 @@ status: "Live"
 featured: true
 order: 2
 timeline: "7 days"
-image: "/portfolio/wynfit.jpg"
+image: "/portfolio/wynfit.webp"
 imageAlt: "WynFit SwingRunBox fitness website homepage"
 ---
 

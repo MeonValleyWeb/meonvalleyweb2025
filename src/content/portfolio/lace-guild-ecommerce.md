@@ -7,7 +7,7 @@ client: "The Lace Guild"
 status: "In Development"
 featured: true
 order: 3
-image: "/portfolio/thelaceguild.jpg"
+image: "/portfolio/thelaceguild.webp"
 imageAlt: "The Lace Guild website homepage showing lace-making heritage"
 ---
 

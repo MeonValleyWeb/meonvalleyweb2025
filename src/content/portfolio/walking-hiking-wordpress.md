@@ -7,7 +7,7 @@ client: "Two Dogs and an Awning"
 status: "Live"
 featured: true
 order: 1
-image: "/portfolio/twodogsananawning.jpg"
+image: "/portfolio/twodogsananawning.webp"
 imageAlt: "Two Dogs and an Awning walking website homepage"
 ---
 

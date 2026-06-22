@@ -7,7 +7,7 @@ client: "Wessex Whisky"
 status: "Live"
 featured: true
 order: 6
-image: "/portfolio/wessexwhiskyclub.jpg"
+image: "/portfolio/wessexwhiskyclub.webp"
 imageAlt: "Wessex Whisky club website homepage showcasing premium tastings for charity"
 ---
 

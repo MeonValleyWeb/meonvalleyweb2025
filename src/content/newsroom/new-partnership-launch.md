@@ -5,7 +5,7 @@ date: 2026-02-20
 author: "Meon Valley Web"
 category: "Partnerships"
 featured: true
-image: "/portfolio/sdsa.jpg"
+image: "/portfolio/sdsa.webp"
 imageAlt: "Charity website preview"
 tags: ["charity", "partnership", "community"]
 ---

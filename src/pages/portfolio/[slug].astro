@@ -82,6 +82,8 @@ const htmlContent = entry.body ? await marked(entry.body) : '';
           src={entry.data.image} 
           alt={entry.data.imageAlt || entry.data.title}
           class="w-full h-auto object-contain"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     ) : (
