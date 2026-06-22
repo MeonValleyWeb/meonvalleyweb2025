@@ -1,0 +1,50 @@
+---
+import { business } from '../data/site.ts';
+
+export interface Props {
+  items: Array<{ name: string; href?: string }>;
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.href ? new URL(item.href, business.url).toString() : undefined,
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="bg-gray-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+      {
+        items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          return (
+            <li class="flex items-center gap-2">
+              {index > 0 && (
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              )}
+              {isLast || !item.href ? (
+                <span class="font-medium text-gray-900" aria-current="page">{item.name}</span>
+              ) : (
+                <a href={item.href} class="hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-500">
+                  {item.name}
+                </a>
+              )}
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

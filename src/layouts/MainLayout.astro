@@ -2,47 +2,91 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { business } from '../data/site.ts';
 
 export interface Props {
   title: string;
   description?: string;
+  breadcrumbs?: Array<{ name: string; href?: string }>;
 }
 
-const { title, description = "Professional web development and hosting services for small to mid-size companies." } = Astro.props;
+const { title, description = business.description, breadcrumbs } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL('/meon-valley-web-logo.svg', Astro.site).toString();
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: business.name,
+  url: business.url,
+  logo: ogImage,
+  telephone: business.phone,
+  email: business.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: business.address.locality,
+    addressRegion: business.address.region,
+    addressCountry: business.address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: business.geo.latitude,
+    longitude: business.geo.longitude,
+  },
+  openingHoursSpecification: [
     {
-      "@type": "LocalBusiness",
-      "name": "Meon Valley Web",
-      "url": "https://meonvalleyweb.com",
-      "logo": ogImage,
-      "areaServed": ["Hampshire", "South Coast", "United Kingdom"],
-      "description": "Web design, WordPress hosting, and maintenance for small businesses."
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
     },
-    {
-      "@type": "Service",
-      "serviceType": "Managed WordPress Hosting",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Meon Valley Web",
-        "url": "https://meonvalleyweb.com"
+  ],
+  priceRange: business.priceRange,
+  areaServed: ['Hampshire', 'South Coast', 'United Kingdom'],
+  description: business.description,
+};
+
+const serviceSchemas = [
+  'Managed WordPress Hosting',
+  'WordPress Support & Maintenance',
+  'Web Design & Development',
+].map((serviceType) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: business.name,
+    url: business.url,
+  },
+  areaServed: ['Hampshire', 'South Coast', 'United Kingdom'],
+}));
+
+const websiteSchema = Astro.url.pathname === '/'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: business.name,
+      url: business.url,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${business.url}/blog/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
       },
-      "areaServed": ["Hampshire", "South Coast", "United Kingdom"]
-    },
-    {
-      "@type": "Service",
-      "serviceType": "WordPress Support & Maintenance",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Meon Valley Web",
-        "url": "https://meonvalleyweb.com"
-      },
-      "areaServed": ["Hampshire", "South Coast", "United Kingdom"]
     }
-  ]
+  : null;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    localBusinessSchema,
+    ...serviceSchemas,
+    ...(websiteSchema ? [websiteSchema] : []),
+  ],
 };
 ---
 
@@ -57,7 +101,7 @@ const jsonLd = {
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Meon Valley Web" />
+    <meta property="og:site_name" content={business.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
@@ -68,9 +112,7 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <script type="application/ld+json">
-      {JSON.stringify(jsonLd)}
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,6 +159,9 @@ const jsonLd = {
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <Header />
+
+    {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
+
     <main id="main-content">
       <slot />
     </main>
