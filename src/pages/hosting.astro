@@ -1,418 +1,234 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { hosting, plans, business } from '../data/site.ts';
+
+const pageTitle = 'WordPress Hosting Hampshire | Fast Managed Hosting | Meon Valley Web';
+const description =
+  'Managed WordPress hosting for Hampshire businesses from £25/month. Daily backups, Cloudflare DNS & CDN, free SSL, UK business-hours support. Migration to Cloudflare included with premium hosting.';
+
+const faqs = [
+  {
+    q: 'Where are my website files and data stored?',
+    a: 'We host WordPress sites on premium cloud VPS servers in DigitalOcean or Hetzner data centres, with Cloudflare handling DNS, CDN and security rules. Off-site backups are stored securely in S3.',
+  },
+  {
+    q: 'What does the £200 migration include?',
+    a: 'The £200 migration fee covers moving your WordPress files and database, configuring DNS on Cloudflare, transferring email/DNS records, setting up SSL, and post-launch testing.',
+  },
+  {
+    q: 'How often are backups taken?',
+    a: 'Backups run daily and are retained for 30 days. WordPress sites are backed up off-site to S3; sites on dedicated servers also receive platform snapshots.',
+  },
+  {
+    q: 'When can I get support?',
+    a: 'Standard support is UK business hours, Monday to Friday, 9am–5pm. Premium plan customers receive enhanced 24/7 support cover.',
+  },
+  {
+    q: 'Can you host Astro or static sites too?',
+    a: 'Yes. Astro and static sites are deployed to Cloudflare Workers, Netlify or Vercel — whichever best suits your project — with the same Cloudflare DNS, backup and performance backing.',
+  },
+  {
+    q: 'Are there any data or bandwidth limits?',
+    a: hosting.limits,
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
-<MainLayout title="WordPress Hosting Hampshire | Meon Valley Web" description="Managed WordPress hosting for Hampshire and South Coast businesses — fast, secure, and fully supported.">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Managed WordPress hosting for <span class="text-primary-500">Hampshire</span> small businesses
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Fast, secure hosting with 99.9% uptime, daily backups, and real support. 
-          Built for Hampshire and South Coast businesses that want peace of mind.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
-            Book a 15‑minute call
-          </a>
-          <a href="#plans" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-            See plans & pricing
-          </a>
-        </div>
-      </div>
+<MainLayout
+  title={pageTitle}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Hosting' },
+  ]}
 
-      <!-- Key Features -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Lightning Fast</h3>
-          <p class="text-gray-600 text-sm">Optimized servers for maximum speed</p>
-        </div>
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
 
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">99.9% Uptime</h3>
-          <p class="text-gray-600 text-sm">Guaranteed reliability</p>
-        </div>
-
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Secure</h3>
-          <p class="text-gray-600 text-sm">Daily backups & monitoring</p>
-        </div>
-
-        <div class="text-center">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">24/7 Support</h3>
-          <p class="text-gray-600 text-sm">Always here when you need us</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hosting Plans -->
-  <section id="plans" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Simple, Transparent Pricing
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Choose the perfect hosting solution for your business needs.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Wayfarer Hosting Only -->
-        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Wayfarer</h3>
-            <p class="text-sm text-gray-500 mb-4">Hosting Only</p>
-            <div class="mb-4">
-              <span class="text-5xl font-bold text-gray-900">£30</span>
-              <span class="text-gray-600 ml-2">/ monthly</span>
-            </div>
-          </div>
-
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Premium Storage</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Unlimited Bandwidth</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Free SSL Certificate</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Daily Automated Backups</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Email Support</span>
-            </li>
-          </ul>
-
-          <a href="/contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center block">
-            Get Hosting Only
-          </a>
-        </div>
-
-        <!-- Shipwright Hosting & Maintenance -->
-        <div class="bg-white rounded-2xl shadow-xl border-2 border-primary-500 p-8 relative">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">Most Popular</span>
-          </div>
-          
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Shipwright</h3>
-            <p class="text-sm text-gray-500 mb-4">Hosting & Maintenance</p>
-            <div class="mb-4">
-              <span class="text-5xl font-bold text-gray-900">£75</span>
-              <span class="text-gray-600 ml-2">/ monthly</span>
-            </div>
-          </div>
-
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">All Wayfarer features +</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Plugin Checks & Updates</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Basic Security Monitoring</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">WordPress Core Updates</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Priority Email Support</span>
-            </li>
-          </ul>
-
-          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
-            Get Hosting & Maintenance
-          </a>
-        </div>
-
-        <!-- Monarch Premium -->
-        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Monarch</h3>
-            <p class="text-sm text-gray-500 mb-4">Premium Hosting & Maintenance</p>
-            <div class="mb-4">
-              <span class="text-5xl font-bold text-gray-900">£100</span>
-              <span class="text-gray-600 ml-2">/ monthly</span>
-            </div>
-          </div>
-
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">All Shipwright features +</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Advanced Security Setup [Bedrock]</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Staging Environment</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">CDN Integration</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Performance Monitoring</span>
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700">Priority Support</span>
-            </li>
-          </ul>
-
-          <a href="/contact" class="w-full bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-center block">
-            Get Premium Plan
-          </a>
-        </div>
-      </div>
-
-      <!-- Setup Included -->
-      <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-4xl mx-auto mt-16">
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Setup included</h3>
-        <p class="text-gray-600">
-          WordPress migration, DNS configuration, security hardening, and performance optimisation are included with every plan.
-        </p>
-        <p class="text-gray-600 mt-3">
-          <strong>Migration assistance is a one‑off £250 (required).</strong>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-12 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-primary-50 border border-primary-100 rounded-xl p-6 md:p-8 text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Need WordPress fixes or maintenance?</h3>
-        <p class="text-gray-700 mb-4">
-          If your site is slow, broken, or hacked, our WordPress Doctor service gets you back online fast.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/wordpress-doctor" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-            Visit WordPress Doctor →
-          </a>
-          <a href="/wordpress-doctor#booking-form" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-            Request a fix →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Why choose our hosting?
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We're part of the Webmaster Backup Alliance and follow industry best practices 
-          to keep your website secure, fast, and always available.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Security First</h3>
-          <p class="text-gray-600">
-            Regular security updates, malware scanning, and firewall protection. 
-            Part of the Webmaster Backup Alliance for extra peace of mind.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Daily Backups</h3>
-          <p class="text-gray-600">
-            Automated daily backups stored securely off-site. Quick restoration 
-            available if anything goes wrong.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Optimized</h3>
-          <p class="text-gray-600">
-            SSD storage, CDN integration, and server-level caching for 
-            lightning-fast loading times.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">99.9% Uptime</h3>
-          <p class="text-gray-600">
-            Guaranteed uptime with redundant systems and proactive monitoring. 
-            Your website stays online when your customers need it.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Expert Support</h3>
-          <p class="text-gray-600">
-            Real people who understand web hosting. Quick response times 
-            and knowledgeable assistance when you need it.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="bg-primary-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">No Hidden Costs</h3>
-          <p class="text-gray-600">
-            Transparent pricing with no surprise fees. What you see is what you pay, 
-            with all essential features included.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Hosting FAQs</h2>
-        <p class="text-xl text-gray-600">Quick answers for Hampshire and South Coast businesses.</p>
-      </div>
-      <div class="space-y-6">
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Can you migrate my WordPress site?</h3>
-          <p class="text-gray-700">Yes. We handle migration, DNS, and performance tuning. Migration assistance is a required one‑off £250.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you support WooCommerce?</h3>
-          <p class="text-gray-700">Absolutely. We optimise WooCommerce sites for speed and stability.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my site is hacked or broken?</h3>
-          <p class="text-gray-700">We can repair and secure it quickly via our WordPress Doctor service.</p>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Do I get support?</h3>
-          <p class="text-gray-700">Yes. All plans include support, with priority response on higher tiers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-primary-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Ready to get started?
-      </h2>
-      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-        Choose the hosting plan that's right for your business. 
-        All plans come with a 30-day money-back guarantee.
+  <!-- Hero -->
+  <Section ariaLabel="Hosting hero" padding="xl" class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50">
+    <Container class="text-center max-w-4xl">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
+        {hosting.headline}
+      </h1>
+      <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+        {hosting.summary}
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-          Get Started Today
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary-500 text-white font-semibold text-lg hover:bg-primary-600 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        >
+          Book a call
         </a>
-        <a href="/contact" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-semibold text-lg">
-          Ask Questions
+        <a
+          href="#plans"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-600 font-semibold text-lg hover:bg-primary-50 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        >
+          See plans
         </a>
       </div>
-    </div>
-  </section>
+    </Container>
+  </Section>
+
+  <!-- Plans -->
+  <Section id="plans" ariaLabel="Hosting plans" class="bg-white">
+    <Container>
+      <SectionHeading
+        title="Simple, transparent hosting"
+        description="No setup fees. No hidden charges. Cancel anytime."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {plans.map((plan) => (
+          <PricingCard
+            id={plan.id}
+            name={plan.name}
+            tagline={plan.tagline}
+            price={plan.price}
+            features={plan.features}
+            isPopular={plan.isPopular}
+            href="/contact"
+            ctaLabel={
+              plan.id === 'starter'
+                ? 'Get hosting only'
+                : plan.id === 'professional'
+                  ? 'Get hosting & maintenance'
+                  : 'Get premium hosting'
+            }
+          />
+        ))}
+      </div>
+
+      <p class="mt-8 text-center text-sm text-gray-500">
+        * Small content edits on request as part of the maintenance plan, subject to fair use.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- What's included on every plan -->
+  <Section ariaLabel="Platform features" class="bg-gray-50">
+    <Container>
+      <SectionHeading
+        title="What you get on every plan"
+        description="Every hosting package is built on the same dependable infrastructure."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {hosting.infrastructure.map((feature, i) => (
+          <div class="flex items-start gap-4 p-4">
+            <span class="mt-1 text-primary-500">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <p class="text-gray-700 leading-relaxed">{feature}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Backup and support -->
+  <Section ariaLabel="Backups and support" class="bg-white">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <FeatureCard
+          icon="lock"
+          title={hosting.backups.cadence}
+          description={`${hosting.backups.retention} retention. ${hosting.backups.storage}. Restores can be arranged during business hours.`}
+        />
+        <FeatureCard
+          icon="support"
+          title="UK business-hours support"
+          description={`${hosting.support.hours}. ${hosting.support.premiumHours}. Response by email during standard hours.`}
+        />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Migration -->
+  <Section ariaLabel="Migration" class="bg-primary-50">
+    <Container class="text-center max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Stress-free migration for £{hosting.migration.price}
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8">
+        {hosting.migration.description}
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+      >
+        Start your migration
+      </a>
+    </Container>
+  </Section>
+
+  <!-- Astro hosting note -->
+  <Section ariaLabel="Astro static site hosting" class="bg-white">
+    <Container class="text-center max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Static & Astro site hosting</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        {hosting.astroHosting.summary}
+      </p>
+    </Container>
+  </Section>
+
+  <!-- FAQ -->
+  <Section ariaLabel="Frequently asked questions" class="bg-gray-50">
+    <Container class="max-w-3xl">
+      <SectionHeading title="Frequently asked questions" align="center" />
+
+      <div class="space-y-6">
+        {faqs.map((item, idx) => (
+          <details
+            class="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 open:ring-1 open:ring-primary-200"
+            open={idx === 0}
+          >
+            <summary class="cursor-pointer font-semibold text-gray-900 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm">
+              {item.q}
+              <span class="text-primary-500 group-open:rotate-180 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <CtaBanner
+    title="Ready for faster, more reliable hosting?"
+    description="Book a free 15-minute call and we’ll review your current setup and recommend the right plan."
+    href="/contact"
+    buttonText="Book a call"
+  />
+
 </MainLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
