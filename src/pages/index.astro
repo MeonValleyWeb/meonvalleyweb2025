@@ -1,139 +1,278 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
 import { locations } from '../data/site.ts';
-import dashboardImg from '../assets/dashboard.jpg';
-import halGatewoodXzzg from '../assets/hal-gatewood-xzzgY__zX8A-unsplash.jpg';
-import halGatewoodTZc3 from '../assets/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg';
-import halGatewoodWeRQ from '../assets/hal-gatewood-weRQAu9TA-A-unsplash.jpg';
-import halGatewoodSVbF from '../assets/hal-gatewood-SVbFzF_8eGU-unsplash.jpg';
-import astroLogo from '../assets/astro.png';
-import netlifyLogo from '../assets/Netlify_logo.svg.png';
-import laravelLogo from '../assets/laravel.png';
-import twodogsImg from '../assets/twodogs.png';
 import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import TechStrip from '../components/TechStrip.astro';
 ---
 
 <MainLayout 
-  title="Professional Web Development & Hosting | Meon Valley Web"
-  description="Web design, WordPress hosting and maintenance for Hampshire small businesses. Transparent pricing, daily backups and UK support."
+  title="Web Design Hampshire | Meon Valley Web"
+  description="Web development and hosting for Hampshire small businesses. Request a free site audit, book a call, and start improving your website today."
 >
-  <!-- Hero Section -->
-  <section class="py-20 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 relative overflow-hidden">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0 z-0">
+  <!-- Hero: conversion-first -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16 lg:py-24" aria-label="Introduction">
+    <div class="absolute inset-0 -z-10">
       <div class="absolute top-20 right-20 w-72 h-72 bg-primary-100 rounded-full opacity-40 blur-3xl"></div>
       <div class="absolute bottom-20 left-20 w-96 h-96 bg-primary-50 rounded-full opacity-30 blur-3xl"></div>
     </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-        <!-- Left Content -->
-        <div class="col-span-full lg:col-span-6 max-w-xl lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left" id="hero-content">
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-black mb-8 leading-[1.1] tracking-tight">
-            Professional web development guides your <span class="text-primary-500">business growth</span>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 leading-[1.1] tracking-tight">
+            Web development and hosting that grows your <span class="text-primary-500">Hampshire business</span>
           </h1>
-          <p class="text-xl text-gray-600 mb-12 leading-relaxed">
-            Meon Valley Web is the fit-for-purpose solution for building modern, fast, and scalable websites for small to mid-size companies.
+          <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
+            Modern, fast websites and reliable WordPress hosting for small businesses across Hampshire and the South Coast. Clear pricing, local support, and no jargon.
           </p>
-          
-          <!-- Feature Grid - 2x2 Layout -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div>
-              <p class="text-lg font-bold text-black mb-2">Modern Development</p>
-              <p class="text-gray-600 text-sm">WordPress, headless WordPress with Astro, or full AstroJS solutions.</p>
-            </div>
-            
-            <div>
-              <p class="text-lg font-bold text-black mb-2">Fast Hosting</p>
-              <p class="text-gray-600 text-sm">Lightning-fast hosting with 99.9% uptime guarantee and daily backups.</p>
-            </div>
-            
-            <div>
-              <p class="text-lg font-bold text-black mb-2">Local Support</p>
-              <p class="text-gray-600 text-sm">Personal service with professional results, based in the Meon Valley.</p>
-            </div>
-            
-            <div>
-              <p class="text-lg font-bold text-black mb-2">Transparent Pricing</p>
-              <p class="text-gray-600 text-sm">No hidden costs or surprise fees. Clear pricing from the start.</p>
-            </div>
-          </div>
-          
+
+          <ul class="space-y-3 mb-10 text-gray-700">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Free site audit video — see what’s costing you leads
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Most websites from £2,500; hosting from £25/month
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              WordPress support, security updates and daily backups
+            </li>
+          </ul>
+
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-              Get started
+            <a href="/contact?subject=Free+site+audit" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
+              Request a free site audit
             </a>
             <a href="/services" class="text-primary-500 hover:text-primary-600 px-8 py-4 rounded-lg font-medium text-lg inline-flex items-center justify-center underline">
               View services
             </a>
           </div>
         </div>
-        
-        <!-- Right Image - Full width to browser edge, matching left column height (Desktop only) -->
-        <div class="hidden lg:block lg:col-span-6 relative flex items-start">
-          <div class="absolute top-0 left-0 right-0 lg:right-[calc(-50vw+50%)] bg-white rounded-l-2xl shadow-2xl border border-gray-200 overflow-hidden hero-image-container">
-            <div class="relative w-full h-full p-8">
-              <Image 
-                src={dashboardImg} 
-                alt="Meon Valley Web Dashboard - Professional Web Development" 
-                class="w-full h-full object-cover object-left rounded-xl"
-                widths={[600, 900, 1200]}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                format="webp"
-                quality={80}
-              />
-            </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 sm:p-6">
+            <img
+              src="/analytics-dashboard.webp"
+              alt="Website analytics dashboard showing traffic growth"
+              class="w-full h-auto rounded-xl object-cover"
+              width="1090"
+              height="790"
+              fetchpriority="high"
+            />
           </div>
         </div>
       </div>
     </div>
-
-    <!-- JavaScript to match image height to content height (Desktop only) -->
-    <script>
-      function matchImageHeight() {
-        const contentElement = document.getElementById('hero-content');
-        const imageContainer = document.querySelector('.hero-image-container');
-        
-        if (contentElement && imageContainer && window.innerWidth >= 1024) {
-          const contentHeight = contentElement.offsetHeight;
-          imageContainer.style.height = contentHeight + 'px';
-        }
-      }
-
-      // Only run on desktop
-      if (window.innerWidth >= 1024) {
-        window.addEventListener('load', matchImageHeight);
-        window.addEventListener('resize', matchImageHeight);
-        document.addEventListener('DOMContentLoaded', matchImageHeight);
-      }
-    </script>
   </section>
 
-  <!-- Trusted by Section -->
-  <section class="py-16 bg-gray-50">
+  <!-- Site audit lead capture -->
+  <section class="py-16 sm:py-20 bg-primary-500" aria-label="Free site audit offer">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Not sure where your website stands?</h2>
+      <p class="text-lg text-primary-100 mb-10 max-w-2xl mx-auto">
+        Paste your website address below and we’ll send you a short video audit covering speed, mobile usability, SEO basics and quick wins.
+      </p>
+
+      <form name="site-audit" method="POST" data-netlify="true" action="/thank-you-checklist" class="max-w-3xl mx-auto">
+        <input type="hidden" name="form-name" value="site-audit" />
+        <div class="hidden" aria-hidden="true">
+          <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-4">
+          <input
+            type="url"
+            name="website"
+            required
+            placeholder="https://yourbusiness.co.uk"
+            aria-label="Your website URL"
+            class="flex-[2] px-4 py-4 rounded-lg border-0 focus:ring-2 focus:ring-white/50 text-gray-900"
+          />
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+            aria-label="Your email address"
+            class="flex-[2] px-4 py-4 rounded-lg border-0 focus:ring-2 focus:ring-white/50 text-gray-900"
+          />
+          <button type="submit" class="flex-[1] bg-gray-900 text-white px-6 py-4 rounded-lg hover:bg-gray-800 transition font-semibold">
+            Get my audit
+          </button>
+        </div>
+        <p class="text-sm text-primary-100">Free and confidential. No spam, unsubscribe anytime.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Trust stats -->
+  <TrustSignals />
+
+  <!-- Unified "How we help" section -->
+  <section class="py-20 bg-white" aria-label="What we do">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-lg text-gray-600 mb-8">We trust our services and our clients to the most innovative companies in the world</p>
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">How we help you take control online</h2>
+        <p class="text-lg text-gray-600">
+          We combine modern development, reliable hosting and practical SEO so your site works harder for your business.
+        </p>
       </div>
-      <!-- Technology Logos -->
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
-        <Image src={astroLogo} alt="AstroJS" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
-        <img src="/wordpress-tile.svg" alt="WordPress" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-        <Image src={laravelLogo} alt="Laravel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={165} height={48} format="webp" />
-        <img src="/ubuntu-2.svg" alt="Ubuntu" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-        <Image src={netlifyLogo} alt="Netlify" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
-        <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-4">A website built to perform</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Whether you need WordPress, a headless CMS with Astro, or a Laravel application, we build sites that load fast, work on every device, and convert visitors into enquiries.
+          </p>
+          <ul class="space-y-3 mb-8 text-gray-700">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Responsive, accessible design</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> SEO baked in from day one</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Transparent, fixed-fee projects</li>
+          </ul>
+          <a href="/services" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
+            Explore development
+          </a>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
+          <img
+            src="/search-console.webp"
+            alt="Google Search Console showing improved search visibility"
+            class="w-full h-auto rounded-xl"
+            loading="lazy"
+            decoding="async"
+            width="1043"
+            height="644"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
+          <img
+            src="/pagespeed-score.webp"
+            alt="PageSpeed Insights score showing fast performance"
+            class="w-full h-auto rounded-xl"
+            loading="lazy"
+            decoding="async"
+            width="1085"
+            height="673"
+          />
+        </div>
+        <div class="order-1 lg:order-2">
+          <h3 class="text-2xl font-bold text-black mb-4">Hosting and care that keeps you online</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Our managed WordPress hosting starts at £25/month and includes daily backups, Cloudflare DNS and SSL. Upgrade to a maintenance plan and we’ll handle updates, security and support.
+          </p>
+          <ul class="space-y-3 mb-8 text-gray-700">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Daily backups with 30-day retention</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> UK business-hours support</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Straightforward £50/month maintenance plan</li>
+          </ul>
+          <a href="/hosting" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
+            See hosting plans
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Areas We Serve -->
-  <section class="py-16 bg-gray-50">
+  <!-- Service cards -->
+  <section class="py-20 bg-gray-50" aria-label="Services overview">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-black mb-4">Services built for your business</h2>
+        <p class="text-lg text-gray-600">Everything from a brand-new site to ongoing care and emergency fixes.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/services" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Web Development</h3>
+          <p class="text-gray-600 text-sm">Bespoke WordPress, Astro and Laravel builds designed around your goals. Most projects from £2,500.</p>
+        </a>
+
+        <a href="/hosting" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Hosting & Maintenance</h3>
+          <p class="text-gray-600 text-sm">Managed hosting from £25/month with backups, support and optional maintenance plans.</p>
+        </a>
+
+        <a href="/wordpress-doctor" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
+          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">WordPress Doctor</h3>
+          <p class="text-gray-600 text-sm">Urgent fixes for hacked, broken or slow WordPress sites. Diagnosis and repair for Hampshire businesses.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-20 bg-white" aria-label="Client testimonial">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-3xl p-8 lg:p-12">
+        <div>
+          <svg class="w-10 h-10 text-primary-300 mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+          </svg>
+          <blockquote class="text-xl sm:text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
+            “The support and service provided by Andrew at Meon Valley Web is first class. He has created websites that effectively generate interest in my businesses, they are accessible and user friendly on all devices. The backup technical support is quick, reliable and always provides outstanding customer care.”
+          </blockquote>
+          <div>
+            <p class="font-bold text-gray-900">Paul Fredericks</p>
+            <p class="text-gray-600"><a href="https://twodogsandanawning.co.uk" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600">Two Dogs and an Awning</a></p>
+          </div>
+          <div class="mt-8">
+            <a href="/portfolio/walking-hiking-wordpress" class="text-primary-600 hover:text-primary-800 font-medium">View this project →</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
+            <img
+              src="/portfolio/twodogsananawning.webp"
+              alt="Two Dogs and an Awning website homepage"
+              class="w-full h-auto rounded-xl object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Primary CTA -->
+  <section class="py-20 bg-primary-500 text-white text-center" aria-label="Call to action">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to improve your website?</h2>
+      <p class="text-xl text-primary-100 mb-10">
+        Book a free consultation or request a short site audit. No pressure, just honest advice.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact?subject=Free+site+audit" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-medium text-lg inline-flex items-center justify-center">
+          Request a free site audit
+        </a>
+        <a href="/contact" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition font-medium text-lg inline-flex items-center justify-center">
+          Book a call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas we serve -->
+  <section class="py-16 bg-gray-50" aria-label="Areas we serve">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-gray-900 mb-3">Areas we serve</h2>
+        <h2 class="text-3xl font-bold text-black mb-3">Areas we serve</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Based in the Meon Valley, we work with businesses across Hampshire and the South Coast.
         </p>
@@ -144,559 +283,16 @@ import TrustSignals from '../components/TrustSignals.astro';
             href={`/web-design-${loc.slug}`}
             class="px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-600 transition-colors duration-200"
           >
-            Web Design {loc.name}
+            {loc.name}
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Trust Signals Section -->
-  <TrustSignals />
+  <!-- Tech strip -->
+  <TechStrip />
 
-  <!-- Features Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
-          Appropriate features for proper web development
-        </h2>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Feature 1 -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-black mb-4">Increases Brand Awareness</h3>
-          <p class="text-gray-600 leading-relaxed">
-            You want to stand out in your industry as a leader, but you also want to be seen as a relevant solution for your audience.
-          </p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-black mb-4">Amplifies SEO Success</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Make sure you optimize your website for both desktop and mobile search results for maximum visibility and success.
-          </p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-black mb-4">Builds Customer Trust</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Even with a strong SEO strategy, building customer trust in your brand takes time. Invest in quality content for readers.
-          </p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-black mb-4">Transparent Pricing</h3>
-          <p class="text-gray-600 leading-relaxed">
-            No hidden costs or surprise fees. Clear pricing from the start with ongoing support that fits your budget perfectly.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content Section with Image -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Left Content -->
-        <div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-8 leading-tight">
-            Take effective control of your web presence
-          </h2>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Meon Valley Web automatically handles all aspects of your website development and hosting. 
-            Instant reports, seamless maintenance, and integrations with the tools your business loves.
-          </p>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            We offer unlimited revisions and ongoing support with transparent pricing. This makes us perfect 
-            for businesses with simple to complex web development needs. Available as both static sites 
-            and dynamic applications for desktop and mobile.
-          </p>
-          <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center">
-            Discover More
-          </a>
-        </div>
-        
-        <!-- Right Image -->
-        <div class="relative">
-          <div class="bg-white shadow-1xl p-4">
-            <Image 
-              src={halGatewoodXzzg} 
-              alt="Web Development Dashboard" 
-              class="w-full h-auto rounded-xl"
-              widths={[400, 600, 800]}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              format="webp"
-              quality={80}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Tabs Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
-          We create world-class web design & development
-        </h2>
-      </div>
-      
-      <!-- Tab Navigation -->
-      <div class="flex justify-center mb-12">
-        <div class="bg-white rounded-xl p-2 shadow-lg border border-gray-200">
-          <div class="flex space-x-2">
-            <button class="tab-button active flex items-center px-6 py-3 rounded-lg font-medium text-sm transition-colors duration-200 bg-primary-500 text-white" data-tab="development">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
-              Web Development
-            </button>
-            <button class="tab-button flex items-center px-6 py-3 rounded-lg font-medium text-sm transition-colors duration-200 text-gray-600 hover:text-gray-900" data-tab="hosting">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-              </svg>
-              Hosting & Maintenance
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Tab Content -->
-      <div class="tab-content" id="development">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6">
-            <h3 class="text-3xl font-bold text-black">Modern Web Development</h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              We specialize in modern web development using the latest technologies. From WordPress 
-              to headless solutions with Astro, and custom Laravel applications - we build websites 
-              that are fast, secure, and scalable.
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">Responsive design for all devices</span>
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">SEO optimized from the ground up</span>
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">Lightning-fast loading speeds</span>
-              </li>
-            </ul>
-          </div>
-          <div class="relative">
-            <Image 
-              src={halGatewoodTZc3} 
-              alt="Web Development Portfolio" 
-              class="w-full h-auto rounded-xl shadow-lg"
-              widths={[400, 600, 800]}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              format="webp"
-              quality={80}
-            />
-          </div>
-        </div>
-      </div>
-      
-      <div class="tab-content hidden" id="hosting">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6">
-            <h3 class="text-3xl font-bold text-black">Reliable Hosting & Maintenance</h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Our hosting solutions are built for performance and reliability. With daily backups, 
-              security monitoring, and 99.9% uptime guarantee, your website will always be available 
-              when your customers need it.
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">Daily automated backups</span>
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">24/7 security monitoring</span>
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-gray-700">99.9% uptime guarantee</span>
-              </li>
-            </ul>
-          </div>
-          <div class="relative">
-            <Image 
-              src={halGatewoodWeRQ} 
-              alt="Hosting Dashboard" 
-              class="w-full h-auto rounded-xl shadow-lg"
-              widths={[400, 600, 800]}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              format="webp"
-              quality={80}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO Content Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Left Image -->
-        <div class="relative">
-          <div class="bg-white rounded-2xl p-8">
-            <Image 
-              src={halGatewoodSVbF} 
-              alt="SEO Performance Dashboard" 
-              class="w-full h-auto rounded-xl"
-              widths={[400, 600, 800]}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              format="webp"
-              quality={80}
-            />
-          </div>
-        </div>
-        
-        <!-- Right Content -->
-        <div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-8 leading-tight">
-            SEO gains momentum by increasing your investment
-          </h2>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            SEO is often referred to as the 'long-term game' in the marketing world. The more time you invest, 
-            the faster the benefits of SEO will accrue. As your website content grows, so does your visibility.
-          </p>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Search engine optimization ensures that your online presence is both articulated properly 
-            and discoverable to potential customers.
-          </p>
-          
-          <div class="space-y-6">
-            <div class="flex items-start">
-            
-              <div>
-                <h3 class="text-xl font-bold text-black mb-2">Keyword Research</h3>
-                <p class="text-gray-600">Keyword research is the process of discovering valuable search queries that your customers use.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              
-              <div>
-                <h3 class="text-xl font-bold text-black mb-2">Link Building</h3>
-                <p class="text-gray-600">Link building is a SEO technique that increases your search engine ranking through quality backlinks.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              
-              <div>
-                <h3 class="text-xl font-bold text-black mb-2">Ranking</h3>
-                <p class="text-gray-600">It helps a website achieve top positions in the search engine results pages for relevant keywords.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Testimonial Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gray-50 rounded-3xl p-12 lg:p-16 relative">
-        <!-- Quote Icon -->
-        <div class="absolute top-8 left-8">
-          <svg class="w-12 h-12 text-primary-200" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-          </svg>
-        </div>
-        
-        <div class="text-center max-w-4xl mx-auto">
-          <blockquote class="text-2xl lg:text-3xl font-medium text-gray-900 mb-8 leading-relaxed">
-            "The support and service provided by Andrew at Meon Valley Web is first class. He has created websites that effectively generate interest in my businesses, they are accessible and user friendly on all devices.  The backup technical support is quick, reliable and always provides outstanding customer care.""
-          </blockquote>
-          
-          <div class="flex items-center justify-center">
-            <div class="w-16 h-16 bg-gray-300 rounded-full mr-4">
-              <Image src={twodogsImg} alt="Two Dogs and an Awning" class="w-16 h-16 mx-auto mb-4" width={64} height={64} format="webp" />
-            </div>
-            <div class="text-left">
-              <div class="font-bold text-gray-900">Paul Fredericks</div>
-              <div class="text-gray-600"><a href="https://twodogsandanawning.co.uk" target="_blank">Two Dogs and an Awning</a></div>
-            </div>
-          </div>
-          
-          <div class="mt-8">
-            <a href="/testimonials" class="text-primary-500 hover:text-primary-600 font-medium">
-              Read All Reviews →
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6">
-          Some FAQs about our web development services
-        </h2>
-      </div>
-      
-      <div class="space-y-6">
-        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
-          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
-            <span class="text-lg font-medium text-gray-900">How do I get started with a new website project?</span>
-            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="faq-answer hidden px-6 pb-6">
-            <p class="text-gray-600 leading-relaxed">
-              Simply contact us through our website or give us a call. We'll schedule a consultation to discuss your 
-              requirements, timeline, and budget. From there, we'll provide a detailed proposal and project timeline.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
-          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
-            <span class="text-lg font-medium text-gray-900">What is the typical timeline for a website project?</span>
-            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="faq-answer hidden px-6 pb-6">
-            <p class="text-gray-600 leading-relaxed">
-              A typical website project takes 2-6 weeks depending on complexity. Simple WordPress sites can be completed 
-              in 2-3 weeks, while custom applications may take 4-8 weeks. We'll provide a detailed timeline during consultation.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
-          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
-            <span class="text-lg font-medium text-gray-900">Do you provide ongoing support and maintenance?</span>
-            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="faq-answer hidden px-6 pb-6">
-            <p class="text-gray-600 leading-relaxed">
-              Yes, we offer comprehensive maintenance plans including security updates, backups, performance monitoring, 
-              and content updates. Our support plans range from basic maintenance to full management services.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200">
-          <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
-            <span class="text-lg font-medium text-gray-900">Can you help with SEO and digital marketing?</span>
-            <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="faq-answer hidden px-6 pb-6">
-            <p class="text-gray-600 leading-relaxed">
-              Absolutely! All our websites are built with SEO best practices from the ground up. We also offer ongoing 
-              SEO services, content strategy, and can recommend trusted local digital marketing partners.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
-  <section class="py-20 bg-primary-500 relative overflow-hidden">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Ready to start your web project today?
-      </h2>
-      <p class="text-xl text-primary-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-        If you're ready to take your business online with professional web development and reliable hosting, 
-        get in touch today and receive a free consultation and project quote.
-      </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <a href="/contact" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-          Start Your Project
-        </a>
-        <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-          View Services
-        </a>
-      </div>
-      
-      <!-- App Store Style Buttons (if applicable) -->
-      <div class="flex justify-center space-x-4">
-        <div class="text-primary-100 text-sm">
-          Available for consultation across Hampshire and surrounding areas
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lead Magnet Inline Section -->
-  <section class="py-16 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-        <div class="text-center mb-8">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
-            Free Website Health Checklist
-          </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get our comprehensive 15-point checklist to audit your website. Discover what's working, what's missing, and how to improve your online presence.
-          </p>
-        </div>
-        
-        <form name="lead-magnet-inline" method="POST" data-netlify="true" action="/thank-you-checklist" class="max-w-lg mx-auto">
-          <input type="hidden" name="form-name" value="lead-magnet-inline" />
-          <div style="display: none;" aria-hidden="true">
-            <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
-          </div>
-          
-          <div class="flex flex-col sm:flex-row gap-4">
-            <input
-              id="email"
-              type="email"
-              name="email"
-              required
-              placeholder="Enter your email"
-              aria-label="Enter your email address"
-              class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
-            />
-            <button type="submit" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold whitespace-nowrap flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-              </svg>
-              Get Checklist
-            </button>
-          </div>
-          <p class="text-xs text-gray-500 text-center mt-4">
-            Join 500+ business owners who've improved their websites. No spam, unsubscribe anytime.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lead Magnet Popup -->
+  <!-- Popup -->
   <LeadMagnetPopup />
-
-  <!-- JavaScript for Interactive Elements -->
-  <script>
-    // Tab functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Tab switching
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-      
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const targetTab = button.getAttribute('data-tab');
-          
-          // Remove active class from all buttons and contents
-          tabButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-500', 'text-white'));
-          tabContents.forEach(content => content.classList.add('hidden'));
-          
-          // Add active class to clicked button and show corresponding content
-          button.classList.add('active', 'bg-primary-500', 'text-white');
-          document.getElementById(targetTab).classList.remove('hidden');
-        });
-      });
-      
-      // Set initial active state
-      document.querySelector('.tab-button[data-tab="development"]').classList.add('bg-primary-500', 'text-white');
-      
-      
-      // FAQ functionality
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const icon = question.querySelector('svg');
-        
-        question.addEventListener('click', () => {
-          const isOpen = !answer.classList.contains('hidden');
-          
-          // Close all other FAQ items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.querySelector('.faq-answer').classList.add('hidden');
-              otherItem.querySelector('svg').classList.remove('rotate-180');
-            }
-          });
-          
-          // Toggle current item
-          if (isOpen) {
-            answer.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          } else {
-            answer.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-          }
-        });
-      });
-    });
-  </script>
 </MainLayout>

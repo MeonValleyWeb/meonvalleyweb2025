@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import astroLogo from '../assets/astro.png';
+import netlifyLogo from '../assets/Netlify_logo.svg.png';
+import laravelLogo from '../assets/laravel.png';
+
+const tools = [
+  { name: 'AstroJS', summary: 'Ultra-fast static & edge sites', src: astroLogo, publicSrc: null, width: 134, height: 48 },
+  { name: 'WordPress', summary: 'Powers flexible content sites', src: null, publicSrc: '/wordpress-tile.svg', width: null, height: null },
+  { name: 'Laravel', summary: 'Robust custom applications', src: laravelLogo, publicSrc: null, width: 144, height: 48 },
+  { name: 'Ubuntu Linux', summary: 'Stable server OS', src: null, publicSrc: '/ubuntu-2.svg', width: null, height: null },
+  { name: 'Netlify', summary: 'Reliable deployment & hosting', src: netlifyLogo, publicSrc: null, width: 150, height: 48 },
+  { name: 'Vercel', summary: 'Edge-first site delivery', src: null, publicSrc: '/Vercel_logo_black.svg', width: null, height: null },
+];
+---
+
+<section class="py-16 bg-white border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-gray-600 mb-10">Built and deployed with modern, reliable tools</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-items-center">
+      {tools.map((tool) => (
+        <div class="group relative flex items-center justify-center p-4 w-full h-24 rounded-xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50/40 transition">
+          {tool.src ? (
+            <Image
+              src={tool.src}
+              alt={tool.name}
+              width={tool.width}
+              height={tool.height}
+              fit="contain"
+              class="h-10 w-auto max-w-full"
+              format="webp"
+            />
+          ) : (
+            <img
+              src={tool.publicSrc}
+              alt={tool.name}
+              class="h-10 w-auto max-w-full object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <span class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition bg-gray-900 text-white text-xs rounded-lg py-2 px-3 w-40 text-center pointer-events-none">
+            {tool.summary}
+            <span class="absolute left-1/2 -translate-x-1/2 top-full w-2 h-2 bg-gray-900 rotate-45"></span>
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
