@@ -1,0 +1,33 @@
+---
+export interface Props {
+  as?: 'section' | 'div' | 'article' | 'header' | 'footer';
+  id?: string;
+  class?: string;
+  ariaLabel?: string;
+  padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+}
+
+const {
+  as: Tag = 'section',
+  id,
+  class: extraClass = '',
+  ariaLabel,
+  padding = 'lg',
+} = Astro.props;
+
+const paddingClasses = {
+  none: '',
+  sm: 'py-8',
+  md: 'py-12',
+  lg: 'py-20',
+  xl: 'py-24 lg:py-32',
+};
+---
+
+<Tag
+  id={id}
+  aria-label={ariaLabel}
+  class:list={['relative', paddingClasses[padding], extraClass].filter(Boolean)}
+>
+  <slot />
+</Tag>

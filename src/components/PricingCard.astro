@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+
+export interface Props {
+  id?: string;
+  name: string;
+  tagline?: string;
+  price: number;
+  frequency?: string;
+  features: string[];
+  isPopular?: boolean;
+  href?: string;
+  ctaLabel?: string;
+}
+
+const {
+  id,
+  name,
+  tagline,
+  price,
+  frequency = 'monthly',
+  features,
+  isPopular = false,
+  href = '/contact',
+  ctaLabel = 'Get started',
+} = Astro.props;
+---
+
+<article
+  id={id}
+  class:list={[
+    'relative rounded-2xl p-8 flex flex-col h-full border transition-shadow',
+    isPopular
+      ? 'shadow-xl border-primary-500 ring-1 ring-primary-500 bg-white'
+      : 'shadow-lg border-gray-200 bg-white',
+  ]}
+  aria-label={`${name} plan`}
+>
+  {isPopular && (
+    <span
+      class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-500 text-white px-4 py-1 rounded-full text-sm font-medium"
+    >
+      Most popular
+    </span>
+  )}
+
+  <div class="text-center mb-8">
+    <h3 class="text-2xl font-bold text-gray-900">{name}</h3>
+    {tagline && <p class="text-sm text-gray-500 mt-1">{tagline}</p>}
+    <div class="mt-4">
+      <span class="text-5xl font-bold text-gray-900">£{price}</span>
+      <span class="text-gray-600 ml-2">/ {frequency}</span>
+    </div>
+  </div>
+
+  <ul class="space-y-4 mb-8 flex-1" aria-label={`${name} features`}>
+    {features.map((feature) => (
+      <li class="flex items-start text-gray-700">
+        <span class="mr-3 mt-1 text-primary-500 flex-shrink-0">
+          <Icon name="checkmark" class="w-5 h-5" />
+        </span>
+        {feature}
+      </li>
+    ))}
+  </ul>
+
+  <Button href={href} variant={isPopular ? 'primary' : 'secondary'} class="w-full">
+    {ctaLabel}
+  </Button>
+</article>
