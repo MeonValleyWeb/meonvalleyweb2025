@@ -1,0 +1,30 @@
+{
+  "serverInfo": {
+    "name": "meonvalleyweb",
+    "version": "1.4.0"
+  },
+  "endpoint": "/",
+  "capabilities": {
+    "tools": {
+      "contact": {
+        "description": "Contact form for service inquiries",
+        "url": "https://meonvalleyweb.com/contact"
+      }
+    },
+    "resources": {
+      "services": {
+        "description": "Web development and hosting services documentation",
+        "url": "https://meonvalleyweb.com/services"
+      },
+      "about": {
+        "description": "Company information and background",
+        "url": "https://meonvalleyweb.com/about"
+      },
+      "portfolio": {
+        "description": "Past project examples and case studies",
+        "url": "https://meonvalleyweb.com/portfolio"
+      }
+    },
+    "prompts": {}
+  }
+}

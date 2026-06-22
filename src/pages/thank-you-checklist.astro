@@ -1,0 +1,302 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="Checklist Downloaded | Website Maintenance Guide | Meon Valley Web" 
+  description="Your website maintenance checklist has been emailed to you. Here's what to do next to keep your website secure and performing well."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Checklist <span class="text-primary-500">Sent!</span>
+      </h1>
+      
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+        We've emailed your Website Maintenance Checklist to <strong id="user-email">your inbox</strong>.
+      </p>
+      <p class="text-gray-500">
+        You'll also receive monthly maintenance reminders. Unsubscribe anytime.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Win Tips -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+        Quick Wins You Can Do Right Now
+      </h2>
+      <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        While you wait for our monthly reminders, here are 5 maintenance tasks you should do today.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tip 1 -->
+        <div class="bg-green-50 border border-green-200 p-6 rounded-xl">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+              <span class="text-xl font-bold text-green-600">1</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Update Everything</h3>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">
+            Log into your WordPress dashboard and update any plugins or themes showing "Update Available".
+          </p>
+          <p class="text-green-700 text-sm font-medium">
+            ⏱️ Takes 5 minutes
+          </p>
+        </div>
+
+        <!-- Tip 2 -->
+        <div class="bg-blue-50 border border-blue-200 p-6 rounded-xl">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <span class="text-xl font-bold text-blue-600">2</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Test Your Forms</h3>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">
+            Fill out your contact form right now and make sure you receive the email. Broken forms = lost customers.
+          </p>
+          <p class="text-blue-700 text-sm font-medium">
+            ⏱️ Takes 2 minutes
+          </p>
+        </div>
+
+        <!-- Tip 3 -->
+        <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-xl">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
+              <span class="text-xl font-bold text-yellow-600">3</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Check Your Backups</h3>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">
+            Verify your backup plugin ran recently and that you can actually restore from it. Many backups fail silently.
+          </p>
+          <p class="text-yellow-700 text-sm font-medium">
+            ⏱️ Takes 10 minutes
+          </p>
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="bg-purple-50 border border-purple-200 p-6 rounded-xl">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+              <span class="text-xl font-bold text-purple-600">4</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Speed Test</h3>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">
+            Visit <a href="https://pagespeed.web.dev" target="_blank" rel="noopener" class="text-primary-600 hover:underline">PageSpeed Insights</a> and test your homepage. Look for red scores that need fixing.
+          </p>
+          <p class="text-purple-700 text-sm font-medium">
+            ⏱️ Takes 3 minutes
+          </p>
+        </div>
+
+        <!-- Tip 5 -->
+        <div class="bg-red-50 border border-red-200 p-6 rounded-xl md:col-span-2 lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+              <span class="text-xl font-bold text-red-600">5</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Delete Unused Stuff</h3>
+          </div>
+          <p class="text-gray-600 text-sm mb-3">
+            Remove old user accounts, unused plugins, and draft posts you've abandoned. Less clutter = better security and performance. Check for admin accounts you don't recognise—that's a security red flag.
+          </p>
+          <p class="text-red-700 text-sm font-medium">
+            ⏱️ Takes 15 minutes | 🔒 Critical security task
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Read These Next -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+        Keep Learning: Related Articles
+      </h2>
+      <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        Dive deeper into keeping your website healthy and effective.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Article 1 -->
+        <a href="/blog/why-faster-sites-convert-better" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 group">
+          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
+            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+            Why Faster Sites Convert Better
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Learn how page speed directly impacts your revenue and what you can do about it.
+          </p>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="/blog/how-much-does-website-cost-hampshire" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 group">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+            Website Costs in Hampshire
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Transparent pricing guide for Hampshire businesses planning a website project.
+          </p>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="/blog/how-to-choose-web-designer" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 group">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+            How to Choose a Web Designer
+          </h3>
+          <p class="text-gray-600 text-sm">
+            10 essential questions to ask before hiring anyone to work on your website.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Call a Pro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-8 md:p-12 text-white text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Don't Want to Do This Yourself?
+        </h2>
+        <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+          Our WordPress Care Plans handle all monthly, quarterly, and annual maintenance tasks for you. 
+          From £50/month with no long-term contracts.
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-left">
+          <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+            <h3 class="font-bold mb-2">Essential</h3>
+            <p class="text-primary-100 text-sm">Weekly updates, daily backups, security monitoring</p>
+            <p class="font-bold mt-2">£50/month</p>
+          </div>
+          <div class="bg-white/20 backdrop-blur rounded-lg p-4 border-2 border-white/30">
+            <h3 class="font-bold mb-2">Professional ⭐</h3>
+            <p class="text-primary-100 text-sm">+ 2 hours content updates, priority support</p>
+            <p class="font-bold mt-2">£100/month</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+            <h3 class="font-bold mb-2">Enterprise</h3>
+            <p class="text-primary-100 text-sm">+ 5 hours updates, quarterly reviews</p>
+            <p class="font-bold mt-2">£200/month</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/wordpress-doctor" class="bg-white text-primary-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold">
+            Learn About Care Plans
+          </a>
+          <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-primary-600 transition-colors duration-200 font-semibold">
+            Get a Custom Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+        Common Maintenance Questions
+      </h2>
+      
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-gray-900 mb-2">How often should I update WordPress?</h3>
+          <p class="text-gray-600 text-sm">
+            Core updates: within 48 hours of release (security patches). Plugin updates: weekly. 
+            Always backup first—updates can occasionally break things.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-gray-900 mb-2">What happens if I don't maintain my website?</h3>
+          <p class="text-gray-600 text-sm">
+            Security vulnerabilities pile up, performance degrades, and eventually something breaks. 
+            Unmaintained sites are prime targets for hackers—30,000+ WordPress sites get hacked daily.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-gray-900 mb-2">Can I do maintenance myself or should I hire someone?</h3>
+          <p class="text-gray-600 text-sm">
+            If you're tech-savvy and have 2-3 hours per month, you can handle basic maintenance. 
+            But most business owners find their time is better spent on their business. Our £50/month 
+            plan costs less than 2 hours of your time.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-semibold text-gray-900 mb-2">How do I know if my site has been hacked?</h3>
+          <p class="text-gray-600 text-sm">
+            Warning signs: unexpected redirects, new admin users you didn't create, slow performance, 
+            Google warning "This site may be hacked," or your host suspends your account.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-12 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="text-gray-600 hover:text-primary-600 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Home
+        </a>
+        <span class="hidden sm:block text-gray-300">|</span>
+        <a href="/blog" class="text-gray-600 hover:text-primary-600 flex items-center gap-2">
+          More Articles
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Extract email from URL parameters if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    if (email) {
+      const emailElement = document.getElementById('user-email');
+      if (emailElement) {
+        emailElement.textContent = email;
+      }
+    }
+  </script>
+</MainLayout>

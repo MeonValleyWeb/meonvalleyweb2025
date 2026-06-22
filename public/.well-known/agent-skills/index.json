@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "request-quote",
+      "type": "skill-md",
+      "description": "Request a web development quote via the contact form",
+      "url": "https://meonvalleyweb.com/.well-known/agent-skills/request-quote.SKILL.md",
+      "digest": "sha256:db3ca555abb3288e4d78f8f803979cf58ad1a92f36c6dd9ce717cbe08d6ccfbe"
+    },
+    {
+      "name": "browse-services",
+      "type": "skill-md",
+      "description": "Browse web development and hosting services",
+      "url": "https://meonvalleyweb.com/.well-known/agent-skills/browse-services.SKILL.md",
+      "digest": "sha256:3731c209f5604a5da5222aa25116f81bf66b6b105dfaac2ca69aeacdf0102603"
+    },
+    {
+      "name": "view-portfolio",
+      "type": "skill-md",
+      "description": "View past project examples and case studies",
+      "url": "https://meonvalleyweb.com/.well-known/agent-skills/view-portfolio.SKILL.md",
+      "digest": "sha256:1b4f4ac664517d70a02edfd7189368b34aa93650b6b2cf78d2532097c7cfca84"
+    }
+  ]
+}

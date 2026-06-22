@@ -1,0 +1,10 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://meonvalleyweb.com/",
+      "service-desc": ["https://meonvalleyweb.com/services"],
+      "service-doc": ["https://meonvalleyweb.com/about"],
+      "status": ["https://meonvalleyweb.com/"]
+    }
+  ]
+}

@@ -6,3 +6,25 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Robots-Tag: all
+
+# Link headers for agent discovery (RFC 8288)
+# https://www.rfc-editor.org/rfc/rfc8288
+/
+  Link: </services>; rel="service-doc"
+  Link: </contact>; rel="service-desc"
+  Link: </about>; rel="describedby"
+
+# API Catalog content type (RFC 9727)
+# https://www.rfc-editor.org/rfc/rfc9727
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+# MCP Server Card (SEP-1649)
+# https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127
+/.well-known/mcp/server-card.json
+  Content-Type: application/json
+
+# Agent Skills Discovery (RFC v0.2.0)
+# https://agentskills.io/
+/.well-known/agent-skills/index.json
+  Content-Type: application/json

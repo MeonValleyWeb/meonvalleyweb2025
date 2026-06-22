@@ -1,9 +1,42 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const andoverFAQs = [
+  {
+    question: "Do you work with Andover businesses?",
+    answer: "Yes, we work extensively with businesses in Andover and throughout the Test Valley. From the historic town centre with its Georgian high street to businesses in surrounding villages like Ludgershall and Tidworth, we help local companies establish a strong online presence. Our Andover clients include professional services, retailers, tradespeople, and agricultural businesses."
+  },
+  {
+    question: "How much does a website cost in Andover?",
+    answer: "Our Andover web design projects typically start from £2,500 for a professional small business website. This includes custom design, mobile optimisation, basic SEO setup, and CMS training. E-commerce websites for Andover retailers start from £4,500. We provide transparent, fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas around Andover do you cover?",
+    answer: "We serve businesses throughout the Andover area including the town centre (SP10), surrounding villages in SP11, and nearby areas like Charlton, Enham Alamein, and Smannell. Whether you're based in Andover town, a rural business, or in the surrounding Test Valley, we can help with your web design project."
+  },
+  {
+    question: "Can you help Andover agricultural and rural businesses?",
+    answer: "Absolutely. We understand the unique needs of Andover's rural and agricultural businesses. Our websites can include farm shop sales, livestock information, holiday let bookings, and services for the local community. We create designs that connect rural businesses with both local and wider markets."
+  },
+  {
+    question: "Do you offer WordPress support for Andover businesses?",
+    answer: "Yes, we provide comprehensive WordPress services for Andover businesses including custom theme development, plugin integration, managed hosting with 99.9% uptime, and ongoing maintenance packages. Whether you need a new site or help with an existing WordPress website, we can assist."
+  },
+  {
+    question: "How quickly can you build a website for my Andover business?",
+    answer: "Most Andover business websites are completed within 2-4 weeks. Simple brochure sites can be ready in 2 weeks, while more complex projects with custom features take 4-6 weeks. We provide a detailed timeline during our free consultation and keep you updated throughout."
+  },
+  {
+    question: "Can you help my Andover business rank on Google?",
+    answer: "Yes, all our websites are built with SEO fundamentals including fast loading times, mobile optimisation, schema markup, and proper heading structures. For Andover businesses specifically, we optimise for local search terms like 'web design Andover' and your services combined with Test Valley location keywords."
+  }
+];
 ---
 
-<MainLayout
-  title="Web Design Andover | Professional Website Development"
+<SchemaFAQ faqs={andoverFAQs} />
+
+<MainLayout 
   description="Expert web design services in Andover & Test Valley. Custom WordPress & AstroJS websites for local businesses. Free consultation."
   breadcrumbs={[
     { name: 'Home', href: '/' },
@@ -311,6 +344,38 @@ import MainLayout from '../layouts/MainLayout.astro';
           site to establish credibility or a full e-commerce solution to sell your products 
           nationwide, we deliver solutions that respect your budget and exceed your expectations.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Andover web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {andoverFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>

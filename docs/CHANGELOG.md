@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-04-27] - v1.4
+
+### Added
+- Link response headers for agent discovery per RFC 8288
+  - `Link: </services>; rel="service-doc"` - API documentation reference
+  - `Link: </contact>; rel="service-desc"` - Service description reference
+  - `Link: </about>; rel="describedby"` - Site description reference
+- Markdown content negotiation for agent requests per llmstxt.org
+  - Netlify Edge Function to convert HTML to markdown when `Accept: text/markdown` header is present
+  - Returns `Content-Type: text/markdown` with `x-markdown-tokens` header
+- Content Signals in robots.txt for AI content usage preferences (per IETF draft)
+  - `ai-train=no` - Do not use content for AI training
+  - `search=yes` - Allow search engine indexing
+  - `ai-input=no` - Do not use content as AI input
+- API catalog for automated API discovery per RFC 9727
+  - `/.well-known/api-catalog` endpoint with `application/linkset+json` content type
+  - Linkset includes anchor, service-desc, service-doc, and status relations
+- MCP Server Card for agent discovery per SEP-1649
+  - `/.well-known/mcp/server-card.json` with server info and capabilities
+  - Documents available resources: services, about, portfolio
+- Agent Skills Discovery index per RFC v0.2.0
+  - `/.well-known/agent-skills/index.json` with $schema and skills array
+  - Skills: request-quote, browse-services, view-portfolio (with SHA-256 digests)
+- WebMCP browser API support for agent tool exposure
+  - Register 4 tools: navigate, submit_inquiry, get_service_info, view_portfolio
+  - Each tool has name, description, inputSchema (JSON Schema), and execute callback
+  - Uses AbortController for cleanup when page unloads
+
 ## [2026-03-03] - v1.3
 
 ### Added

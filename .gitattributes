@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Mark docs folder as documentation (excludes from GitHub language stats)
+docs/** linguist-documentation

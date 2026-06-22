@@ -1,9 +1,42 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+
+const farehamFAQs = [
+  {
+    question: "Do you work with small businesses in Fareham?",
+    answer: "Yes, we specialise in helping small businesses in Fareham and the surrounding areas. From the town centre shops to businesses in Segensworth and Whiteley, we create affordable, professional websites that help local companies compete online. Our typical Fareham clients include professional services firms, retailers, tradespeople, and startups."
+  },
+  {
+    question: "How much does a website cost in Fareham?",
+    answer: "Our small business websites for Fareham clients typically start from £2,500. This includes a custom design, mobile-responsive build, basic SEO setup, and training on how to update your site. For e-commerce sites or more complex requirements, prices start from £4,500. We provide transparent, fixed-price quotes with no hidden costs."
+  },
+  {
+    question: "What areas around Fareham do you cover?",
+    answer: "We work with businesses throughout the Fareham area including Portchester, Wallington, Whiteley, Park Gate, Locks Heath, Titchfield, and Stubbington. We're based just 15 minutes from Fareham town centre, making it easy to meet in person if needed. We also cover surrounding postcodes: PO14, PO15, PO16, and PO17."
+  },
+  {
+    question: "Can you help with WordPress websites in Fareham?",
+    answer: "Absolutely. WordPress is our primary platform for Fareham clients. We build custom WordPress themes, provide WordPress hosting with 99.9% uptime, and offer ongoing maintenance and support packages. Whether you need a brand new WordPress site or help with an existing one, we can assist."
+  },
+  {
+    question: "Do you offer website hosting for Fareham businesses?",
+    answer: "Yes, we provide fast, reliable hosting specifically optimised for WordPress and AstroJS websites. Our hosting includes daily backups, SSL certificates, security monitoring, and CDN for speed. Many Fareham businesses choose our hosting because it's managed - we handle all the technical maintenance so you can focus on your business."
+  },
+  {
+    question: "How long does it take to build a website for a Fareham business?",
+    answer: "Most Fareham business websites take 2-4 weeks from initial consultation to launch. Simple brochure sites can be completed in 2 weeks, while e-commerce sites typically take 4-6 weeks. We provide a clear timeline during our free consultation and keep you updated throughout the build process."
+  },
+  {
+    question: "Can you help my Fareham business rank higher on Google?",
+    answer: "Yes, all our websites are built with SEO best practices including fast loading times, mobile optimisation, proper heading structures, and local SEO targeting. For Fareham businesses specifically, we can help you rank for local search terms like 'web design Fareham' or your specific services in the local area. We also offer ongoing SEO support packages."
+  }
+];
 ---
 
-<MainLayout
-  title="Web Design Fareham | Professional Website Development"
+<SchemaFAQ faqs={farehamFAQs} />
+
+<MainLayout 
   description="Expert web design services in Fareham & Portchester. Custom WordPress & AstroJS websites for local businesses. Free consultation."
   breadcrumbs={[
     { name: 'Home', href: '/' },
@@ -308,6 +341,38 @@ import MainLayout from '../layouts/MainLayout.astro';
           We offer a free initial consultation, either at your premises or via video call, to 
           discuss how we can help your business thrive online.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600">Common questions about our Fareham web design services</p>
+      </div>
+      
+      <div class="space-y-4">
+        {farehamFAQs.map((faq, index) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <span class="transition-transform duration-200 group-open:rotate-180">
+                  <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
       </div>
     </div>
   </section>
