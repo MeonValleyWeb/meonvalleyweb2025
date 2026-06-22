@@ -10,248 +10,248 @@ import { hosting, plans, business } from '../data/site.ts';
 
 const pageTitle = 'WordPress Hosting Hampshire | Fast Managed Hosting | Meon Valley Web';
 const description =
-  'Managed WordPress hosting for Hampshire businesses from £25/month. Daily backups, Cloudflare DNS, free SSL, UK business-hours support and £200 migration.';
+ 'Managed WordPress hosting for Hampshire businesses from £25/month. Daily backups, Cloudflare DNS, free SSL, UK business-hours support and £200 migration.';
 
 const faqs = [
-  {
-    q: 'Where are my website files and data stored?',
-    a: 'We host WordPress sites on premium cloud VPS servers in DigitalOcean or Hetzner data centres, with Cloudflare handling DNS, CDN and security rules. Off-site backups are stored securely in S3.',
-  },
-  {
-    q: 'What does the £200 migration include?',
-    a: 'The £200 migration fee covers moving your WordPress files and database, configuring DNS on Cloudflare, transferring email/DNS records, setting up SSL, and post-launch testing.',
-  },
-  {
-    q: 'How often are backups taken?',
-    a: 'Backups run daily and are retained for 30 days. WordPress sites are backed up off-site to S3; sites on dedicated servers also receive platform snapshots.',
-  },
-  {
-    q: 'When can I get support?',
-    a: 'Standard support is UK business hours, Monday to Friday, 9am–5pm. Premium plan customers receive enhanced 24/7 support cover.',
-  },
-  {
-    q: 'Can you host Astro or static sites too?',
-    a: 'Yes. Astro and static sites are deployed to Cloudflare Workers, Netlify or Vercel — whichever best suits your project — with the same Cloudflare DNS, backup and performance backing.',
-  },
-  {
-    q: 'Are there any data or bandwidth limits?',
-    a: hosting.limits,
-  },
+ {
+ q: 'Where are my website files and data stored?',
+ a: 'We host WordPress sites on premium cloud VPS servers in DigitalOcean or Hetzner data centres, with Cloudflare handling DNS, CDN and security rules. Off-site backups are stored securely in S3.',
+ },
+ {
+ q: 'What does the £200 migration include?',
+ a: 'The £200 migration fee covers moving your WordPress files and database, configuring DNS on Cloudflare, transferring email/DNS records, setting up SSL, and post-launch testing.',
+ },
+ {
+ q: 'How often are backups taken?',
+ a: 'Backups run daily and are retained for 30 days. WordPress sites are backed up off-site to S3; sites on dedicated servers also receive platform snapshots.',
+ },
+ {
+ q: 'When can I get support?',
+ a: 'Standard support is UK business hours, Monday to Friday, 9am–5pm. Premium plan customers receive enhanced 24/7 support cover.',
+ },
+ {
+ q: 'Can you host Astro or static sites too?',
+ a: 'Yes. Astro and static sites are deployed to Cloudflare Workers, Netlify or Vercel — whichever best suits your project — with the same Cloudflare DNS, backup and performance backing.',
+ },
+ {
+ q: 'Are there any data or bandwidth limits?',
+ a: hosting.limits,
+ },
 ];
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.a,
-    },
-  })),
+ '@context': 'https://schema.org',
+ '@type': 'FAQPage',
+ mainEntity: faqs.map((item) => ({
+ '@type': 'Question',
+ name: item.q,
+ acceptedAnswer: {
+ '@type': 'Answer',
+ text: item.a,
+ },
+ })),
 };
 ---
 
 <MainLayout
-  title={pageTitle}
-  description={description}
-  breadcrumbs={[
-    { name: 'Home', href: '/' },
-    { name: 'Hosting' },
-  ]}
+ title={pageTitle}
+ description={description}
+ breadcrumbs={[
+ { name: 'Home', href: '/' },
+ { name: 'Hosting' },
+ ]}
 
 >
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+ <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <Section ariaLabel="Hosting hero" padding="xl" class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50">
-    <Container class="text-center max-w-4xl">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
-        {hosting.headline}
-      </h1>
-      <p class="mt-6 text-xl text-gray-600 leading-relaxed">
-        {hosting.summary}
-      </p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary-500 text-white font-semibold text-lg hover:bg-primary-600 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
-        >
-          Book a call
-        </a>
-        <a
-          href="#plans"
-          class="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-600 font-semibold text-lg hover:bg-primary-50 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
-        >
-          See plans
-        </a>
-      </div>
-    </Container>
-  </Section>
+ <!-- Hero -->
+ <Section ariaLabel="Hosting hero" padding="xl" class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50">
+ <Container class="text-center max-w-4xl">
+ <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
+ {hosting.headline}
+ </h1>
+ <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+ {hosting.summary}
+ </p>
+ <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+ <a
+ href="https://calendly.com/parysnet/30min"
+ class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary-500 text-white font-semibold text-lg hover:bg-primary-600 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+ target="_blank" rel="noopener noreferrer">
+ Book a call
+ </a>
+ <a
+ href="#plans"
+ class="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-600 font-semibold text-lg hover:bg-primary-50 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+>
+ See plans
+ </a>
+ </div>
+ </Container>
+ </Section>
 
-  <!-- Plans -->
-  <Section id="plans" ariaLabel="Hosting plans" class="bg-white">
-    <Container>
-      <SectionHeading
-        title="Simple, transparent hosting"
-        description="No setup fees. No hidden charges. Cancel anytime."
-        align="center"
-      />
+ <!-- Plans -->
+ <Section id="plans" ariaLabel="Hosting plans" class="bg-white">
+ <Container>
+ <SectionHeading
+ title="Simple, transparent hosting"
+ description="No setup fees. No hidden charges. Cancel anytime."
+ align="center"
+ />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-        {plans.map((plan) => (
-          <PricingCard
-            id={plan.id}
-            name={plan.name}
-            tagline={plan.tagline}
-            price={plan.price}
-            features={plan.features}
-            isPopular={plan.isPopular}
-            href="/contact"
-            ctaLabel={
-              plan.id === 'starter'
-                ? 'Get hosting only'
-                : plan.id === 'professional'
-                  ? 'Get hosting & maintenance'
-                  : 'Get premium hosting'
-            }
-          />
-        ))}
-      </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+ {plans.map((plan) => (
+ <PricingCard
+ id={plan.id}
+ name={plan.name}
+ tagline={plan.tagline}
+ price={plan.price}
+ features={plan.features}
+ isPopular={plan.isPopular}
+ href="/contact"
+ ctaLabel={
+ plan.id === 'starter'
+ ? 'Get hosting only'
+ : plan.id === 'professional'
+ ? 'Get hosting & maintenance'
+ : 'Get premium hosting'
+ }
+ />
+ ))}
+ </div>
 
-      <p class="mt-8 text-center text-sm text-gray-500">
-        * Small content edits on request as part of the maintenance plan, subject to fair use.
-      </p>
-    </Container>
-  </Section>
+ <p class="mt-8 text-center text-sm text-gray-500">
+ * Small content edits on request as part of the maintenance plan, subject to fair use.
+ </p>
+ </Container>
+ </Section>
 
-  <!-- What's included on every plan -->
-  <Section ariaLabel="Platform features" class="bg-gray-50">
-    <Container>
-      <SectionHeading
-        title="What you get on every plan"
-        description="Every hosting package is built on the same dependable infrastructure."
-        align="center"
-      />
+ <!-- What's included on every plan -->
+ <Section ariaLabel="Platform features" class="bg-gray-50">
+ <Container>
+ <SectionHeading
+ title="What you get on every plan"
+ description="Every hosting package is built on the same dependable infrastructure."
+ align="center"
+ />
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {hosting.infrastructure.map((feature, i) => (
-          <div class="flex items-start gap-4 p-4">
-            <span class="mt-1 text-primary-500">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-            </span>
-            <p class="text-gray-700 leading-relaxed">{feature}</p>
-          </div>
-        ))}
-      </div>
-    </Container>
-  </Section>
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+ {hosting.infrastructure.map((feature, i) => (
+ <div class="flex items-start gap-4 p-4">
+ <span class="mt-1 text-primary-500">
+ <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+ </svg>
+ </span>
+ <p class="text-gray-700 leading-relaxed">{feature}</p>
+ </div>
+ ))}
+ </div>
+ </Container>
+ </Section>
 
-  <!-- Backup and support -->
-  <Section ariaLabel="Backups and support" class="bg-white">
-    <Container>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <FeatureCard
-          icon="lock"
-          title={hosting.backups.cadence}
-          description={`${hosting.backups.retention} retention. ${hosting.backups.storage}. Restores can be arranged during business hours.`}
-        />
-        <FeatureCard
-          icon="support"
-          title="UK business-hours support"
-          description={`${hosting.support.hours}. ${hosting.support.premiumHours}. Response by email during standard hours.`}
-        />
-      </div>
-    </Container>
-  </Section>
+ <!-- Backup and support -->
+ <Section ariaLabel="Backups and support" class="bg-white">
+ <Container>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+ <FeatureCard
+ icon="lock"
+ title={hosting.backups.cadence}
+ description={`${hosting.backups.retention} retention. ${hosting.backups.storage}. Restores can be arranged during business hours.`}
+ />
+ <FeatureCard
+ icon="support"
+ title="UK business-hours support"
+ description={`${hosting.support.hours}. ${hosting.support.premiumHours}. Response by email during standard hours.`}
+ />
+ </div>
+ </Container>
+ </Section>
 
-  <!-- Migration -->
-  <Section ariaLabel="Migration" class="bg-primary-50">
-    <Container class="text-center max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-        Stress-free migration for £{hosting.migration.price}
-      </h2>
-      <p class="text-lg text-gray-600 leading-relaxed mb-8">
-        {hosting.migration.description}
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
-      >
-        Start your migration
-      </a>
-    </Container>
-  </Section>
+ <!-- Migration -->
+ <Section ariaLabel="Migration" class="bg-primary-50">
+ <Container class="text-center max-w-3xl">
+ <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+ Stress-free migration for £{hosting.migration.price}
+ </h2>
+ <p class="text-lg text-gray-600 leading-relaxed mb-8">
+ {hosting.migration.description}
+ </p>
+ <a
+ href="/contact"
+ class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+>
+ Start your migration
+ </a>
+ </Container>
+ </Section>
 
-  <!-- Astro hosting note -->
-  <Section ariaLabel="Astro static site hosting" class="bg-white">
-    <Container class="text-center max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Static & Astro site hosting</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        {hosting.astroHosting.summary}
-      </p>
-    </Container>
-  </Section>
+ <!-- Astro hosting note -->
+ <Section ariaLabel="Astro static site hosting" class="bg-white">
+ <Container class="text-center max-w-3xl">
+ <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Static & Astro site hosting</h2>
+ <p class="text-lg text-gray-600 leading-relaxed">
+ {hosting.astroHosting.summary}
+ </p>
+ </Container>
+ </Section>
 
-  <!-- FAQ -->
-  <Section ariaLabel="Frequently asked questions" class="bg-gray-50">
-    <Container class="max-w-3xl">
-      <SectionHeading title="Frequently asked questions" align="center" />
+ <!-- FAQ -->
+ <Section ariaLabel="Frequently asked questions" class="bg-gray-50">
+ <Container class="max-w-3xl">
+ <SectionHeading title="Frequently asked questions" align="center" />
 
-      <div class="space-y-6">
-        {faqs.map((item, idx) => (
-          <details
-            class="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 open:ring-1 open:ring-primary-200"
-            open={idx === 0}
-          >
-            <summary class="cursor-pointer font-semibold text-gray-900 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm">
-              {item.q}
-              <span class="text-primary-500 group-open:rotate-180 transition-transform">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </summary>
-            <p class="mt-4 text-gray-600 leading-relaxed">{item.a}</p>
-          </details>
-        ))}
-      </div>
-    </Container>
-  </Section>
+ <div class="space-y-6">
+ {faqs.map((item, idx) => (
+ <details
+ class="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 open:ring-1 open:ring-primary-200"
+ open={idx === 0}
+>
+ <summary class="cursor-pointer font-semibold text-gray-900 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm">
+ {item.q}
+ <span class="text-primary-500 group-open:rotate-180 transition-transform">
+ <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+ </svg>
+ </span>
+ </summary>
+ <p class="mt-4 text-gray-600 leading-relaxed">{item.a}</p>
+ </details>
+ ))}
+ </div>
+ </Container>
+ </Section>
 
-  <Section ariaLabel="Related services" class="bg-white">
-    <Container>
-      <SectionHeading
-        title="Related services"
-        description="Hosting works best when your site is fast, secure, and well maintained."
-        align="center"
-      />
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="/services" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Web development</h3>
-          <p class="text-gray-700">Bespoke WordPress, AstroJS and headless builds for Hampshire businesses.</p>
-        </a>
-        <a href="/wordpress-support-south-coast" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">WordPress support</h3>
-          <p class="text-gray-700">Ongoing updates, security checks and UK business-hours help.</p>
-        </a>
-        <a href="/wordpress-doctor" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">WordPress Doctor</h3>
-          <p class="text-gray-700">Urgent fixes for hacked, broken or slow WordPress sites.</p>
-        </a>
-      </div>
-    </Container>
-  </Section>
+ <Section ariaLabel="Related services" class="bg-white">
+ <Container>
+ <SectionHeading
+ title="Related services"
+ description="Hosting works best when your site is fast, secure, and well maintained."
+ align="center"
+ />
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+ <a href="/services" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
+ <h3 class="text-xl font-semibold text-gray-900 mb-2">Web development</h3>
+ <p class="text-gray-700">Bespoke WordPress, AstroJS and headless builds for Hampshire businesses.</p>
+ </a>
+ <a href="/wordpress-support-south-coast" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
+ <h3 class="text-xl font-semibold text-gray-900 mb-2">WordPress support</h3>
+ <p class="text-gray-700">Ongoing updates, security checks and UK business-hours help.</p>
+ </a>
+ <a href="/wordpress-doctor" class="block bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary-300 transition focus-visible:ring-2 focus-visible:ring-primary-500">
+ <h3 class="text-xl font-semibold text-gray-900 mb-2">WordPress Doctor</h3>
+ <p class="text-gray-700">Urgent fixes for hacked, broken or slow WordPress sites.</p>
+ </a>
+ </div>
+ </Container>
+ </Section>
 
-  <CtaBanner
-    title="Ready for faster, more reliable hosting?"
-    description="Book a free 15-minute call and we’ll review your current setup and recommend the right plan."
-    href="/contact"
-    buttonText="Book a call"
-  />
+ <CtaBanner
+ title="Ready for faster, more reliable hosting?"
+ description="Book a free 15-minute call and we’ll review your current setup and recommend the right plan."
+ href="/contact"
+ buttonText="Book a call"
+ />
 
 </MainLayout>
 
