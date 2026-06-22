@@ -16,6 +16,10 @@ const formatDate = (date: Date) =>
 <MainLayout
   title="Blog | Meon Valley Web"
   description="Insights on web performance, design, WordPress, and growth."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Blog' },
+  ]}
 >
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

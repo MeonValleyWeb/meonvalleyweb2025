@@ -26,7 +26,15 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
 }).format(entry.data.date);
 ---
 
-<MainLayout title={`${entry.data.title} | Blog`} description={entry.data.description}>
+<MainLayout 
+  title={`${entry.data.title} | Blog`} 
+  description={entry.data.description}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Blog', href: '/blog' },
+    { name: entry.data.title },
+  ]}
+>
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="flex flex-wrap justify-center gap-2 mb-6">

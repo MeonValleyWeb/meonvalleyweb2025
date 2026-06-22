@@ -6,9 +6,13 @@ const portfolioItems = await getCollection('portfolio');
 const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<MainLayout 
-  title="Portfolio - Meon Valley Web" 
+<MainLayout
+  title="Portfolio - Meon Valley Web"
   description="Explore our diverse portfolio of web development projects, from charity websites to complex data analysis platforms."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Portfolio' },
+  ]}
 >
   <div class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,14 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="WordPress Hosting Hampshire | Meon Valley Web" description="Managed WordPress hosting in Hampshire with speed, security, backups, and real support for small businesses.">
+<MainLayout
+  title="WordPress Hosting Hampshire | Meon Valley Web"
+  description="Managed WordPress hosting in Hampshire with speed, security, backups, and real support for small businesses."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'WordPress Hosting Hampshire' },
+  ]}
+>
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">

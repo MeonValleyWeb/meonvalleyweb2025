@@ -15,7 +15,14 @@ const htmlContent = marked(termsContent);
 const termsModifiedDate = '2025-01-15';
 ---
 
-<MainLayout title="Terms of Service | Meon Valley Web" description="Our terms of service for website design, development, hosting, and maintenance services. Comprehensive coverage of our service agreements.">
+<MainLayout
+  title="Terms of Service | Meon Valley Web"
+  description="Our terms of service for website design, development, hosting, and maintenance services. Comprehensive coverage of our service agreements."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Terms of Service' },
+  ]}
+>
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

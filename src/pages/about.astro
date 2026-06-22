@@ -4,7 +4,14 @@ import { Image } from 'astro:assets';
 import dashboardImg from '../assets/dashboard.jpg';
 ---
 
-<MainLayout title="About Us | Meon Valley Web" description="Learn about Meon Valley Web — web development and hosting for Hampshire small businesses. Modern methods, transparent pricing, community commitment.">
+<MainLayout
+  title="About Us | Meon Valley Web"
+  description="Learn about Meon Valley Web — web development and hosting for Hampshire small businesses. Modern methods, transparent pricing, community commitment."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'About Us' },
+  ]}
+>
 >
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

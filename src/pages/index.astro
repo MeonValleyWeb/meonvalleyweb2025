@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
+import { locations } from '../data/site.ts';
 import dashboardImg from '../assets/dashboard.jpg';
 import halGatewoodXzzg from '../assets/hal-gatewood-xzzgY__zX8A-unsplash.jpg';
 import halGatewoodTZc3 from '../assets/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg';
@@ -15,7 +16,10 @@ import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 ---
 
-<MainLayout title="Professional Web Development & Hosting | Meon Valley Web">
+<MainLayout 
+  title="Professional Web Development & Hosting | Meon Valley Web"
+  description="Web design, WordPress hosting and maintenance for Hampshire small businesses. Transparent pricing, daily backups and UK support."
+>
   <!-- Hero Section -->
   <section class="py-20 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 relative overflow-hidden">
     <!-- Background decorative elements -->
@@ -123,6 +127,28 @@ import TrustSignals from '../components/TrustSignals.astro';
         <Image src={netlifyLogo} alt="Netlify" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
         <Image src={spinupwpLogo} alt="SpinupWP" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" width={146} height={48} format="webp" />
         <img src="/Vercel_logo_black.svg" alt="Vercel" class="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Areas we serve</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Based in the Meon Valley, we work with businesses across Hampshire and the South Coast.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {locations.map((loc) => (
+          <a
+            href={`/web-design-${loc.slug}`}
+            class="px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-600 transition-colors duration-200"
+          >
+            Web Design {loc.name}
+          </a>
+        ))}
       </div>
     </div>
   </section>
