@@ -1,92 +1,68 @@
-# Meon Valley Web 2025
+# Meon Valley Web
 
-A modern, clean website for Meon Valley Web built with AstroJS and Tailwind CSS. Inspired by column.com's typography and layout with toned-down brand colors.
+A fast, accessible, SEO-friendly website for Meon Valley Web, built with Astro 6+ and Tailwind CSS 4+. Content and business data are centralised in `src/data/site.ts` so the site stays consistent across pages.
 
-## Features
-
-- **Modern Design**: Clean, professional layout inspired by column.com
-- **Mobile-First**: Fully responsive design that works on all devices
-- **Fast Performance**: Built with AstroJS for lightning-fast loading
-- **SEO Optimized**: Proper meta tags and semantic HTML
-- **Accessible**: Following web accessibility best practices
-
-## Tech Stack
-
-- **Framework**: AstroJS
-- **Styling**: Tailwind CSS
-- **Content**: Markdown files
-- **Fonts**: Inter (primary), JetBrains Mono (code)
-- **Icons**: Heroicons
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Header.astro
-│   └── Footer.astro
-├── layouts/
-│   └── MainLayout.astro
-├── pages/
-│   ├── index.astro
-│   ├── about.astro
-│   ├── services.astro
-│   ├── portfolio.astro
-│   ├── hosting.astro
-│   └── contact.astro
-├── content/
-│   └── pages/
-│       └── about.md
-└── styles/
-    └── global.css
-```
-
-## Development
+## Quick start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## Brand Colors
+## Build & quality checks
 
-- **Primary**: Pink/Magenta tones (toned down from original #CF0F6F)
-- **Dark**: Slate gray tones for text and backgrounds
-- **Accent**: Primary color variations for highlights
+Run these before committing to verify the refactor branch:
 
-## Services Offered
+```bash
+npm run build
+node scripts/verify-build.js
+node scripts/accessibility-audit.js
+```
 
-- WordPress Development
-- Headless WordPress + Astro
-- Full AstroJS Development
-- Laravel Applications
-- Fast Hosting Solutions
-- Maintenance Plans
+## Project structure
 
-## Pricing
+```text
+src/
+├── components/          # Reusable UI primitives (cards, nav, section, etc.)
+├── content/             # Content collections: blog, newsroom, portfolio, legal
+├── data/site.ts         # Single source of truth for pricing, nav, locations, etc.
+├── layouts/
+│   └── MainLayout.astro # SEO, schema, breadcrumbs, header, footer
+├── pages/               # Astro page routes
+├── scripts/             # Imported page scripts (where used)
+└── styles/global.css    # Tailwind layers and base styles
 
-- **Starter Websites**: £800-£1,000 (tradesmen, personal blogs)
-- **Business Websites**: £3,000+ (professional business sites)
-- **E-commerce Sites**: £5,000+ (online stores with payment processing)
-- **Hosting**: From £15/month
-- **Maintenance**: From £50/month
+scripts/
+├── verify-build.js      # Post-build smoke tests
+└── accessibility-audit.js # Post-build a11y/SEO checks
+```
 
-## Charity Commitment
+## Editing key content
 
-- Free website for a charity every quarter
-- 10% of profits go to charitable causes
+- **Navigation, footer, contact details, prices**: edit `src/data/site.ts`.
+- **Page titles/descriptions**: set `<MainLayout title=... description=...>` props on each page.
+- **Breadcrumbs**: pass a `breadcrumbs` array to `MainLayout`.
+- **Portfolio / blog / newsroom**: add Markdown files under `src/content/<collection>/`.
+- **Open Graph**: `MainLayout` uses the default business description; add `ogImage` when a social image is needed.
 
-## Contact
+## Accessibility & SEO standards
 
-- Website: [meonvalleyweb.com](https://meonvalleyweb.com)
-- Email: hello@meonvalleyweb.com
-- Location: Meon Valley, Hampshire, UK
+- Exactly one `<h1>` per page.
+- Form inputs must have an associated label.
+- Images must have alt text.
+- Meta descriptions should be 50–160 characters.
+- Schema.org JSON-LD is included in `MainLayout` (`LocalBusiness`, `WebSite`, `BreadcrumbList`).
+- See `docs/accessibility.md` and `docs/seo-checklist.md` for details.
+
+## Deployment
+
+Configured for Netlify:
+
+- `public/_headers` forces security headers.
+- `public/_redirects` handles HTTPS, www, and deprecated routes.
+- `sitemap-index.xml` is generated automatically.
+
+## License
+
+© Meon Valley Web. All rights reserved.

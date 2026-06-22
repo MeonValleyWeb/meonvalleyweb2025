@@ -11,5 +11,8 @@ https://www.meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
 http://meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
 http://www.meonvalleyweb.com/* https://meonvalleyweb.com/:splat 301!
 
+# Redirect old pricing page
+/pricing /hosting 301
+
 # SPA fallback (if needed later)
 # /* /index.html 200
