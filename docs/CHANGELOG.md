@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2026-07-23
+
+### Changed
+- Replaced the default Astro favicon with the Meon Valley Web M mark.
+
 ## [0.2.0] - 2026-07-23
 
 ### Added
