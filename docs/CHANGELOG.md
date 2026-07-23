@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2026-07-23
+
+### Added
+- Cloudflare Workers deployment configuration with static asset serving.
+- Cloudflare Worker support for canonical redirects and Markdown content negotiation.
+- Wrangler development, deployment, and binding-type generation scripts.
+
+### Changed
+- Upgraded Astro to v7.1.3.
+- Enabled HTML compression in the Astro build.
+
 ## [2026-04-27] - v1.4
 
 ### Added
