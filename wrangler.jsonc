@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "meonvalleyweb",
+  "name": "meonvalleyweb2025",
   "main": "src/worker.ts",
   "compatibility_date": "2026-07-23",
   "build": {

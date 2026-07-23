@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2026-07-23
+
+### Fixed
+- Removed Netlify-only redirect rules that Cloudflare Workers Static Assets rejects.
+- Matched the Wrangler Worker name to the connected Cloudflare Workers Build.
+
 ## [0.1.1] - 2026-07-23
 
 ### Fixed
