@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-07-23
+
+### Changed
+- Reframed the free site audit as a one-page, prioritised website improvement report.
+- Expanded the review scope to cover CLS, accessibility, search visibility, cookies, privacy, trust, and conversion clarity.
+
 ## [0.2.1] - 2026-07-23
 
 ### Changed
