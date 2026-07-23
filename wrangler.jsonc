@@ -6,6 +6,11 @@
   "build": {
     "command": "npm run build"
   },
+  "send_email": [
+    {
+      "name": "EMAIL"
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

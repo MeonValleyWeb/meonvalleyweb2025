@@ -45,9 +45,97 @@ function htmlToMarkdown(html: string) {
     .trim();
 }
 
+const forms = {
+  contact: {
+    fields: ['firstName', 'lastName', 'email', 'phone', 'company', 'projectType', 'message'],
+    required: ['firstName', 'lastName', 'email', 'projectType', 'message'],
+    subject: 'Contact form submission',
+    successPath: '/thank-you',
+  },
+  'site-audit': {
+    fields: ['website', 'email', 'name'],
+    required: ['website', 'email'],
+    subject: 'Free site audit request',
+    successPath: '/thank-you-checklist',
+  },
+  'wordpress-doctor': {
+    fields: ['name', 'email', 'phone', 'website', 'issue', 'preferred_date', 'preferred_time', 'urgency'],
+    required: ['name', 'email', 'phone', 'issue', 'preferred_date', 'preferred_time'],
+    subject: 'WordPress Doctor request',
+    successPath: '/thank-you',
+  },
+  'lead-magnet': {
+    fields: ['firstName', 'email'],
+    required: ['firstName', 'email'],
+    subject: 'Website health checklist request',
+    successPath: '/thank-you-checklist',
+  },
+} as const;
+
+function fieldValue(formData: FormData, name: string) {
+  const value = formData.get(name);
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  })[character]!);
+}
+
+async function handleFormSubmission(request: Request, env: Env) {
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } });
+  }
+
+  const formData = await request.formData();
+  const formName = fieldValue(formData, 'form-name') as keyof typeof forms;
+  const form = forms[formName];
+  if (!form || fieldValue(formData, 'bot-field')) {
+    return new Response('Invalid form submission', { status: 400 });
+  }
+
+  const values = Object.fromEntries(form.fields.map((field) => [field, fieldValue(formData, field)]));
+  if (form.required.some((field) => !values[field]) || !values.email.includes('@')) {
+    return new Response('Please complete all required fields.', { status: 400 });
+  }
+
+  const details = form.fields
+    .filter((field) => values[field])
+    .map((field) => `${field}: ${values[field]}`)
+    .join('\n');
+
+  try {
+    await env.EMAIL.send({
+      to: 'hello@meonvalleyweb.com',
+      from: { email: 'forms@meonvalleyweb.com', name: 'Meon Valley Web Forms' },
+      replyTo: values.email,
+      subject: `${form.subject} from ${values.name || values.firstName || values.email}`,
+      text: `${form.subject}\n\n${details}`,
+      html: `<h1>${escapeHtml(form.subject)}</h1><dl>${form.fields
+        .filter((field) => values[field])
+        .map((field) => `<dt><strong>${escapeHtml(field)}</strong></dt><dd>${escapeHtml(values[field]).replaceAll('\n', '<br>')}</dd>`)
+        .join('')}</dl>`,
+    });
+  } catch (error) {
+    console.error('Unable to send form submission', error);
+    return new Response('Unable to send your request. Please try again later.', { status: 502 });
+  }
+
+  return Response.redirect(new URL(form.successPath, request.url), 303);
+}
+
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/forms') {
+      return handleFormSubmission(request, env);
+    }
 
     if (url.hostname === 'www.meonvalleyweb.com') {
       url.hostname = 'meonvalleyweb.com';

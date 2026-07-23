@@ -110,7 +110,7 @@ import { business } from '../data/site.ts';
           <p class="text-lg text-gray-600">Tell us where to look and where to send the video.</p>
         </div>
 
-        <form name="site-audit" method="POST" data-netlify="true" action="/thank-you-checklist" class="max-w-2xl mx-auto space-y-6">
+        <form name="site-audit" method="POST" action="/api/forms" class="max-w-2xl mx-auto space-y-6">
           <input type="hidden" name="form-name" value="site-audit" />
           <div class="hidden" aria-hidden="true">
             <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>

@@ -109,8 +109,11 @@ const faqs = [
         <p class="text-gray-600">Tell us what’s wrong and request a 30-minute call. We’ll confirm by email.</p>
       </div>
 
-      <form name="wordpress-doctor" method="POST" action="/thank-you" data-netlify="true" class="space-y-4">
+      <form name="wordpress-doctor" method="POST" action="/api/forms" class="space-y-4">
         <input type="hidden" name="form-name" value="wordpress-doctor" />
+        <div class="hidden" aria-hidden="true">
+          <label>Do not fill this out if you are human: <input name="bot-field" type="text" aria-hidden="true" tabindex="-1" autocomplete="off" /></label>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>

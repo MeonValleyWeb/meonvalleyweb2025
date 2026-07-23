@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2026-07-23
+
+### Added
+- Cloudflare Email Sending support for contact, site-audit, WordPress Doctor, and lead-magnet form submissions.
+
 ## [0.1.2] - 2026-07-23
 
 ### Fixed
