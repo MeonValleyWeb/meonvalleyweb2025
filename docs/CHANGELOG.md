@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-07-23
+
+### Changed
+- Redesigned the blog index with the editorial visual style used on the website improvement report.
+- Added a branded fallback image for articles without an available thumbnail.
+
 ## [0.3.0] - 2026-07-23
 
 ### Changed

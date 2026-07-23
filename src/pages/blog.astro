@@ -4,72 +4,70 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const [featuredPost, ...remainingPosts] = sortedPosts;
+const fallbackImage = '/blog-placeholder.svg';
 
-const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en-GB', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  }).format(date);
+const formatDate = (date: Date) => new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+}).format(date);
+
+const postUrl = (id: string) => `/blog/${id.split('/').pop()?.replace(/\.md$/, '')}`;
+const postImage = (image?: string) => image && !image.startsWith('/images/blog/') ? image : fallbackImage;
 ---
 
 <MainLayout
-  title="Blog | Meon Valley Web"
-  description="Insights on web performance, design, WordPress, and growth."
-  breadcrumbs={[
-    { name: 'Home', href: '/' },
-    { name: 'Blog' },
-  ]}
+  title="Journal | Meon Valley Web"
+  description="Practical notes on website performance, accessibility, design, WordPress, and digital growth for ambitious businesses."
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Blog' }]}
 >
-  <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">Blog</h1>
-        <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
-          Practical guidance for growing your digital presence, with a focus on speed, clarity, and outcomes.
-        </p>
+  <section class="relative overflow-hidden bg-[#111315] py-16 sm:py-20 lg:py-24">
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 78% 8%, #c51d65 0, transparent 26%), linear-gradient(145deg, transparent 0 55%, #272b2e 55% 56%, transparent 56%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-primary-300">The journal</p>
+      <div class="mt-5 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-20 items-end">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.02] text-white">Clear thinking for <span class="text-primary-400">better websites.</span></h1>
+        <p class="max-w-xl text-lg leading-relaxed text-gray-300">Practical articles on speed, accessibility, search visibility, and the decisions that make a website easier to trust and use.</p>
       </div>
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {sortedPosts.map((post) => (
-        <article class="bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col">
-          {post.data.image ? (
-            <img
-              src={post.data.image}
-              alt={post.data.imageAlt || post.data.title}
-              class="w-full h-44 object-cover rounded-t-2xl"
-            />
-          ) : (
-            <div class="h-44 bg-gray-100 rounded-t-2xl"></div>
-          )}
-          <div class="p-6 flex flex-col gap-3 flex-1">
-            <div class="flex flex-wrap gap-2">
-              {post.data.category && (
-                <span class="inline-flex items-center rounded-full bg-primary-100 text-primary-700 px-3 py-1 text-xs font-medium">
-                  {post.data.category}
-                </span>
-              )}
-              <span class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-3 py-1 text-xs font-medium">
-                {formatDate(post.data.date)}
-              </span>
-            </div>
-            <h2 class="text-xl font-semibold text-gray-900">{post.data.title}</h2>
-            <p class="text-gray-600 text-sm flex-1">{post.data.description}</p>
-            <a
-              href={`/blog/${post.id.split('/').pop()?.replace(/\.md$/, '')}`}
-              class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-800"
-            >
-              Read the post
-              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+  {featuredPost && (
+    <section class="bg-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="grid overflow-hidden rounded-2xl border border-gray-200 bg-gray-950 lg:grid-cols-2 shadow-xl shadow-gray-200/50">
+          <a href={postUrl(featuredPost.id)} class="min-h-64 bg-gray-900 overflow-hidden">
+            <img src={postImage(featuredPost.data.image)} alt={featuredPost.data.imageAlt || `${featuredPost.data.title} article cover`} class="h-full w-full object-cover transition duration-500 hover:scale-105" />
+          </a>
+          <div class="flex flex-col items-start p-8 sm:p-10 lg:p-12">
+            <div class="flex flex-wrap gap-2"><span class="rounded-full bg-primary-500/15 px-3 py-1 text-xs font-bold text-primary-300">Latest note</span>{featuredPost.data.category && <span class="rounded-full border border-white/15 px-3 py-1 text-xs font-medium text-gray-300">{featuredPost.data.category}</span>}</div>
+            <p class="mt-7 text-sm text-gray-400">{formatDate(featuredPost.data.date)}</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl"><a href={postUrl(featuredPost.id)} class="hover:text-primary-300 transition">{featuredPost.data.title}</a></h2>
+            <p class="mt-5 max-w-xl text-lg leading-relaxed text-gray-300">{featuredPost.data.description}</p>
+            <a href={postUrl(featuredPost.id)} class="mt-8 inline-flex items-center gap-3 font-semibold text-primary-300 hover:text-white transition">Read the article <span aria-hidden="true">→</span></a>
           </div>
         </article>
-      ))}
+      </div>
+    </section>
+  )}
+
+  <section class="bg-gray-50 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p class="text-sm font-bold uppercase tracking-[0.18em] text-primary-600">More reading</p><h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-950">Useful by design.</h2></div><p class="text-sm text-gray-500">{remainingPosts.length} articles and counting</p></div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {remainingPosts.map((post) => (
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-300/40">
+            <a href={postUrl(post.id)} class="aspect-[16/9] overflow-hidden bg-gray-900"><img src={postImage(post.data.image)} alt={post.data.imageAlt || `${post.data.title} article cover`} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" /></a>
+            <div class="flex flex-1 flex-col p-6 sm:p-7">
+              <div class="flex flex-wrap items-center gap-2 text-xs"><span class="font-bold uppercase tracking-wider text-primary-600">{post.data.category || 'Journal'}</span><span class="text-gray-300">/</span><span class="text-gray-500">{formatDate(post.data.date)}</span></div>
+              <h2 class="mt-4 text-2xl font-bold leading-tight tracking-tight text-gray-950"><a href={postUrl(post.id)} class="transition group-hover:text-primary-700">{post.data.title}</a></h2>
+              <p class="mt-4 flex-1 leading-relaxed text-gray-600">{post.data.description}</p>
+              <a href={postUrl(post.id)} class="mt-6 inline-flex items-center gap-2 font-semibold text-gray-950 transition group-hover:text-primary-700">Read article <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </MainLayout>

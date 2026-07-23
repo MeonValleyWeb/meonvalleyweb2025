@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title">
+  <title>Meon Valley Web journal</title>
+  <rect width="1200" height="675" fill="#111315"/>
+  <path d="M760 0h440v230L934 485 760 311z" fill="#c51d65" opacity=".88"/>
+  <path d="M0 530 290 240l122 122L122 652z" fill="#272b2e"/>
+  <path d="M118 474V186h92l91 157 91-157h92v288h-92V345l-91 157-91-157v129z" fill="#f8f7f4"/>
+  <path d="M102 545h336" stroke="#c51d65" stroke-width="8"/>
+  <text x="104" y="586" fill="#f8f7f4" font-family="Georgia, serif" font-size="36">Journal / Meon Valley Web</text>
+</svg>
