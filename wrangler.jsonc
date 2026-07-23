@@ -6,6 +6,12 @@
   "build": {
     "command": "npm run build"
   },
+  "observability": {
+    "logs": {
+      "enabled": false,
+      "invocation_logs": true
+    }
+  },
   "send_email": [
     {
       "name": "EMAIL"
