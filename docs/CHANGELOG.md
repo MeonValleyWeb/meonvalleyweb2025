@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2026-07-23
+
+### Fixed
+- Prevented the featured blog fallback artwork from cropping its Journal label.
+
 ## [0.4.0] - 2026-07-23
 
 ### Changed
