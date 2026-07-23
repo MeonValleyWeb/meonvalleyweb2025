@@ -47,7 +47,7 @@ function htmlToMarkdown(html: string) {
 
 const forms = {
   contact: {
-    fields: ['firstName', 'lastName', 'email', 'phone', 'company', 'projectType', 'message'],
+    fields: ['firstName', 'lastName', 'email', 'phone', 'company', 'projectType', 'budget', 'message'],
     required: ['firstName', 'lastName', 'email', 'projectType', 'message'],
     subject: 'Contact form submission',
     successPath: '/thank-you',

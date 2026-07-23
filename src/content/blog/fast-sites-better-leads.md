@@ -20,8 +20,6 @@ Imagine two local plumbers competing for the same search term. Both have good re
 ## Another example: portfolio-led businesses
 For agencies, photographers, or architects, the site *is* the work. If your portfolio is slow to load, the quality of your service feels uncertain. A lightweight, polished portfolio with fast image delivery makes the work feel premium. It reduces hesitation and makes it easier for a visitor to contact you straight away.
 
-![GTmetrix speed visualization for saintsdsa.netlify.app](/performance/gtmetrix-saintsdsa-speed.png)
-
 ## Why speed changes behaviour
 People read websites differently when they have to wait. A delay interrupts their decision-making flow, so the next action is less likely. That is why the same copy can convert at a much higher rate once the site feels instant. Faster performance also improves SEO, which increases qualified traffic without spending more on ads.
 
@@ -35,12 +33,6 @@ Here are a few changes that almost always deliver immediate results:
 - Avoid loading large JavaScript bundles on every page.
 - Use static generation for content-heavy pages.
 - Limit third-party scripts and tracking pixels.
-
-![GTmetrix waterfall chart for saintsdsa.netlify.app](/performance/gtmetrix-saintsdsa-waterfall.png)
-
-![GTmetrix speed visualization for meonvalleyweb.com](/performance/gtmetrix-meonvalley-speed.png)
-
-![GTmetrix waterfall chart for meonvalleyweb.com](/performance/gtmetrix-meonvalley-waterfall.png)
 
 ## The results you can expect
 With a faster site, visitors are more likely to stay, explore, and enquire. You also gain SEO benefits because search engines reward good performance and strong user signals. Over time, that compound effect leads to stronger organic traffic and a more consistent lead pipeline.

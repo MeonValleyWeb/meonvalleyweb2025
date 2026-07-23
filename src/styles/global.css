@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --color-primary-50: #fdf2f7;
   --color-primary-100: #fce7f0;
   --color-primary-200: #f9cfe1;
@@ -11,15 +12,6 @@
   --color-primary-700: #8f1749;
   --color-primary-800: #77143e;
   --color-primary-900: #631235;
-}
-
-/* Optimize font loading - prevent invisible text */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: local('Inter');
 }
 
 /* Enhanced focus indicators for accessibility */
@@ -54,6 +46,9 @@ textarea:focus-visible {
 /* Markdown content images */
 .content-area img {
   display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   margin: 2.5rem auto;
   border-radius: 14px;
   box-shadow: 0 16px 40px -28px rgba(15, 23, 42, 0.45);

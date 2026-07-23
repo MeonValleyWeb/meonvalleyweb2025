@@ -47,12 +47,25 @@ function scanHtml(dir) {
     const h1Matches = content.match(/<h1[\s>]/gi) || [];
     const imgs = content.match(/<img[^>]*>/gi) || [];
     const missingAlt = imgs.filter((tag) => !/alt=/i.test(tag));
+    const requiredMetadata = [
+      ['document language', /<html[^>]+lang=["'][^"']+["']/i],
+      ['title', /<title>[^<]+<\/title>/i],
+      ['description', /<meta[^>]+name=["']description["'][^>]+content=["'][^"']+/i],
+      ['canonical', /<link[^>]+rel=["']canonical["'][^>]+href=["']https?:\/\//i],
+      ['Open Graph title', /<meta[^>]+property=["']og:title["'][^>]+content=["'][^"']+/i],
+      ['Open Graph image', /<meta[^>]+property=["']og:image["'][^>]+content=["']https?:\/\//i],
+      ['Twitter card', /<meta[^>]+name=["']twitter:card["'][^>]+content=["'][^"']+/i],
+      ['JSON-LD', /<script[^>]+type=["']application\/ld\+json["']/i],
+    ];
 
     if (h1Matches.length !== 1) {
       problems.push(`${rel}: expected 1 <h1>, found ${h1Matches.length}`);
     }
     if (missingAlt.length > 0) {
       problems.push(`${rel}: ${missingAlt.length} image(s) missing alt`);
+    }
+    for (const [label, pattern] of requiredMetadata) {
+      if (!pattern.test(content)) problems.push(`${rel}: missing ${label}`);
     }
   }
   return problems;

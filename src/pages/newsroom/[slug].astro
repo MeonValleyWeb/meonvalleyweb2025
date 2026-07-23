@@ -61,7 +61,9 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
         <img
           src={entry.data.image}
           alt={entry.data.imageAlt || entry.data.title}
-          class="w-full h-auto object-cover"
+          class="w-full aspect-[16/9] object-cover"
+          width="1200"
+          height="675"
         />
       </div>
     </section>

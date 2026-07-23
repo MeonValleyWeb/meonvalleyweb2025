@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2026-07-23
+
+### Changed
+- Standardised website pricing across the site: focused static sites from £250–£500 and most professional small-business projects from around £2,500.
+- Rebuilt the Hampshire website cost guide around scope and outcomes rather than high price bands.
+- Added indicative pricing choices to the contact form.
+- Replaced external font loading with an accessible system font stack and reserved article image space to reduce layout shift.
+- Strengthened universal robots, Open Graph, and Twitter metadata.
+
+### Fixed
+- Added an internal link and asset verifier and corrected all links it identified.
+
 ## [0.4.1] - 2026-07-23
 
 ### Fixed
