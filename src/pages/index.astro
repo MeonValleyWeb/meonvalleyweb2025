@@ -1,9 +1,14 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 import { locations } from '../data/site.ts';
 import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import TechStrip from '../components/TechStrip.astro';
+import analyticsDashboardImg from '../assets/analytics-dashboard.webp';
+import searchConsoleImg from '../assets/search-console.webp';
+import pagespeedScoreImg from '../assets/pagespeed-score.webp';
+import twoDogsImg from '../assets/twodogsananawning.webp';
 ---
 
 <MainLayout 
@@ -54,12 +59,12 @@ import TechStrip from '../components/TechStrip.astro';
 
  <div class="relative">
  <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 sm:p-6">
- <img
- src="/analytics-dashboard.webp"
+ <Image
+ src={analyticsDashboardImg}
  alt="Website analytics dashboard showing traffic growth"
  class="w-full h-auto rounded-xl object-cover"
- width="1090"
- height="790"
+ widths={[545, 1090]}
+ sizes="(min-width: 1024px) 545px, 100vw"
  fetchpriority="high"
  />
  </div>
@@ -112,28 +117,28 @@ import TechStrip from '../components/TechStrip.astro';
  </a>
  </div>
  <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <img
- src="/search-console.webp"
+ <Image
+ src={searchConsoleImg}
  alt="Google Search Console showing improved search visibility"
  class="w-full h-auto rounded-xl"
  loading="lazy"
  decoding="async"
- width="1043"
- height="644"
+ widths={[522, 1043]}
+ sizes="(min-width: 1024px) 522px, 100vw"
  />
  </div>
  </div>
 
  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
  <div class="order-2 lg:order-1 bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <img
- src="/pagespeed-score.webp"
+ <Image
+ src={pagespeedScoreImg}
  alt="PageSpeed Insights score showing fast performance"
  class="w-full h-auto rounded-xl"
  loading="lazy"
  decoding="async"
- width="1085"
- height="673"
+ widths={[543, 1085]}
+ sizes="(min-width: 1024px) 543px, 100vw"
  />
  </div>
  <div class="order-1 lg:order-2">
@@ -212,12 +217,14 @@ import TechStrip from '../components/TechStrip.astro';
 
  <div class="relative">
  <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
- <img
- src="/portfolio/twodogsananawning.webp"
+ <Image
+ src={twoDogsImg}
  alt="Two Dogs and an Awning website homepage"
  class="w-full h-auto rounded-xl object-cover"
  loading="lazy"
  decoding="async"
+ widths={[597, 1193]}
+ sizes="(min-width: 1024px) 597px, 100vw"
  />
  </div>
  </div>

@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import twoDogsImg from '../assets/twodogsananawning.webp';
 
 const portfolioItems = await getCollection('portfolio');
 const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.order);
@@ -243,10 +245,13 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
         <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
           <div class="aspect-square rounded-xl relative overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
             <!-- Background image -->
-            <img 
-              src="/portfolio/twodogsananawning.webp" 
-              alt="Two Dogs and an Awning website" 
+            <Image
+              src={twoDogsImg}
+              alt="Two Dogs and an Awning website"
               class="absolute inset-0 w-full h-full object-cover"
+              width={400}
+              height={400}
+              loading="lazy"
             />
             <!-- Overlay to make background very faint -->
             <div class="absolute inset-0 bg-white/85 rounded-xl"></div>
