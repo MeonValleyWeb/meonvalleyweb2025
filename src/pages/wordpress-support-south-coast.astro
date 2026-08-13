@@ -1,29 +1,78 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { plans } from '../data/site.ts';
+
+const pageTitle = 'WordPress Support South Coast | Maintenance & Care Plans | Meon Valley Web';
+const description =
+  'Ongoing WordPress support and maintenance for South Coast businesses from £50/month. Updates, security monitoring, and priority support — no ticket queues.';
+
+const maintenancePlans = plans.filter((plan) => plan.id !== 'starter');
+
+const faqs = [
+  {
+    q: 'What’s the difference between WordPress support and WordPress Doctor?',
+    a: 'WordPress support is ongoing care — core, theme and plugin updates, security monitoring and priority response, billed monthly. WordPress Doctor is a one-off rescue service for sites that are already broken, hacked or badly slowed down. Many clients start with a Doctor fix, then move onto a support plan to stop the problem recurring.',
+  },
+  {
+    q: 'How quickly do you respond to support requests?',
+    a: 'Support plan clients get priority email response during UK business hours, Monday to Friday, 9am–5pm. Premium plan clients receive enhanced 24/7 support cover for urgent issues.',
+  },
+  {
+    q: 'Do you handle plugin and theme updates for me?',
+    a: 'Yes. Core WordPress, theme and plugin updates are handled as part of every maintenance plan, tested before release where practical to avoid update-related breakages.',
+  },
+  {
+    q: 'What if an update breaks my site?',
+    a: 'Every site on a maintenance plan has daily backups retained for 30 days, so we can roll back quickly if an update causes a conflict, then diagnose and fix the underlying issue.',
+  },
+  {
+    q: 'Can you take over support for a site you didn’t build?',
+    a: 'Yes — we regularly take on support for existing WordPress sites built by other developers or agencies. We’ll do a quick audit first so there are no surprises once you’re on a plan.',
+  },
+  {
+    q: 'Is hosting included in a support plan?',
+    a: 'Support and maintenance plans are billed alongside hosting, not instead of it — see our hosting plans for the full pricing breakdown, including the Shipwright and Monarch tiers which bundle hosting and maintenance together.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
 <MainLayout
-  title="WordPress Support South Coast | Meon Valley Web"
-  description="Fast WordPress support and maintenance across the South Coast. Fixes, security, and performance improvements."
+  title={pageTitle}
+  description={description}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'WordPress Support South Coast' },
   ]}
 >
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+
   <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
         WordPress support on the <span class="text-primary-500">South Coast</span>
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        From emergency fixes to ongoing maintenance, we keep your WordPress site stable, secure, and fast.
+        From emergency fixes to ongoing maintenance, we keep your WordPress site stable, secure, and fast — with plans from £50/month.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/wordpress-doctor#booking-form" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
           Request a WordPress fix
         </a>
-        <a href="/wordpress-doctor" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
-          WordPress Doctor service
+        <a href="#plans" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
+          See maintenance plans
         </a>
       </div>
     </div>
@@ -35,7 +84,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Fast, reliable WordPress support</h2>
           <p class="text-gray-700 mb-4">
-            We specialise in fixing broken sites, improving performance, and keeping WordPress secure. You’ll deal with a senior specialist, not a ticket queue.
+            We specialise in fixing broken sites, improving performance, and keeping WordPress secure. You'll deal with a senior specialist, not a ticket queue.
           </p>
           <p class="text-gray-700">
             If your site generates leads or revenue, stability matters. We keep it running and recover it fast when things go wrong.
@@ -105,6 +154,71 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
+  <!-- Maintenance plans -->
+  <section id="plans" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Ongoing maintenance plans</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Stop firefighting and put your WordPress site on a plan. Maintenance is billed alongside hosting — see full details on our <a href="/hosting" class="text-primary-600 hover:text-primary-700 font-medium">hosting plans page</a>.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        {maintenancePlans.map((plan) => (
+          <div class={`bg-white rounded-xl p-8 border ${plan.isPopular ? 'border-primary-300 ring-1 ring-primary-200' : 'border-gray-200'}`}>
+            {plan.isPopular && (
+              <p class="text-xs font-semibold uppercase tracking-widest text-primary-600 mb-2">Most popular</p>
+            )}
+            <h3 class="text-xl font-bold text-gray-900 mb-1">{plan.name}</h3>
+            <p class="text-sm text-gray-500 mb-4">{plan.tagline}</p>
+            <p class="text-3xl font-bold text-gray-900 mb-6">
+              £{plan.price}<span class="text-base font-normal text-gray-500">/month</span>
+            </p>
+            <ul class="space-y-2 text-gray-700 text-sm mb-6">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-primary-500 mt-0.5">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class="block text-center bg-primary-500 text-white py-3 px-6 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold"
+            >
+              Get {plan.name}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Frequently asked questions</h2>
+      <div class="space-y-6">
+        {faqs.map((item, idx) => (
+          <details
+            class="group bg-gray-50 rounded-xl p-6 border border-gray-200 open:ring-1 open:ring-primary-200"
+            open={idx === 0}
+          >
+            <summary class="cursor-pointer font-semibold text-gray-900 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm">
+              {item.q}
+              <span class="text-primary-500 group-open:rotate-180 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 bg-primary-500">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-4xl font-bold text-white mb-4">Need a reliable partner?</h2>
@@ -115,3 +229,5 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 </MainLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

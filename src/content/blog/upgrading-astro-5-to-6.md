@@ -4,7 +4,7 @@ description: "A detailed guide to the breaking changes in Astro 6, including con
 date: 2026-03-11
 author: "Meon Valley Web"
 category: "Astro Development"
-featured: true
+featured: false
 image: "/astro-logo-light-gradient.png"
 imageAlt: "Astro upgrade migration guide"
 tags: ["astro", "migration", "web-development", "content-collections"]

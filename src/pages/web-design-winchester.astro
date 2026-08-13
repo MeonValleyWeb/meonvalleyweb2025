@@ -36,7 +36,8 @@ const winchesterFAQs = [
 
 <SchemaFAQ faqs={winchesterFAQs} />
 
-<MainLayout 
+<MainLayout
+  title="Web Design Winchester | Meon Valley Web"
   description="Expert web design services in Winchester. Custom WordPress & AstroJS websites for local businesses. Free consultation & Hampshire-based support."
   breadcrumbs={[
     { name: 'Home', href: '/' },
@@ -193,6 +194,110 @@ const winchesterFAQs = [
     </div>
   </section>
 
+  <!-- Winchester Areas Served -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Serving Winchester & Surrounding Areas
+        </h2>
+        <p class="text-xl text-gray-600">We work with businesses across the district</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">City Centre</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Fulflood</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Weeke</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Stanmore</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Badger Farm</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Kings Worthy</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Twyford</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <p class="font-semibold text-gray-900">Sutton Scotney</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Winchester Section (Unique Content) -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Web Design for Winchester's Historic High Street
+        </h2>
+        <p class="text-lg text-gray-600">
+          Serving SO22, SO23 and SO24 around England's ancient capital
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p class="mb-6">
+          Winchester carries its history visibly — the Cathedral, the Great Hall, and a High Street
+          lined with independent shops that trade on the city's reputation for quality and heritage.
+          It's also home to a strong professional-services base, a large student population from the
+          University of Winchester, and steady visitor footfall drawn by the history itself. A website
+          here needs to feel as considered as the city looks.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">The Cathedral & High Street</h3>
+            <p class="text-gray-600">
+              Independent retailers and hospitality businesses around the Cathedral Close and High
+              Street rely on visitor footfall as much as local trade. We build sites with strong
+              imagery and clear opening-hours detail that convert browsing visitors into customers.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Professional & Legal Services</h3>
+            <p class="text-gray-600">
+              Winchester has a dense concentration of solicitors, accountants and consultancies who
+              need a website that projects trust before a client ever picks up the phone. Clean
+              design and clear credentials matter more here than flashy visuals.
+            </p>
+          </div>
+        </div>
+
+        <p class="mb-6">
+          We work with businesses across the city — an independent bookshop near the Cathedral, a
+          solicitor's practice off the High Street, a B&B in Kings Worthy catering to Cathedral
+          visitors and walkers on the South Downs Way. Each needs a website that matches Winchester's
+          own balance of heritage and quiet confidence.
+        </p>
+
+        <div class="bg-primary-50 p-6 rounded-xl border-l-4 border-primary-500 my-8">
+          <p class="text-gray-800 italic">
+            "Winchester clients expect a certain standard — the site needed to look as considered as
+            our office does. It's brought in enquiries we wouldn't have got otherwise."
+            — Winchester Professional Services Client
+          </p>
+        </div>
+
+        <p class="mb-6">
+          Whether you're trading on Cathedral footfall, serving clients from a High Street office, or
+          running a business in one of the surrounding villages, we'll build a site that fits how
+          Winchester itself presents — polished, credible, and built to last.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,7 +307,7 @@ const winchesterFAQs = [
         </h2>
         <p class="text-xl text-gray-600">Common questions about our Winchester web design services</p>
       </div>
-      
+
       <div class="space-y-4">
         {winchesterFAQs.map((faq, index) => (
           <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">

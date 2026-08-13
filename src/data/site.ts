@@ -38,8 +38,7 @@ export const navigation = [
       { label: 'Web Design', href: '/web-design-hampshire', description: 'Design-first builds for local businesses.' },
       { label: 'WordPress Doctor', href: '/wordpress-doctor', description: 'Fixes, tune-ups and rescue projects.' },
       { label: 'WordPress Support', href: '/wordpress-support-south-coast', description: 'Ongoing maintenance and updates.' },
-      { label: 'WordPress Hosting', href: '/wordpress-hosting-hampshire', description: 'Fast, secure managed hosting.' },
-      { label: 'Hosting Plans', href: '/hosting', description: 'Reliable infrastructure for growing sites.' },
+      { label: 'WordPress Hosting', href: '/hosting', description: 'Fast, secure managed hosting with plans and pricing.' },
     ],
   },
   { label: 'Portfolio', href: '/portfolio' },
@@ -60,10 +59,9 @@ export const footerNavigation = {
   services: [
     { label: 'Web Development', href: '/services' },
     { label: 'Web Design', href: '/web-design-hampshire' },
-    { label: 'WordPress Hosting', href: '/wordpress-hosting-hampshire' },
+    { label: 'WordPress Hosting', href: '/hosting' },
     { label: 'WordPress Support', href: '/wordpress-support-south-coast' },
     { label: 'WordPress Doctor', href: '/wordpress-doctor' },
-    { label: 'Hosting Plans', href: '/hosting' },
   ],
   company: [
     { label: 'About Us', href: '/about' },

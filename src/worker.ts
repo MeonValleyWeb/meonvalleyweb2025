@@ -152,6 +152,11 @@ export default {
       return Response.redirect(url, 301);
     }
 
+    if (url.pathname === '/wordpress-hosting-hampshire') {
+      url.pathname = '/hosting';
+      return Response.redirect(url, 301);
+    }
+
     const response = await env.ASSETS.fetch(request);
     if (!request.headers.get('Accept')?.includes('text/markdown') || !response.ok || !response.headers.get('Content-Type')?.includes('text/html')) {
       return response;
