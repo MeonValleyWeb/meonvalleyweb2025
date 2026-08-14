@@ -1,0 +1,103 @@
+---
+// Cookie consent banner. Gates the Google Ads (gtag) tag behind consent —
+// Fathom and Umami are cookieless analytics and load regardless.
+---
+
+<div
+  id="cookie-consent"
+  class="fixed inset-x-0 bottom-0 z-[60] hidden border-t border-gray-200 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+  role="region"
+  aria-label="Cookie consent"
+>
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+    <p class="text-sm text-gray-700">
+      We use essential cookies to run this site, and optional advertising cookies (Google Ads) to measure ad performance if you arrive via one of our ads. We don't use Google Analytics. See our
+      <a href="/privacy#cookies" class="font-medium text-primary-600 underline hover:text-primary-700">Cookie Policy</a>
+      for details.
+    </p>
+    <div class="flex flex-shrink-0 gap-3">
+      <button
+        type="button"
+        id="cookie-decline"
+        class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+      >
+        Essential only
+      </button>
+      <button
+        type="button"
+        id="cookie-accept"
+        class="rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary-600 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+      >
+        Accept advertising cookies
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const CONSENT_KEY = 'cookieConsent';
+
+  function loadGoogleAds() {
+    if (document.getElementById('gtag-ads-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'gtag-ads-script';
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18045888148';
+    document.head.appendChild(script);
+
+    const win = window as typeof window & { dataLayer: unknown[] };
+    win.dataLayer = win.dataLayer || [];
+    function gtag(...args: unknown[]) {
+      win.dataLayer.push(args);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-18045888148');
+  }
+
+  function init() {
+    const banner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    if (!banner || !acceptBtn || !declineBtn) return;
+
+    let consent: string | null = null;
+    try {
+      consent = localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      // localStorage unavailable — fall back to always showing the banner
+    }
+
+    if (consent === 'accepted') {
+      loadGoogleAds();
+      return;
+    }
+
+    if (consent === 'declined') {
+      return;
+    }
+
+    banner.classList.remove('hidden');
+
+    acceptBtn.addEventListener('click', () => {
+      try {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+      } catch (e) {}
+      loadGoogleAds();
+      banner.classList.add('hidden');
+    });
+
+    declineBtn.addEventListener('click', () => {
+      try {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+      } catch (e) {}
+      banner.classList.add('hidden');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>

@@ -1,7 +1,7 @@
 ---
 title: "Privacy Policy"
 description: "Meon Valley Web's privacy policy"
-lastUpdated: 2025-01-15
+lastUpdated: 2026-08-15
 ---
 
 ## Introduction
@@ -49,7 +49,8 @@ We may share your information with:
 - **Hosting Infrastructure**: Secure data centers and cloud providers
 - **Payment Processors**: Stripe, PayPal, or other secure payment services
 - **Email Services**: For customer communications and support
-- **Analytics Tools**: Google Analytics (anonymized data only)
+- **Analytics Tools**: Fathom Analytics and Umami — both cookieless, no personal data collected
+- **Advertising**: Google Ads (only if you've consented to advertising cookies)
 
 ### Legal Requirements
 We may disclose information when required by law, court order, or to protect our rights and safety.
@@ -74,7 +75,8 @@ We retain your personal data for as long as necessary to:
 - **Active Services**: Duration of our service relationship
 - **Financial Records**: 7 years for tax and accounting purposes
 - **Marketing Data**: Until you withdraw consent or 3 years of inactivity
-- **Website Analytics**: 26 months (Google Analytics default)
+- **Website Analytics**: Fathom and Umami retain aggregated, non-personal usage data; neither uses cookies or identifies individual visitors
+- **Advertising Cookies**: Google's standard retention periods apply, only if you've consented — see our Cookie Policy above
 
 ## Your Rights
 
@@ -96,21 +98,29 @@ Under UK GDPR, you have the following rights:
 ### Exercising Your Rights
 To exercise any of these rights, contact us at info@meonvalleyweb.com. We will respond within one month.
 
+<a id="cookies"></a>
 ## Cookies and Tracking
 
-### Essential Cookies
-We use essential cookies for:
-- Website functionality and security
-- Remembering your preferences
-- Maintaining your session
+A cookie is a small text file stored on your device. Some of the tools on our website use cookies; others don't. Here's exactly what we use and why.
 
-### Analytics Cookies
-With your consent, we use:
-- **Google Analytics**: To understand website usage (anonymized)
-- **Performance Monitoring**: To ensure optimal website performance
+### Essential Cookies
+We use a small number of essential, strictly-necessary cookies for:
+- Website functionality and security
+- Remembering your cookie consent choice
+- Maintaining your session where relevant (e.g. on hosting client portals)
+
+These don't require consent under UK data protection law, and can't be switched off, as the site won't function correctly without them.
+
+### Analytics — No Cookies Used
+We do **not** use Google Analytics. For website analytics we use [Fathom Analytics](https://usefathom.com) and a self-hosted [Umami](https://umami.is) instance, both of which are privacy-focused and do not use cookies or collect personal data — they don't track you across sites or build a profile of you. No consent is required for these under UK PECR rules, and they run regardless of your cookie choice below.
+
+### Advertising Cookies — Requires Your Consent
+If you arrive at our site via a Google Ads campaign, we use Google's advertising tag (gtag.js) to measure ad performance and manage remarketing. This sets cookies that can be used to show you relevant ads on other sites and measure conversions.
+
+**This only loads if you accept it** via the cookie banner shown on your first visit. If you choose "Essential only," this script never loads and no advertising cookies are set. You can change your choice at any time by clearing your browser's local storage for this site and reloading the page.
 
 ### Managing Cookies
-You can control cookies through your browser settings. Note that disabling essential cookies may affect website functionality.
+You can also control cookies generally through your browser settings, including blocking or deleting them. Note that disabling essential cookies may affect website functionality.
 
 ## International Transfers
 
