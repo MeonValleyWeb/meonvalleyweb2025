@@ -112,7 +112,11 @@ async function handleFormSubmission(request: Request, env: Env) {
   try {
     await env.EMAIL.send({
       to: 'hello@meonvalleyweb.com',
-      from: { email: 'forms@meonvalleyweb.com', name: 'Meon Valley Web Forms' },
+      // Sent from the cf-bounce subdomain so DKIM/SPF/DMARC alignment matches
+      // Cloudflare Email Sending's actual signing domain (see wrangler email
+      // sending settings meonvalleyweb.com) — sending from the root domain
+      // fails DMARC there since SPF/DKIM for the root are owned by ProtonMail.
+      from: { email: 'forms@cf-bounce.meonvalleyweb.com', name: 'Meon Valley Web Forms' },
       replyTo: values.email,
       subject: `${form.subject} from ${values.name || values.firstName || values.email}`,
       text: `${form.subject}\n\n${details}`,
