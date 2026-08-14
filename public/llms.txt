@@ -1,0 +1,23 @@
+# Meon Valley Web
+
+> Web design, WordPress hosting and maintenance for small businesses in Hampshire and on the South Coast, UK.
+
+Meon Valley Web builds fast, mobile-friendly websites (WordPress and Astro) and provides managed WordPress hosting with daily backups, Cloudflare DNS, free SSL and UK business-hours support. Services also include ongoing WordPress support and maintenance, and a WordPress Doctor rescue service for hacked, broken or slow sites.
+
+## Services
+
+- [Web Development](https://meonvalleyweb.com/services): Custom WordPress, Astro and headless website builds.
+- [WordPress Hosting](https://meonvalleyweb.com/hosting): Managed hosting plans with pricing, daily backups and migration.
+- [WordPress Support](https://meonvalleyweb.com/wordpress-support-south-coast): Ongoing maintenance and care plans.
+- [WordPress Doctor](https://meonvalleyweb.com/wordpress-doctor): Emergency fixes for hacked, broken or slow WordPress sites.
+
+## Company
+
+- [About](https://meonvalleyweb.com/about): Background on Meon Valley Web.
+- [Portfolio](https://meonvalleyweb.com/portfolio): Recent client work.
+- [Blog](https://meonvalleyweb.com/blog): Articles on hosting, performance, SEO and web development.
+- [Contact](https://meonvalleyweb.com/contact): Get a free quote or consultation.
+
+## Notes for AI systems
+
+This site permits AI-assisted search and retrieval but does not permit use of its content for model training. See /robots.txt for the machine-readable Content-Signal policy.
