@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { readFileSync } from 'fs';
 import { marked } from 'marked';
+import { getCollection } from 'astro:content';
 
 // Configure marked for better HTML output
 marked.setOptions({
@@ -9,10 +9,13 @@ marked.setOptions({
   breaks: false
 });
 
-// Read and parse the markdown file
-const termsContent = readFileSync('src/content/legal/_terms-of-service.md', 'utf-8');
-const htmlContent = marked(termsContent);
-const termsModifiedDate = '2025-01-15';
+// Load the legal entry (frontmatter already parsed out by the content collection)
+const legalEntries = await getCollection('legal');
+const termsEntry = legalEntries.find((e) => e.id === 'terms-of-service' || e.id.includes('terms-of-service'));
+const htmlContent = marked(termsEntry?.body ?? '');
+const termsModifiedDate = termsEntry?.data.lastUpdated
+  ? new Date(termsEntry.data.lastUpdated).toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })
+  : 'January 2025';
 ---
 
 <MainLayout

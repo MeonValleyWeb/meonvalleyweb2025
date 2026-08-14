@@ -1,19 +1,19 @@
 ---
 title: "Terms of Service"
 description: "Meon Valley Web's terms of service"
-lastUpdated: 2025-01-15
+lastUpdated: 2026-08-15
 ---
 
 ## What We Do
 
 We build websites and provide hosting. Simple as that.
 
-**Website Projects:** We design and build custom websites, WordPress sites, online shops, and web applications. Projects start from £500 for simple sites, £2,500 for business websites.
+**Website Projects:** We design and build custom websites, WordPress sites, online shops, and web applications. Focused static sites start from £250–£500; most business websites start from around £2,500.
 
-**Hosting Plans:** 
-- **Wayfarer** (£30/month) - Just hosting
-- **Shipwright** (£75/month) - Hosting + maintenance  
-- **Monarch** (£100/month) - Premium hosting + advanced maintenance
+**Hosting Plans:**
+- **Wayfarer** (£25/month) - Just hosting
+- **Shipwright** (£50/month) - Hosting + maintenance
+- **Monarch** (£75/month) - Premium hosting + advanced maintenance
 
 ---
 

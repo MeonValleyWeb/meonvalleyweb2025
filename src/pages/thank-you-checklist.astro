@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { plans } from '../data/site.ts';
+
+const maintenancePlans = plans.filter((plan) => plan.id !== 'starter');
 ---
 
 <MainLayout 
@@ -189,31 +192,23 @@ import MainLayout from '../layouts/MainLayout.astro';
           Don't Want to Do This Yourself?
         </h2>
         <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-          Our WordPress Care Plans handle all monthly, quarterly, and annual maintenance tasks for you. 
-          From £50/month with no long-term contracts.
+          Our WordPress hosting and maintenance plans handle all of this for you.
+          From £{plans[0].price}/month with no long-term contracts.
         </p>
-        
+
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-left">
-          <div class="bg-white/10 backdrop-blur rounded-lg p-4">
-            <h3 class="font-bold mb-2">Essential</h3>
-            <p class="text-primary-100 text-sm">Weekly updates, daily backups, security monitoring</p>
-            <p class="font-bold mt-2">£50/month</p>
-          </div>
-          <div class="bg-white/20 backdrop-blur rounded-lg p-4 border-2 border-white/30">
-            <h3 class="font-bold mb-2">Professional ⭐</h3>
-            <p class="text-primary-100 text-sm">+ 2 hours content updates, priority support</p>
-            <p class="font-bold mt-2">£100/month</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur rounded-lg p-4">
-            <h3 class="font-bold mb-2">Enterprise</h3>
-            <p class="text-primary-100 text-sm">+ 5 hours updates, quarterly reviews</p>
-            <p class="font-bold mt-2">£200/month</p>
-          </div>
+          {plans.map((plan) => (
+            <div class={`rounded-lg p-4 ${plan.isPopular ? 'bg-white/20 backdrop-blur border-2 border-white/30' : 'bg-white/10 backdrop-blur'}`}>
+              <h3 class="font-bold mb-2">{plan.name}{plan.isPopular ? ' ⭐' : ''}</h3>
+              <p class="text-primary-100 text-sm">{plan.tagline}</p>
+              <p class="font-bold mt-2">£{plan.price}/month</p>
+            </div>
+          ))}
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/wordpress-doctor" class="bg-white text-primary-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold">
-            Learn About Care Plans
+          <a href="/hosting" class="bg-white text-primary-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold">
+            View Hosting & Care Plans
           </a>
           <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-primary-600 transition-colors duration-200 font-semibold">
             Get a Custom Quote
