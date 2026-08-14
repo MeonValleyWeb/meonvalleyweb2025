@@ -30,6 +30,16 @@ const hasSocial = Object.values(social).some((url) => url.length > 0);
           <a href={business.phoneUrl} class="block hover:text-primary-400">{business.phone}</a>
         </address>
 
+        <a
+          href={business.googleBusinessUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-gray-300 hover:text-primary-400 text-sm mb-4 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary-500 rounded-sm"
+        >
+          <Icon name="location" class="w-4 h-4" />
+          Find us on Google
+        </a>
+
         {hasSocial && (
           <div class="flex space-x-4">
             {social.twitter && (

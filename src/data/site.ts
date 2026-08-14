@@ -20,6 +20,7 @@ export const business = {
   priceRange: '££',
   description:
     'Web design, WordPress hosting, and maintenance for small businesses in Hampshire and on the South Coast.',
+  googleBusinessUrl: 'https://share.google/yGX5QX17CVURkTuGf',
 } as const;
 
 export const social = {
