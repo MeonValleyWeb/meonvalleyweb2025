@@ -30,6 +30,14 @@ const faqs = [
  a: 'Standard support is UK business hours, Monday to Friday, 9am–5pm. Premium plan customers receive enhanced 24/7 support cover.',
  },
  {
+ q: 'How fast do you respond, and how do you know if my site goes down?',
+ a: 'Every plan includes 24/7 automated uptime monitoring, so we\'re alerted the moment a site goes offline — not when a customer tells us. Standard support replies within one business day; Shipwright and Monarch plans get priority support with a reply within 4 business hours during UK office hours.',
+ },
+ {
+ q: 'Do you use Google Analytics?',
+ a: 'No. We use privacy-focused, cookieless analytics tools (Fathom and Umami) instead of Google Analytics. They don\'t track visitors across sites, don\'t sell data to ad networks, and don\'t require a cookie consent banner for analytics — while still giving you clear visitor and traffic reports.',
+ },
+ {
  q: 'Can you host Astro or static sites too?',
  a: 'Yes. Astro and static sites are deployed to Cloudflare Workers, Netlify or Vercel — whichever best suits your project — with the same Cloudflare DNS, backup and performance backing.',
  },
@@ -107,8 +115,9 @@ const faqSchema = {
  <h3 class="text-xl font-semibold text-gray-900 mb-3">Why clients choose us</h3>
  <ul class="space-y-2 text-gray-700">
  <li>• Local support with fast response times</li>
- <li>• Daily backups and proactive monitoring</li>
+ <li>• Daily backups, 24/7 uptime monitoring and proactive alerts</li>
  <li>• Migration, DNS and optimisation handled end‑to‑end</li>
+ <li>• No setup fees, no lock‑in contracts — cancel anytime</li>
  <li>• Plans that scale as you grow</li>
  </ul>
  </div>
@@ -176,21 +185,29 @@ const faqSchema = {
  </Container>
  </Section>
 
- <!-- Backup and support -->
- <Section ariaLabel="Backups and support" class="bg-white">
+ <!-- Backup, monitoring and support -->
+ <Section ariaLabel="Backups, monitoring and support" class="bg-white">
  <Container>
- <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
  <FeatureCard
  icon="lock"
  title={hosting.backups.cadence}
  description={`${hosting.backups.retention} retention. ${hosting.backups.storage}. Restores can be arranged during business hours.`}
  />
  <FeatureCard
+ icon="chart"
+ title="24/7 uptime monitoring"
+ description={hosting.monitoring.uptime}
+ />
+ <FeatureCard
  icon="support"
  title="UK business-hours support"
- description={`${hosting.support.hours}. ${hosting.support.premiumHours}. Response by email during standard hours.`}
+ description={`${hosting.support.hours}. ${hosting.support.premiumHours}. ${hosting.support.responseTime}`}
  />
  </div>
+ <p class="mt-10 text-center text-sm text-gray-500 max-w-2xl mx-auto">
+ {hosting.monitoring.analytics}
+ </p>
  </Container>
  </Section>
 

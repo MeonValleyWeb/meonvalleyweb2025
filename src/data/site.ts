@@ -80,6 +80,7 @@ export const hosting = {
     hours: 'Monday–Friday, 9am–5pm (UK time)',
     premiumHours: 'Enhanced 24/7 support on the Premium plan',
     response: 'Email support during business hours',
+    responseTime: 'Standard plans: within 1 business day. Priority plans: within 4 business hours.',
   },
   backups: {
     cadence: 'Daily backups',
@@ -92,7 +93,13 @@ export const hosting = {
     'Cloudflare DNS, CDN and edge rules',
     'Free SSL/TLS certificates',
     'Server-level security hardening',
+    '24/7 automated uptime monitoring with alerts',
   ],
+  monitoring: {
+    uptime: '24/7 automated uptime monitoring with instant alerts if your site goes down, on every plan.',
+    analytics:
+      'We use privacy-focused, cookieless analytics (Fathom and Umami) instead of Google Analytics — no cookie banners required for analytics, no user data sold to ad networks, and no impact on page speed from a bulky tracking script.',
+  },
   migration: {
     price: 200,
     description:
@@ -121,8 +128,10 @@ export const plans = [
       'Cloudflare DNS & CDN',
       'Free SSL certificate',
       'Daily backups kept 30 days',
+      '24/7 uptime monitoring with alerts',
       'Unmetered bandwidth (fair use)',
-      'Email support during UK business hours',
+      'Email support during UK business hours (reply within 1 business day)',
+      'No setup fee, no contract — cancel anytime',
     ],
   },
   {
@@ -136,8 +145,9 @@ export const plans = [
       'Everything in Wayfarer, plus',
       'WordPress core, theme & plugin updates',
       'Basic security monitoring',
+      'Privacy-focused analytics (no Google Analytics, no cookie banner needed)',
       'Monthly performance report',
-      'Priority email support',
+      'Priority email support (reply within 4 business hours)',
       'Small content edits on request*',
     ],
   },
