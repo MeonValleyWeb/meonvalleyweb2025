@@ -26,9 +26,11 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
 }).format(entry.data.date);
 ---
 
-<MainLayout 
-  title={`${entry.data.title} | Blog`} 
+<MainLayout
+  title={`${entry.data.title} | Blog`}
   description={entry.data.description}
+  ogImage={entry.data.image}
+  ogImageAlt={entry.data.imageAlt || entry.data.title}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },

@@ -10,18 +10,22 @@ export interface Props {
   title: string;
   description?: string;
   breadcrumbs?: Array<{ name: string; href?: string }>;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
-const { title, description = business.description, breadcrumbs } = Astro.props;
+const { title, description = business.description, breadcrumbs, ogImage: ogImageProp, ogImageAlt } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = new URL('/Meon_Valley_Icon.png', Astro.site).toString();
+const logoUrl = new URL('/Meon_Valley_Icon.png', Astro.site).toString();
+const ogImage = ogImageProp ? new URL(ogImageProp, Astro.site).toString() : logoUrl;
+const ogImageAltText = ogImageAlt || `${business.name} logo`;
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: business.name,
   url: business.url,
-  logo: ogImage,
+  logo: logoUrl,
   telephone: business.phone,
   email: business.email,
   address: {
@@ -111,13 +115,13 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content={`${business.name} logo`} />
+    <meta property="og:image:alt" content={ogImageAltText} />
     <meta property="og:locale" content="en_GB" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={`${business.name} logo`} />
+    <meta name="twitter:image:alt" content={ogImageAltText} />
     <meta name="twitter:url" content={canonicalUrl} />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
