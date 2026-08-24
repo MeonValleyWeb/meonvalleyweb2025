@@ -72,6 +72,21 @@ const forms = {
   },
 } as const;
 
+type TurnstileResult = {
+  success: boolean;
+  hostname?: string;
+  action?: string;
+  'error-codes'?: string[];
+};
+
+const turnstileAction = 'turnstile-spin-v2';
+const turnstileHostnames = new Set([
+  'meonvalleyweb.com',
+  'www.meonvalleyweb.com',
+  'localhost',
+  '127.0.0.1',
+]);
+
 function fieldValue(formData: FormData, name: string) {
   const value = formData.get(name);
   return typeof value === 'string' ? value.trim() : '';
@@ -87,6 +102,65 @@ function escapeHtml(value: string) {
   })[character]!);
 }
 
+async function verifyTurnstile(formData: FormData, request: Request, env: Env) {
+  const token = fieldValue(formData, 'cf-turnstile-response');
+  if (!token || token.length > 2048 || !env.TURNSTILE_SECRET) {
+    return false;
+  }
+
+  const body = new URLSearchParams({
+    secret: env.TURNSTILE_SECRET,
+    response: token,
+  });
+  const clientIp = request.headers.get('CF-Connecting-IP');
+  if (clientIp) {
+    body.set('remoteip', clientIp);
+  }
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!response.ok) {
+      console.error(JSON.stringify({
+        message: 'Turnstile Siteverify request failed',
+        status: response.status,
+      }));
+      return false;
+    }
+
+    const result = await response.json() as TurnstileResult;
+    const requestHostname = new URL(request.url).hostname;
+    const validHostname = Boolean(
+      result.hostname &&
+      turnstileHostnames.has(result.hostname) &&
+      result.hostname === requestHostname,
+    );
+    const validAction = result.action === turnstileAction;
+
+    if (!result.success || !validHostname || !validAction) {
+      console.warn(JSON.stringify({
+        message: 'Turnstile verification failed',
+        errorCodes: result['error-codes'] ?? [],
+        hostname: result.hostname,
+        action: result.action,
+      }));
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error(JSON.stringify({
+      message: 'Unable to verify Turnstile response',
+      error: error instanceof Error ? error.message : String(error),
+    }));
+    return false;
+  }
+}
+
 async function handleFormSubmission(request: Request, env: Env) {
   if (request.method !== 'POST') {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } });
@@ -97,6 +171,10 @@ async function handleFormSubmission(request: Request, env: Env) {
   const form = forms[formName];
   if (!form || fieldValue(formData, 'bot-field')) {
     return new Response('Invalid form submission', { status: 400 });
+  }
+
+  if (!(await verifyTurnstile(formData, request, env))) {
+    return new Response('Please complete the security check and try again.', { status: 403 });
   }
 
   const values = Object.fromEntries(form.fields.map((field) => [field, fieldValue(formData, field)]));

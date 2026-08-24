@@ -6,6 +6,9 @@
   "build": {
     "command": "npm run build"
   },
+  "secrets": {
+    "required": ["TURNSTILE_SECRET"]
+  },
   "observability": {
     "logs": {
       "enabled": false,

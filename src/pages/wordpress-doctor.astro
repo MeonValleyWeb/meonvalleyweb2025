@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import TurnstileWidget from '../components/TurnstileWidget.astro';
 
 const pageTitle = 'WordPress Doctor Hampshire | Fast Fixes & Care | Meon Valley Web';
 const description =
@@ -176,6 +177,8 @@ const faqs = [
             <option>Not urgent (general support)</option>
           </select>
         </div>
+
+        <TurnstileWidget />
 
         <div class="flex flex-col sm:flex-row gap-4">
           <button
