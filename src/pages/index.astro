@@ -1,280 +1,270 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
-import { locations } from '../data/site.ts';
+import { business, locations } from '../data/site';
 import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import TechStrip from '../components/TechStrip.astro';
-import analyticsDashboardImg from '../assets/analytics-dashboard.webp';
-import searchConsoleImg from '../assets/search-console.webp';
-import pagespeedScoreImg from '../assets/pagespeed-score.webp';
 import twoDogsImg from '../assets/twodogsananawning.webp';
+
+const services = [
+  {
+    title: 'Win more enquiries',
+    text: 'Clear positioning, confident design and an obvious next step for the people you want to reach.',
+    href: '/web-design-hampshire',
+    link: 'Explore web design',
+  },
+  {
+    title: 'Sell and publish online',
+    text: 'WordPress, ecommerce and content systems selected around how your team actually works.',
+    href: '/services',
+    link: 'Explore development',
+  },
+  {
+    title: 'Keep WordPress healthy',
+    text: 'Practical help for slow, broken or compromised sites, followed by sensible ongoing care.',
+    href: '/wordpress-doctor',
+    link: 'Meet the WordPress Doctor',
+  },
+  {
+    title: 'Stay fast and supported',
+    text: 'Managed hosting, daily backups, security updates and direct Hampshire support.',
+    href: '/hosting',
+    link: 'View hosting and care',
+  },
+];
 ---
 
-<MainLayout 
- title="Web Design Hampshire | Meon Valley Web"
- description="Web development and hosting for Hampshire small businesses. Request a free site audit, book a call, and start improving your website today."
+<MainLayout
+  title="Web Design Hampshire | Meon Valley Web"
+  description="Modern web design for Hampshire businesses. Fast, accessible Astro and WordPress websites with honest local support."
+  ogImage="/portfolio/sdsa.webp"
+  ogImageAlt="A selection of websites built by Meon Valley Web"
 >
- <!-- Hero: conversion-first -->
- <section class="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16 lg:py-24" aria-label="Introduction">
- <div class="absolute inset-0 -z-10">
- <div class="absolute top-20 right-20 w-72 h-72 bg-primary-100 rounded-full opacity-40 blur-3xl"></div>
- <div class="absolute bottom-20 left-20 w-96 h-96 bg-primary-50 rounded-full opacity-30 blur-3xl"></div>
- </div>
+  <section class="home-hero overflow-hidden bg-[#f7f7f5]" aria-labelledby="home-title">
+    <div class="mx-auto grid min-h-[calc(100dvh-4.5rem)] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8 lg:py-20">
+      <div class="max-w-2xl">
+        <h1 id="home-title" class="text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-gray-950 sm:text-6xl">
+          Hampshire web design that <span class="text-primary-600">works.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl">
+          Fast, accessible websites with honest local support, built around your business goals.
+        </p>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="/free-site-audit" class="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-primary-600 px-7 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-700 active:translate-y-px">
+            Request a free site audit
+          </a>
+          <a href="/portfolio" class="inline-flex items-center justify-center whitespace-nowrap rounded-xl border border-gray-300 bg-white px-7 py-4 text-base font-semibold text-gray-950 transition hover:-translate-y-0.5 hover:border-gray-950 active:translate-y-px">
+            View recent work
+          </a>
+        </div>
+      </div>
 
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
- <div class="max-w-2xl">
- <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 leading-[1.1] tracking-tight">
- Web development and hosting that grows your <span class="text-primary-500">Hampshire business</span>
- </h1>
- <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
- Modern, fast websites and reliable WordPress hosting for small businesses across Hampshire and the South Coast. Clear pricing, local support, and no jargon.
- </p>
+      <div class="project-montage relative mx-auto w-full max-w-3xl lg:ml-auto" role="group" aria-label="Recent website projects">
+        <article class="project-frame project-frame-main bg-white p-3 shadow-[0_30px_80px_-42px_rgba(17,24,39,0.5)]">
+          <Image
+            src={twoDogsImg}
+            alt="Two Dogs and an Awning website homepage"
+            class="aspect-[16/10] w-full object-cover"
+            widths={[680, 1020, 1360]}
+            sizes="(min-width: 1024px) 620px, 92vw"
+            fetchpriority="high"
+          />
+          <div class="flex items-center justify-between gap-4 px-2 pb-1 pt-3">
+            <p class="font-semibold text-gray-950">Two Dogs and an Awning</p>
+            <p class="text-sm text-gray-700">WordPress and charity fundraising</p>
+          </div>
+        </article>
 
- <ul class="space-y-3 mb-10 text-gray-700">
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-  Free improvement report — see what to fix first
- </li>
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-  Focused static sites from £250; most business sites from around £2,500
- </li>
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
- WordPress support, security updates and daily backups
- </li>
- </ul>
+        <article class="project-frame project-frame-small project-frame-left bg-white p-2 shadow-[0_24px_60px_-36px_rgba(17,24,39,0.55)]">
+          <img src="/portfolio/sdsa.webp" alt="Saints Disabled Supporters Association website" class="aspect-[4/3] w-full object-cover" loading="eager" decoding="async" />
+          <p class="px-1 pb-1 pt-2 text-sm font-semibold text-gray-950">Accessible supporter services</p>
+        </article>
 
- <div class="flex flex-col sm:flex-row gap-4">
-   <a href="/free-site-audit" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-     Request a free site audit
-   </a>
-   <a href="https://calendly.com/meonvalleyweb/30min" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-600 px-8 py-4 rounded-lg font-medium text-lg inline-flex items-center justify-center underline">
-     Book a call
-   </a>
- </div>
- </div>
+        <article class="project-frame project-frame-small project-frame-right bg-gray-950 p-2 text-white shadow-[0_24px_60px_-36px_rgba(17,24,39,0.7)]">
+          <img src="/portfolio/wessexwhiskyclub.webp" alt="Wessex Whisky Club website" class="aspect-[4/3] w-full object-cover" loading="eager" decoding="async" />
+          <p class="px-1 pb-1 pt-2 text-sm font-semibold">Membership and events</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
- <div class="relative">
- <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 sm:p-6">
- <Image
- src={analyticsDashboardImg}
- alt="Website analytics dashboard showing traffic growth"
- class="w-full h-auto rounded-xl object-cover"
- widths={[545, 1090]}
- sizes="(min-width: 1024px) 545px, 100vw"
- fetchpriority="high"
- />
- </div>
- </div>
- </div>
- </div>
- </section>
+  <TrustSignals />
 
- <!-- Site audit teaser -->
- <section class="py-16 sm:py-20 bg-primary-500" aria-label="Free site audit offer">
-   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
-       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Not sure where your website stands?</h2>
-       <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-         Get a short video audit covering speed, mobile usability, SEO basics, security and quick wins — completely free.
-       </p>
-       <a href="/free-site-audit" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition font-semibold text-lg">
-         Get my free audit
-       </a>
-     </div>
-   </div>
- </section>
+  <section class="reveal-block bg-white py-20 sm:py-24" aria-labelledby="selected-work-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[0.16em] text-primary-700">Selected work</p>
+        <h2 id="selected-work-title" class="mt-3 text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">Real work for organisations with something useful to do.</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">Each project starts with the audience, the job they need to complete and the clearest route through.</p>
+      </div>
 
- <!-- Trust stats -->
- <TrustSignals />
+      <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_0.8fr] lg:grid-rows-2">
+        <a href="/portfolio/walking-hiking-wordpress" class="work-cell group bg-[#f3f3f0] p-4 lg:row-span-2 lg:p-6">
+          <Image src={twoDogsImg} alt="Two Dogs and an Awning walking website" class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.015]" widths={[700, 1050, 1400]} sizes="(min-width: 1024px) 700px, 92vw" loading="lazy" />
+          <div class="px-1 pb-2 pt-6">
+            <h3 class="text-2xl font-bold text-gray-950">A walking library built around more than 900 routes</h3>
+            <p class="mt-2 text-gray-600">Content structure, search and fundraising support for Two Dogs and an Awning.</p>
+          </div>
+        </a>
 
- <!-- Unified "How we help" section -->
- <section class="py-20 bg-white" aria-label="What we do">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center max-w-3xl mx-auto mb-16">
- <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">How we help you take control online</h2>
- <p class="text-lg text-gray-600">
- We combine modern development, reliable hosting and practical SEO so your site works harder for your business.
- </p>
- </div>
+        <a href="/portfolio/saints-disabled-association" class="work-cell group grid grid-cols-[0.9fr_1.1fr] items-center gap-5 bg-gray-950 p-4 text-white sm:p-5">
+          <img src="/portfolio/sdsa.webp" alt="Saints Disabled Supporters Association website" class="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+          <div>
+            <h3 class="text-xl font-bold">Accessible ticket workflows</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-300">Clear forms and administration for disabled supporters.</p>
+          </div>
+        </a>
 
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
- <div>
- <h3 class="text-2xl font-bold text-black mb-4">A website built to perform</h3>
- <p class="text-gray-600 mb-6 leading-relaxed">
- Whether you need WordPress, a headless CMS with Astro, or a Laravel application, we build sites that load fast, work on every device, and convert visitors into enquiries.
- </p>
- <ul class="space-y-3 mb-8 text-gray-700">
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Responsive, accessible design</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> SEO baked in from day one</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Transparent, fixed-fee projects</li>
- </ul>
- <a href="/services" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
- Explore development
- </a>
- </div>
- <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <Image
- src={searchConsoleImg}
- alt="Google Search Console showing improved search visibility"
- class="w-full h-auto rounded-xl"
- loading="lazy"
- decoding="async"
- widths={[522, 1043]}
- sizes="(min-width: 1024px) 522px, 100vw"
- />
- </div>
- </div>
+        <a href="/portfolio/wessex-whisky-ecommerce" class="work-cell group grid grid-cols-[1.1fr_0.9fr] items-center gap-5 bg-primary-600 p-4 text-white sm:p-5">
+          <div>
+            <h3 class="text-xl font-bold">Membership, events and charity</h3>
+            <p class="mt-2 text-sm leading-relaxed text-primary-50">A focused club experience that makes each event easy to discover.</p>
+          </div>
+          <img src="/portfolio/wessexwhiskyclub.webp" alt="Wessex Whisky Club website" class="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+        </a>
+      </div>
+    </div>
+  </section>
 
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
- <div class="order-2 lg:order-1 bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <Image
- src={pagespeedScoreImg}
- alt="PageSpeed Insights score showing fast performance"
- class="w-full h-auto rounded-xl"
- loading="lazy"
- decoding="async"
- widths={[543, 1085]}
- sizes="(min-width: 1024px) 543px, 100vw"
- />
- </div>
- <div class="order-1 lg:order-2">
- <h3 class="text-2xl font-bold text-black mb-4">Hosting and care that keeps you online</h3>
- <p class="text-gray-600 mb-6 leading-relaxed">
- Our managed WordPress hosting starts at £25/month and includes daily backups, Cloudflare DNS and SSL. Upgrade to a maintenance plan and we’ll handle updates, security and support.
- </p>
- <ul class="space-y-3 mb-8 text-gray-700">
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Daily backups with 30-day retention</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> UK business-hours support</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Straightforward £50/month maintenance plan</li>
- </ul>
- <a href="/hosting" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
- See hosting plans
- </a>
- </div>
- </div>
- </div>
- </section>
+  <section class="reveal-block bg-[#f7f7f5] py-20 sm:py-24" aria-labelledby="services-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 id="services-title" class="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">Start with the business problem.</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">The framework comes later. First we decide what the website needs to help somebody do.</p>
+      </div>
 
- <!-- Service cards -->
- <section class="py-20 bg-gray-50" aria-label="Services overview">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center max-w-3xl mx-auto mb-16">
- <h2 class="text-3xl sm:text-4xl font-bold text-black mb-4">Services built for your business</h2>
- <p class="text-lg text-gray-600">Everything from a brand-new site to ongoing care and emergency fixes.</p>
- </div>
+      <div class="mt-12 grid grid-cols-1 border-t border-gray-300 md:grid-cols-2">
+        {services.map((service, index) => (
+          <article class:list={[
+            'border-b border-gray-300 py-8 md:py-10',
+            index % 2 === 0 ? 'md:pr-10' : 'md:border-l md:pl-10',
+          ]}>
+            <h3 class="text-2xl font-bold text-gray-950">{service.title}</h3>
+            <p class="mt-3 max-w-xl leading-relaxed text-gray-600">{service.text}</p>
+            <a href={service.href} class="mt-6 inline-flex font-semibold text-primary-700 underline decoration-primary-300 underline-offset-4 transition hover:text-primary-900">{service.link}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
- <a href="/services" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Web Development</h3>
-  <p class="text-gray-600 text-sm">Focused static sites from £250, with most bespoke WordPress, Astro and Laravel projects starting around £2,500.</p>
- </a>
+  <TechStrip />
 
- <a href="/hosting" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Hosting & Maintenance</h3>
- <p class="text-gray-600 text-sm">Managed hosting from £25/month with backups, support and optional maintenance plans.</p>
- </a>
+  <section class="reveal-block bg-white py-20 sm:py-24" aria-labelledby="experience-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:grid-rows-2">
+        <div class="experience-photo overflow-hidden bg-gray-100 lg:row-span-2">
+          <img src="/sophie-and-dad-canoeing.jpg" alt="Andrew and Sophie canoeing together" class="h-full min-h-[28rem] w-full object-cover" loading="eager" fetchpriority="low" decoding="async" />
+        </div>
+        <article class="bg-gray-950 p-8 text-white sm:p-10">
+          <h2 id="experience-title" class="text-3xl font-bold tracking-tight">Experience that reaches beyond a single platform.</h2>
+          <p class="mt-5 leading-relaxed text-gray-300">Andrew's earlier digital work includes HSBC, Hoseasons, Eastern Electricity, French Country Cottages and TravelBag.</p>
+          <a href="/about" class="mt-7 inline-flex font-semibold text-primary-300 underline decoration-primary-500 underline-offset-4 hover:text-white">Meet Andrew</a>
+        </article>
+        <article class="bg-primary-600 p-8 text-white sm:p-10">
+          <p class="text-4xl font-bold tracking-tight">£300,000+</p>
+          <h2 class="mt-3 text-2xl font-bold">Raised through Sophie's Gift Ball</h2>
+          <p class="mt-4 leading-relaxed text-primary-50">That experience shaped an ongoing commitment to charity websites and local causes.</p>
+          <a href="/charity" class="mt-7 inline-flex font-semibold text-white underline decoration-primary-300 underline-offset-4">Read the community story</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
- <a href="/wordpress-doctor" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">WordPress Doctor</h3>
- <p class="text-gray-600 text-sm">Urgent fixes for hacked, broken or slow WordPress sites. Diagnosis and repair for Hampshire businesses.</p>
- </a>
- </div>
- </div>
- </section>
+  <section class="bg-[#f7f7f5] py-20" aria-labelledby="testimonial-title">
+    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 id="testimonial-title" class="sr-only">Client testimonial</h2>
+      <blockquote class="text-3xl font-semibold leading-tight tracking-tight text-gray-950 sm:text-4xl">“The support and service provided by Andrew at Meon Valley Web is first class.”</blockquote>
+      <p class="mt-6 font-semibold text-gray-950">Paul Fredericks</p>
+      <p class="mt-1 text-gray-600">Two Dogs and an Awning</p>
+    </div>
+  </section>
 
- <!-- Testimonial -->
- <section class="py-20 bg-white" aria-label="Client testimonial">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-3xl p-8 lg:p-12">
- <div>
- <svg class="w-10 h-10 text-primary-300 mb-6" fill="currentColor" viewBox="0 0 24 24">
- <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
- </svg>
- <blockquote class="text-xl sm:text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
- “The support and service provided by Andrew at Meon Valley Web is first class. He has created websites that effectively generate interest in my businesses, they are accessible and user friendly on all devices. The backup technical support is quick, reliable and always provides outstanding customer care.”
- </blockquote>
- <div>
- <p class="font-bold text-gray-900">Paul Fredericks</p>
- <p class="text-gray-600"><a href="https://twodogsandanawning.co.uk" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600">Two Dogs and an Awning</a></p>
- </div>
- <div class="mt-8">
- <a href="/portfolio/walking-hiking-wordpress" class="text-primary-600 hover:text-primary-800 font-medium">View this project →</a>
- </div>
- </div>
+  <section class="bg-white py-16" aria-labelledby="areas-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 id="areas-title" class="text-3xl font-bold tracking-tight text-gray-950">Web design across Hampshire</h2>
+      <p class="mt-3 max-w-2xl text-gray-600">Based in the Meon Valley and working with businesses across the county and South Coast.</p>
+      <div class="location-scroll mt-8 flex snap-x gap-3 overflow-x-auto pb-3">
+        {locations.map((location) => (
+          <a href={`/web-design-${location.slug}`} class="snap-start whitespace-nowrap rounded-xl border border-gray-300 bg-[#f7f7f5] px-5 py-3 font-semibold text-gray-800 transition hover:border-primary-600 hover:text-primary-700">{location.name}</a>
+        ))}
+      </div>
+    </div>
+  </section>
 
- <div class="relative">
- <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
- <Image
- src={twoDogsImg}
- alt="Two Dogs and an Awning website homepage"
- class="w-full h-auto rounded-xl object-cover"
- loading="lazy"
- decoding="async"
- widths={[597, 1193]}
- sizes="(min-width: 1024px) 597px, 100vw"
- />
- </div>
- </div>
- </div>
- </div>
- </section>
+  <section class="bg-primary-600 py-20 text-white" aria-labelledby="audit-title">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 id="audit-title" class="text-4xl font-bold tracking-tight sm:text-5xl">Find the clearest improvement first.</h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-primary-50">Get a short, practical review of your website's speed, search visibility, accessibility and trust signals.</p>
+      <a href="/free-site-audit" class="mt-8 inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-gray-950 px-7 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-gray-900 active:translate-y-px">Request a free site audit</a>
+      <p class="mt-4 text-sm text-primary-100">No pressure and no generic automated report.</p>
+    </div>
+  </section>
 
- <!-- Primary CTA -->
- <section class="py-20 bg-primary-500 text-white text-center" aria-label="Call to action">
- <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
- <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to improve your website?</h2>
- <p class="text-xl text-primary-100 mb-10">
- Book a free consultation or request a short site audit. No pressure, just honest advice.
- </p>
- <div class="flex flex-col sm:flex-row gap-4 justify-center">
- <a href="/free-site-audit" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-medium text-lg inline-flex items-center justify-center">
-   Request a free site audit
- </a>
- <a href="https://calendly.com/meonvalleyweb/30min" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition font-medium text-lg inline-flex items-center justify-center">
-   Book a call
- </a>
- </div>
- </div>
- </section>
-
- <!-- Areas we serve -->
- <section class="py-16 bg-gray-50" aria-label="Areas we serve">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center mb-10">
- <h2 class="text-3xl font-bold text-black mb-3">Areas we serve</h2>
- <p class="text-lg text-gray-600 max-w-2xl mx-auto">
- Based in the Meon Valley, we work with businesses across Hampshire and the South Coast.
- </p>
- </div>
- <div class="flex flex-wrap justify-center gap-3">
- {locations.map((loc) => (
- <a
- href={`/web-design-${loc.slug}`}
- class="px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-600 transition-colors duration-200"
->
- {loc.name}
- </a>
- ))}
- </div>
- </div>
- </section>
-
- <!-- Tech strip -->
- <TechStrip />
-
- <!-- Popup -->
- <LeadMagnetPopup />
+  <LeadMagnetPopup />
 </MainLayout>
+
+<style>
+  .project-frame,
+  .work-cell,
+  .experience-photo {
+    border-radius: 1rem;
+  }
+
+  .project-montage {
+    padding: 3.5rem 1rem 4.5rem;
+  }
+
+  .project-frame-main {
+    position: relative;
+    z-index: 2;
+    transform: rotate(-1.5deg);
+  }
+
+  .project-frame-small {
+    position: absolute;
+    z-index: 3;
+    width: min(44%, 17rem);
+  }
+
+  .project-frame-left {
+    bottom: 0.5rem;
+    left: -0.5rem;
+    transform: rotate(2.5deg);
+  }
+
+  .project-frame-right {
+    right: -0.25rem;
+    top: 0;
+    transform: rotate(3deg);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .project-frame-main { animation: hero-settle 900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .project-frame-left { animation: hero-left 1s 120ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .project-frame-right { animation: hero-right 1s 220ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  }
+
+  @keyframes hero-settle {
+    from { transform: translateY(28px) rotate(-3deg); }
+    to { transform: translateY(0) rotate(-1.5deg); }
+  }
+
+  @keyframes hero-left {
+    from { transform: translate(-18px, 24px) rotate(5deg); }
+    to { transform: translate(0, 0) rotate(2.5deg); }
+  }
+
+  @keyframes hero-right {
+    from { transform: translate(20px, -12px) rotate(6deg); }
+    to { transform: translate(0, 0) rotate(3deg); }
+  }
+
+  @media (max-width: 767px) {
+    .project-montage { padding: 2rem 0 3.5rem; }
+    .project-frame-small { width: 43%; }
+    .project-frame-left { left: 0; }
+    .project-frame-right { right: 0; }
+  }
+</style>

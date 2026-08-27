@@ -2,7 +2,7 @@
 title: "New Partnership Launch: Supporting Local Charities"
 description: "We are partnering with local charities to deliver fast, accessible websites at no cost."
 date: 2026-02-20
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Partnerships"
 featured: true
 image: "/portfolio/sdsa.webp"

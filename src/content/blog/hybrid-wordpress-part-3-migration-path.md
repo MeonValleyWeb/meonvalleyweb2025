@@ -2,7 +2,7 @@
 title: "How to Actually Hybridize WordPress: A Practical Migration Path (Part 3 of 3)"
 description: "What a real hybrid WordPress migration involves — the steps, the honest time and cost expectations, and when a traditional WordPress setup is still the better choice."
 date: 2026-08-03
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Architecture"
 featured: true
 image: "/blog/hybrid-wordpress-part-3.webp"

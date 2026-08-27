@@ -26,8 +26,8 @@ const hasSocial = Object.values(social).some((url) => url.length > 0);
 
         <address class="not-italic text-gray-300 mb-4 text-sm">
           <span class="block">{business.address.locality}, {business.address.region}, {business.address.country}</span>
-          <a href={`mailto:${business.email}`} class="block hover:text-primary-400">{business.email}</a>
-          <a href={business.phoneUrl} class="block hover:text-primary-400">{business.phone}</a>
+          <a href={`mailto:${business.email}`} class="flex min-h-7 items-center hover:text-primary-400">{business.email}</a>
+          <a href={business.phoneUrl} class="flex min-h-7 items-center hover:text-primary-400">{business.phone}</a>
         </address>
 
         <a
@@ -99,7 +99,7 @@ const hasSocial = Object.values(social).some((url) => url.length > 0);
     <!-- Charity Notice -->
     <div class="mt-6 p-4 bg-primary-900/20 rounded-lg border border-primary-800/30">
       <p class="text-primary-200 text-sm text-center">
-        🤝 We build a website for a charity every quarter free of charge • 10% of profits go to charitable causes
+        We build a website for a charity every quarter free of charge. 10% of profits go to charitable causes.
       </p>
     </div>
   </div>

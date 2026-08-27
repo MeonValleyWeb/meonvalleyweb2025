@@ -2,7 +2,7 @@
 title: "What a Proper WordPress Backup Strategy Should Include"
 description: "Daily backups aren't enough on their own. Here's what small business owners should actually check before trusting their WordPress backups."
 date: 2026-06-22
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Hosting"
 featured: false
 image: "/portfolio/sdsa.webp"

@@ -2,7 +2,7 @@
 title: "Speed, Security and Scale: the Real Hybrid WordPress Payoff (Part 2 of 3)"
 description: "The concrete benefits of hybrid WordPress architecture — Core Web Vitals, attack surface reduction, and how static front ends handle traffic spikes that would bring a traditional WordPress site down."
 date: 2026-07-27
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Architecture"
 featured: true
 image: "/blog/hybrid-wordpress-part-2.webp"

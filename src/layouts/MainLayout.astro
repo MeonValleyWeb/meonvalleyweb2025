@@ -12,9 +12,10 @@ export interface Props {
   breadcrumbs?: Array<{ name: string; href?: string }>;
   ogImage?: string;
   ogImageAlt?: string;
+  noindex?: boolean;
 }
 
-const { title, description = business.description, breadcrumbs, ogImage: ogImageProp, ogImageAlt } = Astro.props;
+const { title, description = business.description, breadcrumbs, ogImage: ogImageProp, ogImageAlt, noindex = false } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const logoUrl = new URL('/Meon_Valley_Icon.png', Astro.site).toString();
 const ogImage = ogImageProp ? new URL(ogImageProp, Astro.site).toString() : logoUrl;
@@ -102,7 +103,7 @@ const jsonLd = {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <meta name="theme-color" content="#111315" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -128,17 +129,22 @@ const jsonLd = {
     
     <title>{title}</title>
     
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="GVQVVZKT" defer></script>
-    <!-- / Fathom -->
+    <!-- Privacy-focused analytics load only on the production host. -->
+    <script is:inline>
+      if (location.hostname === 'meonvalleyweb.com' || location.hostname === 'www.meonvalleyweb.com') {
+        const fathom = document.createElement('script');
+        fathom.src = 'https://cdn.usefathom.com/script.js';
+        fathom.dataset.site = 'GVQVVZKT';
+        fathom.defer = true;
+        document.head.appendChild(fathom);
 
-    <!-- Umami analytics -->
-    <script
-      defer
-      src="https://stats.meonvalleyweb.com/script.js"
-      data-website-id="68db143d-30a2-4f47-8aa2-e5fd4e695bc0"
-    ></script>
-    <!-- / Umami analytics -->
+        const umami = document.createElement('script');
+        umami.src = 'https://stats.meonvalleyweb.com/script.js';
+        umami.dataset.websiteId = '68db143d-30a2-4f47-8aa2-e5fd4e695bc0';
+        umami.defer = true;
+        document.head.appendChild(umami);
+      }
+    </script>
 
     <!-- Google Ads tag (gtag.js) is loaded conditionally by CookieConsent.astro,
          only after the visitor accepts advertising cookies. -->

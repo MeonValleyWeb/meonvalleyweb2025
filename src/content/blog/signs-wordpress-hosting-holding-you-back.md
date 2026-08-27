@@ -2,7 +2,7 @@
 title: "5 Signs Your WordPress Hosting Is Holding Your Site Back"
 description: "Slow admin, downtime alerts, and no backups when you need them — the warning signs that cheap hosting is costing you more than it saves."
 date: 2026-06-08
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Hosting"
 featured: true
 image: "/portfolio/wessexwhiskyclub.webp"

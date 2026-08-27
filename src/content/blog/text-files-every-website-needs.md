@@ -2,7 +2,7 @@
 title: "The Text Files Every Website Needs in 2026 (robots.txt, ads.txt, llms.txt & More)"
 description: "A plain-English guide to the small text files sitting at the root of your website — what they do, which ones you actually need, and why AI crawlers have added a new one to the list."
 date: 2026-08-15
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Hosting"
 featured: true
 image: "/site-health-bar.webp"

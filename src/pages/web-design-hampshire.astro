@@ -1,113 +1,178 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import twoDogsImg from '../assets/twodogsananawning.webp';
+
+const faqs = [
+  {
+    question: 'How much does a small business website cost in Hampshire?',
+    answer: 'A focused, content-ready static site can start from £250. Most bespoke small business websites start around £2,500, depending on content, design, integrations and ongoing support.',
+  },
+  {
+    question: 'Do you work with businesses outside the Meon Valley?',
+    answer: 'Yes. Meon Valley Web works across Hampshire and the South Coast, including Portsmouth, Southampton, Winchester, Petersfield, Fareham, Eastleigh and surrounding areas.',
+  },
+  {
+    question: 'Should I choose WordPress or Astro?',
+    answer: 'The choice depends on how your team publishes, what the website needs to do and who will maintain it. We recommend the simplest suitable platform after discussing those needs.',
+  },
+  {
+    question: 'Will my new website be ready for search engines?',
+    answer: 'Every build includes a clear page structure, descriptive metadata, crawlable content, mobile performance and the technical foundations search engines need. Ongoing ranking work is planned separately around content, authority and local relevance.',
+  },
+  {
+    question: 'Can you improve an existing website?',
+    answer: 'Yes. The free website audit identifies the highest-impact improvements first. We can then refresh the design, repair WordPress, improve performance or rebuild only where that is the sensible option.',
+  },
+];
 ---
 
 <MainLayout
- title="Web Design Hampshire | Meon Valley Web"
- description="Modern, conversion‑focused web design for Hampshire small businesses. WordPress and Astro builds with ongoing support."
- breadcrumbs={[
- { name: 'Home', href: '/' },
- { name: 'Web Design Hampshire' },
- ]}
+  title="Web Design Hampshire | Fast, Accessible Business Websites"
+  description="Hampshire web design for businesses that need a faster, clearer and more credible website. WordPress and Astro builds with direct local support."
+  ogImage="/portfolio/sdsa.webp"
+  ogImageAlt="Websites designed and built by Meon Valley Web in Hampshire"
+  breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Web Design Hampshire' }]}
 >
- <section class="bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-20">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
- <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
- Small business web design in <span class="text-primary-500">Hampshire</span>
- </h1>
- <p class="text-xl text-gray-600 max-w-3xl mx-auto">
- We design fast, mobile‑friendly websites that generate leads and build trust.
- </p>
- <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
- <a href="/contact" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-semibold text-lg">
- Start a project
- </a>
- <a href="/portfolio" class="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg">
- View portfolio
- </a>
- </div>
- </div>
- </section>
+  <SchemaFAQ faqs={faqs} />
 
- <section class="py-16 bg-white">
- <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
- <div>
- <h2 class="text-3xl font-bold text-gray-900 mb-4">Design that converts, not just looks good</h2>
- <p class="text-gray-700 mb-4">
- We focus on clear messaging, strong calls‑to‑action, and fast performance to turn visitors into enquiries.
- </p>
- <p class="text-gray-700">
- Our Hampshire clients value simplicity, speed, and a site they can trust to represent their business.
- </p>
- </div>
- <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
- <h3 class="text-xl font-semibold text-gray-900 mb-3">Our USP</h3>
- <ul class="space-y-2 text-gray-700">
- <li>• Strategy‑first design focused on leads</li>
- <li>• Fast, mobile‑first builds</li>
- <li>• Local support and long‑term partnership</li>
- <li>• Hosting and maintenance under one roof</li>
- </ul>
- </div>
- </div>
- </div>
- </section>
+  <section class="overflow-hidden bg-[#f7f7f5]" aria-labelledby="hampshire-title">
+    <div class="mx-auto grid min-h-[78dvh] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:px-8 lg:py-20">
+      <div class="max-w-2xl">
+        <h1 id="hampshire-title" class="text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-gray-950 sm:text-6xl"><span class="text-primary-600">Hampshire</span> web design.</h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl">Fast, accessible websites with clear pricing and direct local support.</p>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href="/free-site-audit" class="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-primary-600 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-700 active:translate-y-px">Request a free site audit</a>
+          <a href="/portfolio" class="inline-flex items-center justify-center whitespace-nowrap rounded-xl border border-gray-300 bg-white px-7 py-4 font-semibold text-gray-950 transition hover:-translate-y-0.5 hover:border-gray-950 active:translate-y-px">View recent work</a>
+        </div>
+      </div>
 
- <section class="py-20 bg-white">
- <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
- <div class="bg-gray-50 rounded-xl p-6">
- <h2 class="text-xl font-bold text-gray-900 mb-2">Conversion‑focused</h2>
- <p class="text-gray-700">Clear messaging, strong calls‑to‑action, and trust signals.</p>
- </div>
- <div class="bg-gray-50 rounded-xl p-6">
- <h2 class="text-xl font-bold text-gray-900 mb-2">Modern builds</h2>
- <p class="text-gray-700">WordPress or Astro builds based on your business needs.</p>
- </div>
- <div class="bg-gray-50 rounded-xl p-6">
- <h2 class="text-xl font-bold text-gray-900 mb-2">Ongoing support</h2>
- <p class="text-gray-700">Maintenance and hosting available under one roof.</p>
- </div>
- </div>
- </div>
- </section>
+      <div class="hampshire-project bg-white p-4 shadow-[0_32px_90px_-48px_rgba(17,24,39,0.55)]">
+        <Image src={twoDogsImg} alt="Two Dogs and an Awning website designed in Hampshire" class="aspect-[16/10] w-full object-cover" widths={[680, 1020, 1360]} sizes="(min-width: 1024px) 620px, 92vw" fetchpriority="high" />
+        <div class="grid gap-4 px-2 pb-2 pt-5 sm:grid-cols-[1fr_auto] sm:items-end">
+          <div><p class="text-sm font-semibold text-primary-700">Hampshire project</p><p class="mt-1 text-xl font-bold text-gray-950">Two Dogs and an Awning</p></div>
+          <p class="max-w-xs text-sm leading-relaxed text-gray-500">More than 900 walks organised for visitors and charity fundraising.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
- <section class="py-20 bg-white">
- <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center mb-10">
- <h2 class="text-3xl font-bold text-gray-900 mb-3">Our process</h2>
- <p class="text-gray-600">Clear steps and no surprises.</p>
- </div>
- <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
- <div class="bg-gray-50 rounded-xl p-6">
- <h3 class="text-lg font-semibold text-gray-900 mb-2">1) Discover</h3>
- <p class="text-gray-700">We understand your goals, audience, and offers.</p>
- </div>
- <div class="bg-gray-50 rounded-xl p-6">
- <h3 class="text-lg font-semibold text-gray-900 mb-2">2) Design & build</h3>
- <p class="text-gray-700">We create a fast, mobile‑first site with clear CTAs.</p>
- </div>
- <div class="bg-gray-50 rounded-xl p-6">
- <h3 class="text-lg font-semibold text-gray-900 mb-2">3) Launch & optimise</h3>
- <p class="text-gray-700">We launch, test, and refine for conversions.</p>
- </div>
- </div>
- <div class="text-center mt-8">
- <a href="https://calendly.com/meonvalleyweb/30min" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700" target="_blank" rel="noopener noreferrer">
- Book a discovery call →
- </a>
- </div>
- </div>
- </section>
+  <TrustSignals />
 
- <section class="py-16 bg-primary-500">
- <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
- <h2 class="text-4xl font-bold text-white mb-4">Ready to improve your site?</h2>
- <p class="text-xl text-primary-100 mb-6">We build sites that look great and perform even better.</p>
- <a href="https://calendly.com/meonvalleyweb/30min" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-semibold text-lg" target="_blank" rel="noopener noreferrer">
- Book a discovery call
- </a>
- </div>
- </section>
+  <section class="pillar-reveal bg-white py-20 sm:py-24" aria-labelledby="difference-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 id="difference-title" class="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">A modern website has to prove its value quickly.</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">Visitors need to understand what you do, why they should trust you and what to do next.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:grid-rows-2">
+        <article class="difference-cell bg-primary-600 p-8 text-white sm:p-10 lg:row-span-2">
+          <h3 class="text-3xl font-bold tracking-tight sm:text-4xl">Built around the decision your customer is making.</h3>
+          <p class="mt-5 max-w-xl text-lg leading-relaxed text-primary-50">Structure, copy, proof and calls to action are considered together, so the design supports a real business outcome.</p>
+          <div class="mt-12 border-t border-primary-300/40 pt-6">
+            <p class="text-sm font-semibold text-primary-100">What that changes</p>
+            <p class="mt-2 text-xl font-semibold">Less hesitation. Clearer enquiries. A site you are confident to share.</p>
+          </div>
+        </article>
+        <article class="difference-cell bg-gray-950 p-8 text-white">
+          <h3 class="text-2xl font-bold">Performance from the start</h3>
+          <p class="mt-3 leading-relaxed text-gray-300">Lean pages, responsive images and careful third-party scripts keep the experience fast.</p>
+        </article>
+        <article class="difference-cell border border-gray-200 bg-[#f7f7f5] p-8">
+          <h3 class="text-2xl font-bold text-gray-950">Support after launch</h3>
+          <p class="mt-3 leading-relaxed text-gray-600">Hosting, maintenance and direct help remain available without a large-agency handoff.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillar-reveal bg-[#f7f7f5] py-20 sm:py-24" aria-labelledby="hampshire-work-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] text-primary-700">Hampshire work</p>
+      <h2 id="hampshire-work-title" class="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">Websites for businesses, clubs and community organisations.</h2>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr]">
+        <a href="/portfolio/saints-disabled-association" class="case-study group bg-white p-4 md:row-span-2">
+          <img src="/portfolio/sdsa.webp" alt="Saints Disabled Supporters Association website" class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.015]" loading="lazy" decoding="async" />
+          <div class="p-4 sm:p-6"><h3 class="text-2xl font-bold text-gray-950">Accessible supporter services</h3><p class="mt-3 leading-relaxed text-gray-600">Clear information and administration designed around disabled supporters.</p></div>
+        </a>
+        <a href="/portfolio/wessex-whisky-ecommerce" class="case-study group grid grid-cols-[1fr_0.9fr] items-center gap-5 bg-gray-950 p-4 text-white sm:p-5">
+          <div><h3 class="text-xl font-bold">Membership and events</h3><p class="mt-2 text-sm leading-relaxed text-gray-300">A club platform supporting events and charitable causes.</p></div>
+          <img src="/portfolio/wessexwhiskyclub.webp" alt="Wessex Whisky Club website" class="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+        </a>
+        <a href="/portfolio/lace-guild-ecommerce" class="case-study group grid grid-cols-[0.9fr_1fr] items-center gap-5 bg-white p-4 sm:p-5">
+          <img src="/portfolio/thelaceguild.webp" alt="The Lace Guild website" class="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+          <div><h3 class="text-xl font-bold text-gray-950">Heritage and ecommerce</h3><p class="mt-2 text-sm leading-relaxed text-gray-600">Modernising access to a specialist craft community.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillar-reveal bg-white py-20 sm:py-24" aria-labelledby="process-title">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 lg:px-8">
+      <div class="max-w-xl">
+        <h2 id="process-title" class="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">A clear route from idea to improvement.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-gray-600">You always know what is being decided, built and checked.</p>
+      </div>
+
+      <div class="border-t border-gray-300">
+        <article class="grid gap-3 border-b border-gray-300 py-8 sm:grid-cols-[10rem_1fr]"><h3 class="text-2xl font-bold text-primary-700">Clarify</h3><p class="leading-relaxed text-gray-600">Agree the audience, business goal, content and simplest sensible scope.</p></article>
+        <article class="grid gap-3 border-b border-gray-300 py-8 sm:grid-cols-[10rem_1fr]"><h3 class="text-2xl font-bold text-primary-700">Build</h3><p class="leading-relaxed text-gray-600">Design and develop the real page journeys, with regular review points.</p></article>
+        <article class="grid gap-3 border-b border-gray-300 py-8 sm:grid-cols-[10rem_1fr]"><h3 class="text-2xl font-bold text-primary-700">Improve</h3><p class="leading-relaxed text-gray-600">Launch carefully, measure real enquiries and strengthen what the evidence supports.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-950 py-20 text-white" aria-labelledby="pricing-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl"><h2 id="pricing-title" class="text-4xl font-bold tracking-tight sm:text-5xl">Clear scope before a line is built.</h2><p class="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">A useful starting point for planning, followed by a fixed proposal for the actual work.</p></div>
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-[0.8fr_1.2fr]">
+        <article class="price-cell border border-white/15 bg-gray-900 p-8"><p class="text-sm font-semibold text-primary-300">Focused static site</p><p class="mt-4 text-4xl font-bold">From £250</p><p class="mt-4 leading-relaxed text-gray-300">For a tightly scoped, content-ready website with a simple structure.</p></article>
+        <article class="price-cell bg-primary-600 p-8"><p class="text-sm font-semibold text-primary-100">Most bespoke business sites</p><p class="mt-4 text-5xl font-bold">From £2,500</p><p class="mt-4 max-w-xl leading-relaxed text-primary-50">For tailored content structure, design, development, accessibility and room to grow.</p></article>
+      </div>
+      <a href="/blog/how-much-does-website-cost-hampshire" class="mt-8 inline-flex font-semibold text-primary-300 underline decoration-primary-500 underline-offset-4 hover:text-white">Read the Hampshire website pricing guide</a>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 sm:py-24" aria-labelledby="faq-title">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 id="faq-title" class="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">Questions Hampshire businesses ask first.</h2>
+      <div class="mt-10 border-t border-gray-300">
+        {faqs.map((faq) => (
+          <details class="group border-b border-gray-300 py-6">
+            <summary class="cursor-pointer list-none pr-10 text-xl font-bold text-gray-950 marker:hidden">{faq.question}</summary>
+            <p class="mt-4 max-w-3xl leading-relaxed text-gray-600">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-600 py-20 text-white" aria-labelledby="hampshire-audit-title">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 id="hampshire-audit-title" class="text-4xl font-bold tracking-tight sm:text-5xl">See what your current website needs first.</h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-primary-50">Get a practical review of speed, search visibility, accessibility and conversion clarity.</p>
+      <a href="/free-site-audit" class="mt-8 inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-gray-950 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-gray-900 active:translate-y-px">Request a free site audit</a>
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  .hampshire-project,
+  .difference-cell,
+  .case-study,
+  .price-cell { border-radius: 1rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hampshire-project { animation: project-enter 900ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  }
+
+  @keyframes project-enter {
+    from { opacity: 0; transform: translateY(28px) rotate(1.5deg); }
+    to { opacity: 1; transform: translateY(0) rotate(-1deg); }
+  }
+
+</style>

@@ -2,7 +2,7 @@
 title: "What Is Hybrid WordPress — and Why It Matters (Part 1 of 3)"
 description: "Hybrid (headless) WordPress separates content management from the front end your visitors see. Here's what that actually means, and why it's changing how serious businesses build on WordPress."
 date: 2026-07-20
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Architecture"
 featured: true
 image: "/blog/hybrid-wordpress-part-1.webp"

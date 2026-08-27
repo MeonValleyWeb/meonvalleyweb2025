@@ -2,10 +2,20 @@
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import MainLayout from '../../layouts/MainLayout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('blog');
-  return entries.map((entry) => {
+  const dedicatedRoutes = new Set([
+    'ai-website-guide-business-owners',
+    'how-much-does-website-cost-hampshire',
+    'how-to-choose-web-designer',
+  ]);
+
+  return entries.filter((entry) => {
+    const slug = entry.id.split('/').pop()?.replace(/\.md$/, '') || '';
+    return !dedicatedRoutes.has(slug);
+  }).map((entry) => {
     // entry.id is like 'blog/filename' or 'blog/folder/filename'
     // Extract just the filename without the collection prefix and extension
     const slug = entry.id.split('/').pop()?.replace(/\.md$/, '') || '';
@@ -78,6 +88,8 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
       <Fragment set:html={htmlContent} />
     </div>
   </section>
+
+  <AuthorBio />
 
   <section class="bg-gray-50 py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">

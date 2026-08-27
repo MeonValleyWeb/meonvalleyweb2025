@@ -2,7 +2,7 @@
 title: "Why Faster Sites Convert Better"
 description: "Speed is not just a technical metric. It directly impacts trust, engagement, and lead quality."
 date: 2026-02-10
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Performance"
 featured: true
 image: "/portfolio/wessexwhiskyclub.webp"

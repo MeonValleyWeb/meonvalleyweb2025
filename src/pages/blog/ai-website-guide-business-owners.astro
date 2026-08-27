@@ -1,16 +1,17 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
 ---
 
 <MainLayout 
-  title="AI on Your Website: A Business Owner's Guide [2025]" 
+  title="AI on Your Website: A Business Owner's Guide"
   description="Practical guide to using AI on business websites. Learn where AI adds value, the pitfalls to avoid, and how to choose local vs cloud tools."
 >
   <!-- Hero Section -->
   <section class="py-20 lg:py-28 bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-        2025 Business Guide
+        Business Guide
       </span>
       <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
         AI on Your Website: <span class="text-primary-500">What Business Owners Need to Know</span>
@@ -497,56 +498,25 @@ import MainLayout from '../../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- Real Success Stories -->
+  <!-- Practical starting points -->
   <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg-px-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-        Real Results: AI Done Right
+        Where AI can earn its place
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-gray-900 mb-2">E-commerce Site: 40% Revenue Increase</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Implemented AI-powered product recommendations and intelligent search for a Hampshire 
-            retail business. The system learned from browsing patterns to suggest complementary products.
-          </p>
-          <p class="text-green-700 text-sm font-medium">
-            Result: £12,000 additional monthly revenue after 3 months.
-          </p>
+      <div class="border-t border-gray-300">
+        <div class="grid gap-3 border-b border-gray-300 py-7 sm:grid-cols-[12rem_1fr]">
+          <h3 class="font-bold text-gray-900">Product discovery</h3>
+          <p class="text-gray-600">Recommendations can help when a catalogue is large enough and the business has reliable product and behavioural data.</p>
         </div>
-
-        <div class="bg-white p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-gray-900 mb-2">Service Business: 60% Fewer Support Calls</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Built a context-aware chatbot trained on the company's actual documentation. 
-            It answers 80% of common questions without human intervention.
-          </p>
-          <p class="text-green-700 text-sm font-medium">
-            Result: Owner reclaimed 15 hours/week previously spent on repetitive emails.
-          </p>
+        <div class="grid gap-3 border-b border-gray-300 py-7 sm:grid-cols-[12rem_1fr]">
+          <h3 class="font-bold text-gray-900">Support triage</h3>
+          <p class="text-gray-600">A controlled assistant can surface approved documentation and route unanswered questions to a person.</p>
         </div>
-
-        <div class="bg-white p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-gray-900 mb-2">Local Trades: 25% More Enquiries</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Used AI to generate 50 location-specific landing pages for different service areas. 
-            Each page was human-edited but AI-drafted from a data feed.
-          </p>
-          <p class="text-green-700 text-sm font-medium">
-            Result: Dominated local search for "[service] + [town]" combinations.
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl shadow-md">
-          <h3 class="font-bold text-gray-900 mb-2">GDPR-Compliant Local AI</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Implemented a self-hosted AI system for a healthcare-adjacent business. 
-            All patient-adjacent data stays on their server, never leaves the UK.
-          </p>
-          <p class="text-green-700 text-sm font-medium">
-            Result: Passed regulatory audit with zero data protection concerns.
-          </p>
+        <div class="grid gap-3 border-b border-gray-300 py-7 sm:grid-cols-[12rem_1fr]">
+          <h3 class="font-bold text-gray-900">Internal workflows</h3>
+          <p class="text-gray-600">Summarisation and classification can reduce repetitive administration when the inputs, review process and data boundaries are clear.</p>
         </div>
       </div>
     </div>
@@ -591,6 +561,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
       </div>
     </div>
   </section>
+
+  <AuthorBio />
 
   <!-- CTA -->
   <section class="py-20 bg-primary-500">

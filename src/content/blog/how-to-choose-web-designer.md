@@ -2,7 +2,7 @@
 title: "How to Choose a Web Designer in Hampshire: 10 Essential Questions"
 description: "Don't hire a web designer until you ask these 10 questions. Expert advice for Hampshire businesses choosing a web development partner."
 date: 2026-03-27
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Business Guide"
 featured: true
 image: "/images/blog/choose-web-designer.jpg"

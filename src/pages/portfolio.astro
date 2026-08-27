@@ -3,9 +3,17 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import twoDogsImg from '../assets/twodogsananawning.webp';
+import { portfolioImages } from '../data/portfolioImages';
 
 const portfolioItems = await getCollection('portfolio');
-const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.order);
+const sortedPortfolio = portfolioItems
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((project) => ({
+    ...project,
+    resolvedImage: project.data.image
+      ? portfolioImages[project.data.image as keyof typeof portfolioImages]
+      : undefined,
+  }));
 ---
 
 <MainLayout
@@ -36,7 +44,18 @@ const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.orde
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <!-- Project Image -->
             <div class={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-              {project.data.image ? (
+              {project.resolvedImage ? (
+                <div class="rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <Image
+                    src={project.resolvedImage}
+                    alt={project.data.imageAlt || project.data.title}
+                    class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    widths={[620, 930, 1240]}
+                    sizes="(min-width: 1024px) 620px, 92vw"
+                    loading="lazy"
+                  />
+                </div>
+              ) : project.data.image ? (
                 <div class="rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                   <img 
                     src={project.data.image} 
