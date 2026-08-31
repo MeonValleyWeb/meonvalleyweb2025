@@ -17,7 +17,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.3",
-    "devalue": "^5.9.0",
+    "devalue": "^5.9.2",
     "marked": "^18.0.10",
     "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3"
