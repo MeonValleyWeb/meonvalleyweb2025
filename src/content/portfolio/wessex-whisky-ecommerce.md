@@ -1,44 +1,34 @@
 ---
-title: "Wessex Whisky Club Membership Site"
-description: "Premium whisky tastings to benefit charities and club membership"
-technology: "Membership Platform"
-category: "Club and Meetings"
-client: "Wessex Whisky"
+title: "Wessex Whisky Club Membership and Events"
+description: "A focused club website presenting tastings, membership and charitable activity"
+technology: "Astro & Cloud Delivery"
+category: "Membership & Events"
+client: "Wessex Whisky Club"
 status: "Live"
 featured: true
 order: 6
 image: "/portfolio/wessexwhiskyclub.webp"
-imageAlt: "Wessex Whisky club website homepage showcasing premium tastings for charity"
+imageAlt: "Wessex Whisky Club website homepage showcasing premium tastings for charity"
 ---
 
-## Project Overview
+## The challenge
 
-This project involved creating a high-end experience to attract members, focusing on premium tasting presentation, user experience, and seamless club membership management.
+Wessex Whisky Club needed to present premium tasting events without losing the friendly character of a local club. Visitors needed to understand the next event quickly, see what membership offered and recognise the charitable purpose behind the programme.
 
-## Key Features
+## The approach
 
-- **Premium Product Showcase**: Elegant product galleries with detailed descriptions
-- **Advanced Filtering**: Search and filter by region, age, price, and whisky type
-- **Secure Checkout**: Integrated payment processing with age verification
-- **Inventory Management**: Real-time stock tracking and availability updates
-- **Mobile Optimized**: Responsive design for all device types
-- **Content Management**: Easy-to-use backend for product and content updates
+The site gives each event a clear place in the wider club story. Strong imagery establishes the atmosphere, while concise event information and direct booking routes reduce the work required to decide and act.
 
-## Technical Implementation
+The project focused on:
 
-- **Ecommerce Platform**: Modern ecommerce solution with custom theming
-- **Payment Integration**: Secure payment gateway with multiple payment options
-- **Age Verification**: Compliance with alcohol sales regulations
-- **Performance Optimization**: Fast loading times for image-heavy product pages
-- **SEO Optimization**: Search engine optimization for product discoverability
+- Clear presentation of upcoming tastings and club activity.
+- A mobile-first journey for members arriving from email and social posts.
+- Straightforward event and membership calls to action.
+- Fast static delivery and responsive imagery.
+- Visible connection between club activity and charitable causes.
 
-## Design Approach
+## The outcome
 
-- **Sophisticated Aesthetic**: Design reflecting the premium nature of the products
-- **User Experience**: Intuitive navigation and streamlined purchasing process
-- **Brand Consistency**: Visual design aligned with Wessex Whisky's brand identity
-- **Trust Signals**: Professional presentation to build customer confidence
+The club now has a focused destination it can confidently use in campaigns, event announcements and membership conversations. The website supports the event journey while leaving the organisers with a maintainable platform.
 
-## Results
-
-The platform successfully showcases Wessex Whisky's premium collection while providing customers with an intuitive and trustworthy online shopping experience, supporting the business's growth in the digital marketplace.
+[See how Meon Valley Web approaches modern delivery](/services) or [request a free site audit](/free-site-audit).

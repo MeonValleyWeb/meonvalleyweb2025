@@ -1,280 +1,521 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
-import { locations } from '../data/site.ts';
-import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
-import TrustSignals from '../components/TrustSignals.astro';
-import TechStrip from '../components/TechStrip.astro';
-import analyticsDashboardImg from '../assets/analytics-dashboard.webp';
-import searchConsoleImg from '../assets/search-console.webp';
-import pagespeedScoreImg from '../assets/pagespeed-score.webp';
-import twoDogsImg from '../assets/twodogsananawning.webp';
+import HoldingLayout from '../layouts/HoldingLayout.astro';
+
+const source120Url = 'https://source120.com';
 ---
 
-<MainLayout 
- title="Web Design Hampshire | Meon Valley Web"
- description="Web development and hosting for Hampshire small businesses. Request a free site audit, book a call, and start improving your website today."
+<HoldingLayout
+  title="Meon Valley Web is becoming Source 120"
+  description="Meon Valley Web is becoming Source 120. The same person, experience and care, with a broader home for the work."
 >
- <!-- Hero: conversion-first -->
- <section class="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-primary-100/50 py-16 lg:py-24" aria-label="Introduction">
- <div class="absolute inset-0 -z-10">
- <div class="absolute top-20 right-20 w-72 h-72 bg-primary-100 rounded-full opacity-40 blur-3xl"></div>
- <div class="absolute bottom-20 left-20 w-96 h-96 bg-primary-50 rounded-full opacity-30 blur-3xl"></div>
- </div>
+  <div class="holding-page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Meon Valley Web home">
+        <img src="/meon-valley-web-logo.svg" alt="Meon Valley Web" width="224" height="58" />
+      </a>
+      <a class="new-home" href={source120Url} target="_blank" rel="noopener noreferrer">
+        <span>Now building as</span>
+        <strong>Source 120 <span aria-hidden="true">↗</span></strong>
+      </a>
+    </header>
 
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
- <div class="max-w-2xl">
- <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 leading-[1.1] tracking-tight">
- Web development and hosting that grows your <span class="text-primary-500">Hampshire business</span>
- </h1>
- <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
- Modern, fast websites and reliable WordPress hosting for small businesses across Hampshire and the South Coast. Clear pricing, local support, and no jargon.
- </p>
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Meon Valley Web</p>
+          <h1 id="hero-title">The name is changing. The work carries on.</h1>
+          <p class="hero-lede">Meon Valley Web is becoming Source 120. The same person, experience and care, with a broader home for the work.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={source120Url} target="_blank" rel="noopener noreferrer">Visit Source 120 <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="mailto:hello@meonvalleyweb.com">Email Andrew</a>
+          </div>
+          <p class="transition-note">This address and the Meon Valley Web email remain active while the move is completed.</p>
+        </div>
 
- <ul class="space-y-3 mb-10 text-gray-700">
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-  Free improvement report — see what to fix first
- </li>
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-  Focused static sites from £250; most business sites from around £2,500
- </li>
- <li class="flex items-start gap-3">
- <svg class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
- WordPress support, security updates and daily backups
- </li>
- </ul>
+        <figure class="hero-art">
+          <div class="hero-art-frame">
+            <img
+              src="/rebrand-transition.webp"
+              alt="A charcoal folded card, raspberry paper ribbon and white arrow suggesting a new direction"
+              width="1448"
+              height="1086"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <figcaption>Same care. A wider frame.</figcaption>
+        </figure>
+      </section>
 
- <div class="flex flex-col sm:flex-row gap-4">
-   <a href="/free-site-audit" class="bg-primary-500 text-white px-8 py-4 rounded-lg hover:bg-primary-600 transition-colors duration-200 font-medium text-lg inline-flex items-center justify-center">
-     Request a free site audit
-   </a>
-   <a href="https://calendly.com/meonvalleyweb/30min" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-600 px-8 py-4 rounded-lg font-medium text-lg inline-flex items-center justify-center underline">
-     Book a call
-   </a>
- </div>
- </div>
+      <section class="continuity" aria-labelledby="continuity-title">
+        <div class="section-intro">
+          <h2 id="continuity-title">A new name. The same way of working.</h2>
+          <p>I started Meon Valley Web to make good websites feel more straightforward. That remains the point. Source 120 gives the work a home that can grow beyond one valley.</p>
+        </div>
 
- <div class="relative">
- <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4 sm:p-6">
- <Image
- src={analyticsDashboardImg}
- alt="Website analytics dashboard showing traffic growth"
- class="w-full h-auto rounded-xl object-cover"
- widths={[545, 1090]}
- sizes="(min-width: 1024px) 545px, 100vw"
- fetchpriority="high"
- />
- </div>
- </div>
- </div>
- </div>
- </section>
+        <div class="continuity-list">
+          <article>
+            <h3>Useful first</h3>
+            <p>Websites built around the job they need to do, not a stack of features.</p>
+          </article>
+          <article>
+            <h3>Support after launch</h3>
+            <p>Clear advice, practical fixes and someone who knows the work when you need help.</p>
+          </article>
+          <article>
+            <h3>Time for good causes</h3>
+            <p>Charity and community work remain part of the reason I do this.</p>
+          </article>
+        </div>
+      </section>
 
- <!-- Site audit teaser -->
- <section class="py-16 sm:py-20 bg-primary-500" aria-label="Free site audit offer">
-   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
-       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Not sure where your website stands?</h2>
-       <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-         Get a short video audit covering speed, mobile usability, SEO basics, security and quick wins — completely free.
-       </p>
-       <a href="/free-site-audit" class="inline-flex items-center justify-center bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition font-semibold text-lg">
-         Get my free audit
-       </a>
-     </div>
-   </div>
- </section>
+      <section class="contact-band" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">For existing contacts</p>
+          <h2 id="contact-title">Keep the old address. Follow the new one.</h2>
+          <p>You can still reach Andrew at <a href="mailto:hello@meonvalleyweb.com">hello@meonvalleyweb.com</a>. New work and the next chapter are now at Source 120.</p>
+        </div>
+        <a class="text-link" href={source120Url} target="_blank" rel="noopener noreferrer">See the new site <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
 
- <!-- Trust stats -->
- <TrustSignals />
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">Meon Valley Web</p>
+        <p class="footer-note">Moving to Source 120. The domain remains active for email while the transition is completed.</p>
+      </div>
+      <a href="mailto:hello@meonvalleyweb.com">hello@meonvalleyweb.com</a>
+    </footer>
+  </div>
+</HoldingLayout>
 
- <!-- Unified "How we help" section -->
- <section class="py-20 bg-white" aria-label="What we do">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center max-w-3xl mx-auto mb-16">
- <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">How we help you take control online</h2>
- <p class="text-lg text-gray-600">
- We combine modern development, reliable hosting and practical SEO so your site works harder for your business.
- </p>
- </div>
+<style>
+  .holding-page {
+    --ink: #15171c;
+    --muted: #5b5e66;
+    --line: rgba(21, 23, 28, 0.16);
+    --paper: #f6f4ef;
+    --paper-deep: #ece9e2;
+    --pink: #bc1f63;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: var(--paper);
+  }
 
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
- <div>
- <h3 class="text-2xl font-bold text-black mb-4">A website built to perform</h3>
- <p class="text-gray-600 mb-6 leading-relaxed">
- Whether you need WordPress, a headless CMS with Astro, or a Laravel application, we build sites that load fast, work on every device, and convert visitors into enquiries.
- </p>
- <ul class="space-y-3 mb-8 text-gray-700">
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Responsive, accessible design</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> SEO baked in from day one</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Transparent, fixed-fee projects</li>
- </ul>
- <a href="/services" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
- Explore development
- </a>
- </div>
- <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <Image
- src={searchConsoleImg}
- alt="Google Search Console showing improved search visibility"
- class="w-full h-auto rounded-xl"
- loading="lazy"
- decoding="async"
- widths={[522, 1043]}
- sizes="(min-width: 1024px) 522px, 100vw"
- />
- </div>
- </div>
+  .site-header,
+  .hero,
+  .continuity,
+  .contact-band,
+  .site-footer {
+    width: min(100% - 3rem, 78rem);
+    margin: 0 auto;
+  }
 
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
- <div class="order-2 lg:order-1 bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
- <Image
- src={pagespeedScoreImg}
- alt="PageSpeed Insights score showing fast performance"
- class="w-full h-auto rounded-xl"
- loading="lazy"
- decoding="async"
- widths={[543, 1085]}
- sizes="(min-width: 1024px) 543px, 100vw"
- />
- </div>
- <div class="order-1 lg:order-2">
- <h3 class="text-2xl font-bold text-black mb-4">Hosting and care that keeps you online</h3>
- <p class="text-gray-600 mb-6 leading-relaxed">
- Our managed WordPress hosting starts at £25/month and includes daily backups, Cloudflare DNS and SSL. Upgrade to a maintenance plan and we’ll handle updates, security and support.
- </p>
- <ul class="space-y-3 mb-8 text-gray-700">
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Daily backups with 30-day retention</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> UK business-hours support</li>
- <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Straightforward £50/month maintenance plan</li>
- </ul>
- <a href="/hosting" class="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition font-medium inline-flex items-center">
- See hosting plans
- </a>
- </div>
- </div>
- </div>
- </section>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 6.5rem;
+    border-bottom: 1px solid var(--line);
+  }
 
- <!-- Service cards -->
- <section class="py-20 bg-gray-50" aria-label="Services overview">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center max-w-3xl mx-auto mb-16">
- <h2 class="text-3xl sm:text-4xl font-bold text-black mb-4">Services built for your business</h2>
- <p class="text-lg text-gray-600">Everything from a brand-new site to ongoing care and emergency fixes.</p>
- </div>
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    max-width: 14rem;
+  }
 
- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
- <a href="/services" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Web Development</h3>
-  <p class="text-gray-600 text-sm">Focused static sites from £250, with most bespoke WordPress, Astro and Laravel projects starting around £2,500.</p>
- </a>
+  .brand img {
+    display: block;
+    width: auto;
+    height: 2.7rem;
+  }
 
- <a href="/hosting" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">Hosting & Maintenance</h3>
- <p class="text-gray-600 text-sm">Managed hosting from £25/month with backups, support and optional maintenance plans.</p>
- </a>
+  .new-home {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    text-decoration: none;
+  }
 
- <a href="/wordpress-doctor" class="group block bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition">
- <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
- <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
- </div>
- <h3 class="text-xl font-bold text-black mb-3 group-hover:text-primary-600 transition">WordPress Doctor</h3>
- <p class="text-gray-600 text-sm">Urgent fixes for hacked, broken or slow WordPress sites. Diagnosis and repair for Hampshire businesses.</p>
- </a>
- </div>
- </div>
- </section>
+  .new-home span {
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
 
- <!-- Testimonial -->
- <section class="py-20 bg-white" aria-label="Client testimonial">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-3xl p-8 lg:p-12">
- <div>
- <svg class="w-10 h-10 text-primary-300 mb-6" fill="currentColor" viewBox="0 0 24 24">
- <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
- </svg>
- <blockquote class="text-xl sm:text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
- “The support and service provided by Andrew at Meon Valley Web is first class. He has created websites that effectively generate interest in my businesses, they are accessible and user friendly on all devices. The backup technical support is quick, reliable and always provides outstanding customer care.”
- </blockquote>
- <div>
- <p class="font-bold text-gray-900">Paul Fredericks</p>
- <p class="text-gray-600"><a href="https://twodogsandanawning.co.uk" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600">Two Dogs and an Awning</a></p>
- </div>
- <div class="mt-8">
- <a href="/portfolio/walking-hiking-wordpress" class="text-primary-600 hover:text-primary-800 font-medium">View this project →</a>
- </div>
- </div>
+  .new-home strong {
+    color: var(--ink);
+    font-size: 1rem;
+    transition: color 180ms ease;
+  }
 
- <div class="relative">
- <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
- <Image
- src={twoDogsImg}
- alt="Two Dogs and an Awning website homepage"
- class="w-full h-auto rounded-xl object-cover"
- loading="lazy"
- decoding="async"
- widths={[597, 1193]}
- sizes="(min-width: 1024px) 597px, 100vw"
- />
- </div>
- </div>
- </div>
- </div>
- </section>
+  .new-home:hover strong,
+  .new-home:focus-visible strong {
+    color: var(--pink);
+  }
 
- <!-- Primary CTA -->
- <section class="py-20 bg-primary-500 text-white text-center" aria-label="Call to action">
- <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
- <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to improve your website?</h2>
- <p class="text-xl text-primary-100 mb-10">
- Book a free consultation or request a short site audit. No pressure, just honest advice.
- </p>
- <div class="flex flex-col sm:flex-row gap-4 justify-center">
- <a href="/free-site-audit" class="bg-white text-primary-500 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-medium text-lg inline-flex items-center justify-center">
-   Request a free site audit
- </a>
- <a href="https://calendly.com/meonvalleyweb/30min" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-500 transition font-medium text-lg inline-flex items-center justify-center">
-   Book a call
- </a>
- </div>
- </div>
- </section>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    align-items: center;
+    gap: clamp(2.5rem, 7vw, 7rem);
+    min-height: min(47rem, calc(100dvh - 6.5rem));
+    padding: 4.5rem 0 5.5rem;
+  }
 
- <!-- Areas we serve -->
- <section class="py-16 bg-gray-50" aria-label="Areas we serve">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="text-center mb-10">
- <h2 class="text-3xl font-bold text-black mb-3">Areas we serve</h2>
- <p class="text-lg text-gray-600 max-w-2xl mx-auto">
- Based in the Meon Valley, we work with businesses across Hampshire and the South Coast.
- </p>
- </div>
- <div class="flex flex-wrap justify-center gap-3">
- {locations.map((loc) => (
- <a
- href={`/web-design-${loc.slug}`}
- class="px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-600 transition-colors duration-200"
->
- {loc.name}
- </a>
- ))}
- </div>
- </div>
- </section>
+  .hero-copy {
+    max-width: 35rem;
+  }
 
- <!-- Tech strip -->
- <TechStrip />
+  .eyebrow {
+    margin: 0;
+    color: var(--pink);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
 
- <!-- Popup -->
- <LeadMagnetPopup />
-</MainLayout>
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--ink);
+    letter-spacing: -0.045em;
+  }
+
+  h1 {
+    max-width: 10ch;
+    margin-bottom: 1.6rem;
+    font-size: clamp(3.4rem, 6.2vw, 6rem);
+    font-weight: 750;
+    line-height: 0.96;
+  }
+
+  .hero-lede {
+    max-width: 31rem;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    gap: 0.7rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.85rem 1.35rem;
+    font-size: 0.95rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button:active {
+    transform: translateY(0);
+  }
+
+  .button-primary {
+    background: var(--pink);
+    color: #fff;
+  }
+
+  .button-primary:hover,
+  .button-primary:focus-visible {
+    background: #8f1749;
+  }
+
+  .button-secondary {
+    border-color: var(--line);
+    color: var(--ink);
+  }
+
+  .button-secondary:hover,
+  .button-secondary:focus-visible {
+    border-color: var(--ink);
+    background: rgba(255, 255, 255, 0.45);
+  }
+
+  .transition-note {
+    max-width: 27rem;
+    margin: 1.4rem 0 0;
+    color: #777a80;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .hero-art {
+    margin: 0;
+  }
+
+  .hero-art-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: var(--paper-deep);
+    box-shadow: 0 2.5rem 5rem -3rem rgba(21, 23, 28, 0.42);
+  }
+
+  .hero-art-frame::after {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(21, 23, 28, 0.12);
+    border-radius: inherit;
+    content: '';
+    pointer-events: none;
+  }
+
+  .hero-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  figcaption {
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .continuity {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.75fr);
+    gap: clamp(3rem, 10vw, 9rem);
+    border-top: 1px solid var(--line);
+    padding: 6.5rem 0;
+  }
+
+  .section-intro {
+    max-width: 31rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 750;
+    line-height: 1;
+  }
+
+  .section-intro p,
+  .contact-band p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .continuity-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .continuity-list article {
+    border-bottom: 1px solid var(--line);
+    padding: 1.45rem 0 1.6rem;
+  }
+
+  .continuity-list h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .continuity-list p {
+    max-width: 28rem;
+    margin-bottom: 0;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .contact-band {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: 1.25rem;
+    background: var(--ink);
+    padding: clamp(2rem, 5vw, 4rem);
+  }
+
+  .contact-band h2,
+  .contact-band p:not(.eyebrow) {
+    color: #f7f4ed;
+  }
+
+  .contact-band h2 {
+    max-width: 12ch;
+    margin-top: 0.8rem;
+  }
+
+  .contact-band p:not(.eyebrow) {
+    max-width: 39rem;
+    margin-bottom: 0;
+  }
+
+  .contact-band a:not(.text-link) {
+    color: #f5a7c8;
+    font-weight: 700;
+  }
+
+  .text-link {
+    flex: 0 0 auto;
+    color: #fff;
+    font-weight: 750;
+    text-decoration: none;
+    text-underline-offset: 0.3rem;
+  }
+
+  .text-link:hover,
+  .text-link:focus-visible {
+    color: #f5a7c8;
+    text-decoration: underline;
+  }
+
+  .site-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 5rem 0 2rem;
+  }
+
+  .footer-brand {
+    margin-bottom: 0.45rem;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .footer-note {
+    max-width: 27rem;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .site-footer > a {
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-underline-offset: 0.25rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-copy,
+    .hero-art {
+      animation: enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-art {
+      animation-delay: 120ms;
+    }
+
+    @keyframes enter {
+      from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .site-header,
+    .hero,
+    .continuity,
+    .contact-band,
+    .site-footer {
+      width: min(100% - 2rem, 42rem);
+    }
+
+    .site-header {
+      min-height: 5.5rem;
+    }
+
+    .brand img {
+      height: 2.2rem;
+    }
+
+    .new-home span {
+      font-size: 0.61rem;
+    }
+
+    .new-home strong {
+      font-size: 0.88rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3rem;
+      min-height: auto;
+      padding: 4rem 0 4.5rem;
+    }
+
+    h1 {
+      max-width: 9ch;
+      font-size: clamp(3.25rem, 15vw, 5rem);
+    }
+
+    .hero-art {
+      width: 100%;
+    }
+
+    .continuity {
+      display: block;
+      padding: 4.5rem 0;
+    }
+
+    .continuity-list {
+      margin-top: 2.75rem;
+    }
+
+    .contact-band {
+      display: block;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .site-footer {
+      display: block;
+      padding-top: 4rem;
+    }
+
+    .site-footer > a {
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+  }
+</style>
