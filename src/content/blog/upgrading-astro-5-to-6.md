@@ -2,7 +2,7 @@
 title: "Upgrading from Astro 5 to Astro 6: Common Pitfalls and Solutions"
 description: "A detailed guide to the breaking changes in Astro 6, including content collections migration, slug handling, and markdown rendering issues."
 date: 2026-03-11
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Astro Development"
 featured: false
 image: "/astro-logo-light-gradient.png"

@@ -8,7 +8,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://meonvalleyweb.com',
   compressHTML: true,
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) => !['/thank-you/', '/thank-you-checklist/'].includes(new URL(page).pathname),
+  })],
   vite: {
     plugins: [tailwindcss()],
     server: {

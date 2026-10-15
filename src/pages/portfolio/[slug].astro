@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import { portfolioImages } from '../../data/portfolioImages';
 
 export async function getStaticPaths() {
   const portfolioEntries = await getCollection('portfolio');
@@ -18,6 +20,9 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const htmlContent = entry.body ? await marked(entry.body) : '';
+const resolvedImage = entry.data.image
+  ? portfolioImages[entry.data.image as keyof typeof portfolioImages]
+  : undefined;
 ---
 
 <MainLayout 
@@ -76,7 +81,18 @@ const htmlContent = entry.body ? await marked(entry.body) : '';
     </section>
     <!-- Project Image -->
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    {entry.data.image ? (
+    {resolvedImage ? (
+      <div class="rounded-lg shadow-lg overflow-hidden">
+        <Image
+          src={resolvedImage}
+          alt={entry.data.imageAlt || entry.data.title}
+          class="w-full h-auto object-contain"
+          widths={[720, 1080, 1440]}
+          sizes="(min-width: 1024px) 1152px, 92vw"
+          loading="eager"
+        />
+      </div>
+    ) : entry.data.image ? (
       <div class="rounded-lg shadow-lg overflow-hidden">
         <img 
           src={entry.data.image} 

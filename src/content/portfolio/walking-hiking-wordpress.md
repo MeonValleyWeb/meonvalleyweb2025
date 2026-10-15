@@ -1,8 +1,8 @@
 ---
-title: "Walking & Hiking WordPress Site"
-description: "WordPress site featuring over 900 walks for charity fundraising"
+title: "Two Dogs and an Awning Walking Library"
+description: "A WordPress publishing system organising more than 900 walks while supporting Trussell Trust fundraising"
 technology: "WordPress"
-category: "Charity & Fundraising"
+category: "Publishing & Fundraising"
 client: "Two Dogs and an Awning"
 status: "Live"
 featured: true
@@ -11,26 +11,30 @@ image: "/portfolio/twodogsananawning.webp"
 imageAlt: "Two Dogs and an Awning walking website homepage"
 ---
 
-## Project Overview
+## The challenge
 
-This project showcases the power of WordPress as a content management system for large-scale content organization. The site serves as both a resource for hiking enthusiasts and a platform for charitable fundraising.
+Two Dogs and an Awning had built an unusually deep collection of walking content. More than 900 routes needed to remain useful to people browsing by place and difficulty, without losing the personal character of the project or its fundraising purpose.
 
-## Key Features
+The website therefore needed to behave like a practical library, not a conventional brochure site.
 
-- **Extensive Walk Database**: Over 900 documented walks with detailed descriptions
-- **Geographic Organization**: Walks categorized by region and difficulty level
-- **Fundraising Integration**: Seamless donation processing for the Trussell Trust
-- **User-Friendly Navigation**: Intuitive search and filtering system
-- **Mobile Responsive**: Optimized for hikers accessing information on-the-go
+## The approach
 
-## Technical Implementation
+WordPress provides an editing workflow that suits a growing collection. The information architecture groups walks consistently, keeps route information readable on mobile and makes new entries easier to publish.
 
-- **Platform**: WordPress with custom theme development
-- **Content Management**: Custom post types for walk entries
-- **Mapping Integration**: Interactive maps for walk routes
-- **Performance Optimization**: Caching and image optimization for fast loading
-- **SEO Optimization**: Structured data and meta optimization for search visibility
+The project focused on:
 
-## Impact
+- A repeatable structure for more than 900 walk entries.
+- Clear geographic organisation and route discovery.
+- Mobile access for people using the site away from a desk.
+- Visible support for Trussell Trust fundraising.
+- Ongoing technical care as the library grows.
 
-The site has become a valuable resource for the hiking community while successfully supporting charitable fundraising efforts for the Trussell Trust, demonstrating how web technology can serve both informational and philanthropic purposes.
+## The outcome
+
+The finished site gives a large body of specialist content a clear home. Visitors can move from broad browsing to a useful route, while the fundraising purpose remains part of the experience rather than an afterthought.
+
+> “The support and service provided by Andrew at Meon Valley Web is first class.”
+
+Paul Fredericks, Two Dogs and an Awning
+
+[View more Meon Valley Web projects](/portfolio) or [request a review of your current website](/free-site-audit).

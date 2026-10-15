@@ -1,52 +1,37 @@
 ---
-title: "Saints Disabled Association Management System"
-description: "Complex forms and automation workflows for season ticket allocation management"
+title: "Saints Disabled Supporters' Association Workflows"
+description: "Accessible forms and administration workflows supporting season-ticket allocation"
 technology: "Web Forms & Automation"
-category: "Charity & Automation"
-client: "Saints Disabled Association"
+category: "Accessibility & Administration"
+client: "Saints Disabled Supporters' Association"
 status: "Live"
 featured: true
 order: 4
 image: "/portfolio/sdsa.webp"
-imageAlt: "Saints Disabled Supporters Association website homepage"
+imageAlt: "Saints Disabled Supporters' Association website homepage"
 ---
 
-## Project Overview
+## The challenge
 
-The Saints Disabled Association required a comprehensive solution to manage their season ticket allocation process, which involves complex eligibility criteria, accessibility requirements, and administrative workflows.
+Season-ticket administration involves detailed supporter information, accessibility requirements and several connected decisions. The association needed a clearer way to collect consistent applications and move that information into its existing administration process.
 
-## Key Challenges
+Accessibility and data clarity were central requirements, not optional finishing work.
 
-- **Complex Eligibility Criteria**: Multiple factors determining ticket allocation
-- **Accessibility Requirements**: Ensuring the system itself is fully accessible
-- **Data Integration**: Seamless flow from web forms to management spreadsheets
-- **Workflow Automation**: Reducing manual administrative burden
-- **Compliance**: Meeting charity and accessibility regulations
+## The approach
 
-## System Features
+The website uses structured forms and automation to reduce repeated manual handling. Conditional questions keep the journey relevant to each applicant, while validation improves the quality of information reaching the administration team.
 
-- **Intelligent Forms**: Dynamic forms that adapt based on user responses
-- **Automated Workflows**: Streamlined processing from application to allocation
-- **Spreadsheet Integration**: Direct data flow to existing management systems
-- **Status Tracking**: Real-time updates for applicants and administrators
-- **Accessibility Compliance**: WCAG 2.1 AA compliant interface
-- **Data Security**: Secure handling of sensitive personal information
+The delivery includes:
 
-## Technical Implementation
+- Forms that adapt to the information a supporter provides.
+- Clear labels, keyboard-friendly controls and readable error handling.
+- Consistent accessibility fields for administration.
+- Automated movement of submissions into existing working documents.
+- Email updates supporting the allocation workflow.
+- Careful handling of sensitive personal information.
 
-- **Form Logic**: Complex conditional logic for eligibility determination
-- **API Integration**: Seamless connection to spreadsheet management systems
-- **Automated Notifications**: Email updates for status changes
-- **Data Validation**: Comprehensive validation to ensure data quality
-- **Backup Systems**: Redundant data storage for reliability
+## The outcome
 
-## Workflow Automation
+The association has a more consistent route from supporter application to administration. The work reduces avoidable re-entry and gives disabled supporters a clearer way to provide the information the process genuinely needs.
 
-- **Application Processing**: Automated initial screening and categorization
-- **Allocation Logic**: Intelligent distribution based on multiple criteria
-- **Communication**: Automated updates to applicants throughout the process
-- **Reporting**: Automated generation of administrative reports
-
-## Impact
-
-The system has significantly reduced administrative overhead while improving the experience for disabled supporters seeking season tickets, demonstrating how technology can enhance accessibility and efficiency in charitable organizations.
+This project reflects the same accessibility-first approach used across [Meon Valley Web's Hampshire website work](/web-design-hampshire).

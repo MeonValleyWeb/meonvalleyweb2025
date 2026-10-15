@@ -2,7 +2,7 @@
 title: "Why US and EU Businesses Are Choosing UK WordPress Hosting"
 description: "A look at UK-based managed WordPress hosting from an American and a European standpoint — data sovereignty, latency, cost, and support overlap that both audiences should actually weigh up."
 date: 2026-08-10
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Hosting"
 featured: true
 image: "/blog/uk-hosting-global-perspective.webp"

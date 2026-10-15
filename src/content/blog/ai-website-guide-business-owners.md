@@ -2,7 +2,7 @@
 title: "AI on Your Website: A Business Owner's Guide [2025]"
 description: "Expert guide to using AI on your business website. Learn where AI adds value, the pitfalls to avoid, and why it's not just 'adding ChatGPT'. Hampshire web design expertise."
 date: 2026-03-27
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Technology"
 featured: true
 image: "/images/blog/ai-website-guide.jpg"

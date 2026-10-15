@@ -2,7 +2,7 @@
 title: "How Much Does a Website Cost in Hampshire?"
 description: "Focused five-page static sites can start around £250–£500. Most professional small-business websites start around £2,500, depending on scope."
 date: 2026-03-27
-author: "Meon Valley Web"
+author: "Andrew, Meon Valley Web"
 category: "Business Guide"
 featured: true
 image: "/images/blog/website-cost-hampshire.jpg"
