@@ -225,6 +225,11 @@ export default {
       return Response.redirect(url, 301);
     }
 
+    if (url.pathname === '/sitemap.xml') {
+      url.pathname = '/sitemap-index.xml';
+      return Response.redirect(url, 301);
+    }
+
     if (url.pathname === '/pricing') {
       url.pathname = '/hosting';
       return Response.redirect(url, 301);
